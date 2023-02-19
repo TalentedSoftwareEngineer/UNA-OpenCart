@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<resources name="en" flag="gb" title="English">
+	<string
+    name="_vnd_test_view_detail_title"
+  ><![CDATA[View Product Details]]></string>
+	<string
+    name="_vnd_test_block_search_products_title"
+  ><![CDATA[User Search OpenCart Products]]></string>
+	<string
+    name="_vnd_test_upload_new_products_title"
+  ><![CDATA[Upload New Products]]></string>
+</resources>

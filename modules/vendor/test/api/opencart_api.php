@@ -1,0 +1,71 @@
+<?php
+// require_once 'vendor/autoload.php';
+// use League\OAuth2\Client\Provider\GenericProvider;
+
+class OpenApiIntegration {
+    private static $_instance;
+    private string $api_token;
+    function __construct() {
+        
+    }
+
+    public function autoLogin() 
+    {
+        $apiKey = "l6UEEIvdtBbJU8VhqyDA6SAa6s05nzKUP0IHdnJxxCvHyR57TSEDe3P8Cf75reILFtGWIjUdmc04hoLlOuBTZLyUBMJGZnCRenp4LEDNDiNHrakrnSa5IVnbmJtqtM66M3BJB1P08LtPuK4t4IORMJndsNJKKyJ12u4c1CHXu8BlJvI3tNaZZy7YEhnkAFkoipaXRS2DROutparQ20iU1Ru1G5sqSoTFTEm08J10hEXXE7dGRKbyXTPnEQOqlCSI"; //Whatever you put in System -> Users -> API
+
+        $url = BASIC_OPEN_CART_SERVER_API . "route=api/login&api_token=0";
+        
+        $curl = curl_init($url);
+         
+        $post = array (
+          'username' => 'admin',
+          'key' => $apiKey
+        );
+        
+        curl_setopt_array( $curl, array(
+          CURLOPT_RETURNTRANSFER=> TRUE,
+          CURLOPT_POSTFIELDS      => $post
+        ) );
+         
+        $raw_response = curl_exec( $curl );
+        // print_r($raw_response);
+        $response = json_decode($raw_response);
+        curl_close($curl);
+        
+        $this->api_token = $response->api_token;
+
+    }
+
+    public function getAllProducts()
+    {
+        $this->autoLogin();
+        $url = BASIC_OPEN_CART_SERVER_API . "route=api/product&api_token=" . $this->api_token;
+        
+        $post = array (
+        );
+        
+        $curl = curl_init($url);
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+        $raw_response = curl_exec( $curl );
+        $response = json_decode($raw_response);
+        $err = curl_error($curl);
+        curl_close($curl);
+
+        return $response;
+    }
+
+    public function getApiToken() 
+    {
+        return $this->api_token;
+    }
+
+    public static function getInstance() 
+    {
+        if (null === self::$_instance) {
+            self::$_instance = new self();
+        }
+
+        return self::$_instance;
+    }
+} 
+?>
