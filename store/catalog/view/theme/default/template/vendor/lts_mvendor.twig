@@ -1,0 +1,40 @@
+{{ header }}
+
+<div id="container" class="container">
+  <ul class="breadcrumb">
+    {% for breadcrumb in breadcrumbs %}
+    <li><a href="{{ breadcrumb.href }}">{{ breadcrumb.text }}</a></li>
+    {% endfor %}
+  </ul>
+ 
+    <div id="content" class="col-sm-12">
+      <div class="dashboard-wrap">
+        <h1 class="primary-heading">{{ heading_title }}</h1>
+          {% if vendors %}
+          <div class="row">
+          {% for vendor in vendors %}         
+          <div class="col-sm-12 col-md-4 cardparent">
+            
+          <div class="card">
+            <a href="{{ vendor.href }}"><img src="{{ vendor.banner }}" alt="" title="" class="img-responsive"></a>
+            <div class="card-body">
+              <h4 class="card-title"><a href="{{ vendor.href }}">Store Name: {{ vendor.store_name }}</a></h4>
+              <p class="card-text">{{vendor.description}}</p>
+              <a href="{{ vendor.href }}" class="btn btn-primary">Go to Products</a>
+            </div>
+          </div>
+          </div>
+          {% endfor %}
+        </div>
+         <div class="row">
+        <div class="col-sm-6 text-left">{{ pagination }}</div>
+        <div class="col-sm-6 text-right">{{ results }}</div>
+      </div>
+        {% else %}
+        <p>{{ text_empty }}</p>
+        {% endif %}
+      </div>
+      {{ content_bottom }}</div>
+</div>
+
+{{ footer }}

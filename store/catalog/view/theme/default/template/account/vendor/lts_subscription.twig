@@ -1,0 +1,113 @@
+{{ header }}{{ lts_column_left }}
+<div id="content">
+    <div class="page-header">
+        <div class="container-fluid">
+            <h1>{{ heading_title }}</h1>
+            <ul class="breadcrumb">
+                {% for breadcrumb in breadcrumbs %}
+                <li><a href="{{ breadcrumb.href }}">{{ breadcrumb.text }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    {% if error_warning %}
+    <div class="alert alert-danger alert-dismissible"><i class="fa fa-exclamation-circle"></i> {{ error_warning }}
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+    </div>
+    {% endif %}
+    {% if success %}
+    <div class="alert alert-success alert-dismissible"><i class="fa fa-check-circle"></i> {{ success }}</div>
+    {% endif %}
+    <div class="panel panel-default">
+        <div class="panel-heading">
+             {% if isplan %}   
+                 <h3 class="panel-title alert alert-success">{{paidplan}} {{current_plan.subscription_commission }}% {{days}}</i></h3>
+                 {% else %}
+
+                  <h3 class="panel-title alert alert-danger">{{defaultplan}} {{defaultplan_rate}}% {{days}}</i></h3>
+            {% endif %}
+        </div>
+        <div class="panel-body">
+            <h5 class="alert alert-danger">{{ text_plan_info }}</h5>
+            <div class="row">
+                {% if subscriptions %}        
+                {% for subscription in subscriptions %}
+                {%  if subscription.status=='1' %}
+                <div class="col-sm-12 col-md-6 lts_sub">
+                    {% if current_plan.subscription_id == subscription.subscription_id %}
+                    <div class="current-plan"><span class="active">{{ text_active }}</span></div>                
+                    <div class="lts-title">
+                        <h3>{{ current_plan.subscription_name }}</h3>
+                    </div>
+                    <div class="subscription-item card-text">
+                        <h1 class="subamt"> {{ current_plan.subscription_fee }}</h1>
+                        <div class="plan-item flex text-center">
+                            <div><strong>{{ current_plan.plan_type }}</strong> {{ text_plan_type }}</div>
+                        </div>
+                        
+                        <div class="plan-item flex text-center">
+                            <div><strong>{{ current_plan.subscription_fee }}</strong> {{ text_subscription_fee }}</div>
+                        </div>
+                        <div class="plan-item flex text-center">
+                            <div><strong>{{ current_plan.subscription_commission }}%</strong> {{ entry_commission }}</div>
+                        </div>
+                    </div>
+                    {% else %}
+                    <div class="lts-title">
+                        <h3>{{ subscription.name }}</h3>
+                    </div>
+                    <div class="subscription-item card-text">
+                        <h1 class="subamt"> {{ subscription.subscription_fee }}</h1>
+                        <div class="plan-item flex text-center">
+                            <div><strong>{{ subscription.plan_type }}</strong> {{ text_plan_type }}</div>
+                        </div>
+                        
+                        <div class="plan-item flex text-center">
+                            <div><strong>{{ subscription.subscription_fee }}</strong> {{ text_subscription_fee }}</div>
+                        </div>
+                        <div class="plan-item flex text-center">
+                            <div><strong>{{ subscription.subscription_commission }}%</strong> {{ entry_commission }}</div>
+                        </div>
+                    </div>
+
+                    {% endif %}
+                    <div class="buttons">
+                        {% if current_plan.subscription_id == subscription.subscription_id %}
+                        <div class="pull-right">
+                            <a href="{{ subscription.view }}" class="btn buttons_clr"><i class="fa fa-eye"></i> {{ button_view }}</a>
+                        </div>
+                        {% else %}
+
+
+                        {% if subscription.type %}
+                       
+                        <div class="pull-right">
+                            <a href="{{ subscription.subscribe }}" class="btn buttons_clr">{{ button_subscribe }}</a>
+                        </div>
+                        {% else %}
+                        <div class="pull-right">
+                            <button class="btn  buttons_clr cart_page" type="button" onclick="cart.add('{{ subscription.product_id }}','1');" id="cart_page"><span>{{ button_subscribe }}</span> </button>
+                        </div>
+                        {% endif %}
+                        {% endif %}
+                    </div>
+                </div>
+                {% endif %}
+                {% endfor %}
+            </div>
+            {% endif %}
+        </div>
+    </div>
+
+<script>
+$(document).ready(function() {
+    $('.cart_page').on('click', function() {
+        var cart = '{{cart_url}}';
+        // window.location.href=cart;
+        setTimeout(function()
+         { window.location.href = cart; }, 500);
+    })
+});
+</script>
+{{ footer }}
+</div>

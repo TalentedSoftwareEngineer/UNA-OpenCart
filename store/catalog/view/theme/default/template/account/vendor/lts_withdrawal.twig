@@ -1,0 +1,162 @@
+{{ header }}{{ lts_column_left }}
+<div id="content">
+    <div class="page-header">
+        <div class="container-fluid">
+            <h1>{{ heading_title }}</h1>
+
+            <ul class="breadcrumb">
+                {% for breadcrumb in breadcrumbs %}
+                <li><a href="{{ breadcrumb.href }}">{{ breadcrumb.text }}</a></li>
+                {% endfor %}                
+                <li class="display_bal text-danger">{{lts_current_amount}} : {{net_current_amount}}</li>
+            </ul>
+            <h3 class="text-primary">{{entry_vendor_total_amount}} : {{vendor_total_amount}}</h3>
+        </div>
+    </div>
+    <div class="loader" style=" display:none;" id="withdrawal_loader">
+        <div class="sk-cube-grid">
+            <div class="sk-cube sk-cube1"></div>
+            <div class="sk-cube sk-cube2"></div>
+            <div class="sk-cube sk-cube3"></div>
+            <div class="sk-cube sk-cube4"></div>
+            <div class="sk-cube sk-cube5"></div>
+            <div class="sk-cube sk-cube6"></div>
+            <div class="sk-cube sk-cube7"></div>
+            <div class="sk-cube sk-cube8"></div>
+            <div class="sk-cube sk-cube9"></div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div class="panel-heading">
+                <h3 class="panel-title"><i class="fa fa-pencil"></i> {{heading_title}}</h3>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">{{entry_withdrawal_amount}}</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6">
+                            <h4></h4>
+                            <table class="table table-bordered">
+                                <tr>
+                                    <td>{{ lts_current_amount }} </td>
+                                    <td><input type="text" name="" readonly class="form-control col-md-3" value="{{net_current_amount}}"></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ lts_pending_amount }}</td>
+                                    <td id='bank_name'><input type="" name="" class="form-control" readonly value="{{pending_amount}}"></td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <div class="col-md-6">
+                                <span for="withdrawal">{{min_withdwaral_amount}}</span>
+                                <span><b>{{min_withdwaral_amoun}}</b></span>
+                            </div>
+                            <div class="col-md-6">
+                                <span for="withdrawal">{{max_withdwaral_amount}}</span>
+                                <span><b>{{max_withdwaral_amoun}}</b></span>
+                            </div>
+                            <!-- <form action="" class="withdraw_form"> -->
+                                <div class="col-sm-2">
+                                    <label style="margin-top:40%" for="withdrawal">{{ entry_withdrawal }}</label>
+                                </div>
+                                <div class="col-sm-10">
+                                    <input style="margin-top:7%" type="text" min="100" id="withdrawal_amount" name="withdrawal_amount" value="" class="form-control" placeholder="{{ entry_withdrawal }}">
+                                </div>
+                                <div class="form-group">
+                                    <span id="req_money_status"></span><br>
+                                    <button type="button" name="submit_form" id="transfer_money" class="btn btn-primary transfer_button">{{button_transfer}}</button>
+                                </div>
+                            <!-- </form> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><i class="fa fa-pencil"></i> {{transection_history}}</h3>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <td class="text-left">{{from}}</td>
+                                    <td class="text-left">{{entry_price}}</td>
+                                    <td class="text-left"> {{entry_status}}</td>
+                                    <td class="text-left">{{transection_date}}</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% if transection_list %}
+                                {% for transection in transection_list %}
+                                <tr>
+                                    <td class="text-left">{{admin}}</td>
+                                    <td class="text-left">{{ transection.amount }}</td>
+                                    {% if transection.payment_processed==0 %}
+                                    <td class="text-left">{{transection_status_pending}}</td>
+                                    <td class="text-left">{{ transection.withdrawal_initiate_date }}</td>
+                                    {% else %}
+                                    <td class="text-left">{{transection_status_receive}}</td>
+                                    <td class="text-left">{{ transection.payment_initiate_date }}</td>
+                                    {% endif %}
+                                </tr>
+                                {% endfor %}
+                                {% else %}
+                                <tr>
+                                    <td class="text-center" colspan="8">{{ text_no_results }}</td>
+                                </tr>
+                                {% endif %}
+                            </tbody>
+                        </table>
+                    </div>
+                <div class="row">
+                    <div class="col-sm-6 text-left">{{ pagination }}</div>
+                     <div class="col-sm-6 text-right">{{ results }}</div>
+                </div>
+                </div>
+            </div>
+
+            <script type="text/javascript">
+            $('#req_money_status').val("ljmfsk");
+            $('#transfer_money').click(function(e) {
+                var amount = $("#withdrawal_amount").val();
+
+                $.ajax({
+                    type: 'post',
+                    dataType: 'json',
+                    data: { 'amount': amount },
+                    url: 'index.php?route=account/vendor/lts_withdrawal/withdrawal&user_token={{user_token}}',
+                    beforeSend: function() {
+                        $('#withdrawal_loader').css('display', 'block');
+                    },
+                    success: function(result) {
+                        // alert('xdcsdc');
+                        // console.log(result);
+                        $('#withdrawal_loader').css('display', 'none');
+                        $("#withdrawal_amount").val('');
+                        if (result.data_status.status == true) {
+                            $('#req_money_status').html("Request Sent Sucessfully").css('color', 'green');
+
+                        }
+
+                        if (result.data_status.empty_money == true) {
+                            $('#req_money_status').html(result.data_status.empty_money_msg).css('color', 'red');
+                        }
+                        if (result.data_status.bank_status == false) {
+                            $('#req_money_status').html(result.data_status.bank_detail).css('color', 'red');
+                        }
+                        if (result.data_status.low_price == true) {
+                            $('#req_money_status').html(result.data_status.low_price_msg).css('color', 'red');
+                        }
+                       setTimeout(function(){location.reload();},1000);
+                    }
+
+                });
+            });
+            </script>
+            {{ footer }}
+        </div>

@@ -1,0 +1,61 @@
+{{ header }} {{ lts_column_left }}
+<div id="content">
+    <div class="page-header">
+        <div class="container">
+            <h1>{{ heading_title }}</h1>
+            <ul class="breadcrumb">
+                {% for breadcrumb in breadcrumbs %}
+                <li><a href="{{ breadcrumb.href }}">{{ breadcrumb.text }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <div class="container">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"><i class="fa fa-pencil"></i> {{ text_form }}</h3>
+            </div>
+            <div class="panel-body">
+                <div class="col-sm-12 lts-subscription">
+                    <form action="{{ action }}" method="post" enctype="multipart/form-data" id="vendor-form-category" class="form-horizontal">
+                        <div class="lts-title">
+                            <h3>{{ subscription.name }}</h3>
+                        </div>
+                        
+                        <div class="subscription-item">
+                            <table class="table table-bordered">
+                                <tr>
+                                    <td>
+                                        {{ subscriptions_commission }}
+                                    </td>
+                                    
+                                    <td>
+                                        {{ text_subscription_fee }}
+                                    </td>
+                                     
+                                    <td>
+                                        Action
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <kbd> {{ subscription_commission }} </kbd>
+                                    </td>
+                                     
+                                    <td>
+                                        <kbd>{{ subscription_fee }}</kbd>
+                                    </td>
+                                     
+                                    <td>
+                                        <button class="btn btn-primary">{{ button_save_and_invoice }}</button>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{ footer }}
+</div>
