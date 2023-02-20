@@ -41,6 +41,13 @@ class VndTestModule extends BxDolModule
         $output = $this->helper->get_include_output($file);
         return $output;
     }
+
+    function serviceMoveOcLink ()
+    {
+        $file = VNDTEST_ROOTDIR . "scripts/move_oc_link.php";
+        $output = $this->helper->get_include_output($file);
+        return $output;
+    }
 }
 
 /** @} */

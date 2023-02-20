@@ -1,9 +1,0 @@
-<?php echo $a['display_switcher'];?>
-<?php if($a['bx_if:is_divider_1']['condition']){ ?>
-    <div class="bx-def-hr my-4"></div>
-<?php } ?>
-<?php echo $a['browse_switcher'];?>
-<?php if($a['bx_if:is_divider_2']['condition']){ ?>
-    <div class="bx-def-hr my-4"></div>
-<?php } ?>
-<?php echo $a['filter_switcher'];?>
