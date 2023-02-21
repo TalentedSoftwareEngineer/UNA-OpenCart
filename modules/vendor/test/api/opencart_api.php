@@ -59,6 +59,59 @@ class OpenApiIntegration {
         return $this->api_token;
     }
 
+    public function getAllUsers()
+    {
+        $url = BASIC_OPEN_CART_SERVER_API . "route=api/user/getAllUsers";
+        
+        $post = array (
+        );
+        
+        $curl = curl_init($url);
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+        $raw_response = curl_exec( $curl );
+        $response = json_decode($raw_response);
+        $err = curl_error($curl);
+        curl_close($curl);
+
+        return $response;
+    }
+    
+    public function getSysUserByProfileId($profileId)
+    {
+        $url = BASIC_OPEN_CART_SERVER_API . "route=api/user/getSysUserByProfileId";        
+        $curl = curl_init($url);
+         
+        $post = array (
+            'profileId' => $profileId
+        );        
+        curl_setopt_array( $curl, array(
+          CURLOPT_RETURNTRANSFER=> TRUE,
+          CURLOPT_POSTFIELDS      => $post
+        ) );
+         
+        $raw_response = curl_exec( $curl );
+        $response = json_decode($raw_response);
+        curl_close($curl);
+        
+        return $response;
+    }
+
+    public function addOcUser($post)
+    {
+        $url = BASIC_OPEN_CART_SERVER_API . "route=api/user/add";        
+        $curl = curl_init($url);
+         
+        curl_setopt_array( $curl, array(
+          CURLOPT_RETURNTRANSFER=> TRUE,
+          CURLOPT_POSTFIELDS      => $post
+        ) );
+         
+        $raw_response = curl_exec( $curl );
+        curl_close($curl);
+        
+        return $raw_response;
+    }
+
     public static function getInstance() 
     {
         if (null === self::$_instance) {

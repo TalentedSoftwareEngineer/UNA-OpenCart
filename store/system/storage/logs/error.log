@@ -170,3 +170,67 @@
 2023-02-18 15:01:43 - PHP Warning:  move_uploaded_file(): Unable to move 'C:\xampp\tmp\phpF6A9.tmp' to './upload/356.jpg' in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\catalog\controller\api\product.php on line 152
 2023-02-18 15:02:46 - PHP Warning:  move_uploaded_file(./upload/411.jpg): failed to open stream: No such file or directory in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\catalog\controller\api\product.php on line 152
 2023-02-18 15:02:46 - PHP Warning:  move_uploaded_file(): Unable to move 'C:\xampp\tmp\phpED20.tmp' to './upload/411.jpg' in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\catalog\controller\api\product.php on line 152
+2023-02-21 10:57:52 - PHP Notice:  Undefined index: confirm in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\catalog\controller\api\user.php on line 494
+2023-02-21 10:57:52 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\catalog\controller\api\user.php on line 336
+2023-02-21 10:57:52 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\catalog\controller\api\user.php on line 341
+2023-02-21 10:57:52 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\catalog\controller\api\user.php on line 345
+2023-02-21 10:57:52 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\catalog\controller\api\user.php on line 350
+2023-02-21 10:58:41 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\catalog\controller\api\user.php on line 42
+2023-02-21 12:40:10 - PHP Warning:  get_class() expects parameter 1 to be object, null given in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\catalog\controller\api\user.php on line 141
+2023-02-21 12:41:11 - PHP Warning:  get_class() expects parameter 1 to be object, null given in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\catalog\controller\api\user.php on line 141
+2023-02-21 13:56:23 - PHP Notice:  Indirect modification of overloaded property ModelCatalogUser::$permission has no effect in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\catalog\model\catalog\user.php on line 151
+2023-02-21 13:59:58 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\admin\controller\common\login.php on line 10
+2023-02-21 14:03:17 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\admin\controller\common\login.php on line 10
+2023-02-21 14:05:45 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\admin\controller\common\login.php on line 10
+2023-02-21 14:23:05 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\admin\controller\common\login.php on line 10
+2023-02-21 14:25:17 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\admin\controller\common\login.php on line 10
+2023-02-21 14:56:19 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\admin\controller\common\login.php on line 10
+2023-02-21 14:56:22 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\admin\controller\common\login.php on line 10
+2023-02-21 14:56:23 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\admin\controller\common\login.php on line 10
+2023-02-21 14:56:23 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\admin\controller\common\login.php on line 10
+2023-02-21 14:56:23 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\admin\controller\common\login.php on line 10
+2023-02-21 14:56:23 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\admin\controller\common\login.php on line 10
+2023-02-21 14:56:24 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\admin\controller\common\login.php on line 10
+2023-02-21 14:56:24 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\admin\controller\common\login.php on line 10
+2023-02-21 14:56:24 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\admin\controller\common\login.php on line 10
+2023-02-21 14:56:50 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\admin\controller\common\login.php on line 10
+2023-02-21 14:58:21 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\admin\controller\common\login.php on line 10
+2023-02-21 14:58:29 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\admin\controller\common\login.php on line 10
+2023-02-21 14:58:43 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\admin\controller\common\login.php on line 10
+2023-02-21 14:59:41 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\admin\controller\common\login.php on line 10
+2023-02-21 14:59:48 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\admin\controller\common\login.php on line 10
+2023-02-21 15:01:04 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\admin\controller\common\login.php on line 10
+2023-02-21 15:01:40 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\admin\controller\common\login.php on line 10
+2023-02-21 15:03:40 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\admin\controller\common\login.php on line 10
+2023-02-21 15:09:47 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\admin\controller\common\login.php on line 10
+2023-02-21 15:25:37 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\admin\controller\common\login.php on line 10
+2023-02-21 15:31:11 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\admin\controller\common\login.php on line 10
+2023-02-21 15:31:55 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\admin\controller\common\login.php on line 10
+2023-02-21 15:32:33 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\admin\controller\common\login.php on line 10
+2023-02-21 15:32:35 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\admin\controller\common\login.php on line 10
+2023-02-21 15:32:38 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\admin\controller\common\login.php on line 10
+2023-02-21 15:32:39 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\admin\controller\common\login.php on line 10
+2023-02-21 15:32:39 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\admin\controller\common\login.php on line 10
+2023-02-21 15:32:39 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\admin\controller\common\login.php on line 10
+2023-02-21 15:34:43 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\admin\controller\common\login.php on line 10
+2023-02-21 15:34:44 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\admin\controller\common\login.php on line 10
+2023-02-21 15:34:44 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\admin\controller\common\login.php on line 10
+2023-02-21 15:34:44 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\admin\controller\common\login.php on line 10
+2023-02-21 15:34:45 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\admin\controller\common\login.php on line 10
+2023-02-21 15:34:46 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\admin\controller\common\login.php on line 10
+2023-02-21 15:34:46 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\admin\controller\common\login.php on line 10
+2023-02-21 15:34:46 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\admin\controller\common\login.php on line 10
+2023-02-21 15:34:47 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\admin\controller\common\login.php on line 10
+2023-02-21 15:38:45 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\admin\controller\common\login.php on line 10
+2023-02-21 15:39:02 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\admin\controller\common\login.php on line 10
+2023-02-21 15:39:09 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\admin\controller\common\login.php on line 10
+2023-02-21 15:39:35 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\admin\controller\common\login.php on line 10
+2023-02-21 15:39:56 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\admin\controller\common\login.php on line 10
+2023-02-21 15:40:20 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\admin\controller\common\login.php on line 10
+2023-02-21 16:47:02 - PHP Warning:  mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\system\library\mail\mail.php on line 77
+2023-02-21 18:20:36 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\admin\controller\common\login.php on line 10
+2023-02-21 18:20:58 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\admin\controller\common\login.php on line 10
+2023-02-21 18:21:09 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\admin\controller\common\login.php on line 10
+2023-02-21 18:21:47 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\admin\controller\common\login.php on line 10
+2023-02-21 14:02:00 - PHP Warning:  mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\system\library\mail\mail.php on line 77
+2023-02-21 21:54:45 - PHP Warning:  mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\system\library\mail\mail.php on line 77
