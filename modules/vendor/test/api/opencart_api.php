@@ -112,6 +112,39 @@ class OpenApiIntegration {
         return $raw_response;
     }
 
+    public function getAllCustomers()
+    {
+        $url = BASIC_OPEN_CART_SERVER_API . "route=api/user/getAllCustomers";
+        
+        $post = array (
+        );
+        
+        $curl = curl_init($url);
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+        $raw_response = curl_exec( $curl );
+        $response = json_decode($raw_response);
+        $err = curl_error($curl);
+        curl_close($curl);
+
+        return $response;
+    }
+
+    public function addOcCustomer($post)
+    {
+        $url = BASIC_OPEN_CART_SERVER_API . "route=api/unacustomer/add";
+        $curl = curl_init($url);
+         
+        curl_setopt_array( $curl, array(
+          CURLOPT_RETURNTRANSFER=> TRUE,
+          CURLOPT_POSTFIELDS      => $post
+        ));
+         
+        $raw_response = curl_exec( $curl );
+        curl_close($curl);
+        
+        return $raw_response;
+    }
+
     public static function getInstance() 
     {
         if (null === self::$_instance) {

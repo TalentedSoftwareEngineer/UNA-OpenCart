@@ -148,6 +148,17 @@ class ControllerApiUser extends Controller
 		}
 	}
 
+	public function getAllCustomers()
+	{
+        $this->load->language('api/cart');
+        $this->load->model('catalog/user');
+  
+        $results = $this->model_catalog_user->getCustomers();
+      
+        $this->response->addHeader('Content-Type: application/json');
+        $this->response->setOutput(json_encode($results));
+	}
+
 	protected function getList() {
 		if (isset($this->request->get['sort'])) {
 			$sort = $this->request->get['sort'];
