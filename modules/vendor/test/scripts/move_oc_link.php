@@ -58,7 +58,8 @@
 ?>
 
 <div class="d-flex align-items-center">
-    <button onclick="openCartLogin(event)" class="btn btn-outline-primary" role="button">Acess OpenCart Store</button>
+    <button onclick="openCartLogin(event)" class="btn btn-outline-primary" role="button">Business Management</button>
+    <!-- <a href="http://localhost/UNA-v.13.0.0-RC2/my-store/" class="ml-3 btn btn-outline-primary" role="button">Business</a> -->
     <span id="linking" class="ml-2"></span><span id="linking_text" class="ml-2"></span>
 </div>
 

@@ -48,6 +48,13 @@ class VndTestModule extends BxDolModule
         $output = $this->helper->get_include_output($file);
         return $output;
     }
+    
+    function serviceBusiness()
+    {
+        $file = VNDTEST_ROOTDIR . "scripts/business.php";
+        $output = $this->helper->get_include_output($file);
+        return $output;
+    }
 }
 
 /** @} */

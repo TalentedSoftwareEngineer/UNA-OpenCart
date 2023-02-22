@@ -148,4 +148,67 @@ class ControllerApiProduct extends Controller
             echo '<img src="'.$imagePath.'" height="150" width="225" class="img-thumbnail" />';
         }
     }
+
+    function convertToArray($value) 
+    {
+
+    }
+
+    public function getSelfProduct()
+    {
+        $this->load->language('api/cart');
+        $this->load->model('catalog/cart');
+        $this->load->model('catalog/product');
+        $this->load->model('tool/image');
+
+        $email = $this->request->post['email'];
+        $results = $this->model_catalog_cart->getSelfProduct($email);
+
+        $response = array_map(function($value){    
+            $filter_id = $value['product_id'];
+            $result = $this->model_catalog_product->getProduct($filter_id);
+    
+            if ($result['image']) {
+                $image = $this->model_tool_image->resize($result['image'], $this->config->get('theme_' . $this->config->get('config_theme') . '_image_product_width'), $this->config->get('theme_' . $this->config->get('config_theme') . '_image_product_height'));
+            } else {
+                $image = $this->model_tool_image->resize('placeholder.png', $this->config->get('theme_' . $this->config->get('config_theme') . '_image_product_width'), $this->config->get('theme_' . $this->config->get('config_theme') . '_image_product_height'));
+            }
+            if ($this->customer->isLogged() || !$this->config->get('config_customer_price')) {
+                $price = $this->currency->format($this->tax->calculate($result['price'], $result['tax_class_id'], $this->config->get('config_tax')), $this->session->data['currency']);
+            } else {
+                $price = false;
+            }
+            if ((float) $result['special']) {
+                $special = $this->currency->format($this->tax->calculate($result['special'], $result['tax_class_id'], $this->config->get('config_tax')), $this->session->data['currency']);
+            } else {
+                $special = false;
+            }
+            if ($this->config->get('config_tax')) {
+                $tax = $this->currency->format((float) $result['special'] ? $result['special'] : $result['price'], $this->session->data['currency']);
+            } else {
+                $tax = false;
+            }
+            if ($this->config->get('config_review_status')) {
+                $rating = (int) $result['rating'];
+            } else {
+                $rating = false;
+            }
+            $data = array(
+                'product_id' => $result['product_id'],
+                'thumb' => $image,
+                'name' => $result['name'],
+                'description' => trim(strip_tags(html_entity_decode($result['description'], ENT_QUOTES, 'UTF-8'))),
+                'price' => $price,
+                'special' => $special,
+                'tax' => $tax,
+                'minimum' => $result['minimum'] > 0 ? $result['minimum'] : 1,
+                'rating' => $result['rating'],
+                'href' => $this->url->link('product/product', 'product_id=' . $result['product_id']),
+            );
+            return $data;
+        }, $results);
+
+        $this->response->addHeader('Content-Type: application/json');
+        $this->response->setOutput(json_encode($response));
+    }
 }

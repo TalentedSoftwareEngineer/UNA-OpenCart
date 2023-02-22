@@ -145,6 +145,26 @@ class OpenApiIntegration {
         return $raw_response;
     }
 
+    public function getSelfProduct($email)
+    {
+        $url = BASIC_OPEN_CART_SERVER_API . "route=api/product/getSelfProduct";
+        $curl = curl_init($url);
+         
+        $post = array (
+            'email' => $email
+        );        
+        curl_setopt_array( $curl, array(
+          CURLOPT_RETURNTRANSFER=> TRUE,
+          CURLOPT_POSTFIELDS      => $post
+        ) );
+         
+        $raw_response = curl_exec( $curl );
+        $response = json_decode($raw_response);
+        curl_close($curl);
+        
+        return $response;
+    }
+
     public static function getInstance() 
     {
         if (null === self::$_instance) {

@@ -29,3 +29,7 @@ INSERT INTO `sys_pages_blocks` (`object`, `cell_id`, `module`, `title_system`, `
 
 INSERT INTO `sys_pages_blocks` (`object`, `cell_id`, `module`, `title_system`, `title`, `designbox_id`, `class`, `async`, `cache_lifetime`, `submenu`, `tabs`, `hidden_on`, `visible_for_levels`, `type`, `content`, `help`, `deletable`, `copyable`, `active`, `order`) VALUES
 ('Move-OC-Link', 1, 'vnd_test', '_vnd_test_move_oc_link_title', '_vnd_test_move_oc_link_title', 11, '', 0, 0, '', 0 , 0, 2147483647, 'service', 'a:3:{s:6:\"module\";s:8:\"vnd_test\";s:6:\"method\";s:10:\"MoveOcLink\";s:6:\"params\";a:1:{i:0;s:8:\"extended\";}}', '', 1, 1, 1, 0);
+
+INSERT INTO `sys_pages_blocks` (`object`, `cell_id`, `module`, `title_system`, `title`, `designbox_id`, `class`, `async`, `cache_lifetime`, `submenu`, `tabs`, `hidden_on`, `visible_for_levels`, `type`, `content`, `help`, `deletable`, `copyable`, `active`, `order`) VALUES
+('Business', 1, 'vnd_test', '_vnd_test_business_title', '_vnd_test_business_title', 11, '', 0, 0, '', 0 , 0, 2147483647, 'service', 'a:3:{s:6:\"module\";s:8:\"vnd_test\";s:6:\"method\";s:8:\"Business\";s:6:\"params\";a:1:{i:0;s:8:\"extended\";}}', '', 1, 1, 1, 0);
+
