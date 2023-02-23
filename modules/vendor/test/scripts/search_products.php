@@ -12,11 +12,13 @@
     $arr_empty = [];
     
     $loggedProfileId = bx_get_logged_profile_id();
-    $oProfile = BxDolProfile::getInstance($loggedProfileId);
-    $loggedUsername = $oProfile->getDisplayName($loggedProfileId);
-    $storeUsername = explode('/', $_SERVER['REQUEST_URI'])[3];
-    $storeUsername = str_replace('-', ' ', $storeUsername);
-    $isStoreAuth = strtoupper($loggedUsername) == strtoupper($storeUsername);
+    if($loggedProfileId) {
+        $oProfile = BxDolProfile::getInstance($loggedProfileId);
+        $loggedUsername = $oProfile->getDisplayName($loggedProfileId);
+        $storeUsername = explode('/', $_SERVER['REQUEST_URI'])[3];
+        $storeUsername = str_replace('-', ' ', $storeUsername);
+        $isStoreAuth = strtoupper($loggedUsername) == strtoupper($storeUsername);
+    }
 ?>
 
 <?php if($isStoreAuth) : ?>

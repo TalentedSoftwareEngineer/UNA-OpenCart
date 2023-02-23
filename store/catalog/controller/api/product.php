@@ -149,11 +149,6 @@ class ControllerApiProduct extends Controller
         }
     }
 
-    function convertToArray($value) 
-    {
-
-    }
-
     public function getSelfProduct()
     {
         $this->load->language('api/cart');
@@ -162,9 +157,10 @@ class ControllerApiProduct extends Controller
         $this->load->model('tool/image');
 
         $email = $this->request->post['email'];
+        $product_name = $this->request->post['product_name'];
         $results = $this->model_catalog_cart->getSelfProduct($email);
 
-        $response = array_map(function($value){    
+        $response = array_filter(array_map(function($value){    
             $filter_id = $value['product_id'];
             $result = $this->model_catalog_product->getProduct($filter_id);
     
@@ -206,9 +202,28 @@ class ControllerApiProduct extends Controller
                 'href' => $this->url->link('product/product', 'product_id=' . $result['product_id']),
             );
             return $data;
-        }, $results);
+        }, $results), function($var) {
+            if($this->request->post['product_name'] == '') {
+                return true;
+            } else {
+                return strpos($var['name'], $this->request->post['product_name']) !== false;
+            }
+        });
 
         $this->response->addHeader('Content-Type: application/json');
         $this->response->setOutput(json_encode($response));
+    }
+
+    public function lts_product_delete()
+    {
+        $this->load->language('api/cart');
+        $this->load->model('catalog/cart');
+  
+        $product_id = $this->request->post['product_id'];
+  
+        $results = $this->model_catalog_cart->lts_product_delete($product_id);
+  
+        $this->response->addHeader('Content-Type: application/json');
+        $this->response->setOutput(json_encode($results));
     }
 }

@@ -145,14 +145,15 @@ class OpenApiIntegration {
         return $raw_response;
     }
 
-    public function getSelfProduct($email)
+    public function getSelfProduct($email, $product_name)
     {
         $url = BASIC_OPEN_CART_SERVER_API . "route=api/product/getSelfProduct";
         $curl = curl_init($url);
          
         $post = array (
-            'email' => $email
-        );        
+            'email' => $email,
+            'product_name' => $product_name
+        );
         curl_setopt_array( $curl, array(
           CURLOPT_RETURNTRANSFER=> TRUE,
           CURLOPT_POSTFIELDS      => $post

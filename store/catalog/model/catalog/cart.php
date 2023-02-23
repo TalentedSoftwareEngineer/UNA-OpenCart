@@ -192,4 +192,11 @@ class ModelCatalogCart extends Model {
 		
 		return $query->rows;
 	}
+
+    public function lts_product_delete($product_id) {
+        $sql = "DELETE FROM oc_lts_product WHERE product_id = " . $product_id;
+        $query = $this->db->query($sql);
+
+        return $query;
+    }
 }
