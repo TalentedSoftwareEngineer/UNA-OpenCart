@@ -27,9 +27,7 @@
     </div>
 </div>
 
-<div id="products_container" class="row mt-4">
-
-</div>
+<div id="products_container" class="row mt-4 justify-content-center"></div>
 
 <script type="text/javascript">
     var BASIC_OPEN_CART_SERVER_API = 'http://localhost/UNA-v.13.0.0-RC2/store/index.php?';
@@ -41,41 +39,29 @@
 
     function onClickAdd(event, productInfo)
     {
-
+        $.ajax({
+            type: 'post',
+            url: BASIC_OPEN_CART_SERVER_API + "route=api/product/viewProduct",
+            data: {
+                product_id: productInfo.product_id
+            },
+            success: function(response){
+                if(response)
+                {
+                    alert('Added product!');
+                }
+            },
+            error: function(error, ajaxOptions, thrownError) {
+                
+            }
+        });
     }
 
     function onClickRemove(event, productInfo)
     {
         if (confirm("Are you sure to delete this product?") == true) {
-            $.ajax({
-                type: 'post',
-                url: BASIC_OPEN_CART_SERVER_API + "route=account/vendor/lts_product/delete",
-                data: {
-                    selected: [productInfo.product_id]
-                },
-                success: function(response){
-                    $.fn.lts_product_delete(productInfo.product_id);
-                }
-            });
+            $.fn.remove_from_besiness(productInfo.product_id);
         }
-        // if (confirm("Are you sure to delete this product?") == true) {
-        //     var formData = new FormData();
-        //     formData.append( 'email', '<?= $loggedUser['email'] ?>' );
-        //     formData.append( 'password', '<?= $loggedUser['password'] ?>' );
-        //     $.ajax({
-        //         method: 'POST',
-        //         url: BASIC_OPEN_CART_SERVER_API + 'route=account/login',
-        //         data: formData,
-        //         processData: false,
-        //         contentType: false,
-        //         success: function(response){
-
-        //         },
-        //         error: function(error, ajaxOptions, thrownError) {
-        //             console.log(error);
-        //         }
-        //     });
-        // }
     }
     
     $.fn.createSelfProductCard = function(productInfo) {
@@ -89,7 +75,7 @@
         namePriceContainer.append(price);
         
         let descP = $("<p></p>");
-        descP.css("height", "72px");
+        // descP.css("height", "0px");
         descP.text(productInfo.description.substr(0, 100)+'..');
 
         let linkBtn = $("<button><i class='fa fa-plus'></i>Add</button>");
@@ -130,12 +116,12 @@
 
         var card = $("<div></div>");
         card.addClass('card');
-        card.css("height", "400px");
+        // card.css("height", "400px");
         card.append(cardImg);
         card.append(cardBody);
 
         let cell = $("<div></div>");
-        cell.addClass('col-lg-3 col-md-4 col-sm-6 mb-2');
+        cell.addClass('col-md-4 col-sm-6 mb-2');
         cell.append(card);
 
         $('#products_container').append(cell);
@@ -173,6 +159,19 @@
             },
             success: function(response){
                 $.fn.getSelfProduct('<?= $loggedUser['email'] ?>', $('#product_search').val());
+            }
+        });
+    }
+
+    $.fn.remove_from_besiness = function(product_id) {
+        $.ajax({
+            type: 'POST',
+            url: BASIC_OPEN_CART_SERVER_API + "route=api/product/remove_from_besiness",
+            data: {product_id: product_id},
+            success: function(response) {
+                if(response) {
+                    alert('Remove Product!');
+                }
             }
         });
     }

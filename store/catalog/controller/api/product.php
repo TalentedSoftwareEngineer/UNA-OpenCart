@@ -226,4 +226,29 @@ class ControllerApiProduct extends Controller
         $this->response->addHeader('Content-Type: application/json');
         $this->response->setOutput(json_encode($results));
     }
+
+    public function viewProduct()
+    {
+        $this->load->language('api/cart');
+        $this->load->model('catalog/cart');
+  
+        $product_id = $this->request->post['product_id'];
+  
+        $results = $this->model_catalog_cart->viewProduct($product_id);
+  
+        $this->response->addHeader('Content-Type: application/json');
+        $this->response->setOutput(json_encode($results));
+    }
+
+    public function remove_from_besiness()
+    {
+        $this->load->language('api/cart');
+        $this->load->model('catalog/cart');
+  
+        $product_id = $this->request->post['product_id'];
+        $results = $this->model_catalog_cart->remove_from_besiness($product_id);
+  
+        $this->response->addHeader('Content-Type: application/json');
+        $this->response->setOutput(json_encode($results));
+    }
 }

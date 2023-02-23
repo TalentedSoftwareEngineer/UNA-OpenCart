@@ -7,17 +7,23 @@
     require_once 'modules/vendor/test/api/opencart_api.php';
     $products = ( array ) OpenApiIntegration::getInstance()->getAllProducts();
     $apiToken = OpenApiIntegration::getInstance()->getApiToken();
-    function convertToArray($value) {return ( array ) $value;}
-    $arr_products = array_map('convertToArray', $products['products']);
+    $arr_products = array_map(function($value) {return ( array ) $value;}, $products['products']);
     $arr_empty = [];
     
     $loggedProfileId = bx_get_logged_profile_id();
     if($loggedProfileId) {
         $oProfile = BxDolProfile::getInstance($loggedProfileId);
         $loggedUsername = $oProfile->getDisplayName($loggedProfileId);
-        $storeUsername = explode('/', $_SERVER['REQUEST_URI'])[3];
-        $storeUsername = str_replace('-', ' ', $storeUsername);
-        $isStoreAuth = strtoupper($loggedUsername) == strtoupper($storeUsername);
+        $explodedUrl = explode('/', $_SERVER['REQUEST_URI']);
+        if(count($explodedUrl)>3)
+        {
+            $storeUsername = $explodedUrl[3];
+            $storeUsername = str_replace('-', ' ', $storeUsername);
+            $isStoreAuth = strtoupper($loggedUsername) == strtoupper($storeUsername);
+        } else {
+            $storeUsername = '';
+            $isStoreAuth = false;
+        }
     }
 ?>
 
@@ -47,27 +53,7 @@
     </div> -->
 <?php endif; ?>
 
-<?php if (true) { ?>
-    <div id="cart_products_container" class="row mt-4">
-        <?php foreach($arr_empty as $key=>$value): ?>
-            <div class="col-lg-3 col-md-4 col-sm-6 mb-2">
-                <div class="card">
-                    <img class="card-img-top w-75 mx-auto" src=<?php echo $value['thumb']; ?> alt="Card image">
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between">
-                            <div>
-                                <strong><?= $value['name'] ?></strong>
-                            </div>
-                            <h6><?= $value['price'] ?></h6>
-                        </div>
-                        <p><a href=<?= $value['href'] ?>><?= $value['description'] ?></a></p>
-                        <button class="btn btn-outline-primary btn-block"><i class="fa fa-shopping-cart"></i>Add to Cart</button>
-                    </div>
-                </div>
-            </div>
-        <?php endforeach; ?>
-    </div>
-<?php } ?>
+<div id="cart_products_container" class="row mt-4 justify-content-center"></div>
 
 <script type="text/javascript">
     var BASIC_OPEN_CART_SERVER_API = 'http://localhost/UNA-v.13.0.0-RC2/store/index.php?';

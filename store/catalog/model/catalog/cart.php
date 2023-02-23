@@ -199,4 +199,18 @@ class ModelCatalogCart extends Model {
 
         return $query;
     }
+
+	public function viewProduct($product_id)
+	{
+		$sql = "UPDATE oc_product SET viewed = viewed + 1 WHERE product_id=" . $product_id;
+        $query = $this->db->query($sql);
+        return $query;
+	}
+
+	public function remove_from_besiness($product_id)
+	{
+		$sql = "UPDATE oc_product SET viewed = 0 WHERE product_id=" . $product_id;
+        $query = $this->db->query($sql);
+        return $query;
+	}
 }
