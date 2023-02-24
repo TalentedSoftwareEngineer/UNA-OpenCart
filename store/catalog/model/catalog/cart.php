@@ -226,4 +226,17 @@ class ModelCatalogCart extends Model {
 		$query = $this->db->query($sql);
 		return $query->rows;
 	}
+
+	public function getFilteredBlockProductById($email, $product_id)
+	{
+		$sql = "SELECT p.*
+			FROM oc_customer AS c 
+			LEFT JOIN oc_lts_vendor AS lts_vendor ON lts_vendor.customer_id=c.customer_id
+			LEFT JOIN oc_lts_product AS lts_product ON lts_product.vendor_id=lts_vendor.vendor_id
+			LEFT JOIN oc_product AS p ON p.product_id=lts_product.product_id
+			WHERE c.email='" . $email . "' AND p.`product_id`=" . $product_id;
+        
+		$query = $this->db->query($sql);
+		return $query->row;
+	}
 }

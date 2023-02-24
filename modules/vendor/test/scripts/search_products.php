@@ -4,60 +4,55 @@
 
 <style></style>
 <?php  
-    require_once 'modules/vendor/test/api/opencart_api.php';
-    $products = ( array ) OpenApiIntegration::getInstance()->getAllProducts();
-    $apiToken = OpenApiIntegration::getInstance()->getApiToken();
-    $arr_products = array_map(function($value) {return ( array ) $value;}, $products['products']);
-    $arr_empty = [];
-    
+    require_once 'modules/vendor/test/api/opencart_api.php';    
     $loggedProfileId = bx_get_logged_profile_id();
+    $isSelf = false;
     if($loggedProfileId) {
         $oProfile = BxDolProfile::getInstance($loggedProfileId);
-        $loggedUsername = $oProfile->getDisplayName($loggedProfileId);
-        $explodedUrl = explode('/', $_SERVER['REQUEST_URI']);
-        if(count($explodedUrl)>3)
+        $loggedId = $oProfile->getAccountId();
+        $loggedUser = (array) OpenApiIntegration::getInstance()->getSysUserByProfileId($loggedProfileId)[0];
+        $visitedUser = array('email'=>'');
+        
+        $explodedUri = explode('/', $_SERVER['REQUEST_URI']);
+        if(count($explodedUri)>3)
         {
-            $storeUsername = $explodedUrl[3];
-            $storeUsername = str_replace('-', ' ', $storeUsername);
-            $isStoreAuth = strtoupper($loggedUsername) == strtoupper($storeUsername);
+            $visitedUser_id_proId = (array) OpenApiIntegration::getInstance()->getSysAccountsIdProfileIdByUri($explodedUri[2], $explodedUri[3]);
+            if($visitedUser_id_proId['param_name'] == 'profile_id') {
+                $isSelf = $loggedProfileId == $visitedUser_id_proId['param_value'];
+                if(!$isSelf) {
+                    $visitedUser = (array) OpenApiIntegration::getInstance()->getSysUserByProfileId($visitedUser_id_proId['param_value'])[0];
+                }
+            } elseif($visitedUser_id_proId['param_name'] == 'id') {
+                $isSelf = $loggedId == $visitedUser_id_proId['param_value'];
+                if(!$isSelf) {
+                    $visitedUser = (array) OpenApiIntegration::getInstance()->getSysUserById($visitedUser_id_proId['param_value'])[0];
+                }
+            }
         } else {
-            $storeUsername = '';
-            $isStoreAuth = false;
+            $isSelf = false;
         }
     }
 ?>
 
-<?php if($isStoreAuth) : ?>
-    <div class="d-flex justify-content-between">
-        <div class="input-group w-auto">
+<?php if($isSelf) : ?>
+    <div class="d-flex justify-content-center">
+        <div class="input-group w-75">
             <div class="input-group-prepend">
                 <span class="input-group-text"><i class="fa fa-plus"></i></span>
             </div>
-            <!-- <input id="product_id" type="text" class="form-control" placeholder="Search..."> -->
-            <select class="form-control" id="product_id">
-                <?php foreach($arr_products as $key=>$value): ?>
-                    <option value="<?php echo implode(" *+* ", $value) ?>">
-                        <?= $value['name']?>
-                    </option>
-                <?php endforeach; ?>
-            </select>
+            <input id="search_product_id" type="text" class="form-control" placeholder="Search...">
             <div class="input-group-append">
-                <button id="add_cart_id" class="btn btn-outline-primary" type="button"><i class="fa fa-shopping-cart mr-1"></i>Add to Cart</button>
+                <button onclick="onClickAddToBlock(event)" class="btn btn-outline-primary" type="button">Add</button>
             </div>
         </div>
-
-        <a href="http://localhost/UNA-v.13.0.0-RC2/upload-product" class="btn btn-outline-primary"><i class="fa fa-plus mr-1"></i>Add Product</a>        
     </div>
-    <!-- <div class="d-flex justify-content-center mt-2">
-        <button id="add_cart_id" class="btn btn-success w-50" type="button"><i class="fa fa-shopping-cart mr-1"></i>Add to Cart</button>
-    </div> -->
 <?php endif; ?>
 
-<div id="cart_products_container" class="row mt-4 justify-content-center"></div>
+<div id="block_product_container" class="row mt-4 justify-content-center"></div>
 
 <script type="text/javascript">
     var BASIC_OPEN_CART_SERVER_API = 'http://localhost/UNA-v.13.0.0-RC2/store/index.php?';
-
+    var blockProducts = [];
     $.fn.createProductCard = function(productInfo) {
         let name = $("<strong></strong>");
         name.text(productInfo.name);
@@ -68,49 +63,22 @@
         namePriceContainer.append(name);
         namePriceContainer.append(price);
         
-        let descP = $("<p></p>");
-        descP.css("height", "72px");
+        let descP = $("<a></a>");
+        descP.attr('href', productInfo.href.replace('&amp;', '&'));
         descP.text(productInfo.description.substr(0, 100)+'..');
-
-        let linkBtn = $("<a><i class='fa fa-link'></i>Detail</a>");
-        linkBtn.addClass('btn btn-outline-primary btn-block');
-        linkBtn.attr("href", 'http://localhost/UNA-v.13.0.0-RC2/product-detail?productId='+productInfo.product_id);
-        let linkCell = $("<div></div>");
-        linkCell.addClass('col');
-        linkCell.append(linkBtn);
-
-        let deleteBtn = $("<button><i class='fa fa-trash'></i>Remove</button>");
-        deleteBtn.addClass('btn btn-outline-primary btn-block');
-        deleteBtn.on('click', function() {
-            onClickRemoveProduct(event, productInfo);
-        });
-        let deleteCell = $("<div></div>");
-        deleteCell.addClass('col');
-        deleteCell.append(deleteBtn);
-
-        let actionContainer = $("<div></div>");
-        actionContainer.addClass('row');
-        actionContainer.append(linkCell);
-        if('<?= $isStoreAuth ?>') {
-            actionContainer.append(deleteCell);
-        }
 
         let cardBody = $("<div></div>");
         cardBody.addClass('card-body');
         cardBody.append(namePriceContainer);
         cardBody.append(descP);
-        cardBody.append(actionContainer);
 
         var cardImg = $('<img>');
         cardImg.addClass('card-img-top w-75 mx-auto');
-        cardImg.attr({
-            'src': productInfo.thumb,
-            'alt': "Card image"
-        });
+        cardImg.attr({'src': productInfo.thumb, 'alt': "Card image"});
 
         var card = $("<div></div>");
         card.addClass('card');
-        card.css("height", "400px");
+        card.css("height", "330px");
         card.append(cardImg);
         card.append(cardBody);
 
@@ -118,65 +86,42 @@
         cell.addClass('col-lg-3 col-md-4 col-sm-6 mb-2');
         cell.append(card);
 
-        $('#cart_products_container').append(cell);
+        $('#block_product_container').append(cell);
     }
 
-    onClickRemoveProduct = function(event, pro) {
-        if (confirm("Are you sure to delete this product?") == true) {
-            $.ajax({
-                type: 'post',
-                url: BASIC_OPEN_CART_SERVER_API + 'route=api/c_cart/remove',
-                data: {
-                    product_id: pro.product_id,
-                    user: '<?= $loggedUsername ?>'.toUpperCase()
-                },
-                success: function(response){
-                    $.fn.getCartProducts();
-                },
-                error: function(error, ajaxOptions, thrownError) {
-                    debugger;
-                }
-            });
-        }
-    }
-
-    $.fn.displayCart = function(products) {
-        $('#cart_products_container').empty();
-        var arr_tmp = [];
+    $.fn.displayBlockProduct = function(products) {
+        $('#block_product_container').empty();
         products.forEach(item=> {
-            var productInfo = JSON.parse(item.option)[208].split(' *+* ');
-            var authName = JSON.parse(item.option)[209];
-            if( authName == '<?= $storeUsername ?>'.toUpperCase() && !arr_tmp.includes(productInfo[0]) ) {
-                $.fn.createProductCard({
-                    product_id: productInfo[0],
-                    thumb: productInfo[1],
-                    name: productInfo[2],
-                    description: productInfo[3],
-                    price: productInfo[4],
-                    special: productInfo[5],
-                    tax: productInfo[6],
-                    minimum: productInfo[7],
-                    rating: productInfo[8],
-                });
-                arr_tmp.push(productInfo[0]);
-            }
+            $.fn.createProductCard(item);
         });
     }
 
-    $('#add_cart_id').on('click', function() {
-        var product_properties = $('#product_id option:selected').val();
-        var data = {
-            product_id: product_properties.split(' *+* ')[0],
-            quantuty:'1',
-            option: {208: product_properties, 209: '<?= $loggedUsername ?>'.toUpperCase(), 217: 'null', 218: 'null', 219: 'null', 220: 'null', 221: 'null', 222: 'null', 223: 'null', 224: 'null', 225: 'null', 226: 'null'}
+    function onClickAddToBlock(event) {
+        var filterId = $('#search_product_id').val();
+        if(filterId == '') {
+            alert('Please Enter Keyword...');
+        } else if(!/^\d+$/.test(filterId)) {
+            alert('Please Enter Valid Keyword...');
+        } else {
+            $.fn.getFilteredBlockProductById(filterId);
         }
+    }
+
+    $.fn.getFilteredBlockProductById = function(filterId) {
         $.ajax({
             type: 'post',
-            url: BASIC_OPEN_CART_SERVER_API + 'route=api/cart/add&api_token=<?php echo $apiToken ?>',
-            data,
+            url: BASIC_OPEN_CART_SERVER_API + 'route=api/product/getFilteredBlockProductById',
+            data: {
+                email: '<?= $loggedUser['email'] ?>',
+                product_id: Number(filterId)
+            },
             success: function(response) {
-                if(response.error?.store) alert(response.error.store);
-                $.fn.getCartProducts();
+                if(response) {
+                    blockProducts.push(response);
+                    $.fn.displayBlockProduct(blockProducts);
+                } else {
+                    alert("There is not the product for this ID.");
+                }
             },
             fail: function(fail){
                 console.log(fail);
@@ -185,34 +130,6 @@
                 console.log(error);
             }
         });
-    });
-
-    $.fn.getCartProducts = async function() {
-        var url = BASIC_OPEN_CART_SERVER_API + 'route=api/c_cart';
-        var params = {
-            api_token: '<?php echo $apiToken ?>',
-            customer_id: '0'
-        };
-        await $.get(url, params, function(response) {
-            $.fn.displayCart(response);
-        });
     }
 
-    $.fn.getProductById = function(product_id) {
-        $.ajax({
-            type: 'post',
-            url: BASIC_OPEN_CART_SERVER_API + 'route=api/product/getProductById&api_token=',
-            data: {
-                product_id: product_id
-            },
-            success: function(response){
-                return response.products;
-            },
-            error: function(error, ajaxOptions, thrownError) {
-                console.log(error.responseText);
-            }
-        });
-    }
-
-    $.fn.getCartProducts();
 </script>

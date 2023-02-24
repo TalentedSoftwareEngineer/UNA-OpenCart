@@ -1,12 +1,13 @@
 <!-- layout top area bar right [ start ] -->
 <div id="<?php echo $a['page_id'];?>" class="bx-layout-wrapper bx-layout-top-area-bar-right">
-    <div class="bx-layout-row">
+        <div class="bx-layout-row">
         <div class="bx-layout-col bx-layout-1-column-column1 bx-layout-column-fullwidth">
             <div class="bx-layout-cell" id="bx-layout-cell-1">
                 <?php echo $a['cell_1'];?>
             </div>
         </div>
     </div>
+
     <div class="bx-layout-row">
         <main class="bx-layout-col bx-layout-bar-right-content bx-layout-column-wide md:w-2/3" aria-label="Main">
             <div class="bx-layout-cell" id="bx-layout-cell-2">

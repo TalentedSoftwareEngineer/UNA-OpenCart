@@ -214,44 +214,6 @@ class ControllerApiProduct extends Controller
         $this->response->setOutput(json_encode($response));
     }
 
-    public function lts_product_delete()
-    {
-        $this->load->language('api/cart');
-        $this->load->model('catalog/cart');
-  
-        $product_id = $this->request->post['product_id'];
-  
-        $results = $this->model_catalog_cart->lts_product_delete($product_id);
-  
-        $this->response->addHeader('Content-Type: application/json');
-        $this->response->setOutput(json_encode($results));
-    }
-
-    public function viewProduct()
-    {
-        $this->load->language('api/cart');
-        $this->load->model('catalog/cart');
-  
-        $product_id = $this->request->post['product_id'];
-  
-        $results = $this->model_catalog_cart->viewProduct($product_id);
-  
-        $this->response->addHeader('Content-Type: application/json');
-        $this->response->setOutput(json_encode($results));
-    }
-
-    public function remove_from_besiness()
-    {
-        $this->load->language('api/cart');
-        $this->load->model('catalog/cart');
-  
-        $product_id = $this->request->post['product_id'];
-        $results = $this->model_catalog_cart->remove_from_besiness($product_id);
-  
-        $this->response->addHeader('Content-Type: application/json');
-        $this->response->setOutput(json_encode($results));
-    }
-
     public function getShowProduct()
     {
         $this->load->language('api/cart');
@@ -315,5 +277,110 @@ class ControllerApiProduct extends Controller
 
         $this->response->addHeader('Content-Type: application/json');
         $this->response->setOutput(json_encode($response));
+    }
+
+    public function lts_product_delete()
+    {
+        $this->load->language('api/cart');
+        $this->load->model('catalog/cart');
+  
+        $product_id = $this->request->post['product_id'];
+  
+        $results = $this->model_catalog_cart->lts_product_delete($product_id);
+  
+        $this->response->addHeader('Content-Type: application/json');
+        $this->response->setOutput(json_encode($results));
+    }
+
+    public function viewProduct()
+    {
+        $this->load->language('api/cart');
+        $this->load->model('catalog/cart');
+  
+        $product_id = $this->request->post['product_id'];
+  
+        $results = $this->model_catalog_cart->viewProduct($product_id);
+  
+        $this->response->addHeader('Content-Type: application/json');
+        $this->response->setOutput(json_encode($results));
+    }
+
+    public function remove_from_besiness()
+    {
+        $this->load->language('api/cart');
+        $this->load->model('catalog/cart');
+  
+        $product_id = $this->request->post['product_id'];
+        $results = $this->model_catalog_cart->remove_from_besiness($product_id);
+  
+        $this->response->addHeader('Content-Type: application/json');
+        $this->response->setOutput(json_encode($results));
+    }
+
+    public function getFilteredBlockProductById()
+    {
+        $this->load->language('api/cart');
+        $this->load->model('catalog/cart');
+
+        $email = $this->request->post['email'];
+        $product_id = $this->request->post['product_id'];
+        $result = $this->model_catalog_cart->getFilteredBlockProductById($email, $product_id);   
+
+        if(count($result)!=0) {
+            $response = $this->displayProductData($result['product_id']);
+        } else {
+            $response = false;
+        }
+        
+        $this->response->addHeader('Content-Type: application/json');
+        $this->response->setOutput(json_encode($response));
+    }
+
+    private function displayProductData($product_id)
+    {
+        $this->load->model('tool/image');
+        $this->load->model('catalog/product');
+
+        $result = $this->model_catalog_product->getProduct($product_id);
+
+        if ($result['image']) {
+            $image = $this->model_tool_image->resize($result['image'], $this->config->get('theme_' . $this->config->get('config_theme') . '_image_product_width'), $this->config->get('theme_' . $this->config->get('config_theme') . '_image_product_height'));
+        } else {
+            $image = $this->model_tool_image->resize('placeholder.png', $this->config->get('theme_' . $this->config->get('config_theme') . '_image_product_width'), $this->config->get('theme_' . $this->config->get('config_theme') . '_image_product_height'));
+        }
+        if ($this->customer->isLogged() || !$this->config->get('config_customer_price')) {
+            $price = $this->currency->format($this->tax->calculate($result['price'], $result['tax_class_id'], $this->config->get('config_tax')), $this->session->data['currency']);
+        } else {
+            $price = false;
+        }
+        if ((float) $result['special']) {
+            $special = $this->currency->format($this->tax->calculate($result['special'], $result['tax_class_id'], $this->config->get('config_tax')), $this->session->data['currency']);
+        } else {
+            $special = false;
+        }
+        if ($this->config->get('config_tax')) {
+            $tax = $this->currency->format((float) $result['special'] ? $result['special'] : $result['price'], $this->session->data['currency']);
+        } else {
+            $tax = false;
+        }
+        if ($this->config->get('config_review_status')) {
+            $rating = (int) $result['rating'];
+        } else {
+            $rating = false;
+        }
+        $data = array(
+            'product_id' => $result['product_id'],
+            'thumb' => $image,
+            'name' => $result['name'],
+            'description' => trim(strip_tags(html_entity_decode($result['description'], ENT_QUOTES, 'UTF-8'))),
+            'price' => $price,
+            'special' => $special,
+            'tax' => $tax,
+            'minimum' => $result['minimum'] > 0 ? $result['minimum'] : 1,
+            'rating' => $result['rating'],
+            'href' => $this->url->link('product/product', 'product_id=' . $result['product_id']),
+        );
+
+        return $data;
     }
 }

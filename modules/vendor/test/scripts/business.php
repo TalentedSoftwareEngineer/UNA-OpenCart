@@ -107,12 +107,16 @@
     }
     
     $.fn.createSelfProductCard = function(productInfo) {
+        let productId = $("<h5></h5>");
+        productId.text(productInfo.product_id);
+
         let name = $("<strong></strong>");
         name.text(productInfo.name);
         let price = $("<h6></h6>");
         price.text(productInfo.price);
         let namePriceContainer = $("<div></div>");
         namePriceContainer.addClass('d-flex justify-content-between');
+        namePriceContainer.append(productId);
         namePriceContainer.append(name);
         namePriceContainer.append(price);
         
@@ -183,14 +187,14 @@
         descP.css("height", "70px");
         descP.text(productInfo.description.substr(0, 100)+'..');
 
-        let linkBtn = $("<button><i class='fa fa-shopping-cart'></i>Add to Cart</button>");
+        let linkBtn = $("<button><i class='fa fa-shopping-cart mr-2'></i>Add to Cart</button>");
         linkBtn.addClass('btn btn-outline-primary btn-block');
         linkBtn.on('click', function() {onClickAddToCart(event, productInfo);});
         let linkCell = $("<div></div>");
         linkCell.addClass('col pl-1 pr-1');
         linkCell.append(linkBtn);
 
-        let deleteBtn = $("<button><i class='fa fa-store'></i>Buy Now</button>");
+        let deleteBtn = $("<button><i class='fa fa-shopping-basket mr-2'></i>Buy Now</button>");
         deleteBtn.addClass('btn btn-outline-primary btn-block');
         deleteBtn.on('click', function() {onClickBuyNow(event, productInfo);});
         let deleteCell = $("<div></div>");

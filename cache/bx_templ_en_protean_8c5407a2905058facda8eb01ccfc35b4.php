@@ -1,1 +1,0 @@
-<div class="bx-base-general-entity-actions"><?php echo $a['actions'];?></div>
