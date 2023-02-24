@@ -133,6 +133,18 @@ class ControllerApiUser extends Controller
         $this->response->setOutput(json_encode($results));
 	}
 
+	public function getSysUserById()
+	{
+		$this->load->language('api/cart');
+        $this->load->model('catalog/user');
+
+		$id = $this->request->post['id'];
+		$results = $this->model_catalog_user->getSysUserById($id);
+
+        $this->response->addHeader('Content-Type: application/json');
+        $this->response->setOutput(json_encode($results));
+	}
+
 	public function openCartLogin()
 	{
 		$this->load->language('common/login');
@@ -155,6 +167,23 @@ class ControllerApiUser extends Controller
   
         $results = $this->model_catalog_user->getCustomers();
       
+        $this->response->addHeader('Content-Type: application/json');
+        $this->response->setOutput(json_encode($results));
+	}
+
+	public function getSysAccountsIdProfileIdByUri()
+	{
+        $this->load->language('api/user');
+        $this->load->model('catalog/user');
+  
+        $page_uri = $this->request->post['page_uri'];
+		$uri = $this->request->post['uri'];
+        $results = $this->model_catalog_user->getSysAccountsIdProfileIdByUri($page_uri, $uri);
+
+		if($results['param_name'] == 'id' && $results['param_value'] != 1) {
+			$results['param_value'] = $results['param_value'] + 1;
+		}
+  
         $this->response->addHeader('Content-Type: application/json');
         $this->response->setOutput(json_encode($results));
 	}

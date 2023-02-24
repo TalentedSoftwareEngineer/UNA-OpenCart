@@ -133,6 +133,12 @@ class ModelCatalogUser extends Model {
 		return $query->rows;
 	}
 
+	public function getSysUserById($id) {
+		$sql = "SELECT * FROM " . "sys_accounts WHERE id = " . $id;
+        $query = $this->db->query($sql);
+		return $query->rows;
+	}
+
 	public function login($username, $password) {
 		$user_query = $this->db->query("SELECT * FROM " . DB_PREFIX . "user WHERE username = '" . $this->db->escape($username) . "' AND (password = SHA1(CONCAT(salt, SHA1(CONCAT(salt, SHA1('" . $this->db->escape($password) . "'))))) OR password = '" . $this->db->escape(md5($password)) . "') AND status = '1'");
 
@@ -242,5 +248,13 @@ class ModelCatalogUser extends Model {
 		$query = $this->db->query($sql);
 
 		return $query->rows;
+	}
+
+	public function getSysAccountsIdProfileIdByUri($page_uri, $uri)
+	{
+		$sql = "SELECT param_name, param_value FROM sys_seo_links
+			WHERE page_uri = '" . $page_uri . "' AND uri='" . $uri . "'";
+        $query = $this->db->query($sql);
+		return $query->row;
 	}
 }

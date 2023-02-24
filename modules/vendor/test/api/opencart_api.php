@@ -96,6 +96,26 @@ class OpenApiIntegration {
         return $response;
     }
 
+    public function getSysUserById($id)
+    {
+        $url = BASIC_OPEN_CART_SERVER_API . "route=api/user/getSysUserById";        
+        $curl = curl_init($url);
+         
+        $post = array (
+            'id' => $id
+        );        
+        curl_setopt_array( $curl, array(
+          CURLOPT_RETURNTRANSFER=> TRUE,
+          CURLOPT_POSTFIELDS      => $post
+        ) );
+         
+        $raw_response = curl_exec( $curl );
+        $response = json_decode($raw_response);
+        curl_close($curl);
+        
+        return $response;
+    }
+
     public function addOcUser($post)
     {
         $url = BASIC_OPEN_CART_SERVER_API . "route=api/user/add";        
@@ -173,6 +193,27 @@ class OpenApiIntegration {
         }
 
         return self::$_instance;
+    }
+
+    public function getSysAccountsIdProfileIdByUri($page_uri, $uri)
+    {
+        $url = BASIC_OPEN_CART_SERVER_API . "route=api/user/getSysAccountsIdProfileIdByUri";
+        $curl = curl_init($url);
+         
+        $post = array (
+            'page_uri' => $page_uri,
+            'uri' => $uri
+        );
+        curl_setopt_array( $curl, array(
+          CURLOPT_RETURNTRANSFER=> TRUE,
+          CURLOPT_POSTFIELDS      => $post
+        ) );
+         
+        $raw_response = curl_exec( $curl );
+        $response = json_decode($raw_response);
+        curl_close($curl);
+        
+        return $response;
     }
 } 
 ?>
