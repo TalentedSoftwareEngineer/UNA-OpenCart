@@ -1,0 +1,1 @@
+<?php if(is_array($a['bx_repeat:widgets'])) for($i=0; $i<count($a['bx_repeat:widgets']); $i++){ ?><?php echo $a['bx_repeat:widgets'][$i]['widget'];?><?php } else if(is_string($a['bx_repeat:widgets'])) echo $a['bx_repeat:widgets']; ?>

@@ -5,6 +5,9 @@
 <style></style>
 <?php  
     require_once 'modules/vendor/test/api/opencart_api.php';    
+
+    $basename = basename(BX_DIRECTORY_PATH_MODULES . '/test');
+
     $loggedProfileId = bx_get_logged_profile_id();
     $isSelf = false;
     if($loggedProfileId) {
@@ -19,14 +22,10 @@
             $visitedUser_id_proId = (array) OpenApiIntegration::getInstance()->getSysAccountsIdProfileIdByUri($explodedUri[2], $explodedUri[3]);
             if($visitedUser_id_proId['param_name'] == 'profile_id') {
                 $isSelf = $loggedProfileId == $visitedUser_id_proId['param_value'];
-                if(!$isSelf) {
-                    $visitedUser = (array) OpenApiIntegration::getInstance()->getSysUserByProfileId($visitedUser_id_proId['param_value'])[0];
-                }
+                $visitedUser = (array) OpenApiIntegration::getInstance()->getSysUserByProfileId($visitedUser_id_proId['param_value'])[0];
             } elseif($visitedUser_id_proId['param_name'] == 'id') {
                 $isSelf = $loggedId == $visitedUser_id_proId['param_value'];
-                if(!$isSelf) {
-                    $visitedUser = (array) OpenApiIntegration::getInstance()->getSysUserById($visitedUser_id_proId['param_value'])[0];
-                }
+                $visitedUser = (array) OpenApiIntegration::getInstance()->getSysUserById($visitedUser_id_proId['param_value'])[0];
             }
         } else {
             $isSelf = false;
@@ -40,7 +39,7 @@
             <div class="input-group-prepend">
                 <span class="input-group-text"><i class="fa fa-plus"></i></span>
             </div>
-            <input id="search_product_id" type="text" class="form-control" placeholder="Search...">
+            <input type="text" class="input_search_product form-control" placeholder="Search...">
             <div class="input-group-append">
                 <button onclick="onClickAddToBlock(event)" class="btn btn-outline-primary" type="button">Add</button>
             </div>
@@ -48,12 +47,27 @@
     </div>
 <?php endif; ?>
 
-<div id="block_product_container" class="row mt-4 justify-content-center"></div>
+<div class="products_in_block row mt-4 justify-content-center"></div>
 
 <script type="text/javascript">
     var BASIC_OPEN_CART_SERVER_API = 'http://localhost/UNA-v.13.0.0-RC2/store/index.php?';
-    var blockProducts = [];
-    $.fn.createProductCard = function(productInfo) {
+    var blockProducts = Array(0).fill(Array(0));
+
+    function onClickAddToBlock(event) {
+        var elmnt_block = $(event.target).parents('.bx-page-block-container')[0];
+        var block_id = $(elmnt_block).attr('id').replace('bx-page-block-', '');
+        var filterId = $($(elmnt_block).find('.input_search_product')[0]).val();
+
+        if(filterId == '') {
+            alert('Please Enter Keyword...');
+        } else if(!/^\d+$/.test(filterId)) {
+            alert('Please Enter Valid Keyword...');
+        } else {
+            $.fn.getFilteredBlockProductById(filterId, block_id);
+        }
+    }
+
+    $.fn.createProductCard = function(productInfo, elmnt_pdt_in_block) {
         let name = $("<strong></strong>");
         name.text(productInfo.name);
         let price = $("<h6></h6>");
@@ -86,28 +100,17 @@
         cell.addClass('col-lg-3 col-md-4 col-sm-6 mb-2');
         cell.append(card);
 
-        $('#block_product_container').append(cell);
+        $(elmnt_pdt_in_block).append(cell);
     }
 
-    $.fn.displayBlockProduct = function(products) {
-        $('#block_product_container').empty();
-        products.forEach(item=> {
-            $.fn.createProductCard(item);
+    $.fn.displayBlockProduct = function(products, elmnt_pdt_in_block) {
+        $(elmnt_pdt_in_block).empty();
+        products.forEach(function(item) {
+            $.fn.createProductCard(item, elmnt_pdt_in_block);
         });
     }
 
-    function onClickAddToBlock(event) {
-        var filterId = $('#search_product_id').val();
-        if(filterId == '') {
-            alert('Please Enter Keyword...');
-        } else if(!/^\d+$/.test(filterId)) {
-            alert('Please Enter Valid Keyword...');
-        } else {
-            $.fn.getFilteredBlockProductById(filterId);
-        }
-    }
-
-    $.fn.getFilteredBlockProductById = function(filterId) {
+    $.fn.getFilteredBlockProductById = function(filterId, block_id) {
         $.ajax({
             type: 'post',
             url: BASIC_OPEN_CART_SERVER_API + 'route=api/product/getFilteredBlockProductById',
@@ -117,8 +120,7 @@
             },
             success: function(response) {
                 if(response) {
-                    blockProducts.push(response);
-                    $.fn.displayBlockProduct(blockProducts);
+                    $.fn.saveProductToBlock(response.product_id, block_id);
                 } else {
                     alert("There is not the product for this ID.");
                 }
@@ -131,5 +133,55 @@
             }
         });
     }
+
+    $.fn.saveProductToBlock = function(product_id, block_id) {
+        $.ajax({
+            type: 'post',
+            url: BASIC_OPEN_CART_SERVER_API + 'route=api/product/saveProductToBlock',
+            data: {
+                product: {product_id: product_id, owner: '<?= $loggedUser['email'] ?>'},
+                block_id: block_id
+            },
+            success: function(response) {
+                if(response) {
+                    $.fn.draw();
+                }
+            },
+            fail: function(fail){
+                console.log(fail);
+            },
+            error: function(error, ajaxOptions, thrownError) {
+                console.log(error);
+            }
+        });
+    }
+
+    $.fn.draw = function() {
+        $('.bx-page-block-container').each(function(index, item){
+            if($(item).find('.products_in_block').length!==0) {
+                block_id = $(item).attr('id').replace('bx-page-block-', '');
+                $.ajax({
+                    type: 'post',
+                    url: BASIC_OPEN_CART_SERVER_API + 'route=api/product/getProductsInBlock',
+                    data: {
+                        owner: '<?= $visitedUser['email'] ?>',
+                        block_id: block_id
+                    },
+                    success: function(response) {
+                        var elmnt_pdt_in_block = $(item).find('.products_in_block')[0];
+                        $.fn.displayBlockProduct(response, elmnt_pdt_in_block);
+                    },
+                    fail: function(fail){
+                        console.log(fail);
+                    },
+                    error: function(error, ajaxOptions, thrownError) {
+                        console.log(error);
+                    }
+                });
+            }
+        });
+    }
+
+    $.fn.draw();
 
 </script>

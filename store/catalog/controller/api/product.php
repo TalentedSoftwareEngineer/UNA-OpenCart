@@ -336,6 +336,52 @@ class ControllerApiProduct extends Controller
         $this->response->setOutput(json_encode($response));
     }
 
+    public function saveProductToBlock()
+    {
+        $this->load->language('api/cart');
+        $this->load->model('catalog/cart');
+  
+        $product = $this->request->post['product'];
+        $block_id = $this->request->post['block_id'];
+
+        $text = $this->getTxtSysPagesBlocksById($block_id)['text'];
+        if($text == '') {
+            $product = json_encode(array($product));
+        } else {
+            $arr_text = array_map(function($value) {return ( array ) $value;}, json_decode($text));
+            array_push($arr_text, $product);
+            $product = json_encode($arr_text);
+        }
+
+        $results = $this->model_catalog_cart->saveProductToBlock($product, $block_id);
+  
+        $this->response->addHeader('Content-Type: application/json');
+        $this->response->setOutput(json_encode($results));
+    }
+
+    public function getProductsInBlock()
+    {
+        $this->load->language('api/cart');
+        $this->load->model('catalog/cart');
+  
+        $block_id = $this->request->post['block_id'];
+
+        $text = $this->getTxtSysPagesBlocksById($block_id)['text'];
+        if($text == '') {
+            $data = array();
+        } else {
+            $arr_text = array_map(function($value) {return ( array ) $value;}, json_decode($text));
+            $data = array_map(function($value) {
+                return $this->displayProductData($value['product_id']);
+            }, array_filter($arr_text, function($var) {
+                return $var['owner'] == $this->request->post['owner'];
+            }));
+        }
+  
+        $this->response->addHeader('Content-Type: application/json');
+        $this->response->setOutput(json_encode($data));
+    }
+
     private function displayProductData($product_id)
     {
         $this->load->model('tool/image');
@@ -382,5 +428,12 @@ class ControllerApiProduct extends Controller
         );
 
         return $data;
+    }
+
+    private function getTxtSysPagesBlocksById($block_id)
+    {
+        $this->load->model('catalog/cart');
+        $result = $this->model_catalog_cart->getTxtSysPagesBlocksById($block_id);
+        return $result;
     }
 }

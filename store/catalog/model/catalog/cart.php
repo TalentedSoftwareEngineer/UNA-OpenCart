@@ -239,4 +239,18 @@ class ModelCatalogCart extends Model {
 		$query = $this->db->query($sql);
 		return $query->row;
 	}
+
+	public function saveProductToBlock($product, $block_id)
+	{
+		$sql = "UPDATE sys_pages_blocks SET sys_pages_blocks.`text` = '" . $product . "' WHERE id=" . $block_id;
+        $query = $this->db->query($sql);
+        return $query;
+	}
+
+	public function getTxtSysPagesBlocksById($block_id)
+	{
+		$sql = "SELECT sys_p_b.`text` FROM sys_pages_blocks AS sys_p_b WHERE id = " . $block_id;
+		$query = $this->db->query($sql);
+        return $query->row;
+	}
 }
