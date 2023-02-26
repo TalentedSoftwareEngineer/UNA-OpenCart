@@ -382,6 +382,26 @@ class ControllerApiProduct extends Controller
         $this->response->setOutput(json_encode($data));
     }
 
+    public function removeProductFromBlock()
+    {
+        $this->load->language('api/cart');
+        $this->load->model('catalog/cart');
+  
+        $product = $this->request->post['product'];
+        $block_id = $this->request->post['block_id'];
+
+        $text = $this->getTxtSysPagesBlocksById($block_id)['text'];
+        $arr_text = array_map(function($value) {return ( array ) $value;}, json_decode($text));
+        $index = array_search($product, $arr_text);
+        array_splice($arr_text, $index, 1);
+        $product = json_encode($arr_text);
+
+        $results = $this->model_catalog_cart->saveProductToBlock($product, $block_id);
+  
+        $this->response->addHeader('Content-Type: application/json');
+        $this->response->setOutput(json_encode($results));
+    }
+
     private function displayProductData($product_id)
     {
         $this->load->model('tool/image');

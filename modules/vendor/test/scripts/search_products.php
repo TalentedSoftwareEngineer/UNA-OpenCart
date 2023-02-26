@@ -67,6 +67,12 @@
         }
     }
 
+    function onClickRemove(event, productInfo) {
+        var elmnt_block = $(event.target).parents('.bx-page-block-container')[0];
+        var block_id = $(elmnt_block).attr('id').replace('bx-page-block-', '');
+        $.fn.removeProductFromBlock(productInfo.product_id, block_id);
+    }
+
     $.fn.createProductCard = function(productInfo, elmnt_pdt_in_block) {
         let name = $("<strong></strong>");
         name.text(productInfo.name);
@@ -78,13 +84,23 @@
         namePriceContainer.append(price);
         
         let descP = $("<a></a>");
+        descP.addClass('flex-grow-1');
         descP.attr('href', productInfo.href.replace('&amp;', '&'));
         descP.text(productInfo.description.substr(0, 100)+'..');
 
+        let deleteBtn = $("<button><i class='fa fa-trash'></i>Remove</button>");
+        deleteBtn.addClass('btn btn-outline-primary btn-block mt-2');
+        deleteBtn.on('click', function() {
+            onClickRemove(event, productInfo);
+        });
+
         let cardBody = $("<div></div>");
-        cardBody.addClass('card-body');
+        cardBody.addClass('card-body d-flex flex-column');
         cardBody.append(namePriceContainer);
         cardBody.append(descP);
+        if('<?= $isSelf ?>') {
+            cardBody.append(deleteBtn);
+        }
 
         var cardImg = $('<img>');
         cardImg.addClass('card-img-top w-75 mx-auto');
@@ -92,7 +108,7 @@
 
         var card = $("<div></div>");
         card.addClass('card');
-        card.css("height", "330px");
+        card.css("height", "390px");
         card.append(cardImg);
         card.append(cardBody);
 
@@ -138,6 +154,28 @@
         $.ajax({
             type: 'post',
             url: BASIC_OPEN_CART_SERVER_API + 'route=api/product/saveProductToBlock',
+            data: {
+                product: {product_id: product_id, owner: '<?= $loggedUser['email'] ?>'},
+                block_id: block_id
+            },
+            success: function(response) {
+                if(response) {
+                    $.fn.draw();
+                }
+            },
+            fail: function(fail){
+                console.log(fail);
+            },
+            error: function(error, ajaxOptions, thrownError) {
+                console.log(error);
+            }
+        });
+    }
+
+    $.fn.removeProductFromBlock = function(product_id, block_id) {
+        $.ajax({
+            type: 'post',
+            url: BASIC_OPEN_CART_SERVER_API + 'route=api/product/removeProductFromBlock',
             data: {
                 product: {product_id: product_id, owner: '<?= $loggedUser['email'] ?>'},
                 block_id: block_id
