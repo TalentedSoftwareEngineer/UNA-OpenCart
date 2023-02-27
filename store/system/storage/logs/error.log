@@ -3223,3 +3223,33 @@
 2023-02-26 5:38:15 - PHP Notice:  Trying to access array offset on value of type bool in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\catalog\controller\api\product.php on line 200
 2023-02-26 5:38:15 - PHP Notice:  Trying to access array offset on value of type bool in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\catalog\controller\api\product.php on line 201
 2023-02-26 5:38:15 - PHP Notice:  Trying to access array offset on value of type bool in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\catalog\controller\api\product.php on line 202
+2023-02-26 9:42:59 - PHP Notice:  Trying to access array offset on value of type bool in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\catalog\controller\api\product.php on line 167
+2023-02-26 9:42:59 - PHP Notice:  Trying to access array offset on value of type bool in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\catalog\controller\api\product.php on line 173
+2023-02-26 9:42:59 - PHP Notice:  Trying to access array offset on value of type bool in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\catalog\controller\api\product.php on line 173
+2023-02-26 9:42:59 - PHP Notice:  Trying to access array offset on value of type bool in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\catalog\controller\api\product.php on line 177
+2023-02-26 9:42:59 - PHP Notice:  Trying to access array offset on value of type bool in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\catalog\controller\api\product.php on line 183
+2023-02-26 9:42:59 - PHP Notice:  Trying to access array offset on value of type bool in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\catalog\controller\api\product.php on line 183
+2023-02-26 9:42:59 - PHP Notice:  Trying to access array offset on value of type bool in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\catalog\controller\api\product.php on line 188
+2023-02-26 9:42:59 - PHP Notice:  Trying to access array offset on value of type bool in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\catalog\controller\api\product.php on line 193
+2023-02-26 9:42:59 - PHP Notice:  Trying to access array offset on value of type bool in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\catalog\controller\api\product.php on line 195
+2023-02-26 9:42:59 - PHP Notice:  Trying to access array offset on value of type bool in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\catalog\controller\api\product.php on line 196
+2023-02-26 9:42:59 - PHP Notice:  Trying to access array offset on value of type bool in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\catalog\controller\api\product.php on line 200
+2023-02-26 9:42:59 - PHP Notice:  Trying to access array offset on value of type bool in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\catalog\controller\api\product.php on line 201
+2023-02-26 9:42:59 - PHP Notice:  Trying to access array offset on value of type bool in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\catalog\controller\api\product.php on line 202
+2023-02-27 10:36:07 - PHP Notice:  Undefined index: id in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\catalog\model\catalog\unacustomer.php on line 4
+2023-02-27 10:37:06 - PHP Notice:  Undefined index: id in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\catalog\model\catalog\unacustomer.php on line 4
+2023-02-27 10:37:38 - PHP Notice:  Undefined index: id in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\catalog\model\catalog\unacustomer.php on line 4
+2023-02-27 10:42:13 - PHP Notice:  Undefined index: id in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\catalog\model\catalog\unacustomer.php on line 4
+2023-02-27 10:42:21 - PHP Notice:  Undefined index: id in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\catalog\model\catalog\unacustomer.php on line 4
+2023-02-27 10:42:23 - PHP Notice:  Undefined index: id in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\catalog\model\catalog\unacustomer.php on line 4
+2023-02-27 10:44:19 - PHP Notice:  Undefined index: id in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\catalog\model\catalog\unacustomer.php on line 4
+2023-02-27 10:50:17 - PHP Notice:  Undefined index: id in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\catalog\model\catalog\unacustomer.php on line 4
+2023-02-27 11:29:08 - PHP Notice:  Undefined index: id in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\catalog\model\catalog\unacustomer.php on line 4
+2023-02-27 11:30:38 - PHP Notice:  Undefined index: id in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\catalog\model\catalog\unacustomer.php on line 4
+2023-02-27 11:36:19 - PHP Notice:  Undefined index: id in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\catalog\model\catalog\unacustomer.php on line 4
+2023-02-27 11:37:22 - PHP Notice:  Undefined index: id in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\catalog\model\catalog\unacustomer.php on line 4
+2023-02-27 11:57:55 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\catalog\controller\api\unacustomer.php on line 121
+2023-02-27 12:00:15 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\catalog\controller\api\unacustomer.php on line 121
+2023-02-27 12:00:20 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\catalog\controller\api\unacustomer.php on line 121
+2023-02-27 12:00:39 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\catalog\controller\api\unacustomer.php on line 121
+2023-02-27 12:01:35 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\catalog\controller\api\unacustomer.php on line 121

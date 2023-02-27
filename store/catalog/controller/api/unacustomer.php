@@ -76,7 +76,7 @@ class ControllerApiUnacustomer extends Controller {
 		$this->load->model('catalog/unacustomer');
 
 		if (($this->request->server['REQUEST_METHOD'] == 'POST')) {
-			$this->model_catalog_unacustomer->editCustomer($this->request->get['customer_id'], $this->request->post);
+			$this->model_catalog_unacustomer->editCustomer($this->request->post['customer_id'], $this->request->post);
 
 			$this->session->data['success'] = $this->language->get('text_success');
 

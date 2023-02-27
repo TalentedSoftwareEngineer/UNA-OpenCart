@@ -165,6 +165,22 @@ class OpenApiIntegration {
         return $raw_response;
     }
 
+    public function editOcCustomer($post)
+    {
+        $url = BASIC_OPEN_CART_SERVER_API . "route=api/unacustomer/edit";
+        $curl = curl_init($url);
+         
+        curl_setopt_array( $curl, array(
+          CURLOPT_RETURNTRANSFER=> TRUE,
+          CURLOPT_POSTFIELDS      => $post
+        ));
+         
+        $raw_response = curl_exec( $curl );
+        curl_close($curl);
+        
+        return $raw_response;
+    }
+
     public function getSelfProduct($email, $product_name)
     {
         $url = BASIC_OPEN_CART_SERVER_API . "route=api/product/getSelfProduct";

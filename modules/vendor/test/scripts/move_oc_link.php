@@ -19,7 +19,7 @@
     if($loggedProfileId) {
         $loggedUser = (array) OpenApiIntegration::getInstance()->getSysUserByProfileId($loggedProfileId)[0];
         $in_user = in_array($loggedUser['email'], array_column($arr_users, 'email'));
-        $in_customer = in_array($loggedUser['email'], array_column($arr_customers, 'email'));
+        $in_customer = in_array($loggedUser['id'], array_column($arr_customers, 'customer_id'));
 
         if(!$in_user) {
             //regist user to opencart
@@ -38,7 +38,9 @@
         }
 
         if(!$in_customer) {
+            //add customer to oc_customer table
             $post = array (
+                'customer_id' => $loggedUser['id'],
                 'customer_group_id' => 1,
                 'password' => $loggedUser['password'],
                 'firstname' => ucwords($loggedUser['name']),
@@ -52,7 +54,23 @@
                 'affiliate' => false
             );
             $addedUserId = OpenApiIntegration::getInstance()->addOcCustomer($post);
-            // var_dump($addedUserId);
+        } else {
+            //update customer from oc_customer table
+            $post = array (
+                'customer_id' => $loggedUser['id'],
+                'customer_group_id' => 1,
+                'password' => $loggedUser['password'],
+                'firstname' => ucwords($loggedUser['name']),
+                'lastname' => '',
+                'email' => $loggedUser['email'],
+                'telephone' => $loggedUser['phone'],
+                'custom_field' => http_build_query(array()),
+                'newsletter' => false,
+                'status'=> true,
+                'safe' => false,
+                'affiliate' => false
+            );
+            $addedUserId = OpenApiIntegration::getInstance()->editOcCustomer($post);
         }
     }
 ?>
