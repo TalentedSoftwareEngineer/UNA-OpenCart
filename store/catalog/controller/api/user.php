@@ -151,7 +151,6 @@ class ControllerApiUser extends Controller
 		if($this->validate())
 		{
 			$user_token = token(32);
-			// $this->response->redirect('http://localhost/UNA-v.13.0.0-RC2/store/admin/index.php?route=common/dashboard&user_token=' . $user_token);
 			$this->response->addHeader('Content-Type: application/text');
 			$this->response->setOutput($user_token);
 		} else {

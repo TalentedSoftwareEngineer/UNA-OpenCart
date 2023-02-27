@@ -1,7 +1,7 @@
 <?php
 
-define('BASIC_OPEN_CART_SERVER_API', 'http://localhost/UNA-v.13.0.0-RC2/store/index.php?');
-define('BASIC_OPEN_CART_ADMIN_SERVER_API', 'http://localhost/UNA-v.13.0.0-RC2/store/admin/index.php?');
+// define('BASIC_OPEN_CART_SERVER_API', 'http://localhost/UNA-v.13.0.0-RC2/store/index.php?');
+// define('BASIC_OPEN_CART_ADMIN_SERVER_API', 'http://localhost/UNA-v.13.0.0-RC2/store/admin/index.php?');
 
 define('BX_DOL', 1);
 

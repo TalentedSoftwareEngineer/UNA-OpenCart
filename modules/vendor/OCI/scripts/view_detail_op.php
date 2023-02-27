@@ -40,7 +40,8 @@
 </div>
 
 <script type="text/javascript">
-    var BASIC_OPEN_CART_SERVER_API = 'http://localhost/UNA-v.13.0.0-RC2/store/index.php?';
+    var BASIC_OPEN_CART_ADMIN_SERVER_API = '<?= BASIC_OPEN_CART_ADMIN_SERVER_API ?>';
+    var BASIC_OPEN_CART_SERVER_API = '<?= BASIC_OPEN_CART_SERVER_API ?>';
     $.fn.getProductById = function(product_id) {
         $.ajax({
             type: 'post',
