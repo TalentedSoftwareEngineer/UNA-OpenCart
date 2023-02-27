@@ -1,1 +1,0 @@
-<div class="RSSAggrCont" rssobject="<?php echo $a['rss_object'];?>" rssid="<?php echo $a['rss_id'];?>" rssnum="<?php echo $a['rss_num'];?>" member="<?php echo $a['member_id'];?>"></div>

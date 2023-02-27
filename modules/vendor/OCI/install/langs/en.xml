@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<resources name="en" flag="gb" title="English">
+	<string
+    name="_vnd_test_view_detail_title"
+  ><![CDATA[View Product Details]]></string>
+	<string
+    name="_vnd_test_block_search_products_title"
+  ><![CDATA[Add Product from store]]></string>
+	<string
+    name="_vnd_test"
+  ><![CDATA[OCI]]></string>
+	<string
+    name="_vnd_test_upload_new_products_title"
+  ><![CDATA[Upload New Products]]></string>
+	<string name="_vnd_test_move_oc_link_title"><![CDATA[User Access]]></string>
+	<string name="_vnd_test_business_title"><![CDATA[Business]]></string>
+</resources>

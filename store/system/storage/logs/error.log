@@ -3253,3 +3253,56 @@
 2023-02-27 12:00:20 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\catalog\controller\api\unacustomer.php on line 121
 2023-02-27 12:00:39 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\catalog\controller\api\unacustomer.php on line 121
 2023-02-27 12:01:35 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\catalog\controller\api\unacustomer.php on line 121
+2023-02-27 13:14:18 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\catalog\controller\api\unacustomer.php on line 121
+2023-02-27 13:21:57 - PHP Notice:  Trying to access array offset on value of type bool in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\catalog\controller\api\product.php on line 167
+2023-02-27 13:21:57 - PHP Notice:  Trying to access array offset on value of type bool in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\catalog\controller\api\product.php on line 173
+2023-02-27 13:21:57 - PHP Notice:  Trying to access array offset on value of type bool in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\catalog\controller\api\product.php on line 173
+2023-02-27 13:21:57 - PHP Notice:  Trying to access array offset on value of type bool in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\catalog\controller\api\product.php on line 177
+2023-02-27 13:21:57 - PHP Notice:  Trying to access array offset on value of type bool in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\catalog\controller\api\product.php on line 183
+2023-02-27 13:21:57 - PHP Notice:  Trying to access array offset on value of type bool in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\catalog\controller\api\product.php on line 183
+2023-02-27 13:21:57 - PHP Notice:  Trying to access array offset on value of type bool in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\catalog\controller\api\product.php on line 188
+2023-02-27 13:21:57 - PHP Notice:  Trying to access array offset on value of type bool in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\catalog\controller\api\product.php on line 193
+2023-02-27 13:21:57 - PHP Notice:  Trying to access array offset on value of type bool in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\catalog\controller\api\product.php on line 195
+2023-02-27 13:21:57 - PHP Notice:  Trying to access array offset on value of type bool in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\catalog\controller\api\product.php on line 196
+2023-02-27 13:21:57 - PHP Notice:  Trying to access array offset on value of type bool in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\catalog\controller\api\product.php on line 200
+2023-02-27 13:21:57 - PHP Notice:  Trying to access array offset on value of type bool in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\catalog\controller\api\product.php on line 201
+2023-02-27 13:21:57 - PHP Notice:  Trying to access array offset on value of type bool in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\catalog\controller\api\product.php on line 202
+2023-02-27 13:21:59 - PHP Notice:  Trying to access array offset on value of type bool in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\catalog\controller\api\product.php on line 167
+2023-02-27 13:21:59 - PHP Notice:  Trying to access array offset on value of type bool in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\catalog\controller\api\product.php on line 173
+2023-02-27 13:21:59 - PHP Notice:  Trying to access array offset on value of type bool in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\catalog\controller\api\product.php on line 173
+2023-02-27 13:21:59 - PHP Notice:  Trying to access array offset on value of type bool in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\catalog\controller\api\product.php on line 177
+2023-02-27 13:21:59 - PHP Notice:  Trying to access array offset on value of type bool in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\catalog\controller\api\product.php on line 183
+2023-02-27 13:21:59 - PHP Notice:  Trying to access array offset on value of type bool in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\catalog\controller\api\product.php on line 183
+2023-02-27 13:21:59 - PHP Notice:  Trying to access array offset on value of type bool in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\catalog\controller\api\product.php on line 188
+2023-02-27 13:21:59 - PHP Notice:  Trying to access array offset on value of type bool in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\catalog\controller\api\product.php on line 193
+2023-02-27 13:21:59 - PHP Notice:  Trying to access array offset on value of type bool in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\catalog\controller\api\product.php on line 195
+2023-02-27 13:21:59 - PHP Notice:  Trying to access array offset on value of type bool in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\catalog\controller\api\product.php on line 196
+2023-02-27 13:21:59 - PHP Notice:  Trying to access array offset on value of type bool in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\catalog\controller\api\product.php on line 200
+2023-02-27 13:21:59 - PHP Notice:  Trying to access array offset on value of type bool in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\catalog\controller\api\product.php on line 201
+2023-02-27 13:21:59 - PHP Notice:  Trying to access array offset on value of type bool in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\catalog\controller\api\product.php on line 202
+2023-02-27 13:24:55 - PHP Notice:  Trying to access array offset on value of type bool in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\catalog\controller\api\product.php on line 167
+2023-02-27 13:24:55 - PHP Notice:  Trying to access array offset on value of type bool in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\catalog\controller\api\product.php on line 173
+2023-02-27 13:24:55 - PHP Notice:  Trying to access array offset on value of type bool in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\catalog\controller\api\product.php on line 173
+2023-02-27 13:24:55 - PHP Notice:  Trying to access array offset on value of type bool in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\catalog\controller\api\product.php on line 177
+2023-02-27 13:24:55 - PHP Notice:  Trying to access array offset on value of type bool in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\catalog\controller\api\product.php on line 183
+2023-02-27 13:24:55 - PHP Notice:  Trying to access array offset on value of type bool in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\catalog\controller\api\product.php on line 183
+2023-02-27 13:24:55 - PHP Notice:  Trying to access array offset on value of type bool in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\catalog\controller\api\product.php on line 188
+2023-02-27 13:24:55 - PHP Notice:  Trying to access array offset on value of type bool in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\catalog\controller\api\product.php on line 193
+2023-02-27 13:24:55 - PHP Notice:  Trying to access array offset on value of type bool in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\catalog\controller\api\product.php on line 195
+2023-02-27 13:24:55 - PHP Notice:  Trying to access array offset on value of type bool in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\catalog\controller\api\product.php on line 196
+2023-02-27 13:24:55 - PHP Notice:  Trying to access array offset on value of type bool in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\catalog\controller\api\product.php on line 200
+2023-02-27 13:24:55 - PHP Notice:  Trying to access array offset on value of type bool in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\catalog\controller\api\product.php on line 201
+2023-02-27 13:24:55 - PHP Notice:  Trying to access array offset on value of type bool in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\catalog\controller\api\product.php on line 202
+2023-02-27 13:24:56 - PHP Notice:  Trying to access array offset on value of type bool in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\catalog\controller\api\product.php on line 167
+2023-02-27 13:24:56 - PHP Notice:  Trying to access array offset on value of type bool in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\catalog\controller\api\product.php on line 173
+2023-02-27 13:24:56 - PHP Notice:  Trying to access array offset on value of type bool in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\catalog\controller\api\product.php on line 173
+2023-02-27 13:24:56 - PHP Notice:  Trying to access array offset on value of type bool in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\catalog\controller\api\product.php on line 177
+2023-02-27 13:24:56 - PHP Notice:  Trying to access array offset on value of type bool in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\catalog\controller\api\product.php on line 183
+2023-02-27 13:24:56 - PHP Notice:  Trying to access array offset on value of type bool in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\catalog\controller\api\product.php on line 183
+2023-02-27 13:24:56 - PHP Notice:  Trying to access array offset on value of type bool in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\catalog\controller\api\product.php on line 188
+2023-02-27 13:24:56 - PHP Notice:  Trying to access array offset on value of type bool in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\catalog\controller\api\product.php on line 193
+2023-02-27 13:24:56 - PHP Notice:  Trying to access array offset on value of type bool in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\catalog\controller\api\product.php on line 195
+2023-02-27 13:24:56 - PHP Notice:  Trying to access array offset on value of type bool in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\catalog\controller\api\product.php on line 196
+2023-02-27 13:24:56 - PHP Notice:  Trying to access array offset on value of type bool in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\catalog\controller\api\product.php on line 200
+2023-02-27 13:24:56 - PHP Notice:  Trying to access array offset on value of type bool in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\catalog\controller\api\product.php on line 201
+2023-02-27 13:24:56 - PHP Notice:  Trying to access array offset on value of type bool in C:\xampp\htdocs\UNA-v.13.0.0-RC2\store\catalog\controller\api\product.php on line 202

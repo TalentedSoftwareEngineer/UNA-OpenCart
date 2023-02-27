@@ -1,0 +1,4 @@
+<!--<a <?php echo $a['attrs'];?> href="javascript:void(0);" class="bx-btn bx-def-margin-sec-right <?php echo $a['btn_class'];?>"><?php echo $a['button_title'];?></a>-->
+<div id="<?php echo $a['div_id'];?>" class="filepond bx-uploader-html5-drop-area border-2 border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 bg-gray-50 dark:bg-gray-900/50 border-dashed rounded-lg"></div>
+<input type="text" id="<?php echo $a['focus_div_id'];?>" class="bx-uploader-html5-paste-catcher" tabindex="1" />
+<div id="<?php echo $a['errors_container_id'];?>" class="bx-uploader-html5-errors-area bx-def-font-small"></div>
