@@ -1,1 +1,0 @@
-<div id="<?php echo $a['html_id'];?>" class="<?php echo $a['class'];?>"><?php echo $a['content'];?></div>

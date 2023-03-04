@@ -419,17 +419,19 @@ class BxBasePage extends BxDolPage
         $aCells = $this->_oQuery->getPageBlocks();
         foreach ($aCells as $sKey => $aCell) {
             foreach ($aCell as $i => $aBlock) {                
-                if (!$this->_isVisibleBlock($aBlock))
+                if (!$this->_isVisibleBlock($aBlock)){
                     unset($aCells[$sKey][$i]);
-                
-                $this->processPageBlock($aCells[$sKey][$i], true);
-                $aBlock = $aCells[$sKey][$i];
+                }
+                else{
+                    $this->processPageBlock($aCells[$sKey][$i], true);
+                    $aBlock = $aCells[$sKey][$i];
 
-                $sFunc = '_getBlock' . ucfirst($aBlock['type']);
-                $aCells[$sKey][$i]['content'] = method_exists($this, $sFunc) ? $this->$sFunc($aBlock) : $aBlock['content'];
-                $aCells[$sKey][$i]['title'] = $this->getBlockTitle($aBlock);
-                foreach ($aFieldsUnset as $s)
-                    unset($aCells[$sKey][$i][$s]);
+                    $sFunc = '_getBlock' . ucfirst($aBlock['type']);
+                    $aCells[$sKey][$i]['content'] = method_exists($this, $sFunc) ? $this->$sFunc($aBlock) : $aBlock['content'];
+                    $aCells[$sKey][$i]['title'] = $this->getBlockTitle($aBlock);
+                    foreach ($aFieldsUnset as $s)
+                        unset($aCells[$sKey][$i][$s]);
+                }
             }
         }
         return $aCells;
@@ -659,7 +661,7 @@ class BxBasePage extends BxDolPage
      */
     protected function _addJsCss()
     {
-        $this->_oTemplate->addJs(array('BxDolPage.js', 'theia-sticky-sidebar/ResizeSensor.min.js'));
+        $this->_oTemplate->addJs(array('BxDolPage.js', 'theia-sticky-sidebar/theia-sticky-sidebar.min.js', 'theia-sticky-sidebar/ResizeSensor.min.js'));
         $this->_oTemplate->addCss('page_layouts.css');
     }
 

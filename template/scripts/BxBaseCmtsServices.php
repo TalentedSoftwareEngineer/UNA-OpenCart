@@ -126,6 +126,30 @@ class BxBaseCmtsServices extends BxDol
         );
     }
 
+    public function serviceGetMenuAddonManageTools()
+    {
+        $iNumTotal = BxDolCmts::getGlobalNumByParams();
+
+        $iNum1 = BxDolCmts::getGlobalNumByParams([[
+            'key' => 'status_admin', 
+            'value' => 'pending', 
+            'operator' => '='
+        ]]);
+
+        $iNum2 = BxDolCmts::getGlobalNumByParams([[
+            'key' => 'reports',
+            'value' => '0', 
+            'operator' => '>'
+        ]]);
+
+        return [
+            'counter1_value' => $iNum1, 
+            'counter1_caption' => _t('_sys_menu_dashboard_manage_tools_addon_counter1_caption_profile_default'), 
+            'counter2_value' => $iNum2, 
+            'counter3_value' => $iNumTotal
+        ];
+    }
+
     /**
      * Comment Added for Timeline module
      */
@@ -406,6 +430,117 @@ class BxBaseCmtsServices extends BxDol
             'subentry_sample' => $oCmts->getLanguageKey('txt_sample_score_' . $sType . '_single'),
             'lang_key' => '', //may be empty or not specified. In this case the default one from Notification module will be used.
         );
+    }
+    
+    public function serviceGetDataApi($aParams)
+    {
+         if(is_string($aParams))
+            $aParams = json_decode($aParams, true);
+        
+        $aParams['parent_id'] = !isset($aParams['parent_id']) ? 0 : $aParams['parent_id'];
+        $aParams['start_from'] = !isset($aParams['start_from']) ? 0 : $aParams['start_from'];
+        $aParams['order_way'] = !isset($aParams['order_way']) ? 'desc' : $aParams['order_way'];
+        $aParams['is_form'] = !isset($aParams['is_form']) ? true : $aParams['is_form'];
+        $aParams['insert'] = 'before';
+        
+        $oCmts = BxDolCmts::getObjectInstance($aParams['module'], $aParams['object_id']);
+        
+        if (!$oCmts || !$oCmts->isEnabled())
+            return false;
+        
+        $aRv = [
+            'id' => '1',
+            'url' => '/api.php?r=system/get_data_api/TemplCmtsServices/&params[]=',
+            'type' => 'comments'
+        ];
+        
+        $oForm = $oCmts->getFormPost($aParams['parent_id']);
+        $bIsList =  false;
+        if (isset($oForm['form']) && $aParams['is_form']){
+            $aRv['form'] = ['id' => 'cmt_form', 'type' => 'form', 'name' => 'comment', 'data' => $oForm['form']->getCodeAPI(), 'request' => ['immutable' => true]];
+            
+            // add view (form + new comment)
+            if($oForm['form']->isSubmittedAndValid()){
+                $aParams['insert'] = $aParams['order_way'] == 'desc' ? 'before' : 'after';
+                $aParams['comment_id'] = $oForm['res'];
+                $bIsList = true;
+            }
+            // default view (form + list)
+            if (!$oForm['form']->isSubmitted()){
+                $bIsList = true;
+            }
+        }
+        else{
+            // list only view
+            $bIsList = true;                  
+            $aParams['insert'] = 'after';
+        }
+        if ($bIsList)
+            $aRv['browse'] = $this->serviceGetCommentsApi($oCmts, $aParams);
+
+        return $aRv;
+    }
+    
+    public function serviceGetCommentsApi($oCmts, $aParams)
+    {
+        $mixedResult = $oCmts->isViewAllowed();
+        if($mixedResult !== CHECK_ACTION_RESULT_ALLOWED)
+            return $mixedResult; // TODO: error checking
+
+        $aBp = !isset($aParams['aBp']) ? [] : $aParams['aBp'];
+        $aDp = ['in_designbox' => false, 'show_empty' => false];
+        
+
+        $aBp['type'] = 'head';
+        $oCmts->getParams($aBp, $aDp);
+        $oCmts->prepareParams($aBp, $aDp);
+        
+        $aBp['order']['way'] = $aParams['order_way'];
+        $aBp['order_way'] = $aParams['order_way'];
+        $aBp['start'] = $aParams['start_from'] ; 
+        $aPp = $aBp['per_view'];
+        $aBp['per_view'] =  $aBp['per_view'] + 1; 
+        if (isset($aParams['per_view'])){
+             $aBp['per_view'] = $aParams['per_view'];
+        }
+
+        $aCmts = isset($aParams['comment_id']) ? [['cmt_id' => $aParams['comment_id']]] : $oCmts->getCommentsArray($aBp['vparent_id'], $aBp['filter'], $aBp['order'], $aBp['start'], $aBp[($aBp['init_view'] != -1 ? 'init' : 'per') . '_view']);
+
+        
+        $aParams['start_from'] = 0;
+        if (count($aCmts) == $aBp['per_view']){
+            $aBp['per_view'] = $aPp;
+            $aCmts = array_slice($aCmts, 0, $aBp['per_view']); 
+            $aParams['start_from'] = $aBp['start'] + $aBp['per_view'];
+        }
+            
+        $aCmtsRv = [];
+        foreach ($aCmts as $aCmt) {
+            $aCmtsRv[] = $oCmts->getCommentStructure($aCmt['cmt_id'], $aBp, $aDp);
+        }
+        $aData = [
+            'unit' => 'comments',
+            'start' => $aParams['start_from'],
+            'order' => $aParams['order_way'],
+            'module' => $oCmts->getSystemName(), 
+            'object_id' => $oCmts->getId(),
+            'data' => $aCmtsRv
+        ];
+        if (isset($aParams['mode']) &&  $aParams['mode'] == 'feed')
+            return $aData;
+        
+        $aRv = [
+            'id' => 'cmt_list', 
+            'type' => 'browse', 
+            'insert' => $aParams['insert'], 
+            'data' => $aData
+        ];
+        
+        if (isset($aParams['comment_id'])){
+            $aRv['new'] = $aParams['comment_id'];
+        }
+        
+        return $aRv;
     }
 }
 

@@ -11,7 +11,7 @@
 
     $users = ( array ) OpenApiIntegration::getInstance()->getAllUsers();
     $arr_users = array_map('convertToArray', $users);
-
+    
     $customers = ( array ) OpenApiIntegration::getInstance()->getAllCustomers();
     $arr_customers = array_map('convertToArray', $customers);
     
@@ -143,11 +143,7 @@
             },
             success:function(res)
             {
-                if (event.ctrlKey) {
-                    window.open(BASIC_OPEN_CART_SERVER_API + 'route=account/vendor/lts_dashboard', '_blank');            
-                } else {
-                    location.href = BASIC_OPEN_CART_SERVER_API + 'route=account/vendor/lts_dashboard';
-                }
+                window.open(BASIC_OPEN_CART_SERVER_API + 'route=account/vendor/lts_dashboard', '_blank');
             }
         });
     }

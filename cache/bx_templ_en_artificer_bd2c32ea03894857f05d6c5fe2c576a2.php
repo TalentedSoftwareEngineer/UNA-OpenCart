@@ -1,0 +1,7 @@
+<?php if($a['bx_if:show_text']['condition']){ ?>
+    <span class="<?php echo $a['bx_if:show_text']['content']['class'];?>" <?php if(is_array($a['bx_if:show_text']['content']['bx_repeat:attrs'])) for($i=0; $i<count($a['bx_if:show_text']['content']['bx_repeat:attrs']); $i++){ ?><?php echo $a['bx_if:show_text']['content']['bx_repeat:attrs'][$i]['key'];?>="<?php echo $a['bx_if:show_text']['content']['bx_repeat:attrs'][$i]['value'];?>"<?php } else if(is_string($a['bx_if:show_text']['content']['bx_repeat:attrs'])) echo $a['bx_if:show_text']['content']['bx_repeat:attrs']; ?>><?php echo $a['bx_if:show_text']['content']['content'];?></span>
+<?php } ?>
+<?php if($a['bx_if:show_link']['condition']){ ?>
+    <a class="<?php echo $a['bx_if:show_link']['content']['class'];?> group flex items-center p-1 border-none rounded-full text-gray-500 hover:text-gray-700 dark:text-gray-500 dark:hover:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 text-sm font-normal" <?php if(is_array($a['bx_if:show_link']['content']['bx_repeat:attrs'])) for($i=0; $i<count($a['bx_if:show_link']['content']['bx_repeat:attrs']); $i++){ ?><?php echo $a['bx_if:show_link']['content']['bx_repeat:attrs'][$i]['key'];?>="<?php echo $a['bx_if:show_link']['content']['bx_repeat:attrs'][$i]['value'];?>"<?php } else if(is_string($a['bx_if:show_link']['content']['bx_repeat:attrs'])) echo $a['bx_if:show_link']['content']['bx_repeat:attrs']; ?>><?php echo $a['bx_if:show_link']['content']['content'];?></a>
+<?php } ?>
+<?php echo $a['script'];?>

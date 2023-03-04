@@ -23,7 +23,8 @@ class BxBaseVoteLikes extends BxDolVoteLikes
             'main' => 'bx-vote-likes-' . $sHtmlId
         ));
 
-        $this->_aElementDefaults = array(
+        $this->_aElementDefaults = [
+            'use_icon_as' => 'icon',
             'show_do_vote_as_button' => false,
             'show_do_vote_as_button_small' => false,
             'show_do_vote_icon' => true,
@@ -35,7 +36,10 @@ class BxBaseVoteLikes extends BxDolVoteLikes
             'show_counter_label_text' => true,
             'show_legend' => false,
             'show_script' => true
-        );
+        ];
+        $this->_aElementDefaultsApi = array_merge($this->_aElementDefaults, [
+            'show_counter' => true,
+        ]);
 
         $this->_sTmplContentDoActionLabel = $this->_oTemplate->getHtml('vote_do_vote_label_likes.html');
         $this->_sTmplContentCounterLabel = $this->_oTemplate->getHtml('vote_counter_label_likes.html');
@@ -63,6 +67,19 @@ class BxBaseVoteLikes extends BxDolVoteLikes
         $aParams['class_counter'] .= ' ' . $sClass;
 
         return parent::getCounter($aParams);
+    }
+    
+    public function getCounterAPI($aParams = [])
+    {
+        $aParams = array_merge($this->_aElementDefaultsApi, $aParams);
+
+        $aVote = $this->_getVote();
+        $bVoted = false;
+
+        return array_merge($aVote, [
+            'icon' => $this->_getEmojiDo($bVoted), 
+            'title' => _t($this->_getTitleDo($bVoted)),
+        ]);
     }
 
     public function getElement($aParams = array())
@@ -98,6 +115,16 @@ class BxBaseVoteLikes extends BxDolVoteLikes
         if($bDisabled)
             $sClass .= $bShowDoVoteAsButton || $bShowDoVoteAsButtonSmall ? ' bx-btn-disabled' : 'bx-vote-disabled';
 
+        if($this->_bApi)
+            return [
+                'is_undo' => $this->isUndo(),
+                'is_voted' => $bVoted,
+                'is_disabled' => $bDisabled,
+                'value' => $this->getValue(),
+                'icon' => $this->_getEmojiDo($bVoted), 
+                'title' => _t($this->_getTitleDo($bVoted)),
+            ];
+
         return $this->_oTemplate->parseLink('javascript:void(0)', $this->_getDoVoteLabel($aParams), array(
             'class' => $this->_sStylePrefix . '-do-vote ' . $sClass,
             'title' => _t($this->_getTitleDo($bVoted)),
@@ -114,7 +141,7 @@ class BxBaseVoteLikes extends BxDolVoteLikes
                 'condition' => isset($aParams['show_do_vote_icon']) && (bool)$aParams['show_do_vote_icon'] === true,
                 'content' => array(
                     'style_prefix' => $this->_sStylePrefix,
-                    'icon' => $this->_oTemplate->getImageAuto($this->_getIconDo($bVoted))
+                    'icon' => $this->_oTemplate->getImageAuto($this->{'_get' . bx_gen_method_name($this->_useIconAs($aParams)) . 'Do'}($bVoted))
                 )
             ),
             'bx_if:show_text' => array(

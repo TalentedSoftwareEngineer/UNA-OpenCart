@@ -8,7 +8,7 @@
 <?php
     require_once 'modules/vendor/OCI/api/opencart_api.php';
     $loggedProfileId = bx_get_logged_profile_id();
-    $isSelf = false;
+    $isSelf = true;
     $arr_my_products = array();
     if($loggedProfileId) {
         $oProfile = BxDolProfile::getInstance($loggedProfileId);
@@ -19,23 +19,27 @@
         $my_products = (array) OpenApiIntegration::getInstance()->getSelfProduct($loggedUser['email'], '');
         $arr_my_products = array_map(function($value){return (array) $value;}, $my_products);
         
-        $explodedUri = explode('/', $_SERVER['REQUEST_URI']);
-        if(count($explodedUri)>3)
+        $explodedUri = explode('/', strtok($_SERVER['REQUEST_URI'], '?'));
+        if(count($explodedUri)>2)
         {
-            $visitedUser_id_proId = (array) OpenApiIntegration::getInstance()->getSysAccountsIdProfileIdByUri($explodedUri[2], $explodedUri[3]);
-            if($visitedUser_id_proId['param_name'] == 'profile_id') {
-                $isSelf = $loggedProfileId == $visitedUser_id_proId['param_value'];
-                if(!$isSelf) {
-                    $visitedUser = (array) OpenApiIntegration::getInstance()->getSysUserByProfileId($visitedUser_id_proId['param_value'])[0];
-                }
-            } elseif($visitedUser_id_proId['param_name'] == 'id') {
-                $isSelf = $loggedId == $visitedUser_id_proId['param_value'];
-                if(!$isSelf) {
-                    $visitedUser = (array) OpenApiIntegration::getInstance()->getSysUserById($visitedUser_id_proId['param_value'])[0];
+            $visitedUser_id_proId = (array) OpenApiIntegration::getInstance()->getSysAccountsIdProfileIdByUri($explodedUri[1], $explodedUri[2]);
+            
+            if(count($visitedUser_id_proId)>0) {
+                if($visitedUser_id_proId['param_name'] == 'profile_id') {
+                    $isSelf = $loggedProfileId == $visitedUser_id_proId['param_value'];
+                    if(!$isSelf) {
+                        $visitedUser = (array) OpenApiIntegration::getInstance()->getSysUserByProfileId($visitedUser_id_proId['param_value'])[0];
+                    }
+                } elseif($visitedUser_id_proId['param_name'] == 'id') {
+                    $isSelf = $loggedId == $visitedUser_id_proId['param_value'];
+                    if(!$isSelf) {
+                        $visitedUser = (array) OpenApiIntegration::getInstance()->getSysUserById($visitedUser_id_proId['param_value'])[0];
+                    }
                 }
             }
+            
         } else {
-            $isSelf = false;
+            $isSelf = true;
         }
     }
 ?>
@@ -99,12 +103,50 @@
 
     function onClickAddToCart(event, productInfo)
     {
-
+        var data = {
+            product_id: productInfo.product_id,
+            option: {208: JSON.stringify(productInfo), 209: '<?= $loggedUser['email'] ?>'.toUpperCase(), 217: 'null', 218: 'null', 219: 'null', 220: 'null', 221: 'null', 222: 'null', 223: 'null', 224: 'null', 225: 'null', 226: 'null'}
+        }
+        $.ajax({
+            type: 'post',
+            url: BASIC_OPEN_CART_SERVER_API + 'route=api/c_cart/add',
+            data,
+            success: function(response) {
+                if(response.success) {
+                    alert('Product added to cart successfully');
+                }
+            },
+            fail: function(fail){
+                console.log(fail);
+            },
+            error: function(error, ajaxOptions, thrownError) {
+                console.log(error);
+            }
+        });
     }
 
     function onClickBuyNow(event, productInfo)
     {
-
+        var data = {
+            product_id: productInfo.product_id,
+            option: {208: JSON.stringify(productInfo), 209: '<?= $loggedUser['email'] ?>'.toUpperCase(), 217: 'null', 218: 'null', 219: 'null', 220: 'null', 221: 'null', 222: 'null', 223: 'null', 224: 'null', 225: 'null', 226: 'null'}
+        }
+        $.ajax({
+            type: 'post',
+            url: BASIC_OPEN_CART_SERVER_API + 'route=api/c_cart/add',
+            data,
+            success: function(response) {
+                if(response.success) {
+                    window.open(BASIC_OPEN_CART_SERVER_API + 'route=checkout/checkout', '_blank');
+                }
+            },
+            fail: function(fail){
+                console.log(fail);
+            },
+            error: function(error, ajaxOptions, thrownError) {
+                console.log(error);
+            }
+        });
     }
     
     $.fn.createSelfProductCard = function(productInfo) {
@@ -122,7 +164,7 @@
         namePriceContainer.append(price);
         
         let descP = $("<p></p>");
-        descP.css("height", "70px");
+        descP.css({"height": "70px", "overflow": "hidden"});
         descP.text(productInfo.description.substr(0, 100)+'..');
 
         let linkBtn = $("<button><i class='fa fa-plus'></i>Add</button>");
@@ -185,7 +227,7 @@
         namePriceContainer.append(price);
         
         let descP = $("<p></p>");
-        descP.css("height", "70px");
+        descP.css({"height": "70px", "overflow": "hidden"});
         descP.text(productInfo.description.substr(0, 100)+'..');
 
         let linkBtn = $("<button><i class='fa fa-shopping-cart mr-2'></i>Add to Cart</button>");
@@ -235,12 +277,12 @@
 
     $.fn.displaySelfProductCards = function(products) {
         $('#products_container').empty();
-        products.forEach(item=> {$.fn.createSelfProductCard(item);});
+        $.each(products, function(index, item) {$.fn.createSelfProductCard(item);});
     }
 
     $.fn.displayShowProductCards = function(products) {
         $('#show_products_container').empty();
-        products.forEach(item=> {$.fn.createShowProductCard(item);});
+        $.each(products, function(index, item) {$.fn.createShowProductCard(item);});
     }
 
     $.fn.getSelfProduct = function(email, product_name) {

@@ -685,6 +685,7 @@ function clear_xss($val)
 		        'type' => 'Text',
             ));
             $def->addAttribute('a', 'data-profile-id', 'Text');
+            $def->addAttribute('a', 'dchar', 'Text');
             $def->addAttribute('div', 'source', 'Text');
 		}
 
@@ -2322,6 +2323,58 @@ function bx_absolute_url($sUrl, $sPrefix = BX_DOL_URL_ROOT)
     if (!preg_match('/^https?:\/\//', $sUrl))
         $sUrl = $sPrefix . $sUrl;
     return $sUrl;
+}
+
+function bx_is_api()
+{
+    return defined('BX_API') || bx_get('api') ? true : false;
+}
+
+function bx_api_check_origins()
+{
+    if (isset($_SERVER['HTTP_ORIGIN']) && parse_url($_SERVER['HTTP_ORIGIN'], PHP_URL_HOST) != parse_url(BX_DOL_URL_ROOT, PHP_URL_HOST)) {
+
+        $aAllowedOrigins = ['http://app.una.io:3000', 'http://ci.una.io:3000', 'http://localhost:3000', 'http://localhost:3001', 'http://single.me:3000', 'https://una.io']; // TODO: separate config
+        if (!in_array($_SERVER['HTTP_ORIGIN'], $aAllowedOrigins)) {
+            header('HTTP/1.0 403 Forbidden');
+            echo json_encode(['status' => 403, 'error' => _t("_Access denied")]);
+            exit;
+        } 
+
+        header('Access-Control-Allow-Origin: ' . $_SERVER['HTTP_ORIGIN']);
+
+        if ('OPTIONS' == $_SERVER['REQUEST_METHOD']) {
+            header('Access-Control-Allow-Methods: POST, GET');
+            header('Access-Control-Allow-Headers: Accept-Encoding, Authorization, Cache-Control, Connection, Host, Origin, Pragma, Referer, User-Agent, X-Custom-Header, X-Requested-With');                    
+            exit;
+        } 
+    }
+    //TODO: Temporatery for use logged state 
+    bx_login(1);
+    check_logged();
+}
+
+function bx_api_get_image($sStorage, $iId)
+{
+    $oS = BxDolStorage::getObjectInstance($sStorage);
+    $aFile = $oS->getFile($iId);
+    $sUrl = $oS->getFileUrlById($iId);
+    $iWidth = 500;
+    $iHeight = 500;
+    
+    if(!empty($aFile['dimensions'])){
+        $aTmp = explode('x', $aFile['dimensions']);
+        $iWidth = (int) $aTmp[0];
+        $$iHeight = (int) $aTmp[1];
+    }
+    if (!empty($sUrl)){
+        return [
+            'src' => $sUrl,
+            'width' => $iWidth,
+            'height' => $iHeight,
+        ];
+    }    
+    return false;
 }
 
 /** @} */

@@ -1,0 +1,1 @@
+<div class="<?php echo $a['style_prefix'];?>-empty" style="display:<?php echo $a['visible'];?>;"><?php echo $a['content'];?></div>

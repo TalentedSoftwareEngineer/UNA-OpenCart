@@ -4,7 +4,7 @@
 
 class OpenApiIntegration {
     private static $_instance;
-    private string $api_token;
+    private static $api_token;
     function __construct() {
         
     }
@@ -24,9 +24,11 @@ class OpenApiIntegration {
         
         curl_setopt_array( $curl, array(
           CURLOPT_RETURNTRANSFER=> TRUE,
-          CURLOPT_POSTFIELDS      => $post
+          CURLOPT_POSTFIELDS      => $post,
+          CURLOPT_SSL_VERIFYHOST => 2,
+          CURLOPT_SSL_VERIFYPEER => false
         ) );
-         
+
         $raw_response = curl_exec( $curl );
         // print_r($raw_response);
         $response = json_decode($raw_response);
@@ -46,6 +48,9 @@ class OpenApiIntegration {
         
         $curl = curl_init($url);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 2);
+
         $raw_response = curl_exec( $curl );
         $response = json_decode($raw_response);
         $err = curl_error($curl);
@@ -68,6 +73,8 @@ class OpenApiIntegration {
         
         $curl = curl_init($url);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 2);
         $raw_response = curl_exec( $curl );
         $response = json_decode($raw_response);
         $err = curl_error($curl);
@@ -86,7 +93,9 @@ class OpenApiIntegration {
         );        
         curl_setopt_array( $curl, array(
           CURLOPT_RETURNTRANSFER=> TRUE,
-          CURLOPT_POSTFIELDS      => $post
+          CURLOPT_POSTFIELDS      => $post,
+          CURLOPT_SSL_VERIFYHOST => 2,
+          CURLOPT_SSL_VERIFYPEER => false
         ) );
          
         $raw_response = curl_exec( $curl );
@@ -106,7 +115,9 @@ class OpenApiIntegration {
         );        
         curl_setopt_array( $curl, array(
           CURLOPT_RETURNTRANSFER=> TRUE,
-          CURLOPT_POSTFIELDS      => $post
+          CURLOPT_POSTFIELDS      => $post,
+          CURLOPT_SSL_VERIFYHOST => 2,
+          CURLOPT_SSL_VERIFYPEER => false
         ) );
          
         $raw_response = curl_exec( $curl );
@@ -123,7 +134,9 @@ class OpenApiIntegration {
          
         curl_setopt_array( $curl, array(
           CURLOPT_RETURNTRANSFER=> TRUE,
-          CURLOPT_POSTFIELDS      => $post
+          CURLOPT_POSTFIELDS      => $post,
+          CURLOPT_SSL_VERIFYHOST => 2,
+          CURLOPT_SSL_VERIFYPEER => false
         ) );
          
         $raw_response = curl_exec( $curl );
@@ -141,6 +154,8 @@ class OpenApiIntegration {
         
         $curl = curl_init($url);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 2);
         $raw_response = curl_exec( $curl );
         $response = json_decode($raw_response);
         $err = curl_error($curl);
@@ -156,7 +171,9 @@ class OpenApiIntegration {
          
         curl_setopt_array( $curl, array(
           CURLOPT_RETURNTRANSFER=> TRUE,
-          CURLOPT_POSTFIELDS      => $post
+          CURLOPT_POSTFIELDS      => $post,
+          CURLOPT_SSL_VERIFYHOST => 2,
+          CURLOPT_SSL_VERIFYPEER => false
         ));
          
         $raw_response = curl_exec( $curl );
@@ -172,7 +189,9 @@ class OpenApiIntegration {
          
         curl_setopt_array( $curl, array(
           CURLOPT_RETURNTRANSFER=> TRUE,
-          CURLOPT_POSTFIELDS      => $post
+          CURLOPT_POSTFIELDS      => $post,
+          CURLOPT_SSL_VERIFYHOST => 2,
+          CURLOPT_SSL_VERIFYPEER => false
         ));
          
         $raw_response = curl_exec( $curl );
@@ -192,7 +211,9 @@ class OpenApiIntegration {
         );
         curl_setopt_array( $curl, array(
           CURLOPT_RETURNTRANSFER=> TRUE,
-          CURLOPT_POSTFIELDS      => $post
+          CURLOPT_POSTFIELDS      => $post,
+          CURLOPT_SSL_VERIFYHOST => 2,
+          CURLOPT_SSL_VERIFYPEER => false
         ) );
          
         $raw_response = curl_exec( $curl );
@@ -222,7 +243,9 @@ class OpenApiIntegration {
         );
         curl_setopt_array( $curl, array(
           CURLOPT_RETURNTRANSFER=> TRUE,
-          CURLOPT_POSTFIELDS      => $post
+          CURLOPT_POSTFIELDS      => $post,
+          CURLOPT_SSL_VERIFYHOST => 2,
+          CURLOPT_SSL_VERIFYPEER => false
         ) );
          
         $raw_response = curl_exec( $curl );

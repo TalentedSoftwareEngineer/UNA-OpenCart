@@ -253,7 +253,7 @@ class ModelCatalogUser extends Model {
 	public function getSysAccountsIdProfileIdByUri($page_uri, $uri)
 	{
 		$sql = "SELECT param_name, param_value FROM sys_seo_links
-			WHERE page_uri = '" . $page_uri . "' AND uri='" . $uri . "'";
+			WHERE lower(page_uri) = '" . strtolower($page_uri) . "' AND lower(uri)='" . strtolower($uri) . "'";
         $query = $this->db->query($sql);
 		return $query->row;
 	}

@@ -377,6 +377,15 @@ class BxDolCmts extends BxDolFactory implements iBxDolReplaceable, iBxDolContent
         ));
     }
 
+    public static function getGlobalNumByParams($aParams = [])
+    {
+        $sQuery = "SELECT COUNT(*) FROM `" . self::$sTableIds . "` WHERE 1";
+        foreach($aParams as $aValue)
+            $sQuery .= " AND `" . $aValue['key'] ."` " . $aValue['operator'] . " '" . $aValue['value'] . "'";
+
+        return BxDolDb::getInstance()->getOne($sQuery);
+    }
+
     public function init ($iId)
     {
         if (empty($this->iId) && $iId)
@@ -421,6 +430,11 @@ class BxDolCmts extends BxDolFactory implements iBxDolReplaceable, iBxDolContent
     public function getTranscoderPreviewName()
     {
     	return $this->_getFormObject()->getTranscoderPreviewName();
+    }
+    
+    public function getFormObject()
+    {
+    	return $this->_getFormObject();
     }
 
     public function getTableNameImages()
@@ -1125,7 +1139,7 @@ class BxDolCmts extends BxDolFactory implements iBxDolReplaceable, iBxDolContent
 
     public function isPinAllowed ($aCmt, $isPerformAction = false)
     {
-        if((int)$aCmt['cmt_pinned'] != 0)
+        if((int)$aCmt['cmt_parent_id'] != 0 || (int)$aCmt['cmt_pinned'] != 0)
             return false;
 
         if(isAdmin())
@@ -1741,6 +1755,16 @@ class BxDolCmts extends BxDolFactory implements iBxDolReplaceable, iBxDolContent
     {
         return $this->_getAuthorInfo($iAuthorId);
     }
+    
+    public function getParams(&$aBp, &$aDp)
+    {
+        return $this->_getParams($aBp, $aDp);
+    }
+    
+    public function prepareParams(&$aBp, &$aDp)
+    {
+         return $this->_prepareParams($aBp, $aDp);
+    }
 
     /**
      * Internal functions
@@ -1787,6 +1811,13 @@ class BxDolCmts extends BxDolFactory implements iBxDolReplaceable, iBxDolContent
         $sDisplayName = '_sFormDisplay' . ucfirst($sAction);
 
         return BxDolForm::getObjectInstance($this->_sFormObject, $this->$sDisplayName, false, $this->_sSystem);
+    }
+    
+    protected function _unsetFormObject($sAction = BX_CMT_ACTION_POST)
+    {
+        $sDisplayName = '_sFormDisplay' . ucfirst($sAction);
+
+        return BxDolForm::unsetObjectInstance($this->_sFormObject, $this->$sDisplayName, false, $this->_sSystem);
     }
 
     protected function _getParams(&$aBp, &$aDp)
@@ -2163,12 +2194,14 @@ class BxDolCmts extends BxDolFactory implements iBxDolReplaceable, iBxDolContent
         $bItem = !empty($mixedItem) && is_array($mixedItem);
 
         if($bItem) {
-            $iI = $mixedItem['cmt_id'];
+            $iI = 'i' . $mixedItem['cmt_id'];
             $aStructure[$iI] = array(
                 'id' => $mixedItem['cmt_id'], 
                 'order' => isset($mixedItem['cmt_order']) ? $mixedItem['cmt_order'] : 0, 
+                'data' => $this->getCommentSimple((int)$mixedItem['cmt_id']),
                 'items' => array(),
             );
+            $aStructure[$iI]['data']['author_data'] = BxDolProfile::getData($aStructure[$iI]['data']['cmt_author_id']);
         }
 
         if(!$bItem || (int)$mixedItem['cmt_replies'] > 0) {
@@ -2188,12 +2221,18 @@ class BxDolCmts extends BxDolFactory implements iBxDolReplaceable, iBxDolContent
 
                 //--- Sort subitems
                 $iWay = isset($aBp['order']['way']) && $aBp['order']['way'] == 'desc' ? -1 : 1;
+
+                //tODO fix
+               // print_r($aPassStructure);
                 uasort($aPassStructure, function($aItem1, $aItem2) use ($iWay) {
                     if($aItem1['order'] == $aItem2['order'])
                         return 0;
 
                     return $iWay * ($aItem1['order'] < $aItem2['order'] ? -1 : 1);
                 });
+                $aStructure[$iI]['items'] = $aPassStructure;
+               // print_r($aPassStructure);
+            //    echo '-----------------';
             }
         }
     }

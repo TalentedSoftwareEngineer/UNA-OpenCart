@@ -1,0 +1,1 @@
+<?php $mixedData=2; ?>

@@ -58,6 +58,7 @@ class BxBaseCmts extends BxDolCmts
             'show_counter' => true,
             'show_counter_only' => true,
             'show_counter_empty' => false,
+            'show_counter_reversed' => false,
             'recalculate_counter' => false
         );
 
@@ -134,41 +135,60 @@ class BxBaseCmts extends BxDolCmts
         return $this->_oTemplate->_wrapInTagJsCode("if(window['" . $this->_sJsObjName . "'] == undefined) var " . $this->_sJsObjName . " = new " . $this->_sJsObjClass . "(" . json_encode($aParams) . "); " . $this->_sJsObjName . ".cmtInit();");
     }
 
-    function getCommentsBlockAPI($aBp = [], $aDp = [])
+    function getCommentsBlockAPI($aParams, $aBp = [], $aDp = ['in_designbox' => false, 'show_empty' => false])
     {
+
         $mixedResult = $this->isViewAllowed();
         if($mixedResult !== CHECK_ACTION_RESULT_ALLOWED)
             return $mixedResult; // TODO: error checking
 
+        $aBp['type'] = 'head';
         $this->_getParams($aBp, $aDp);
         $this->_prepareParams($aBp, $aDp);
+        
+        $aBp['order']['way'] = 'desc';
+        $aBp['order_way'] =  'desc';
+        $aBp['start'] = 0 ; 
+        $aPp = $aBp['per_view'];
+        $aBp['per_view'] =  $aBp['per_view'] + 1; 
 
-        $aCmts = $this->getCommentsArray($aBp['vparent_id'], $aBp['filter'], $aBp['order'], $aBp['start'], $aBp[($aBp['init_view'] != -1 ? 'init' : 'per') . '_view']);
+        $aCmts = [];
 
+        if (!isset($aParams['comment_id']))
+            $aCmts = $this->getCommentsArray($aBp['vparent_id'], $aBp['filter'], $aBp['order'], $aBp['start'], $aBp[($aBp['init_view'] != -1 ? 'init' : 'per') . '_view']);
+        else
+            $aCmts = [['cmt_id' => $aParams['comment_id']]];
+        
+        $aParams['start_from'] = 0;
+        if (count($aCmts) == $aBp['per_view']){
+            $aBp['per_view'] = $aPp;
+            $aCmts = array_slice($aCmts, 0, $aBp['per_view']); 
+            $aParams['start_from'] = $aBp['start'] + $aBp['per_view'];
+        }
+            
+        $aCmtsRv = [];
+        foreach ($aCmts as $aCmt) {
+            $aCmtsRv[] = $this->getCommentStructure($aCmt['cmt_id'], $aBp, $aDp);
+        }
         return [
             'unit' => 'comments',
-            'data' => $this->decodeData($aCmts),
+            'start' => 0,
+            'order' => 'a',
+            'module' => $this->_sSystem, 
+            'object_id' => $this->_iId,
+            'data' => $aCmtsRv,
         ];
+        
     }
 
     function decodeData ($a)
     {
         foreach ($a as $i => $r) {
             if (isset($r['cmt_author_id']))
-                $a[$i]['author_data'] = $this->decodeDataAuthor($r);
+                $a[$i]['author_data'] = BxDolProfile::getData($r['cmt_author_id']);
         }
 
         return $a;
-    }
-
-    function decodeDataAuthor ($r) // TODO: get rid of duplicate code here and in BxBaseModGeneralSearchResult
-    {
-        $oProfile = BxDolProfile::getInstanceMagic($r['cmt_author_id']);
-        return [
-            'display_name' => $oProfile->getDisplayName(),
-            'url' => $oProfile->getUrl(),
-            'url_avatar' => $oProfile->getAvatar(),
-        ];
     }
 
     /**
@@ -251,19 +271,13 @@ class BxBaseCmts extends BxDolCmts
      * @param array $aDp - display params array
      *
      */
-    function getComments($aBp = array(), $aDp = array())
+    function getComments($aBp = [], $aDp = [])
     {
         $this->_prepareParams($aBp, $aDp);
 
         $aCmts = $this->getCommentsArray($aBp['vparent_id'], $aBp['filter'], $aBp['order'], $aBp['start'], $aBp[($aBp['init_view'] != -1 ? 'init' : 'per') . '_view']);
-        if(empty($aCmts) || !is_array($aCmts)) {
-            if((int)$aBp['parent_id'] == 0 && !$this->isPostAllowed()) {
-                $oPermalink = BxDolPermalinks::getInstance();
-                return MsgBox(_t('_cmt_msg_login_required', $oPermalink->permalink('page.php?i=login'), $oPermalink->permalink('page.php?i=create-account')));
-            }
-
+        if(empty($aCmts) || !is_array($aCmts))
             return isset($aDp['show_empty']) && $aDp['show_empty'] === true ? $this->_getEmpty($aDp) : '';
-        }
 
         $sCmts = '';
         foreach($aCmts as $k => $aCmt)
@@ -273,7 +287,7 @@ class BxBaseCmts extends BxDolCmts
         return $sCmts;
     }
 
-    function getCommentsPinned($aBp = array(), $aDp = array())
+    function getCommentsPinned($aBp = [], $aDp = [])
     {
         $this->_prepareParams($aBp, $aDp);
 
@@ -407,7 +421,7 @@ class BxBaseCmts extends BxDolCmts
         }
 
         $sReplies = '';
-        if(!empty($aDp)) {
+        if(!(isset($aBp['pinned']) && (int)$aBp['pinned'] != 0 && (int)$aCmt['cmt_pinned'] != 0) && !empty($aDp)) {
             $aDp['show_empty'] = false;
 
             if(!empty($aDp['structure'][$aCmt['cmt_id']]) && is_array($aDp['structure'][$aCmt['cmt_id']])) {
@@ -776,6 +790,7 @@ class BxBaseCmts extends BxDolCmts
         $bShowDoCommentAsButtonSmall = isset($aParams['show_do_comment_as_button_small']) && $aParams['show_do_comment_as_button_small'] == true;
         $bShowDoCommentAsButton = !$bShowDoCommentAsButtonSmall && isset($aParams['show_do_comment_as_button']) && $aParams['show_do_comment_as_button'] == true;
         $bShowEmpty = isset($aParams['show_counter_empty']) && $aParams['show_counter_empty'] == true;
+        $bShowReversed = isset($aParams['show_counter_reversed']) && $aParams['show_counter_reversed'] == true;
         $bRecalculateCounter = isset($aParams['recalculate_counter']) && $aParams['recalculate_counter'] == true;
 
         $sClass = 'sys-action-counter';
@@ -794,7 +809,8 @@ class BxBaseCmts extends BxDolCmts
 
         $iCmtsLimit = 5;
         $aCmts = $this->_getCounterItems($iCmtsLimit);
-        $aCmts = array_reverse($aCmts);
+        if(!$bShowReversed)
+            $aCmts = array_reverse($aCmts);
 
         $aTmplVarsProfiles = [];
         foreach($aCmts as $aCmt) {
@@ -1052,7 +1068,7 @@ class BxBaseCmts extends BxDolCmts
 
         $aForm = $this->{'_getForm' . ucfirst($sType)}($iCmtParentId, $aDp);
         if(empty($aForm['form']))
-            return !empty($aForm['msg']) && (isLogged() || $iCmtParentId != 0 || $this->getCommentsCount() > 0) ? MsgBox($aForm['msg']) : '';
+            return !empty($aForm['msg']) ? MsgBox($aForm['msg']) : '';
 
         return $this->_oTemplate->parseHtmlByName('comment_reply_box.html', array(
             'js_object' => $this->_sJsObjName,
@@ -1141,11 +1157,21 @@ class BxBaseCmts extends BxDolCmts
     protected function _getFormPost($iCmtParentId = 0, $aDp = [])
     {
         $bCmtParentId = !empty($iCmtParentId);
-        if(!$bCmtParentId && !$this->isPostAllowed())
-            return array('msg' => $this->msgErrPostAllowed());
+
+        if(!$bCmtParentId && !$this->isPostAllowed()) {
+            $sMsg = '';
+            if(!isLogged()) {
+                $oPermalink = BxDolPermalinks::getInstance();
+                $sMsg = _t('_cmt_msg_login_required', $oPermalink->permalink('page.php?i=login'), $oPermalink->permalink('page.php?i=create-account'));
+            }
+            else
+                $sMsg = $this->msgErrPostAllowed();
+
+            return bx_is_api() ? ['id' => 1, 'type' => 'msg', 'data' => $sMsg] : ['msg' => $sMsg];
+        }
 
         if($bCmtParentId && !$this->isReplyAllowed($iCmtParentId))
-            return array('msg' => $this->msgErrReplyAllowed());
+            return bx_is_api() ? ['id' => 1, 'type' => 'msg', 'data' => $sMsg] : ['msg' => $this->msgErrReplyAllowed()];
 
         $bDynamic = isset($aDp['dynamic_mode']) && (bool)$aDp['dynamic_mode'];
         $bQuote = isset($aDp['quote']) && (bool)$aDp['quote'];
@@ -1156,9 +1182,9 @@ class BxBaseCmts extends BxDolCmts
         if($bQuote) {
             $aCmtParent = $this->getCommentRow((int)$iCmtParentId);
             if(!empty($aCmtParent['cmt_text']))
-                $oForm->aInputs['cmt_text']['value'] = $this->_oTemplate->parseHtmlByName('comment_quote.html', array(
+                $oForm->aInputs['cmt_text']['value'] = $this->_oTemplate->parseHtmlByName('comment_quote.html', [
                     'content' => $aCmtParent['cmt_text']
-                ));
+                ]);
         }
 
         $oForm->initChecker();
@@ -1177,11 +1203,10 @@ class BxBaseCmts extends BxDolCmts
             if(!$bCmtText && !$bImageIds) {
                 $oForm->aInputs['cmt_text']['error'] =  _t('_Please enter characters');
                 $oForm->setValid(false);
-
-            	return array('form' => $oForm->getCode($bDynamic), 'form_id' => $oForm->id);
+                return bx_is_api() ? ['form' => $oForm, 'res' => 0] : ['form' => $oForm->getCode($bDynamic), 'form_id' => $oForm->id];
             }
 
-            $aParent = array();
+            $aParent = [];
             if($iCmtParentId > 0) {
                 $aParent = $this->getCommentRow($iCmtParentId);
                 if(empty($aParent) || !is_array($aParent)) {
@@ -1197,7 +1222,7 @@ class BxBaseCmts extends BxDolCmts
                 $iCmtVisualParentId = $iLevel > $this->getMaxLevel() ? $aParent['cmt_vparent_id'] : $iCmtParentId;
             }
 
-            $iCmtId = (int)$oForm->insert(array('cmt_vparent_id' => $iCmtVisualParentId, 'cmt_object_id' => $this->_iId, 'cmt_author_id' => $iCmtAuthorId, 'cmt_level' => $iLevel, 'cmt_time' => time()));
+            $iCmtId = (int)$oForm->insert(['cmt_vparent_id' => $iCmtVisualParentId, 'cmt_object_id' => $this->_iId, 'cmt_author_id' => $iCmtAuthorId, 'cmt_level' => $iLevel, 'cmt_time' => time()]);
             if($iCmtId != 0) {
                 $iCmtUniqId = $this->_oQuery->getUniqId($this->_aSystem['system_id'], $iCmtId, [
                     'author_id' => $iCmtAuthorId,
@@ -1224,14 +1249,19 @@ class BxBaseCmts extends BxDolCmts
                 if($this->_sMetatagsObj && ($oMetatags = BxDolMetatags::getObjectInstance($this->_sMetatagsObj)) !== false)
                     $oMetatags->metaAdd($iCmtUniqId, $sCmtText);
 
-                if(($mixedResult = $this->onPostAfter($iCmtId, $aDp)) !== false)
-                    return $mixedResult;
+                if(($mixedResult = $this->onPostAfter($iCmtId, $aDp)) !== false){
+                    if (bx_is_api()){
+                        $this->_unsetFormObject(BX_CMT_ACTION_POST);
+                        return ['form' => $this->_getForm(BX_CMT_ACTION_POST, $iCmtParentId), 'res' => $iCmtId];
+                    }
+                    else{
+                        return $mixedResult;
+                    }
+                }
             }
-
-            return array('msg' => _t('_cmt_err_cannot_perform_action'));
+            return bx_is_api() ? ['id' => 1, 'type' => 'msg', 'data' => _t('_cmt_err_cannot_perform_action')] : ['msg' => _t('_cmt_err_cannot_perform_action')];
         }
-
-        return array('form' => $oForm->getCode($bDynamic), 'form_id' => $oForm->id);
+        return bx_is_api() ? ['form' => $oForm, 'res' => 0] : ['form' => $oForm->getCode($bDynamic), 'form_id' => $oForm->id];
     }
 
     protected function _getFormEdit($iCmtId, $aDp = [])

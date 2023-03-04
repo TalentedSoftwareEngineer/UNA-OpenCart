@@ -1,25 +1,22 @@
 <?php
 
-// define('BASIC_OPEN_CART_SERVER_API', 'http://localhost/UNA-v.13.0.0-RC2/store/index.php?');
-// define('BASIC_OPEN_CART_ADMIN_SERVER_API', 'http://localhost/UNA-v.13.0.0-RC2/store/admin/index.php?');
-
 define('BX_DOL', 1);
 
-define('BX_DOL_URL_ROOT', 'http://localhost/UNA-v.13.0.0-RC2/'); ///< site url
+define('BX_DOL_URL_ROOT', 'https://salescouch.com/'); ///< site url
 
-define('BX_DIRECTORY_PATH_ROOT', 'C:/xampp/htdocs/UNA-v.13.0.0-RC2/'); ///< site path
+define('BX_DIRECTORY_PATH_ROOT', '/www/wwwroot/amogam/'); ///< site path
 
 define('BX_DATABASE_HOST', 'localhost'); ///< db host
 define('BX_DATABASE_SOCK', ''); ///< db socket
 define('BX_DATABASE_PORT', ''); ///< db port
-define('BX_DATABASE_USER', 'root'); ///< db user
-define('BX_DATABASE_PASS', ''); ///< db password
-define('BX_DATABASE_NAME', 'una_db'); ///< db name
+define('BX_DATABASE_USER', 'cms'); ///< db user
+define('BX_DATABASE_PASS', 'cms123'); ///< db password
+define('BX_DATABASE_NAME', 'cms'); ///< db name
 define('BX_DATABASE_ENGINE', 'MYISAM'); ///< db engine
 
-define('BX_SYSTEM_JAVA', ''); ///< path to java binary
-define('BX_SYSTEM_FFMPEG', 'C:/xampp/htdocs/UNA-v.13.0.0-RC2/plugins/ffmpeg/ffmpeg.exe'); ///< path to ffmpeg binary
-define('BX_DOL_SECRET', 'BSvtn&JT=H9'); ///< secret word
+define('BX_SYSTEM_JAVA', 'java:'); ///< path to java binary
+define('BX_SYSTEM_FFMPEG', '/www/wwwroot/amogam/plugins/ffmpeg/ffmpeg.exe'); ///< path to ffmpeg binary
+define('BX_DOL_SECRET', 'ybh7sAGxB&j'); ///< secret word
 
 define('BX_DB_FULL_VISUAL_PROCESSING', true); ///< upon db error - show error message
 define('BX_DB_FULL_DEBUG_MODE', false); ///< upon db error - show detailed report (turn off in production mode)

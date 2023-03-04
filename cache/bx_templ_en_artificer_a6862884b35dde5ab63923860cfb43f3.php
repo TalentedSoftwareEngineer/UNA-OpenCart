@@ -1,0 +1,1 @@
+<div class="<?php echo $a['style_prefix'];?>-content-show-more bx-def-padding-thd-top bx-def-font-middle" style="display:none;"><a class="bx-def-a-colored" href="javascript:void(0)" onclick="<?php echo $a['js_object'];?>.showMore(this);">See more...</a></div>

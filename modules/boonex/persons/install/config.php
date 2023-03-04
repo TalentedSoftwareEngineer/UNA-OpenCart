@@ -18,12 +18,12 @@ $aConfig = array(
     'name' => 'bx_persons',
     'title' => 'Persons',
     'note' => 'Basic person profiles functionality.',
-    'version' => '13.0.6',
+    'version' => '13.0.7',
     'vendor' => 'BoonEx',
     'help_url' => 'http://feed.una.io/?section={module_name}',
 
     'compatible_with' => array(
-        '13.0.0-RC1'
+        '13.0.0-RC3'
     ),
 
     /**
