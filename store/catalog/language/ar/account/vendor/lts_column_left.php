@@ -11,6 +11,8 @@ $_['text_payment']				= "المدفوعات" ;
 $_['text_filter']				= "تصفية" ;
 $_['text_store']				= "معلومات المتجر" ;
 $_['text_setting']				= "الإعداد" ;
+$_['text_physical']              = 'Physical';
+$_['text_virtual']              = 'Virtual';
 $_['text_visit_store']			= "قم بزيارة المتجر" ;
 $_['text_subscription']			= "خطة الاشتراك" ;
 	

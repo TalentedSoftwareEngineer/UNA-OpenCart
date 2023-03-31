@@ -17,12 +17,12 @@ $aConfig = array(
     'name' => 'bx_en',
     'title' => 'English',
     'note' => 'Language file',
-    'version' => '13.0.7',
+    'version' => '13.0.8',
     'vendor' => 'Boonex',
     'help_url' => 'http://feed.una.io/?section={module_name}',
 
     'compatible_with' => array(
-        '13.0.0-RC2'
+        '13.0.0-RC3'
     ),
 
     /**

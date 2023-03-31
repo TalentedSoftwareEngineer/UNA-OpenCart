@@ -1191,7 +1191,19 @@ class BxBaseModGeneralModule extends BxDolModule
      */
     public function serviceEntityEdit ($iContentId = 0, $sDisplay = false)
     {
-        return $this->_serviceEntityForm ('editDataForm', $iContentId, $sDisplay);
+        $mixedResult = $this->_serviceEntityForm ('editDataForm', $iContentId, $sDisplay);
+        if(!bx_is_api()) 
+            return $mixedResult;
+
+        $aResult = [];
+        if(is_a($mixedResult, 'BxTemplFormView'))
+            $aResult = ['id' => 1, 'type' => 'form', 'data' => $mixedResult->getCodeAPI(), 'request' => ['url' => '/api.php?r=' . $this->_aModule['name'] . '/entity_edit', 'immutable' => true]];
+        else
+            $aResult = $mixedResult;
+
+        return [
+            $aResult
+        ];
     }
 
     /**
@@ -1212,7 +1224,19 @@ class BxBaseModGeneralModule extends BxDolModule
      */
     public function serviceEntityDelete ($iContentId = 0)
     {
-        return $this->_serviceEntityForm ('deleteDataForm', $iContentId);
+        $mixedResult = $this->_serviceEntityForm ('deleteDataForm', $iContentId);
+        if(!bx_is_api()) 
+            return $mixedResult;
+
+        $aResult = [];
+        if(is_a($mixedResult, 'BxTemplFormView'))
+            $aResult = ['id' => 1, 'type' => 'form', 'data' => $mixedResult->getCodeAPI(), 'request' => ['url' => '/api.php?r=' . $this->_aModule['name'] . '/entity_delete', 'immutable' => true]];
+        else
+            $aResult = $mixedResult;
+
+        return [
+            $aResult
+        ];
     }
 
     /**
@@ -1440,71 +1464,12 @@ class BxBaseModGeneralModule extends BxDolModule
      */
     public function serviceEntityAllActions ($mixedContent = false, $aParams = array())
     {
-        $CNF = &$this->_oConfig->CNF;
+        $mixedResult = $this->getEntryAllActions($mixedContent, $aParams);
 
-        if(!empty($mixedContent)) {
-            if(!is_array($mixedContent))
-                $mixedContent = array((int)$mixedContent, (method_exists($this->_oDb, 'getContentInfoById')) ? $this->_oDb->getContentInfoById((int)$mixedContent) : array());
-        }
-        else {
-            $mixedContent = $this->_getContent();
-            if($mixedContent === false)
-                return false;
-        }
-
-        list($iContentId, $aContentInfo) = $mixedContent;
-
-        $sObjectMenu = !empty($aParams['object_menu']) ? $aParams['object_menu'] : '';
-        if(empty($sObjectMenu) && !empty($CNF['OBJECT_MENU_ACTIONS_VIEW_ENTRY_ALL']))
-            $sObjectMenu = $CNF['OBJECT_MENU_ACTIONS_VIEW_ENTRY_ALL'];
-
-        if(empty($sObjectMenu))
-            return false;
-
-        $sEntryTitle = !empty($aParams['entry_title']) ? $aParams['entry_title'] : '';
-        if(empty($sEntryTitle) && !empty($CNF['FIELD_TITLE']) && !empty($aContentInfo[$CNF['FIELD_TITLE']]))
-            $sEntryTitle = $aContentInfo[$CNF['FIELD_TITLE']];
-
-        $sEntryUrl = !empty($aParams['entry_url']) ? $aParams['entry_url'] : '';
-        if(empty($sEntryUrl) && !empty($CNF['URI_VIEW_ENTRY']))
-            $sEntryUrl = bx_absolute_url(BxDolPermalinks::getInstance()->permalink('page.php?i=' . $CNF['URI_VIEW_ENTRY'] . '&id=' . $iContentId));
-
-        $iEntryThumb = !empty($aParams['entry_thumb']) ? (int)$aParams['entry_thumb'] : 0;
-        if(empty($iEntryThumb) && !empty($CNF['FIELD_THUMB']) && !empty($aContentInfo[$CNF['FIELD_THUMB']]))
-            $iEntryThumb = (int)$aContentInfo[$CNF['FIELD_THUMB']];
-
-        $sObjectStorage = !empty($aParams['object_storage']) ? $aParams['object_storage'] : false;
-        if(empty($sObjectStorage) && !empty($CNF['OBJECT_STORAGE']))
-            $sObjectStorage = $CNF['OBJECT_STORAGE'];
-
-        $sObjectTranscoder = !empty($aParams['object_transcoder']) ? $aParams['object_transcoder'] : false;
-
-        $aMarkers = array(
-            'id' => $iContentId,
-            'module' => $this->_oConfig->getName(),
-            'title' => !empty($sEntryTitle) ? $sEntryTitle : '',
-            'url' => !empty($sEntryUrl) ? $sEntryUrl : '',
-            'img_url' => ''
-        );
-
-        if(!empty($iEntryThumb)) {
-            if(!empty($sObjectTranscoder))
-                $o = BxDolTranscoder::getObjectInstance($sObjectTranscoder);
-            else if(!empty($sObjectStorage))
-                $o = BxDolStorage::getObjectInstance($sObjectStorage);
-
-            $sImageUrl = $o ? $o->getFileUrlById($iEntryThumb) : '';
-            if(!empty($sImageUrl))
-                $aMarkers['img_url'] = $sImageUrl;
-        }
-
-        $oActions = BxDolMenu::getObjectInstance($sObjectMenu, $this->_oTemplate);
-        if(!$oActions)
-            return false;
-
-        $oActions->setContentId($iContentId);
-        $oActions->addMarkers($aMarkers);
-        return $this->_oTemplate->entryAllActions($oActions->getCode());
+        if(bx_is_api())
+            return [['id' => 1, 'type' => 'actions', 'data' => $mixedResult]];
+        else
+            return $this->_oTemplate->entryAllActions($mixedResult);
     }
 
     /**
@@ -2761,7 +2726,7 @@ class BxBaseModGeneralModule extends BxDolModule
     public function _serviceBrowse ($sMode, $aParams = false, $iDesignBox = BX_DB_PADDING_DEF, $bDisplayEmptyMsg = false, $bAjaxPaginate = true, $sClassSearchResult = 'SearchResult')
     {
         if (CHECK_ACTION_RESULT_ALLOWED !== ($sMsg = $this->checkAllowedBrowse()))
-            return defined('BX_API') ? [['id' => 1, 'type' => 'msg', 'data' => $sMsg]] : MsgBox($sMsg);
+            return bx_is_api() ? [['id' => 1, 'type' => 'msg', 'data' => $sMsg]] : MsgBox($sMsg);
 
         bx_import($sClassSearchResult, $this->_aModule);
         $sClass = $this->_aModule['class_prefix'] . $sClassSearchResult;
@@ -2778,7 +2743,7 @@ class BxBaseModGeneralModule extends BxDolModule
             return '';
 
         if ($s = $o->processing())
-            return defined('BX_API') ? [['id' => 1, 'type' => 'browse', 'data' => $s]] : $s;
+            return bx_is_api() ? [['id' => 1, 'type' => 'browse', 'data' => $s]] : $s;
         else
             return '';
     }
@@ -2997,6 +2962,76 @@ class BxBaseModGeneralModule extends BxDolModule
                 return array('id' => $iId, 'transcoder' => $CNF[$sTranscoder]);
 
         return array('id' => $iId, 'object' => $CNF['OBJECT_STORAGE']);
+    }
+
+    public function getEntryAllActions ($mixedContent = false, $aParams = [])
+    {
+        $CNF = &$this->_oConfig->CNF;
+
+        if(!empty($mixedContent)) {
+            if(!is_array($mixedContent))
+                $mixedContent = array((int)$mixedContent, (method_exists($this->_oDb, 'getContentInfoById')) ? $this->_oDb->getContentInfoById((int)$mixedContent) : array());
+        }
+        else {
+            $mixedContent = $this->_getContent();
+            if($mixedContent === false)
+                return false;
+        }
+
+        list($iContentId, $aContentInfo) = $mixedContent;
+
+        $sObjectMenu = !empty($aParams['object_menu']) ? $aParams['object_menu'] : '';
+        if(empty($sObjectMenu) && !empty($CNF['OBJECT_MENU_ACTIONS_VIEW_ENTRY_ALL']))
+            $sObjectMenu = $CNF['OBJECT_MENU_ACTIONS_VIEW_ENTRY_ALL'];
+
+        if(empty($sObjectMenu))
+            return false;
+
+        $sEntryTitle = !empty($aParams['entry_title']) ? $aParams['entry_title'] : '';
+        if(empty($sEntryTitle) && !empty($CNF['FIELD_TITLE']) && !empty($aContentInfo[$CNF['FIELD_TITLE']]))
+            $sEntryTitle = $aContentInfo[$CNF['FIELD_TITLE']];
+
+        $sEntryUrl = !empty($aParams['entry_url']) ? $aParams['entry_url'] : '';
+        if(empty($sEntryUrl) && !empty($CNF['URI_VIEW_ENTRY']))
+            $sEntryUrl = bx_absolute_url(BxDolPermalinks::getInstance()->permalink('page.php?i=' . $CNF['URI_VIEW_ENTRY'] . '&id=' . $iContentId));
+
+        $iEntryThumb = !empty($aParams['entry_thumb']) ? (int)$aParams['entry_thumb'] : 0;
+        if(empty($iEntryThumb) && !empty($CNF['FIELD_THUMB']) && !empty($aContentInfo[$CNF['FIELD_THUMB']]))
+            $iEntryThumb = (int)$aContentInfo[$CNF['FIELD_THUMB']];
+
+        $sObjectStorage = !empty($aParams['object_storage']) ? $aParams['object_storage'] : false;
+        if(empty($sObjectStorage) && !empty($CNF['OBJECT_STORAGE']))
+            $sObjectStorage = $CNF['OBJECT_STORAGE'];
+
+        $sObjectTranscoder = !empty($aParams['object_transcoder']) ? $aParams['object_transcoder'] : false;
+
+        $aMarkers = [
+            'id' => $iContentId,
+            'module' => $this->_oConfig->getName(),
+            'title' => !empty($sEntryTitle) ? $sEntryTitle : '',
+            'url' => !empty($sEntryUrl) ? $sEntryUrl : '',
+            'img_url' => ''
+        ];
+
+        if(!empty($iEntryThumb)) {
+            if(!empty($sObjectTranscoder))
+                $o = BxDolTranscoder::getObjectInstance($sObjectTranscoder);
+            else if(!empty($sObjectStorage))
+                $o = BxDolStorage::getObjectInstance($sObjectStorage);
+
+            $sImageUrl = $o ? $o->getFileUrlById($iEntryThumb) : '';
+            if(!empty($sImageUrl))
+                $aMarkers['img_url'] = $sImageUrl;
+        }
+
+        $oActions = BxDolMenu::getObjectInstance($sObjectMenu, $this->_oTemplate);
+        if(!$oActions)
+            return false;
+
+        $oActions->setContentId($iContentId);
+        $oActions->addMarkers($aMarkers);
+
+        return $oActions->{bx_is_api() ? 'getCodeAPI' : 'getCode'}();
     }
 
     public function getProfileId()
@@ -3384,40 +3419,51 @@ class BxBaseModGeneralModule extends BxDolModule
     protected function _getImagesForTimelinePost($aEvent, $aContentInfo, $sUrl, $aBrowseParams = array())
     {
         $CNF = &$this->_oConfig->CNF;
-        
-        $iImageId = 0;
-        $sImageSm = $sImageMd = $sImageXl = '';
-        if(isset($CNF['FIELD_COVER']) && !empty($aContentInfo[$CNF['FIELD_COVER']])) {
-            $iImageId = (int)$aContentInfo[$CNF['FIELD_COVER']];
-            $sImageSm = $this->_oConfig->getImageUrl($iImageId, ['OBJECT_IMAGES_TRANSCODER_MINIATURE', 'OBJECT_IMAGES_TRANSCODER_THUMB']);
-            $sImageMd = $this->_oConfig->getImageUrl($iImageId, ['OBJECT_IMAGES_TRANSCODER_GALLERY', 'OBJECT_IMAGES_TRANSCODER_THUMB']);
-            $sImageXl = $this->_oConfig->getImageUrl($iImageId, ['OBJECT_IMAGES_TRANSCODER_COVER']);
+        if (bx_is_api()){
+            $aResult = [];
+            if(isset($CNF['FIELD_COVER']) && !empty($aContentInfo[$CNF['FIELD_COVER']])) {
+                $aResult[] = bx_api_get_image($CNF['OBJECT_STORAGE'], (int)$aContentInfo[$CNF['FIELD_COVER']]);
+            }
+            if(isset($CNF['FIELD_THUMB']) && !empty($aContentInfo[$CNF['FIELD_THUMB']])) {
+                $aResult[] = bx_api_get_image($CNF['OBJECT_STORAGE'], (int)$aContentInfo[$CNF['FIELD_THUMB']]);
+            }
+            return $aResult;
         }
+        else{
+            $iImageId = 0;
+            $sImageSm = $sImageMd = $sImageXl = '';
+            if(isset($CNF['FIELD_COVER']) && !empty($aContentInfo[$CNF['FIELD_COVER']])) {
+                $iImageId = (int)$aContentInfo[$CNF['FIELD_COVER']];
+                $sImageSm = $this->_oConfig->getImageUrl($iImageId, ['OBJECT_IMAGES_TRANSCODER_MINIATURE', 'OBJECT_IMAGES_TRANSCODER_THUMB']);
+                $sImageMd = $this->_oConfig->getImageUrl($iImageId, ['OBJECT_IMAGES_TRANSCODER_GALLERY', 'OBJECT_IMAGES_TRANSCODER_THUMB']);
+                $sImageXl = $this->_oConfig->getImageUrl($iImageId, ['OBJECT_IMAGES_TRANSCODER_COVER']);
+            }
 
-        if($sImageMd == '' && isset($CNF['FIELD_THUMB']) && !empty($aContentInfo[$CNF['FIELD_THUMB']])) {
-            $iImageId = (int)$aContentInfo[$CNF['FIELD_THUMB']];
-            $sImageSm = $this->_oConfig->getImageUrl($iImageId, ['OBJECT_IMAGES_TRANSCODER_MINIATURE', 'OBJECT_IMAGES_TRANSCODER_THUMB']);
-            $sImageMd = $this->_oConfig->getImageUrl($iImageId, ['OBJECT_IMAGES_TRANSCODER_GALLERY', 'OBJECT_IMAGES_TRANSCODER_THUMB']);
-            $sImageXl = $this->_oConfig->getImageUrl($iImageId, ['OBJECT_IMAGES_TRANSCODER_COVER']);
+            if($sImageMd == '' && isset($CNF['FIELD_THUMB']) && !empty($aContentInfo[$CNF['FIELD_THUMB']])) {
+                $iImageId = (int)$aContentInfo[$CNF['FIELD_THUMB']];
+                $sImageSm = $this->_oConfig->getImageUrl($iImageId, ['OBJECT_IMAGES_TRANSCODER_MINIATURE', 'OBJECT_IMAGES_TRANSCODER_THUMB']);
+                $sImageMd = $this->_oConfig->getImageUrl($iImageId, ['OBJECT_IMAGES_TRANSCODER_GALLERY', 'OBJECT_IMAGES_TRANSCODER_THUMB']);
+                $sImageXl = $this->_oConfig->getImageUrl($iImageId, ['OBJECT_IMAGES_TRANSCODER_COVER']);
+            }
+
+            if(empty($sImageMd))
+                return [];
+
+            if($sImageSm == '')
+                $sImageSm = $sImageMd;
+
+            if($sImageXl == '')
+                $sImageXl = $sImageMd;
+
+            return [[
+                'id' => $iImageId, 
+                'url' => $sUrl, 
+                'src' => $sImageMd, 
+                'src_small' => $sImageSm, 
+                'src_medium' => $sImageMd, 
+                'src_orig' => $sImageXl
+            ]];
         }
-
-        if(empty($sImageMd))
-            return [];
-
-        if($sImageSm == '')
-            $sImageSm = $sImageMd;
-
-        if($sImageXl == '')
-            $sImageXl = $sImageMd;
-
-        return [[
-            'id' => $iImageId, 
-            'url' => $sUrl, 
-            'src' => $sImageMd, 
-            'src_small' => $sImageSm, 
-            'src_medium' => $sImageMd, 
-            'src_orig' => $sImageXl
-        ]];
     }
 
     protected function _getImagesForTimelinePostAttach($aEvent, $aContentInfo, $sUrl, $aBrowseParams = array())
@@ -3456,12 +3502,11 @@ class BxBaseModGeneralModule extends BxDolModule
         $oCmts = BxDolCmts::getObjectInstance($sObject, $iId);
         if (!$oCmts || !$oCmts->isEnabled())
             return false;
-
         
-        if (defined('BX_API'))
-            return [['id' => 1, 'type' => 'browse', 'data' => $oCmts->getCommentsBlockAPI(array(), array('in_designbox' => false, 'show_empty' => false))]];
-
-        return $oCmts->getCommentsBlock(array(), array('in_designbox' => false, 'show_empty' => false));
+        if (bx_is_api()){
+            return [bx_srv('system', 'get_data_api', [['module' => $sObject, 'object_id' => $iId]], 'TemplCmtsServices')];
+        }
+        return $oCmts->getCommentsBlock([], ['in_designbox' => false, 'show_empty' => false]);
     }
 
     protected function _getFields($iContentId)

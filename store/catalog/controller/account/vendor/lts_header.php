@@ -68,6 +68,8 @@ class ControllerAccountVendorLtsHeader extends Controller {
       $data['home'] = $this->url->link('vendor/lts_dashboard', '', 'SSL'); 
     }
     
+    $data['customer_id'] = $this->customer->getId();
+
     return $this->load->view('account/vendor/lts_header', $data);
   }
 

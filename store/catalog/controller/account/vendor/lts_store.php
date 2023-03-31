@@ -402,6 +402,8 @@ class ControllerAccountVendorLtsStore extends Controller {
     $data['already_apply']= $this->model_account_vendor_lts_vendor->getVendorApplyInfo($this->customer->isLogged());
     $data['vendor_status']= $this->model_account_vendor_lts_vendor->getVendorStatus($this->customer->isLogged());
 
+    $data['customer_id'] = $this->customer->getId();
+
     $data['account_link'] = $this->url->link('account/account', '', true);
     $data['footer'] = $this->load->controller('account/vendor/lts_footer');
    

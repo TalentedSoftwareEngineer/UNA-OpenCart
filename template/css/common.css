@@ -221,8 +221,15 @@ blockquote {
 .bx-db-menu-tab {
     margin-left: 5px;
     text-align: right;
+    overflow-x: auto;
+}
+.bx-db-menu-tab.bx-db-menu-tab-more-auto {
+    overflow-x: visible;
 }
 
+.bx-db-menu-tab .bx-menu-custom-hor:not(.bx-menu-more-auto) {
+    width: max-content;
+}
 .bx-db-menu-tab-active {
     text-decoration:underline;
 }
@@ -279,8 +286,8 @@ blockquote {
 .bx-db-menu ul.bx-menu-hor,
 .bx-db-menu ul.bx-menu-custom.bx-menu-custom-hor,
 .bx-db-menu ul.bx-menu-custom.bx-menu-custom-hor.bx-menu-more-auto:not(.bx-menu-submenu-more-auto) {
-    display: -webkit-flex;
-    display: flex;
+    display: -webkit-inline-flex;
+    display: inline-flex;
     -webkit-justify-content: flex-end;
     justify-content: flex-end;
 }

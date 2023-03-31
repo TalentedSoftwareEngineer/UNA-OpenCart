@@ -28,7 +28,7 @@ class BxBaseVoteReactions extends BxDolVoteReactions
             'do_popup' => 'bx-vr-do-popup-' . $sHtmlId
         ));
 
-        $this->_aElementDefaults = array(
+        $this->_aElementDefaults = [
             'show_do_vote_as_button' => false,
             'show_do_vote_as_button_small' => false,
             'show_do_vote_icon' => true,
@@ -39,7 +39,10 @@ class BxBaseVoteReactions extends BxDolVoteReactions
             'show_counter_style' => self::$_sCounterStyleDivided, //--- Alloved styles are 'simple', 'divided' and 'compound'
             'show_legend' => false,
             'show_script' => true
-        );
+        ];
+        $this->_aElementDefaultsApi = array_merge($this->_aElementDefaults, [
+            'show_counter' => true,
+        ]);
 
         $this->_sTmplNameBySummary = 'vote_by_summary_reactions.html';
         $this->_sTmplNameByList = 'vote_by_list_reactions.html';
@@ -96,6 +99,31 @@ class BxBaseVoteReactions extends BxDolVoteReactions
             $sMethod = $sMethodPrefix . bx_gen_method_name($sDefault);
 
         return $this->$sMethod($aParams);
+    }
+
+    public function getCounterAPI($aParams = [])
+    {
+        $aParams = array_merge($this->_aElementDefaultsApi, $aParams);
+
+        $aVote = $this->_getVote();
+        $aReactions = $this->getReactions();
+
+        $aItems = [];
+        foreach($aReactions as $sName) {
+            $iCount = (int)$aVote['count_' . $sName];
+            $aItems[] = [
+                'name' => $sName,
+                'count' => $iCount,
+                'sum' => $aVote['sum_' . $sName],
+                'rate' => $aVote['rate_' . $sName],
+                'icon' => $this->getEmoji($sName),
+                'title' => _t($this->_aDataList[$sName]['title']),
+            ];
+        }
+
+        $sStyle = !empty($aParams['show_counter_style']) ? $aParams['show_counter_style'] : $this->_aElementDefaults['show_counter_style'];
+
+        return ['type' => $sStyle, 'items' => $aItems];
     }
 
     public function _getCounterSimple($aParams = array())
@@ -311,6 +339,16 @@ class BxBaseVoteReactions extends BxDolVoteReactions
 
         return parent::getElement($aParams);
     }
+    
+    public function getElementAPI($aParams = [])
+    {
+        $aResult = parent::getElementAPI($aParams);
+
+        if(($oDoVoteMenu = $this->_getDoVoteMenu()) !== false)
+            $aResult['action']['menu'] = $oDoVoteMenu->getCodeAPI();
+
+        return $aResult;
+    }
 
     /**
      * Internal methods.
@@ -365,6 +403,17 @@ class BxBaseVoteReactions extends BxDolVoteReactions
         else
             $sClass .= $bShowDoVoteAsButton || $bShowDoVoteAsButtonSmall ? ' bx-btn-disabled' : ' ' . $this->_sStylePrefix . '-disabled';
 
+        if($this->_bApi)
+            return [
+                'is_undo' => $bUndo,
+                'is_voted' => $bVoted,
+                'is_disabled' => $bDisabled,
+                'value' => $iValue,
+                'reaction' => $sReaction,
+                'icon' => ($sEmoji = $this->getEmoji($sReaction)) != '' ? $sEmoji : '', 
+                'title' => _t($this->_getTitleDoWithTrack($bVoted, $aParams['track'])),
+            ];
+
         return $this->_oTemplate->parseLink('javascript:void(0)', $this->_getDoVoteLabel($aParams), array(
             'class' => $this->_sStylePrefix . '-do-vote' . $sClass,
             'title' => _t($this->_getTitleDoWithTrack($bVoted, $aParams['track'])),
@@ -377,46 +426,82 @@ class BxBaseVoteReactions extends BxDolVoteReactions
     protected function _getDoVoteLabel($aParams = array())
     {
     	$bVoted = isset($aParams['is_voted']) && (bool)$aParams['is_voted'] === true;
+        $aTrack = $bVoted ? $aParams['track'] : [];
 
+        $sReaction = $bVoted ? $aTrack['reaction'] : $this->_sDefault;
+        $aReaction = $this->getReaction($sReaction);
+
+        $sUse = !empty($aReaction['use']) ? $aReaction['use'] : 'emoji';
+        if(!$bVoted && !empty($aReaction['default']))
+            $sUse = 'icon';
+        
         return $this->_oTemplate->parseHtmlByContent($this->_getTmplContentDoActionLabel(), array(
             'style_prefix' => $this->_sStylePrefix,
-            'bx_if:show_icon' => array(
+            'bx_if:show_icon' => [
                 'condition' => isset($aParams['show_do_vote_icon']) && (bool)$aParams['show_do_vote_icon'] === true,
-                'content' => array(
+                'content' => [
                     'style_prefix' => $this->_sStylePrefix,
-                    'name' => $this->_getIconDoWithTrack($bVoted, $aParams['track']),
-                    'emoji' => $this->_getEmojiDoWithTrack($bVoted, $aParams['track'])
-                )
-            ),
+                    'bx_if:show_as_icon' => [
+                        'condition' => $sUse == 'icon',
+                        'content' => [
+                            'name' => $sUse == 'icon' ? $this->_getIconDoWithTrack($bVoted, $aTrack) : '',
+                        ]
+                    ],
+                    'bx_if:show_as_emoji' => [
+                        'condition' => $sUse == 'emoji',
+                        'content' => [
+                            'emoji' => $sUse == 'emoji' ? $this->_getEmojiDoWithTrack($bVoted, $aTrack) : '',
+                        ]
+                    ],
+                    'bx_if:show_as_image' => [
+                        'condition' => $sUse == 'image',
+                        'content' => [
+                            'image' => $sUse == 'image' ? $this->_getImageDoWithTrack($bVoted, $aTrack) : '',
+                        ]
+                    ],
+                ]
+            ],
             'bx_if:show_text' => array(
                 'condition' => isset($aParams['show_do_vote_label']) && (bool)$aParams['show_do_vote_label'] === true,
                 'content' => array(
                     'style_prefix' => $this->_sStylePrefix,
-                    'text' => _t($this->_getTitleDoWithTrack($bVoted, $aParams['track']))
+                    'text' => _t($this->_getTitleDoWithTrack($bVoted, $aTrack))
                 )
             )
         ));
     }
 
-    public function _getDoVotePopup($iValue = 0)
+    public function _getDoVoteMenu($iValue = 0)
     {
         if(empty($iValue))
             $iValue = $this->getValue();
 
         $oMenu = BxTemplMenu::getObjectInstance($this->_sMenuDoVote);
         if(!$oMenu)
-            return '';
+            return false;
 
         $oMenu->setParams(array(
             'object' => &$this,
             'value' => $iValue,
         ));
+        return $oMenu;
+    }
+
+    public function _getDoVotePopup($iValue = 0)
+    {
+        $oMenu = $this->_getDoVoteMenu($iValue);
+        if($oMenu === false)
+            return '';
+
         return $oMenu->getCode();
     }
 
     protected function _getCounterLabel($iCount, $aParams = array())
     {
         $sReaction = !empty($aParams['reaction']) ? $aParams['reaction'] : $this->_sDefault;
+        $aReaction = $this->getReaction($sReaction);
+
+        $sUse = !empty($aReaction['use']) ? $aReaction['use'] : 'emoji';
 
         return $this->_oTemplate->parseHtmlByContent($this->_getTmplContentCounterLabel(), array(
             'style_prefix' => $this->_sStylePrefix,
@@ -424,8 +509,24 @@ class BxBaseVoteReactions extends BxDolVoteReactions
                 'condition' => !isset($aParams['show_counter_label_icon']) || (bool)$aParams['show_counter_label_icon'] === true,
                 'content' => array(
                     'style_prefix' => $this->_sStylePrefix,
-                    'name' => $this->getIcon($sReaction),
-                    'emoji' => $this->getEmoji($sReaction),
+                    'bx_if:show_as_icon' => [
+                        'condition' => $sUse == 'icon',
+                        'content' => [
+                            'name' => $sUse == 'icon' ? $this->getIcon($sReaction) : '',
+                        ]
+                    ],
+                    'bx_if:show_as_emoji' => [
+                        'condition' => $sUse == 'emoji',
+                        'content' => [
+                            'emoji' => $sUse == 'emoji' ? $this->getEmoji($sReaction) : '',
+                        ]
+                    ],
+                    'bx_if:show_as_image' => [
+                        'condition' => $sUse == 'image',
+                        'content' => [
+                            'image' => $sUse == 'image' ? $this->getImage($sReaction) : '',
+                        ]
+                    ],
                     'title_attr' => bx_html_attribute(_t($this->_aDataList[$sReaction]['title'])),
                 )
             ),
@@ -444,6 +545,8 @@ class BxBaseVoteReactions extends BxDolVoteReactions
         if(!isset($aParams['reaction']))
             return $this->_getVotedBySummary($aParams);
 
+        $aReactions = $this->getReactions(true);
+
         $bSummary = $aParams['reaction'] == 'summary';
 
         $aBrowseParams = array('type' => 'by', 'object_id' => $this->getId());
@@ -456,17 +559,40 @@ class BxBaseVoteReactions extends BxDolVoteReactions
         foreach($aValues as $mValue) {
             $mValue = is_array($mValue) ? $mValue : array('author_id' => (int)$mValue, 'reaction' => '');
 
+            $aTmplReaction = [];
+            if($bSummary) {
+                $sUse = !empty($aReactions[$mValue['reaction']]['use']) ? $aReactions[$mValue['reaction']]['use'] : 'emoji';
+
+                $aTmplReaction = [
+                    'style_prefix' => $this->_sStylePrefix,
+                    'bx_if:show_as_icon' => [
+                        'condition' => $sUse == 'icon',
+                        'content' => [
+                            'name' => $sUse == 'icon' ? $this->getIcon($mValue['reaction']) : '',
+                        ]
+                    ],
+                    'bx_if:show_as_emoji' => [
+                        'condition' => $sUse == 'emoji',
+                        'content' => [
+                            'emoji' => $sUse == 'emoji' ? $this->getEmoji($mValue['reaction']) : '',
+                        ]
+                    ],
+                    'bx_if:show_as_image' => [
+                        'condition' => $sUse == 'image',
+                        'content' => [
+                            'image' => $sUse == 'image' ? $this->getImage($mValue['reaction']) : '',
+                        ]
+                    ],
+                ];
+            }
+            
             list($sUserName, $sUserUrl, $sUserIcon, $sUserUnit) = $this->_getAuthorInfo($mValue['author_id']);
             $aTmplUsers[] = array(
                 'style_prefix' => $this->_sStylePrefix,
                 'user_unit' => $sUserUnit,
                 'bx_if:show_reaction' => array(
                     'condition' => $bSummary,
-                    'content' => array(
-                        'style_prefix' => $this->_sStylePrefix,
-                        'icon' => $bSummary ? $this->getIcon($mValue['reaction']) : '',
-                        'emoji' => $bSummary ? $this->getEmoji($mValue['reaction']) : ''
-                    )
+                    'content' => $aTmplReaction
                 )
             );
         }
@@ -486,21 +612,36 @@ class BxBaseVoteReactions extends BxDolVoteReactions
         $sJsObject = $this->getJsObjectName();
 
         $sTxtSummary = _t('_vote_do_by_summary');
-        $aReactions = array_merge(array('summary'), $this->getReactions());
+        $aReactions = array_merge(['summary' => []], $this->getReactions(true));
 
         $aMenuItems = array();
         $aTmplVarsLists = array();
-        foreach ($aReactions as $sReaction) {
+        foreach ($aReactions as $sReaction => $aReaction) {
             if($sReaction == $this->_sDefault)
                 continue;
 
             $bSummary = $sReaction == 'summary';
+            $sUse = !empty($aReaction['use']) ? $aReaction['use'] : 'emoji';
+            
+            $sIcon = '';
+            switch($sUse) {
+                case 'icon':
+                    $sIcon = $this->_oTemplate->parseIcon($this->getIcon($sReaction));
+                    break;
 
-            $sName = $this->_sStylePrefix . '-' . $sReaction;
-            $sEmoji = $this->getEmoji($sReaction);
-            $sTitle = !$bSummary ? $this->_oTemplate->parseIcon($sEmoji ? $sEmoji : $this->getIcon($sReaction)) : $sTxtSummary;
+                case 'emoji':
+                    $sIcon = $this->getEmoji($sReaction);
+                    break;
+
+                case 'image':
+                    $sIcon = $this->getImage($sReaction);
+                    break;
+            }
+
+            $sTitle = !$bSummary ? $sIcon : $sTxtSummary;
             $sTitleAttr = !$bSummary ? _t('_vote_do_by_x_reaction', _t($this->_aDataList[$sReaction]['title'])) : $sTxtSummary;
 
+            $sName = $this->_sStylePrefix . '-' . $sReaction;
             $aMenuItems[] = array('id' => $sName, 'name' => $sName, 'class' => '', 'link' => 'javascript:void(0)', 'onclick' => 'javascript:' . $sJsObject . '.changeVotedBy(this, \'' . $sReaction . '\')', 'target' => '_self', 'title' => $sTitle, 'title_attr' => $sTitleAttr, 'active' => 1);
 
             $aTmplVarsLists[] = array(

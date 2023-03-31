@@ -1,18 +1,18 @@
 <?php
 // HTTP
-define('HTTP_SERVER', 'http://localhost/UNA-v.13.0.0-RC2/store/admin/');
-define('HTTP_CATALOG', 'http://localhost/UNA-v.13.0.0-RC2/store/');
+define('HTTP_SERVER', 'http://localhost/UNA/store/admin/');
+define('HTTP_CATALOG', 'http://localhost/UNA/store/');
 
 // HTTPS
-define('HTTPS_SERVER', 'http://localhost/UNA-v.13.0.0-RC2/store/admin/');
-define('HTTPS_CATALOG', 'http://localhost/UNA-v.13.0.0-RC2/store/');
+define('HTTPS_SERVER', 'http://localhost/UNA/store/admin/');
+define('HTTPS_CATALOG', 'http://localhost/UNA/store/');
 
 // DIR
-define('DIR_APPLICATION', 'C:/xampp/htdocs/UNA-v.13.0.0-RC2/store/admin/');
-define('DIR_SYSTEM', 'C:/xampp/htdocs/UNA-v.13.0.0-RC2/store/system/');
-define('DIR_IMAGE', 'C:/xampp/htdocs/UNA-v.13.0.0-RC2/store/image/');
+define('DIR_APPLICATION', 'C:/xampp/htdocs/UNA/store/admin/');
+define('DIR_SYSTEM', 'C:/xampp/htdocs/UNA/store/system/');
+define('DIR_IMAGE', 'C:/xampp/htdocs/UNA/store/image/');
 define('DIR_STORAGE', DIR_SYSTEM . 'storage/');
-define('DIR_CATALOG', 'C:/xampp/htdocs/UNA-v.13.0.0-RC2/store/catalog/');
+define('DIR_CATALOG', 'C:/xampp/htdocs/UNA/store/catalog/');
 define('DIR_LANGUAGE', DIR_APPLICATION . 'language/');
 define('DIR_TEMPLATE', DIR_APPLICATION . 'view/template/');
 define('DIR_CONFIG', DIR_SYSTEM . 'config/');

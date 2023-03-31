@@ -11,8 +11,10 @@ $_['text_payment']				='付款';
 $_['text_filter']				='过滤器';
 $_['text_store']				='商店信息';
 $_['text_setting']				='设置';
+$_['text_physical']              = 'Physical';
+$_['text_virtual']              = 'Virtual';
 $_['text_visit_store']			='访问商店';
-$_['text_subscription']			='订阅计划'；
+$_['text_subscription']			='订阅计划';
 	
 
 $_['text_coupon']				='优惠券';

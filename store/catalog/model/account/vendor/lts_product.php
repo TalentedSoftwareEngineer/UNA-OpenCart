@@ -180,7 +180,9 @@ class ModelAccountVendorLtsProduct extends Model {
 
     if (isset($data['image'])) {
       $this->db->query("UPDATE " . DB_PREFIX . "product SET image = '" . $this->db->escape($data['image']) . "' WHERE product_id = '" . (int) $product_id . "'");
+      $this->db->query("UPDATE " . DB_PREFIX . "lts_mads SET image = '" . $data['image'] . "' WHERE product_id = " . (int) $product_id);
     }
+
    if (isset($data['quantity'])) {
      $this->db->query("UPDATE " . DB_PREFIX . "lts_product SET quantity = '" . (int) $data['quantity'] . "'  WHERE vendor_id = '" . (int)$vendor_id . "' AND product_id = '" . (int) $product_id . "'");
     }
@@ -188,9 +190,8 @@ class ModelAccountVendorLtsProduct extends Model {
     $this->db->query("DELETE FROM " . DB_PREFIX . "product_description WHERE product_id = '" . (int) $product_id . "'");
 
     foreach ($data['product_description'] as $language_id => $value) {
-
-
       $this->db->query("INSERT INTO " . DB_PREFIX . "product_description SET product_id = '" . (int) $product_id . "', language_id = '" . (int) $language_id . "', name = '" . $this->db->escape($value['name']) . "', description = '" . $this->db->escape($value['description']) . "', tag = '" . $this->db->escape($value['tag']) . "', meta_title = '" . $this->db->escape($value['meta_title']) . "', meta_description = '" . $this->db->escape($value['meta_description']) . "', meta_keyword = '" . $this->db->escape($value['meta_keyword']) . "'");
+      $this->db->query("UPDATE " . DB_PREFIX . "lts_mads SET name = '" . $this->db->escape($value['name']) . "', description = '" . $this->db->escape($value['description']) . "' WHERE product_id = " . (int) $product_id);
     }
 
     $this->db->query("DELETE FROM " . DB_PREFIX . "product_to_store WHERE product_id = '" . (int) $product_id . "'");
@@ -283,6 +284,7 @@ class ModelAccountVendorLtsProduct extends Model {
     if (isset($data['product_category'])) {
       foreach ($data['product_category'] as $category_id) {
         $this->db->query("INSERT INTO " . DB_PREFIX . "product_to_category SET product_id = '" . (int) $product_id . "', category_id = '" . (int) $category_id . "'");
+        $this->db->query("UPDATE " . DB_PREFIX . "lts_mads SET category_id = '" . $category_id . "' WHERE product_id = " . (int) $product_id);
       }
     }
 
@@ -395,6 +397,7 @@ class ModelAccountVendorLtsProduct extends Model {
     $this->db->query("DELETE FROM " . DB_PREFIX . "review WHERE product_id = '" . (int) $product_id . "'");
     $this->db->query("DELETE FROM " . DB_PREFIX . "seo_url WHERE query = 'product_id=" . (int) $product_id . "'");
     $this->db->query("DELETE FROM " . DB_PREFIX . "coupon_product WHERE product_id = '" . (int) $product_id . "'");
+    $this->db->query("DELETE FROM " . DB_PREFIX . "lts_mads WHERE product_id = '" . (int) $product_id . "'");
 
     $this->cache->delete('product');
   }

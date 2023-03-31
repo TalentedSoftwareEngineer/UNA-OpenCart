@@ -6,7 +6,7 @@ class ControllerAccountVendorLtsCoupon extends Controller {
 
   public function index() {
 
-    $this->response->redirect($this->url->link('account/account', '', true));
+    // $this->response->redirect($this->url->link('account/account', '', true));
     
     if (!$this->customer->isLogged()) {
         $this->session->data['redirect'] = $this->url->link('account/account', '', true);

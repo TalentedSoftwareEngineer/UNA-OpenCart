@@ -8,6 +8,9 @@ class ControllerAccountVendorLtsColumnLeft extends Controller {
             $data = array();
 
             $this->load->language('account/vendor/lts_column_left');
+            $this->load->model('account/vendor/lts_vendor');
+
+            $vednor_info = $this->model_account_vendor_lts_vendor->getVendorStoreInfo($this->customer->isLogged());
 
             $data['menus'][] = array(
                 'id'       => 'menu-dashboard',
@@ -33,6 +36,15 @@ class ControllerAccountVendorLtsColumnLeft extends Controller {
                 'href'     => $this->url->link('account/vendor/lts_product', '', true),
                 'children' => array()       
             );
+
+            if($vednor_info['store_type'] == 1) {
+                $catalog[] = array(
+                    'icon'     => 'fa-object-group', 
+                    'name'     => $this->language->get('text_mads'),
+                    'href'     => $this->url->link('account/vendor/lts_mads', '', true),
+                    'children' => array()       
+                );
+            }
 
             $catalog[] = array(
                 'icon'     => 'fa-filter', 
@@ -153,9 +165,9 @@ class ControllerAccountVendorLtsColumnLeft extends Controller {
                 );      
             }
 
-              $withdrawal = array();
+            $withdrawal = array();
 
-             $withdrawal[] = array(
+            $withdrawal[] = array(
                 'icon'     => 'fa fa-money', 
                 'name'     => $this->language->get('Withdrawal'),
                 'href'     => $this->url->link('account/vendor/lts_withdrawal', '', true),
@@ -173,10 +185,9 @@ class ControllerAccountVendorLtsColumnLeft extends Controller {
                 );      
             }
 
-
             $store = array();
 
-             $store[] = array(
+            $store[] = array(
                 'icon'     => 'fa-info', 
                 'name'     => $this->language->get('text_store_info'),
                 'href'     => $this->url->link('account/vendor/lts_store', '', true),
@@ -190,22 +201,43 @@ class ControllerAccountVendorLtsColumnLeft extends Controller {
                 'children' => array()       
             );
 
-            $this->load->model('account/vendor/lts_vendor');
-
-            $vednor_info = $this->model_account_vendor_lts_vendor->getVendorStoreInfo($this->customer->isLogged());
             if(!empty($vednor_info)) {
                 $data['has_vendor_profile'] = true;
-                $store[] = array(
-                    'icon'     => 'fa-external-link', 
-                    'name'     => $this->language->get('text_visit_store'),
-                    'href'     => $this->url->link('vendor/lts_visit', 'vendor_id='. $vednor_info['vendor_id'], true),
-                    'children' => array()       
-                );
+                // $store[] = array(
+                //     'icon'     => 'fa-external-link', 
+                //     'name'     => $this->language->get('text_visit_store'),
+                //     'href'     => $this->url->link('vendor/lts_visit', 'vendor_id='. $vednor_info['vendor_id'], true),
+                //     'children' => array()       
+                // );
 
             } else {
                 $data['has_vendor_profile'] = false;
             }
 
+			// Localisation
+			$localisation = array();
+
+            $localisation[] = array(
+                'name'	   => $this->language->get('text_zone'),
+                'href'     => $this->url->link('account/vendor/lts_zone', '', true),
+                'children' => array()
+            );
+
+            $localisation[] = array(
+                'name'	   => $this->language->get('text_geo_zone'),
+                'href'     => $this->url->link('account/vendor/lts_geo_zone', '', true),
+                'children' => array()
+            );
+            
+            if($vednor_info['store_type'] == 1) {
+                if ($localisation) {
+                    $store[] = array(
+                        'name'	   => $this->language->get('text_localisation'),
+                        'href'     => '',
+                        'children' => $localisation
+                    );
+                }
+            }
            
             if ($store) {
                 $data['menus'][] = array(
@@ -216,6 +248,29 @@ class ControllerAccountVendorLtsColumnLeft extends Controller {
                     'children' => $store
                 );      
             }
+
+			// Marketing
+			$marketing = array();
+            $marketing[] = array(
+                'icon'     => 'fa-gift', 
+                'name'     => $this->language->get('text_coupon'),
+                'href'     => $this->url->link('account/vendor/lts_coupon', '', true),
+                'children' => array()       
+            );
+
+            if($vednor_info['store_type'] == 1) {
+                if ($marketing) {
+                    $data['menus'][] = array(
+                        'id'       => 'menu-marketing',
+                        'icon'	   => 'fa-share-alt',
+                        'name'	   => $this->language->get('text_marketing'),
+                        'href'     => '',
+                        'children' => $marketing
+                    );
+                }
+            }
+            
+            $data['customer_id'] = $this->customer->getId();
 
             if($data['has_vendor_profile']) {
                 return $this->load->view('account/vendor/lts_column_left', $data);

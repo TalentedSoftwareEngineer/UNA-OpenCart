@@ -2,7 +2,7 @@
 /**
  * Copyright (c) Vendor
  * 
- * @defgroup    Test Test module
+ * @defgroup    OCI module
  * @ingroup     VendorModules
  *
  * @{
@@ -10,7 +10,7 @@
 
 bx_import('BxDolStudioInstaller');
 
-class VndTestInstaller extends BxDolStudioInstaller 
+class VndOCIInstaller extends BxDolStudioInstaller 
 {
     function __construct($aConfig) 
     {

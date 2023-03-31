@@ -13,7 +13,7 @@ $aConfig = array(
 	 * Main Section.
 	 */
 	'type' => BX_DOL_MODULE_TYPE_MODULE,
-    'name' => 'vnd_test',
+    'name' => 'vnd_oci',
 	'title' => 'OCI',
     'note' => 'OCI modules',
 	'version' => '1.0.0',
@@ -31,13 +31,13 @@ $aConfig = array(
 	'home_dir' => 'vendor/OCI/',
 	'home_uri' => 'OCI',
 	
-	'db_prefix' => 'vnd_test',
-	'class_prefix' => 'VndTest',
+	'db_prefix' => 'vnd_oci',
+	'class_prefix' => 'VndOCI',
 
 	/**
 	 * Category for language keys.
 	 */
-	'language_category' => 'Vendor Test',
+	'language_category' => 'Vendor OCI',
 
 	/**
 	 * Installation/Uninstallation Section.

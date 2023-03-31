@@ -1,0 +1,384 @@
+<style type="text/css">
+  #productSearchInput {
+    width: 100%;
+    font-size: 16px;
+    padding: 12px 20px 12px 45px;
+    border: 1px solid #ddd;
+    margin-bottom: 0px;
+  }
+
+  #productsList {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    z-index: 200;
+    width: 100%;
+    max-height: 300px;
+    overflow-y: auto;
+    border-bottom: 1px solid #ddd;
+  }
+
+  #productsList li a {
+    border: 1px solid #ddd;
+    margin-top: -1px; /* Prevent double borders */
+    background-color: #ffffff;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    color: black;
+    display: block;
+    cursor: pointer;
+    flex: 1;
+  }
+
+  #productsList li a:hover:not(.header) {
+    background-color: #eee;
+  }
+
+  .icon {
+    position: absolute;  
+    top: 50%;
+    left: 13px;
+    font-size: 24px !important;
+    transform: translateY(-50%);
+  }
+
+  .sub-quantity {
+    border: none;
+    outline: none;
+    text-align: left;
+    width: 100%;
+    background-color: transparent;
+  }
+</style>
+{{ header }}{{ column_left }}
+<div id="content">
+  <div class="page-header">
+    <div class="container-fluid">
+      <div class="pull-right">
+        <button type="button" data-toggle="tooltip" title="{{ help_button_preview }}" onclick="$('#preview-mads').toggleClass('hidden-sm hidden-xs');" class="btn btn-default hidden-md hidden-lg"><i class="fa fa-eye"></i></button>
+        <button type="submit" form="form-mads" data-toggle="tooltip" title="{{ button_save }}" class="btn btn-primary"><i class="fa fa-save"></i></button>
+        <a href="{{ cancel }}" data-toggle="tooltip" title="{{ button_cancel }}" class="btn btn-default"><i class="fa fa-reply"></i></a></div>
+      <h1>{{ heading_title }}</h1>
+      <ul class="breadcrumb">
+        {% for breadcrumb in breadcrumbs %}
+        <li><a href="{{ breadcrumb.href }}">{{ breadcrumb.text }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+  <div class="container-fluid">
+    {% if error_warning %}
+    <div class="alert alert-danger alert-dismissible"><i class="fa fa-exclamation-circle"></i> {{ error_warning }}
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+    </div>
+    {% endif %}
+    <div class="row">
+      <div id="preview-mads" class="col-md-3 col-md-push-9 col-sm-12 hidden-sm hidden-xs">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title"><i class="fa fa-eye"></i> {{ text_preview }}</h3>
+          </div>
+          <div class="panel-body">
+            <div class="form-group">
+              <h2 id="preview-title"></h2>
+              <div class="img-thumbnail" style="width: 100%;">
+                <img id="preview_mads_image" src="{{ thumb }}" alt="" title="" data-placeholder="{{ placeholder }}" style="width: 100%;height: auto;" />
+              </div>
+            </div>
+            <div class="form-group">
+              <div style="display: flex;flex-direction: column;gap: 10px;">
+                <div>
+                  <label class="control-label">{{ entry_description }}</label>
+                  <p id="preview-description">{{description}}</p>
+                </div>
+                <div>
+                  <label class="control-label">{{ entry_message_purchaser }}</label>
+                  <p id="preview-message_purchaser">{{message_purchaser}}</p>
+                </div>
+                <div>
+                  <label class="control-label">{{ entry_commission }}</label>
+                  <p id="preview-commission">{{commission}}</p>
+                </div>
+              </div>
+            </div>
+            {# <div class="form-group text-right">
+              <button type="button" id="button-save" class="btn btn-default"><i class="fa fa-save"></i> {{ button_save }}</button>
+            </div> #}
+          </div>
+        </div>
+      </div>
+      <div class="col-md-9 col-md-pull-3 col-sm-12">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title"><i class="fa fa-pencil"></i> {{ text_form }}</h3>
+          </div>
+          <div class="panel-body">
+            <form action="{{ action }}" method="post" enctype="multipart/form-data" id="form-mads" class="form-horizontal">
+              <div class="form-group required">
+                <label class="col-sm-2 control-label" for="input-title">{{ entry_title }}</label>
+                <div class="col-sm-10">
+                  <input type="text" name="title" value="{{ title }}" placeholder="{{ entry_title }}" id="input-title" class="form-control" />
+                  {% if error_title %}
+                    <div class="text-danger">{{ error_title }}</div>
+                  {% endif %}
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 control-label" for="input-commission">{{ entry_commission }}</label>
+                <div class="col-sm-10">
+                  <input type="text" name="commission" value="{{ commission }}" placeholder="{{ entry_commission }}" id="input-commission" class="form-control" />
+                  {% if error_commission %}
+                    <div class="text-danger">{{ error_commission }}</div>
+                  {% endif %}
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 control-label" for="input-category">{{ entry_category }}</label>
+                <div class="col-sm-10">
+                  <select name="category_id" id="input-category" class="form-control">
+                    {% for category_item in categories %}
+                      {% if category_item.category_id == category_id %}
+                        <option value="{{ category_item.category_id }}" selected="selected">{{ category_item.name }}</option>
+                      {% else %}
+                        <option value="{{ category_item.category_id }}">{{ category_item.name }}</option>
+                      {% endif %}
+                    {% endfor %}
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 control-label" for="input-description">{{ entry_description }}</label>
+                <div class="col-sm-10">
+                  <textarea name="description" rows="5" placeholder="{{ entry_description }}" id="input-description" class="form-control">{{ description }}</textarea>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 control-label" for="input-message_purchaser">{{ entry_message_purchaser }}</label>
+                <div class="col-sm-10">
+                  <textarea name="message_purchaser" rows="5" placeholder="{{ entry_message_purchaser }}" id="input-message_purchaser" class="form-control">{{ message_purchaser }}</textarea>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 control-label" for="input-main_image">{{ entry_main_image }}</label>
+                <div class="col-sm-10">
+                  <a href="" id="thumb-image" data-toggle="image" class="img-thumbnail"><img src="{{ thumb }}" id="mads_image" alt="" title="" data-placeholder="{{ placeholder }}" /></a>
+                  <input type="hidden" name="main_image" value="{{ main_image }}" id="input-main_image" />
+                </div>
+              </div>
+              <input type="hidden" name="sub_products" value="{{ sub_products }}" id="input-sub_products" />
+              <input type="hidden" name="sub_products_quantity" value="{{ sub_products_quantity }}" id="sub_products_quantity" />
+            </form>
+          </div>
+        </div>
+
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title"><i class="fa fa-list"></i> {{ text_sub_product }}</h3>
+          </div>
+          <div class="panel-body">
+            <div style="margin-bottom: 30px;position: relative;">
+              <div style="position:relative;">
+                <i class="fa fa-search icon"></i>
+                <input type="text" id="productSearchInput" onkeyup="filterProducts()" placeholder="Search for names.." title="Type in a name">
+              </div>
+
+              <ul id="productsList">
+                {% if all_products %}
+                  {% for product in all_products %}
+                    <li style="display: flex;">
+                      {% if product.image %} 
+                        <img src="{{ product.image }}" alt="{{ product.name }}" class="img-thumbnail" />
+                      {% else %}
+                        <span class="img-thumbnail list"><i class="fa fa-camera fa-2x"></i></span>
+                      {% endif %}
+                      <a onclick="onAddSubProduct(event, '{{product.product_id}}', '{{product.image}}', '{{product.name}}', '{{product.model}}', '{{product.price}}', '{{product.special}}', '{{product.quantity}}', '{{product.status}}')">{{ product.name }}</a>
+                    </li>
+                  {% endfor %}
+                {% endif %}
+              </ul>
+            </div>
+
+            <div class="table-responsive">
+              <table class="table table-bordered table-hover">
+                <thead>
+                  <tr>
+                    <td class="text-center">{{ column_sub_image }}</td>
+                    <td class="text-left">{% if sort == 'pd.name' %} <a href="{{ sort_name }}" class="{{ order|lower }}">{{ column_sub_name }}</a> {% else %} <a href="{{ sort_name }}">{{ column_sub_name }}</a> {% endif %}</td>
+                    <td class="text-left">{% if sort == 'p.model' %} <a href="{{ sort_model }}" class="{{ order|lower }}">{{ column_sub_model }}</a> {% else %} <a href="{{ sort_model }}">{{ column_sub_model }}</a> {% endif %}</td>
+                    <td class="text-left">{% if sort == 'p.price' %} <a href="{{ sort_price }}" class="{{ order|lower }}">{{ column_sub_price }}</a> {% else %} <a href="{{ sort_price }}">{{ column_sub_price }}</a> {% endif %}</td>
+                    <td class="text-left">{{ column_sub_quantity }}</td>
+                    <td class="text-left">{% if sort == 'p.status' %} <a href="{{ sort_status }}" class="{{ order|lower }}">{{ column_sub_status }}</a> {% else %} <a href="{{ sort_status }}">{{ column_sub_status }}</a> {% endif %}</td>
+                    <td class="text-right">{{ column_sub_action }}</td>
+                  </tr>
+                </thead>
+                <tbody id="added_subproducts_tbody">
+                  {% if table_sub_products %}
+                    {% for product in table_sub_products %}
+                      <tr>
+                        <td class="text-center">{% if product.image %} <img src="{{ product.image }}" alt="{{ product.name }}" class="img-thumbnail" /> {% else %} <span class="img-thumbnail list"><i class="fa fa-camera fa-2x"></i></span> {% endif %}</td>
+                        <td class="text-left">{{ product.name }}</td>
+                        <td class="text-left">{{ product.model }}</td>
+                        <td class="text-left">
+                          {% if product.special %} <span style="text-decoration: line-through;">{{ product.price }}</span><br />
+                          <div class="text-danger" data-toggle="popover" title="{{ text_calculator }}" data-content="{{ text_admin_commission }} </br> {{ text_getway_charge }}">{{ product.special }}</div>
+                          {% else %}
+                          <div class="text" data-toggle="popover" title="{{ text_calculator }}" data-content="{{ text_admin_commission }} , {{ text_getway_charge }}">{{ product.price }}</div>
+                          {% endif %}
+                        </td>
+                        <td class="text-left"><input onchange="onChangeSubQuantity(event)" id="sub_quantity-{{product.product_id}}" class="sub-quantity" type="number" value="{{ product.quantity }}" /></td>
+                        <td class="text-left"><kbd>{{ product.status }}</kbd></td>
+                        <td class="text-right">
+                          <button data-toggle="tooltip" onclick="onRemoveSubProduct('{{product.product_id}}')" title="{{ button_delete }}" class="btn btn-danger"><i class="fa fa-trash-o"></i></button>
+                        </td>
+                      </tr>
+                    {% endfor %}
+                  {% endif %}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <span style="display: none;" id="input-json_sub_products">{{ json_sub_products }}</span>
+
+  <script type="text/javascript"><!--
+    filterProducts();
+    {# var addedSubProducts = JSON.parse($('#input-json_sub_products').text()); #}
+    var addedSubProducts = '{{ json_sub_products }}' == '' ? [] : JSON.parse('{{ json_sub_products }}');
+    var subProductsQuantities = ('{{ sub_products_quantity }}' == '' || '{{ sub_products_quantity }}' == '[{') ? [] : JSON.parse('{{ sub_products_quantity }}');
+    setSubProductsQuantity();
+    
+    $('#input-title').on('keyup', function() {
+      $('#preview-title').text($('#input-title').val());
+    });
+    $('#input-commission').on('keyup', function() {
+      $('#preview-commission').text($('#input-commission').val());
+    });
+    $('#input-message_purchaser').on('keyup', function() {
+      $('#preview-message_purchaser').text($('#input-message_purchaser').val());
+    });
+    $('#input-description').on('keyup', function() {
+      $('#preview-description').text($('#input-description').val());
+    });
+
+    $('#mads_image').on('load', function () {
+      $('#preview_mads_image').attr('src', $('#mads_image').attr('src'));
+    });
+
+    function onChangeSubQuantity(event) {
+      let quantity_value = Number(event.target.value);
+      if(quantity_value <= 0 ) {
+        $(event.target).val(1);
+        return;
+      }
+
+      subProductsQuantities = addedSubProducts.map(function(item) {
+        return {product_id: item.product_id, quantity: $('#sub_quantity-' + item.product_id).val()}
+      });
+      $('#sub_products_quantity').val(JSON.stringify(subProductsQuantities));
+    }
+
+    function setSubProductsQuantity() {
+      subProductsQuantities = addedSubProducts.map(function(item) {
+        return {product_id: item.product_id, quantity: $('#sub_quantity-' + item.product_id).val()}
+      });
+      $('#sub_products_quantity').val(JSON.stringify(subProductsQuantities));
+    }
+
+    function onAddSubProduct(event, product_id, image, name, model, price, special, quantity, status) {
+      if(addedSubProducts.findIndex(function (item){return item.product_id == product_id})==-1) {
+        addedSubProducts.push({product_id, image, name, model, price, special, quantity, status});
+        $('#input-sub_products').val(String(addedSubProducts.map(function(item){return item.product_id})));
+
+        subProductsQuantities.push({product_id: product_id, quantity: 1});
+        $('#sub_products_quantity').val(JSON.stringify(subProductsQuantities));
+      }
+      $('#added_subproducts_tbody').empty();
+      $.each(addedSubProducts, function(index, item){
+        addSubProductTr(item);
+      });
+      closeSearchPanel();
+    }
+
+    function onRemoveSubProduct(product_id) {
+      let index = addedSubProducts.findIndex(function (item){return item.product_id == product_id});
+      addedSubProducts.splice(index, 1);
+      $('#input-sub_products').val(String(addedSubProducts.map(function(item){return item.product_id})));
+
+      let quantity_index = subProductsQuantities.findIndex(function (item){return item.product_id == product_id});
+      subProductsQuantities.splice(quantity_index, 1);
+      $('#sub_products_quantity').val(JSON.stringify(subProductsQuantities));
+
+      $('#added_subproducts_tbody').empty();
+      $.each(addedSubProducts, function(index, item){
+        addSubProductTr(item);
+      });
+    }
+
+    function filterProducts() {
+      var filter, txtValue;
+      filter = $('#productSearchInput').val().toUpperCase();
+
+      $.each($('#productsList li'), function(index, item) {
+        txtValue = $($(item).find("a")[0]).text().toUpperCase();
+
+        if (txtValue.indexOf(filter) > -1 && filter!='') {
+            $(item).css('display', 'flex');
+        } else {
+            $(item).css('display', 'none');
+        }
+      });
+    }
+
+    function closeSearchPanel() {
+      $('#productSearchInput').val('');
+      filterProducts();
+    }
+
+    function getSubProductQuantity(product_id) {
+      if(Boolean(subProductsQuantities.find(function(item){return item.product_id == product_id}))) {
+        return subProductsQuantities.find(function(item){return item.product_id == product_id}).quantity;
+      } else {
+        return 1;
+      }
+    }
+
+    function addSubProductTr(product) {
+      var html = '';
+      html += '<tr>';
+      html += '<td class="text-center">';
+      html += Boolean(product.image) 
+              ? ('<img src="' + product.image+ '" alt="' + product.name + '" class="img-thumbnail" />')
+              : ('<span class="img-thumbnail list"><i class="fa fa-camera fa-2x"></i></span>');
+      html += '</td>';
+      html += '<td class="text-left">' + product.name + '</td>';
+      html += '<td class="text-left">' + product.model + '</td>';
+      html += '<td class="text-right">';
+      html += Boolean(product.special) 
+              ? '<span style="text-decoration: line-through;">' + product.price + '</span><br/><div class="text-danger" data-toggle="popover" title="Price calculator" data-content="Admin commission(%s) </br> Payment getway charge">' + product.special + '</div>'
+              : '<div class="text" data-toggle="popover" title="Price calculator" data-content="Admin commission(%s), Payment getway charge">'+ product.price + '</div>';
+      html += '</td>';
+      html += '<td class="text-right">';
+      html += '<input onchange="onChangeSubQuantity(event)" id="sub_quantity-' + product.product_id + '" class="sub-quantity" type="number" value="' + getSubProductQuantity(product.product_id)  + '" />';
+      html += '</td>';
+      html += '<td class="text-left">';
+      html += '<kbd>'+ product.status + '</kbd>';
+      html += '</td>';
+      html += '<td class="text-right">';
+      html += '<button onclick="onRemoveSubProduct(' + product.product_id + ')" data-toggle="tooltip" title="Cancel" class="btn btn-danger"><i class="fa fa-trash-o"></i></button>';
+      html += '</td>';
+      html += '</tr>';
+      $('#added_subproducts_tbody').append(html);
+    }
+
+//--></script>
+
+{{ footer }}
+</div>
+

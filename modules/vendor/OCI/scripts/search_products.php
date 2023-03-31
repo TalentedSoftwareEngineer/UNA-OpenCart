@@ -9,17 +9,17 @@
     $basename = basename(BX_DIRECTORY_PATH_MODULES . '/OCI');
 
     $loggedProfileId = bx_get_logged_profile_id();
-    $isSelf = false;
+    $isSelf = true;
     if($loggedProfileId) {
         $oProfile = BxDolProfile::getInstance($loggedProfileId);
         $loggedId = $oProfile->getAccountId();
         $loggedUser = (array) OpenApiIntegration::getInstance()->getSysUserByProfileId($loggedProfileId)[0];
         $visitedUser = array('email'=>'');
         
-        $explodedUri = explode('/', $_SERVER['REQUEST_URI']);
-        if(count($explodedUri)>3)
+        $explodedUri = explode('/', strtok($_SERVER['REQUEST_URI'], '?'));
+        if(count($explodedUri)>2)
         {
-            $visitedUser_id_proId = (array) OpenApiIntegration::getInstance()->getSysAccountsIdProfileIdByUri($explodedUri[2], $explodedUri[3]);
+            $visitedUser_id_proId = (array) OpenApiIntegration::getInstance()->getSysAccountsIdProfileIdByUri($explodedUri[count($explodedUri)-2], $explodedUri[count($explodedUri)-1]);
             if($visitedUser_id_proId['param_name'] == 'profile_id') {
                 $isSelf = $loggedProfileId == $visitedUser_id_proId['param_value'];
                 $visitedUser = (array) OpenApiIntegration::getInstance()->getSysUserByProfileId($visitedUser_id_proId['param_value'])[0];
@@ -27,8 +27,9 @@
                 $isSelf = $loggedId == $visitedUser_id_proId['param_value'];
                 $visitedUser = (array) OpenApiIntegration::getInstance()->getSysUserById($visitedUser_id_proId['param_value'])[0];
             }
+
         } else {
-            $isSelf = false;
+            $isSelf = true;
         }
     }
 ?>
@@ -68,7 +69,7 @@
         }
     }
 
-    function onClickRemove(event, productInfo) {
+    function onClickRemoveFromBlock(event, productInfo) {
         var elmnt_block = $(event.target).parents('.bx-page-block-container')[0];
         var block_id = $(elmnt_block).attr('id').replace('bx-page-block-', '');
         $.fn.removeProductFromBlock(productInfo.product_id, block_id);
@@ -92,7 +93,7 @@
         let deleteBtn = $("<button><i class='fa fa-trash'></i>Remove</button>");
         deleteBtn.addClass('btn btn-outline-primary btn-block mt-2');
         deleteBtn.on('click', function() {
-            onClickRemove(event, productInfo);
+            onClickRemoveFromBlock(event, productInfo);
         });
 
         let cardBody = $("<div></div>");
@@ -122,9 +123,16 @@
 
     $.fn.displayBlockProduct = function(products, elmnt_pdt_in_block) {
         $(elmnt_pdt_in_block).empty();
-        products.forEach(function(item) {
-            $.fn.createProductCard(item, elmnt_pdt_in_block);
-        });
+        let tmp = [];
+        $.each(products, function(index, item) {tmp.push(item)});
+
+        if(tmp.length > 0) {
+            $.each(products, function(index, item) {
+                $.fn.createProductCard(item, elmnt_pdt_in_block);
+            });
+        } else {
+            $(elmnt_pdt_in_block).append('<h1>No Products Found</h1>');
+        }
     }
 
     $.fn.getFilteredBlockProductById = function(filterId, block_id) {
@@ -199,11 +207,16 @@
         $('.bx-page-block-container').each(function(index, item){
             if($(item).find('.products_in_block').length!==0) {
                 block_id = $(item).attr('id').replace('bx-page-block-', '');
+                if('<?= $isSelf ?>') {
+                    productOwner = '<?= $loggedUser['email'] ?>'
+                } else {
+                    productOwner = '<?= $visitedUser['email'] ?>'
+                }
                 $.ajax({
                     type: 'post',
                     url: BASIC_OPEN_CART_SERVER_API + 'route=api/product/getProductsInBlock',
                     data: {
-                        owner: '<?= $visitedUser['email'] ?>',
+                        owner: productOwner,
                         block_id: block_id
                     },
                     success: function(response) {

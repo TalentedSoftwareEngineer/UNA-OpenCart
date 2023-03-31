@@ -1,5 +1,6 @@
+
 <nav id="column-left">
-  <div id="navigation"><span class="fa fa-bars"></span> {{ text_navigation }}</div>
+  <div id="navigation"><span id="menu_title_icon"></span><span id="menu_title" style="margin-left: 10px;"></span></div>
   <ul id="menu">
     {% set i = 0 %}
     {% for menu in menus %}
@@ -65,4 +66,28 @@
       </li>
     </ul>
   </div>
+  
+  <span id="customer_id" style="display: none;">{{customer_id}}</span>
+  <script type="text/javascript">
+    $.ajax({
+      type: 'post',
+      url: 'index.php?route=api/store/getStoreType',
+      data: {
+        customer_id: Number($('#customer_id').text())
+      },
+      success: function(response){
+        if(Boolean(Number(response.store_type))) {
+          $('#menu_title').text('Physical store owner');
+          $('#menu_title_icon').addClass('fa fa-shopping-cart');
+        } else {
+          $('#menu_title').text('Virtual store owner');
+          $('#menu_title_icon').addClass('fa fa-tv');
+        }
+      },
+      error: function(error, ajaxOptions, thrownError) {
+          
+      }
+    });
+  </script>
 </nav>
+

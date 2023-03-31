@@ -1,4 +1,4 @@
-2023-02-19 19:27:12 - MOD: Modification Default
+2023-03-06 17:31:22 - MOD: Modification Default
 
 FILE: system/engine/action.php
 REGEX: ~(require|include)(_once)?\(([^)]+)~
@@ -37,7 +37,7 @@ LINE: 215
 CODE: 'system/library/',
 LINE: 141
 ----------------------------------------------------------------
-2023-02-19 19:28:34 - MOD: Modification Default
+2023-03-06 17:48:02 - MOD: Modification Default
 
 FILE: system/engine/action.php
 REGEX: ~(require|include)(_once)?\(([^)]+)~
@@ -296,7 +296,266 @@ FILE: catalog/model/catalog/category.php
 CODE: $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "category c LEFT JOIN " . DB_PREFIX . "category_description cd ON (c.category_id = cd.category_id) LEFT JOIN " . DB_PREFIX . "category_to_store c2s ON (c.category_id = c2s.category_id) WHERE c.parent_id = '" . (int)$parent_id . "' AND cd.language_id = '" . (int)$this->config->get('config_language_id') . "' AND c2s.store_id = '" . (int)$this->config->get('config_store_id') . "'  AND c.status = '1' ORDER BY c.sort_order, LCASE(cd.name)");
 LINE: 9
 ----------------------------------------------------------------
-2023-02-19 19:28:37 - MOD: Modification Default
+2023-03-06 17:48:05 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 69
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 77
+LINE: 151
+LINE: 168
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 59
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 67
+LINE: 73
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/twig.php
+CODE: if (is_file($file)) {
+LINE: 13
+----------------------------------------------------------------
+MOD: letscms-fixoc3installer
+
+FILE: admin/controller/marketplace/install.php
+CODE: $safe = false;
+LINE: 146
+CODE: if (is_dir($file) && !is_dir($path)) {
+LINE: 215
+CODE: 'system/library/',
+LINE: 141
+----------------------------------------------------------------
+MOD: Multi Vendor
+
+FILE: (sub modification) system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 69
+
+FILE: (sub modification) system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 77
+LINE: 151
+LINE: 168
+
+FILE: (sub modification) system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 59
+
+FILE: (sub modification) system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 67
+LINE: 73
+
+FILE: (sub modification) system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: (sub modification) system/library/template/twig.php
+CODE: if (is_file($file)) {
+LINE: 17
+
+FILE: admin/controller/common/column_left.php
+CODE: // Extension
+LINE: 332
+
+FILE: catalog/controller/account/account.php
+CODE: $this->load->language('account/account');
+LINE: 35
+
+FILE: catalog/view/theme/default/template/account/account.twig
+CODE: {{ content_bottom }}</div>
+LINE: 78
+CODE: <li><a href="{{ edit }}">{{ text_edit }}</a></li>
+LINE: 34
+
+FILE: admin/model/catalog/product.php
+CODE: $query = $this->db->query("SELECT `product_id` FROM `" . DB_PREFIX . "product_recurring` WHERE `product_id` = '" . (int)$product_id . "' AND `customer_group_id = '" . (int)$recurring['customer_group_id'] . "' AND `recurring_id` = '" . (int)$recurring['recurring_id'] . "'");
+LINE: 57
+CODE: $product_id = $this->db->getLastId();
+LINE: 15
+CODE: public function editProduct($product_id, $data) {
+LINE: 162
+CODE: $this->db->query("UPDATE " . DB_PREFIX . "product SET model = '" . $this->db->escape($data['model']) . "', sku = '" . $this->db->escape($data['sku']) . "', upc = '" . $this->db->escape($data['upc']) . "', ean = '" . $this->db->escape($data['ean']) . "', jan = '" . $this->db->escape($data['jan']) . "', isbn = '" . $this->db->escape($data['isbn']) . "', mpn = '" . $this->db->escape($data['mpn']) . "', location = '" . $this->db->escape($data['location']) . "', quantity = '" . (int)$data['quantity'] . "', minimum = '" . (int)$data['minimum'] . "', subtract = '" . (int)$data['subtract'] . "', stock_status_id = '" . (int)$data['stock_status_id'] . "', date_available = '" . $this->db->escape($data['date_available']) . "', manufacturer_id = '" . (int)$data['manufacturer_id'] . "', shipping = '" . (int)$data['shipping'] . "', price = '" . (float)$data['price'] . "', points = '" . (int)$data['points'] . "', weight = '" . (float)$data['weight'] . "', weight_class_id = '" . (int)$data['weight_class_id'] . "', length = '" . (float)$data['length'] . "', width = '" . (float)$data['width'] . "', height = '" . (float)$data['height'] . "', length_class_id = '" . (int)$data['length_class_id'] . "', status = '" . (int)$data['status'] . "', tax_class_id = '" . (int)$data['tax_class_id'] . "', sort_order = '" . (int)$data['sort_order'] . "', date_modified = NOW() WHERE product_id = '" . (int)$product_id . "'");
+LINE: 172
+CODE: public function deleteProduct($product_id) {
+LINE: 369
+
+FILE: catalog/model/checkout/order.php
+CODE: public function addOrder($data) {
+LINE: 6
+CODE: foreach ($order_products as $order_product) {
+LINE: 332
+CODE: foreach($order_products as $order_product) {
+LINE: 368
+CODE: public function editOrder($order_id, $data) {
+LINE: 54
+CODE: $order_product_id = $this->db->getLastId();
+LINE: 25
+LINE: 86
+CODE: return $order_id;
+LINE: 138
+CODE: $this->db->query("DELETE FROM " . DB_PREFIX . "order_total WHERE order_id = '" . (int)$order_id . "'");
+LINE: 211
+CODE: // Update the DB with the new statuses
+LINE: 593
+
+FILE: catalog/controller/product/product.php
+CODE: $this->model_catalog_review->addReview($this->request->get['product_id'], $this->request->post);
+LINE: 612
+
+FILE: catalog/controller/product/category.php
+CODE: foreach ($results as $result) {
+LINE: 185
+
+FILE: catalog/controller/product/search.php
+CODE: foreach ($results as $result) {
+LINE: 209
+
+FILE: catalog/model/catalog/review.php
+CODE: public function addReview($product_id, $data) {
+LINE: 2
+CODE: $review_id = $this->db->getLastId();
+LINE: 14
+
+FILE: catalog/model/catalog/product.php
+CODE: public function getProduct($product_id) {
+LINE: 13
+
+FILE: catalog/controller/common/cart.php
+CODE: $data['products'][] = array(
+LINE: 119
+CODE: $data['products'][] = array(
+LINE: 123
+
+FILE: catalog/controller/checkout/cart.php
+CODE: $data['products'][] = array(
+LINE: 157
+CODE: $data['products'][] = array(
+LINE: 161
+
+FILE: catalog/view/theme/default/template/checkout/cart.twig
+CODE: <a href="{{ product.href }}">{{ product.name }}</a>
+LINE: 53
+
+FILE: admin/language/en-gb/catalog/product.php
+CODE: $_['column_action']          = 'Action';
+LINE: 31
+
+FILE: catalog/language/en-gb/product/product.php
+CODE: $_['tab_review']               = 'Reviews (%s)';
+LINE: 49
+
+FILE: admin/controller/catalog/product.php
+CODE: $data['layouts'] = $this->model_design_layout->getLayouts();
+LINE: 1177
+CODE: $data['product_categories'] = array();
+LINE: 901
+
+FILE: admin/view/template/catalog/product_form.twig
+CODE: <div class="tab-pane" id="tab-data">
+LINE: 100
+CODE: <li><a href="#tab-special" data-toggle="tab">{{ tab_special }}</a></li>
+LINE: 41
+CODE: <div class="tab-pane" id="tab-image">
+LINE: 1005
+CODE: <script type="text/javascript" src="view/javascript/summernote/opencart.js"></script>
+LINE: 1192
+CODE: $('input[name=\'category\']').val('');
+LINE: 1398
+
+FILE: (sub modification) catalog/controller/product/product.php
+CODE: public function index() {
+LINE: 37
+
+FILE: (sub modification) catalog/controller/product/product.php
+CODE: $product_info = $this->model_catalog_product->getProduct($product_id);
+LINE: 198
+
+FILE: catalog/view/theme/default/template/product/product.twig
+CODE: <h1>{{ heading_title }}</h1>
+LINE: 146
+CODE: <h1>{{ heading_title }}</h1>
+LINE: 129
+CODE: {{ footer }}
+LINE: 604
+
+FILE: catalog/controller/startup/seo_url.php
+CODE: ($data['route'] == 'product/product' && $key == 'product_id')
+LINE: 78
+CODE: $query->row['query'] &&
+LINE: 43
+CODE: if ($url[0] == 'information_id') {
+LINE: 44
+CODE: $this->request->get['route'] = 'product/category';
+LINE: 64
+CODE: if (isset($data['route'])) {
+LINE: 89
+
+FILE: catalog/controller/api/order.php
+CODE: <?php
+LINE: 3
+CODE: $json['success'] = $this->language->get('text_success');
+LINE: 858
+
+FILE: (sub modification) catalog/controller/api/order.php
+CODE: $json['success'] = $this->language->get('text_success');
+LINE: 837
+CODE: $this->model_checkout_order->addOrderHistory($order_id, $order_status_id);
+LINE: 726
+
+FILE: catalog/controller/checkout/payment_address.php
+CODE: $this->load->model('localisation/country');
+LINE: 128
+
+FILE: catalog/controller/checkout/shipping_address.php
+CODE: $this->load->model('localisation/country');
+LINE: 146
+CODE: if (!$json) {
+LINE: 125
+CODE: public function save() {
+LINE: 95
+
+FILE: catalog/language/en-gb/checkout/checkout.php
+CODE: $_['text_cart']                      = 'Shopping Cart';
+LINE: 8
+
+FILE: (sub modification) catalog/controller/api/order.php
+CODE: $products = $this->cart->getProducts();
+LINE: 491
+
+FILE: (sub modification) catalog/controller/api/order.php
+CODE: $order_info = $this->model_checkout_order->getOrder($order_id);
+LINE: 805
+
+FILE: catalog/controller/account/success.php
+CODE: $this->load->language('account/success');
+LINE: 29
+
+FILE: catalog/view/theme/default/template/common/success.twig
+CODE: {{ content_bottom }}</div>
+LINE: 41
+CODE: <li><a href="{{ edit }}">{{ text_edit }}</a></li>
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/controller/account/login.php
+CODE: $customer_info = $this->model_account_customer->getCustomerByToken($this->request->get['token']);
+LINE: 32
+
+FILE: catalog/model/catalog/category.php
+CODE: $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "category c LEFT JOIN " . DB_PREFIX . "category_description cd ON (c.category_id = cd.category_id) LEFT JOIN " . DB_PREFIX . "category_to_store c2s ON (c.category_id = c2s.category_id) WHERE c.parent_id = '" . (int)$parent_id . "' AND cd.language_id = '" . (int)$this->config->get('config_language_id') . "' AND c2s.store_id = '" . (int)$this->config->get('config_store_id') . "'  AND c.status = '1' ORDER BY c.sort_order, LCASE(cd.name)");
+LINE: 9
+----------------------------------------------------------------
+2023-03-06 17:48:07 - MOD: Modification Default
 
 FILE: system/engine/action.php
 REGEX: ~(require|include)(_once)?\(([^)]+)~

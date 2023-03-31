@@ -8,7 +8,7 @@
 <?php
     require_once 'modules/vendor/OCI/api/opencart_api.php';
     $loggedProfileId = bx_get_logged_profile_id();
-    $isSelf = false;
+    $isSelf = true;
     $arr_my_products = array();
     if($loggedProfileId) {
         $oProfile = BxDolProfile::getInstance($loggedProfileId);
@@ -19,23 +19,27 @@
         $my_products = (array) OpenApiIntegration::getInstance()->getSelfProduct($loggedUser['email'], '');
         $arr_my_products = array_map(function($value){return (array) $value;}, $my_products);
         
-        $explodedUri = explode('/', $_SERVER['REQUEST_URI']);
-        if(count($explodedUri)>3)
+        $explodedUri = explode('/', strtok($_SERVER['REQUEST_URI'], '?'));
+        if(count($explodedUri)>2)
         {
-            $visitedUser_id_proId = (array) OpenApiIntegration::getInstance()->getSysAccountsIdProfileIdByUri($explodedUri[2], $explodedUri[3]);
-            if($visitedUser_id_proId['param_name'] == 'profile_id') {
-                $isSelf = $loggedProfileId == $visitedUser_id_proId['param_value'];
-                if(!$isSelf) {
-                    $visitedUser = (array) OpenApiIntegration::getInstance()->getSysUserByProfileId($visitedUser_id_proId['param_value'])[0];
-                }
-            } elseif($visitedUser_id_proId['param_name'] == 'id') {
-                $isSelf = $loggedId == $visitedUser_id_proId['param_value'];
-                if(!$isSelf) {
-                    $visitedUser = (array) OpenApiIntegration::getInstance()->getSysUserById($visitedUser_id_proId['param_value'])[0];
+            $visitedUser_id_proId = (array) OpenApiIntegration::getInstance()->getSysAccountsIdProfileIdByUri($explodedUri[count($explodedUri)-2], $explodedUri[count($explodedUri)-1]);
+            
+            if(count($visitedUser_id_proId)>0) {
+                if($visitedUser_id_proId['param_name'] == 'profile_id') {
+                    $isSelf = $loggedProfileId == $visitedUser_id_proId['param_value'];
+                    if(!$isSelf) {
+                        $visitedUser = (array) OpenApiIntegration::getInstance()->getSysUserByProfileId($visitedUser_id_proId['param_value'])[0];
+                    }
+                } elseif($visitedUser_id_proId['param_name'] == 'id') {
+                    $isSelf = $loggedId == $visitedUser_id_proId['param_value'];
+                    if(!$isSelf) {
+                        $visitedUser = (array) OpenApiIntegration::getInstance()->getSysUserById($visitedUser_id_proId['param_value'])[0];
+                    }
                 }
             }
+            
         } else {
-            $isSelf = false;
+            $isSelf = true;
         }
     }
 ?>
@@ -81,7 +85,9 @@
             success: function(response){
                 if(response)
                 {
-                    alert('Added product!');
+                    // alert('Added product!');
+                    $('#btnShow_'+productInfo.product_id).css('display', 'none');
+                    $('#btnHide_'+productInfo.product_id).css('display', 'block');
                 }
             },
             error: function(error, ajaxOptions, thrownError) {
@@ -92,24 +98,62 @@
 
     function onClickRemove(event, productInfo)
     {
-        if (confirm("Are you sure to delete this product?") == true) {
+        if (confirm("Are you sure to hide this product?") == true) {
             $.fn.remove_from_besiness(productInfo.product_id);
         }
     }
 
     function onClickAddToCart(event, productInfo)
     {
-
+        var data = {
+            product_id: productInfo.product_id,
+            option: {208: JSON.stringify(productInfo), 209: '<?= $loggedUser['email'] ?>'.toUpperCase(), 217: 'null', 218: 'null', 219: 'null', 220: 'null', 221: 'null', 222: 'null', 223: 'null', 224: 'null', 225: 'null', 226: 'null'}
+        }
+        $.ajax({
+            type: 'post',
+            url: BASIC_OPEN_CART_SERVER_API + 'route=api/c_cart/add',
+            data,
+            success: function(response) {
+                if(response.success) {
+                    alert('Product added to cart successfully');
+                }
+            },
+            fail: function(fail){
+                console.log(fail);
+            },
+            error: function(error, ajaxOptions, thrownError) {
+                console.log(error);
+            }
+        });
     }
 
     function onClickBuyNow(event, productInfo)
     {
-
+        var data = {
+            product_id: productInfo.product_id,
+            option: {208: JSON.stringify(productInfo), 209: '<?= $loggedUser['email'] ?>'.toUpperCase(), 217: 'null', 218: 'null', 219: 'null', 220: 'null', 221: 'null', 222: 'null', 223: 'null', 224: 'null', 225: 'null', 226: 'null'}
+        }
+        $.ajax({
+            type: 'post',
+            url: BASIC_OPEN_CART_SERVER_API + 'route=api/c_cart/add',
+            data,
+            success: function(response) {
+                if(response.success) {
+                    window.open(BASIC_OPEN_CART_SERVER_API + 'route=checkout/checkout', '_blank');
+                }
+            },
+            fail: function(fail){
+                console.log(fail);
+            },
+            error: function(error, ajaxOptions, thrownError) {
+                console.log(error);
+            }
+        });
     }
     
     $.fn.createSelfProductCard = function(productInfo) {
         let productId = $("<h5></h5>");
-        productId.text(productInfo.product_id);
+        productId.html('ID: ' + productInfo.product_id);
 
         let name = $("<strong></strong>");
         name.text(productInfo.name);
@@ -122,25 +166,29 @@
         namePriceContainer.append(price);
         
         let descP = $("<p></p>");
-        descP.css("height", "70px");
+        descP.css({"height": "70px", "overflow": "hidden"});
         descP.text(productInfo.description.substr(0, 100)+'..');
 
-        let linkBtn = $("<button><i class='fa fa-plus'></i>Add</button>");
+        let linkBtn = $("<button><i class='fa fa-plus'></i>Show</button>");
         linkBtn.addClass('btn btn-outline-primary btn-block');
         linkBtn.on('click', function() {
             onClickAdd(event, productInfo);
         });
         let linkCell = $("<div></div>");
+        linkCell.attr('id', 'btnShow_' + productInfo.product_id);
         linkCell.addClass('col pl-1 pr-1');
+        linkCell.css('display', 'block');
         linkCell.append(linkBtn);
 
-        let deleteBtn = $("<button><i class='fa fa-trash'></i>Remove</button>");
+        let deleteBtn = $("<button><i class='fa fa-trash'></i>Hide</button>");
         deleteBtn.addClass('btn btn-outline-primary btn-block');
         deleteBtn.on('click', function() {
             onClickRemove(event, productInfo);
         });
         let deleteCell = $("<div></div>");
+        deleteCell.attr('id', 'btnHide_' + productInfo.product_id);
         deleteCell.addClass('col pl-1 pr-1');
+        deleteCell.css('display', 'none');
         deleteCell.append(deleteBtn);
 
         let actionContainer = $("<div></div>");
@@ -185,7 +233,7 @@
         namePriceContainer.append(price);
         
         let descP = $("<p></p>");
-        descP.css("height", "70px");
+        descP.css({"height": "70px", "overflow": "hidden"});
         descP.text(productInfo.description.substr(0, 100)+'..');
 
         let linkBtn = $("<button><i class='fa fa-shopping-cart mr-2'></i>Add to Cart</button>");
@@ -235,12 +283,28 @@
 
     $.fn.displaySelfProductCards = function(products) {
         $('#products_container').empty();
-        products.forEach(item=> {$.fn.createSelfProductCard(item);});
+        let tmp = [];
+        $.each(products, function(index, item) {tmp.push(item)});
+
+        if(tmp.length > 0) {
+            $.each(products, function(index, item) {$.fn.createSelfProductCard(item);});
+        } else {
+            let html = '<h1>No Products Found</h1>';
+            $('#products_container').append(html);
+        }
     }
 
     $.fn.displayShowProductCards = function(products) {
         $('#show_products_container').empty();
-        products.forEach(item=> {$.fn.createShowProductCard(item);});
+        let tmp = [];
+        $.each(products, function(index, item) {tmp.push(item)});
+
+        if(tmp.length > 0) {
+            $.each(products, function(index, item) {$.fn.createShowProductCard(item);});
+        } else {
+            let html = '<h1>No Products Found</h1>';
+            $('#show_products_container').append(html);
+        }
     }
 
     $.fn.getSelfProduct = function(email, product_name) {
@@ -299,7 +363,9 @@
             data: {product_id: product_id},
             success: function(response) {
                 if(response) {
-                    alert('Remove Product!');
+                    // alert('Remove Product!');
+                    $('#btnShow_'+product_id).css('display', 'block');
+                    $('#btnHide_'+product_id).css('display', 'none');
                 }
             }
         });

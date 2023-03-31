@@ -7,6 +7,13 @@
  * @{
  */
 
+
+define('BX_DOL_OBJECT_ERR_NOT_AVAILABLE', 1);
+define('BX_DOL_OBJECT_ERR_ACCESS_DENIED', 2);
+define('BX_DOL_OBJECT_ERR_DUPLICATE', 3);
+define('BX_DOL_OBJECT_ERR_WRONG_DATE', 4);
+define('BX_DOL_OBJECT_ERR_CANNOT_PERFORM', 5);
+
 /**
  * Base class for all "Object" classes.
  * Child classes usually represents high level programming constructions to generate ready 'objects' functionality, like Comments, Votings, Forms.
@@ -15,6 +22,8 @@ class BxDolObject extends BxDolFactory implements iBxDolReplaceable
 {
     protected $_oTemplate = null;
     protected $_oQuery = null;
+
+    protected $_bApi = false;
 
     protected $_iId = 0; ///< item id the action to be performed with
     protected $_sSystem = ''; ///< current system name
@@ -137,9 +146,19 @@ class BxDolObject extends BxDolFactory implements iBxDolReplaceable
         return $this->_oQuery->isPerformed($iObjectId, $iAuthorId);
     }
 
-	/**
-	 * Interface functions for outer usage
-	 */
+    public function getVote($iObjectId = 0, $bForceGet = false)
+    {
+        return $this->_getVote($iObjectId, $bForceGet);
+    }
+
+    public function getTrack($iObjectId, $iAuthorId)
+    {
+        return $this->_getTrack($iObjectId, $iAuthorId);
+    }
+
+    /**
+     * Interface functions for outer usage
+     */
     public function getConditions($sMainTable, $sMainField)
     {
         if(!$this->isEnabled())
@@ -226,6 +245,20 @@ class BxDolObject extends BxDolFactory implements iBxDolReplaceable
 
         $this->_aMarkers = array_merge($this->_aMarkers, $aMarkers);
         return true;
+    }
+
+    public function getElementAPI($aParams = [])
+    {
+        if(!($this->_bApi = bx_is_api()))
+            return;
+
+        //TODO: Implement for Objects like Views, Votes, etc.
+        $sClass = get_class($this);
+        return [
+            'display_type' => 'element', // 'element_action', 'element_counter'
+            'name' => md5($sClass),
+            'title' => get_class($this)
+        ];
     }
 
     /**

@@ -8,7 +8,7 @@ class ControllerAccountVendorLtsFooter extends Controller {
 		$data['informations'] = array();
 
 		foreach ($this->model_account_vendor_lts_footer->getInformations() as $result) {
-			if ($result['bottom']) {
+			if ($result['bottom'] && ($result['information_id'] == 4 || $result['information_id'] == 5)) {
 				$data['informations'][] = array(
 					'title' => $result['title'],
 					'href'  => $this->url->link('information/information', 'information_id=' . $result['information_id'])

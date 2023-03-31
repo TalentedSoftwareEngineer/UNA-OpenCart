@@ -20,7 +20,7 @@ class ModelLocalisationGeoZone extends Model {
 
 	public function editGeoZone($geo_zone_id, $data) {
 		$this->db->query("UPDATE " . DB_PREFIX . "geo_zone SET name = '" . $this->db->escape($data['name']) . "', description = '" . $this->db->escape($data['description']) . "', date_modified = NOW() WHERE geo_zone_id = '" . (int)$geo_zone_id . "'");
-
+		$this->db->query("UPDATE " . DB_PREFIX . "lts_geo_zone SET name = '" . $this->db->escape($data['name']) . "', description = '" . $this->db->escape($data['description']) . "', date_modified = NOW() WHERE geo_zone_id = '" . (int)$geo_zone_id . "'");
 		$this->db->query("DELETE FROM " . DB_PREFIX . "zone_to_geo_zone WHERE geo_zone_id = '" . (int)$geo_zone_id . "'");
 
 		if (isset($data['zone_to_geo_zone'])) {
@@ -36,6 +36,7 @@ class ModelLocalisationGeoZone extends Model {
 
 	public function deleteGeoZone($geo_zone_id) {
 		$this->db->query("DELETE FROM " . DB_PREFIX . "geo_zone WHERE geo_zone_id = '" . (int)$geo_zone_id . "'");
+		$this->db->query("DELETE FROM " . DB_PREFIX . "lts_geo_zone WHERE geo_zone_id = '" . (int)$geo_zone_id . "'");
 		$this->db->query("DELETE FROM " . DB_PREFIX . "zone_to_geo_zone WHERE geo_zone_id = '" . (int)$geo_zone_id . "'");
 
 		$this->cache->delete('geo_zone');

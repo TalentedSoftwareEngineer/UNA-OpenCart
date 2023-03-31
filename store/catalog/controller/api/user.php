@@ -187,6 +187,31 @@ class ControllerApiUser extends Controller
         $this->response->setOutput(json_encode($results));
 	}
 
+	public function getFriend()
+	{
+        $this->load->language('api/user');
+        $this->load->model('catalog/user');
+  
+        $loggedUserProfileId = $this->request->post['loggedUserProfileId'];
+		$visitedUserProfileId = $this->request->post['visitedUserProfileId'];
+        $results = $this->model_catalog_user->getFriend($loggedUserProfileId, $visitedUserProfileId);
+  
+        $this->response->addHeader('Content-Type: application/json');
+        $this->response->setOutput(json_encode($results));
+	}
+
+	public function getFriendsCount()
+	{
+        $this->load->language('api/user');
+        $this->load->model('catalog/user');
+  
+        $profileId = $this->request->post['profileId'];
+        $result = $this->model_catalog_user->getFriendsCount($profileId);
+  
+        $this->response->addHeader('Content-Type: application/json');
+        $this->response->setOutput(json_encode($result));
+	}
+
 	protected function getList() {
 		if (isset($this->request->get['sort'])) {
 			$sort = $this->request->get['sort'];

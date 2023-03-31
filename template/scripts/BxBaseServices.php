@@ -486,15 +486,15 @@ class BxBaseServices extends BxDol implements iBxDolProfileService
 
     public function serviceProfilePicture ($iContentId)
     {
-        return BxDolTemplate::getInstance()->getImageUrl('account-picture.png');
+        return BxDolTemplate::getInstance()->getImageUrl('account.svg');
     }
 
     public function serviceProfileAvatar ($iContentId)
     {
-        return BxDolTemplate::getInstance()->getImageUrl('account-avatar.png');
+        return BxDolTemplate::getInstance()->getImageUrl('account.svg');
     }
-	
-	public function serviceProfileCover ($iContentId)
+
+    public function serviceProfileCover ($iContentId)
     {
         return '';
     }
@@ -597,6 +597,9 @@ class BxBaseServices extends BxDol implements iBxDolProfileService
      */
     public function serviceGetCreatePostForm($mixedContextId = false, $sDefault = '', $aCustom = array())
     {
+        if (bx_is_api())
+            return ;
+        
     	if(!isLogged() || ($mixedContextId !== false && !is_numeric($mixedContextId)))
             return '';
 

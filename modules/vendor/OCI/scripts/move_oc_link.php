@@ -11,11 +11,14 @@
 
     $users = ( array ) OpenApiIntegration::getInstance()->getAllUsers();
     $arr_users = array_map('convertToArray', $users);
-
+    
     $customers = ( array ) OpenApiIntegration::getInstance()->getAllCustomers();
     $arr_customers = array_map('convertToArray', $customers);
+
+    $friendsCount = 0;
     
     $loggedProfileId = bx_get_logged_profile_id();
+
     if($loggedProfileId) {
         $loggedUser = (array) OpenApiIntegration::getInstance()->getSysUserByProfileId($loggedProfileId)[0];
         $in_user = in_array($loggedUser['email'], array_column($arr_users, 'email'));
@@ -25,7 +28,7 @@
             //regist user to opencart
             $post = array (
                 'username' => $loggedUser['name'],
-                'user_group_id' => 11,
+                'user_group_id' => 10,
                 'password' => $loggedUser['password'],
                 'firstname' => ucwords($loggedUser['name']),
                 'lastname' => '',
@@ -72,6 +75,8 @@
             );
             $addedUserId = OpenApiIntegration::getInstance()->editOcCustomer($post);
         }
+
+        $friendsCount = ((array) OpenApiIntegration::getInstance()->getFriendsCount($loggedProfileId))['friendsCount'];
     }
 ?>
 
@@ -80,36 +85,67 @@
     <!-- <a href="http://localhost/UNA-v.13.0.0-RC2/my-store/" class="ml-3 btn btn-outline-primary" role="button">Business</a> -->
     <span id="linking" class="ml-2"></span><span id="linking_text" class="ml-2"></span>
 </div>
+<p id="business_access_valid_msg" class="text-success mt-2"></p>
 
 <script type="text/javascript">
     var BASIC_OPEN_CART_ADMIN_SERVER_API = '<?= BASIC_OPEN_CART_ADMIN_SERVER_API ?>';
     var BASIC_OPEN_CART_SERVER_API = '<?= BASIC_OPEN_CART_SERVER_API ?>';
     function openCartLogin(event) {
-        $.fn.openCartCustomerLogin(event);
+        if(Number('<?= $friendsCount ?>') < 5) {
+            $('#business_access_valid_msg').text('To use Business Management feature, you need have minimum five friends. Please invite them and become friends to start using our business service. In case if you cannot see Business management opening, check your popup blocker and unblock for our site.');
+            // alert('In case if you cannot see Business management opening, check your popup blocker and unblock for our site.');
+        } else {
+            $.fn.openCartCustomerLogin(event);
+        }
     }
     
     $.fn.openCartCustomerLogin = function(event) {
-        var formData = new FormData();
-        formData.append( 'email', '<?= $loggedUser['email'] ?>' );
-        formData.append( 'password', '<?= $loggedUser['password'] ?>' );
-
         $.ajax({
-            method: 'POST',
-            url: BASIC_OPEN_CART_SERVER_API + 'route=account/login',
-            data: formData,
-            processData: false,
-            contentType: false,
-            beforeSend:function(){
-                $('#linking').addClass("spinner-grow text-primary");
-                $('#linking_text').text('Accessing...');
-            },
+            type: 'post',
+            url: BASIC_OPEN_CART_SERVER_API + "route=account/logout",
             success: function(response){
-                $('#linking').removeClass("spinner-grow text-primary");
-                $('#linking_text').text('');
-                $.fn.createStore(event);
+
+                var formData = new FormData();
+                formData.append( 'email', '<?= $loggedUser['email'] ?>' );
+                formData.append( 'password', '<?= $loggedUser['password'] ?>' );
+
+                $.ajax({
+                    method: 'POST',
+                    url: BASIC_OPEN_CART_SERVER_API + 'route=account/login',
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    beforeSend:function(){
+                        $('#linking').addClass("spinner-grow text-primary");
+                        $('#linking_text').text('Accessing...');
+                    },
+                    success: function(response){
+                        $('#linking').removeClass("spinner-grow text-primary");
+                        $('#linking_text').text('');
+                        $.fn.getStoreByCustomerId(event);
+                    },
+                    error: function(error, ajaxOptions, thrownError) {
+                        console.log(error);
+                    }
+                });
             },
-            error: function(error, ajaxOptions, thrownError) {
-                console.log(error);
+            error: function(error, ajaxOptions, thrownError) {console.log(error)}
+        });
+    }
+
+    $.fn.getStoreByCustomerId = function(event) {
+        $.ajax({
+            url: BASIC_OPEN_CART_SERVER_API + 'route=api/store/getVendorStoreInfo',
+            method:"POST",
+            data: {customer_id: '<?= $loggedUser['id'] ?>'},
+            success:function(res)
+            {
+                if(!Boolean(res.store_name))
+                {
+                    $.fn.createStore(event);
+                } else {
+                    window.open(BASIC_OPEN_CART_SERVER_API + 'route=account/vendor/lts_dashboard', '_blank');
+                }
             }
         });
     }
@@ -143,11 +179,7 @@
             },
             success:function(res)
             {
-                if (event.ctrlKey) {
-                    window.open(BASIC_OPEN_CART_SERVER_API + 'route=account/vendor/lts_dashboard', '_blank');            
-                } else {
-                    location.href = BASIC_OPEN_CART_SERVER_API + 'route=account/vendor/lts_dashboard';
-                }
+                window.open(BASIC_OPEN_CART_SERVER_API + 'route=account/vendor/lts_dashboard', '_blank');
             }
         });
     }
@@ -200,5 +232,13 @@
             }
         });
     }
+
+    $.ajax({
+        type: 'post',
+        url: BASIC_OPEN_CART_SERVER_API + 'route=api/store/createStoreTypeField',
+        data: {},
+        success: function(response){},
+        error: function(error, ajaxOptions, thrownError) {}
+    });
 </script>
 

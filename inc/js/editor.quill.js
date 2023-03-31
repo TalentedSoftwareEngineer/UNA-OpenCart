@@ -74,15 +74,6 @@ function bx_editor_init(oEditor, oParams){
     
     $(oParams.selector).after("<div id='" + oParams.name + "' class='bx-def-font-inputs bx-form-input-textarea bx-form-input-html bx-form-input-html-quill " + oParams.css_class + "'>" + $(oParams.selector).val() + "</div>" );
     
-    if($(oParams.selector).parents('form').first())
-        $(oParams.selector).parents('form').first().submit(function(){ 
-            sVal = oEditor.container.firstChild.innerHTML;
-            if(!oParams.empty_tags){
-                sVal = sVal.replaceAll('<p><br></p>','');
-            }
-            $(oParams.selector).val(sVal); 
-            
-        });
     $(oParams.selector).hide();
     
     $(oParams.selector).attr('object_editor', oParams.name);
@@ -91,21 +82,62 @@ function bx_editor_init(oEditor, oParams){
         
         var Embed = Quill.import('blots/embed');
         
+        const BaseLink = Quill.import("formats/link");
+        class Link extends BaseLink {
+            format(name, value) {
+                if (["href", "target"].indexOf(name) > -1) {
+                    if (value) {
+                        this.domNode.setAttribute(name, value);
+                    } else {
+                        this.domNode.removeAttribute(name);
+                    }
+                } else {
+                    super.format(name, value);
+                    if (name == 'link'){
+                        if (value){
+                            if (!value.startsWith(oParams.root_url) && (value.startsWith('http://') || value.startsWith('https://'))){
+                                this.domNode.setAttribute("target", "_blank");  
+                            }
+                            else{
+                                this.domNode.removeAttribute('target');
+                            }
+                        }
+                    }
+                }
+            }
+            static create(value) {
+                const node = super.create(value);
+                node.setAttribute("href", this.sanitize(value));
+                if (!value.startsWith(oParams.root_url) && (value.startsWith('http://') || value.startsWith('https://'))){
+                    node.setAttribute("target", "_blank");  
+                }
+                else{
+                    node.removeAttribute('target');
+                }
+                return node;
+            }
+        }
+        Quill.register(Link, true);
+        
         class MenthionLink extends Embed {
             static create(value) {
                 let node = super.create(value);
                 if (value.id && value.value){
+                    
                     node.setAttribute('href', value.id);
                     node.innerHTML = value.denotationChar + value.value;
                     node.setAttribute('title', value.value);
                     node.setAttribute('dchar', value.denotationChar);
                     node.setAttribute('data-profile-id', value.dataProfileId);
                 }
-                if (value.url && value.dchar && value.title && value.dataProfileId){
+                if (value.url && value.title && value.dataProfileId){
                     node.setAttribute('href', value.url);
                     node.innerHTML = value.text;
                     node.setAttribute('title', value.title);
-                    node.setAttribute('dchar', value.dchar);
+                    if (value.dchar)
+                        node.setAttribute('dchar', value.dchar);
+                    else
+                        node.setAttribute('dchar', '@');
                     node.setAttribute('data-profile-id', value.dataProfileId);
                 }
                 return node;
@@ -354,7 +386,7 @@ function bx_editor_init(oEditor, oParams){
         bx_editor_on_space_enter(node.data, oParams.selector, false);
         return new Delta().insert(node.data); 
     });
-
+    
     if (oParams.insert_as_plain_text){
         oEditor.clipboard.addMatcher (Node.ELEMENT_NODE, function (node, delta) {
 			let ops = []
@@ -369,11 +401,26 @@ function bx_editor_init(oEditor, oParams){
 			return delta
         });
     }
+    else{
+        oEditor.clipboard.addMatcher (Node.ELEMENT_NODE, function (node, delta) {
+			delta.forEach(e => {
+                if(e.attributes){
+                    e.attributes.color = '';
+                    e.attributes.background = '';
+                }
+            });
+            return delta;
+        });
+    }
+
     
     oEditor.on('editor-change', function(delta, oldDelta, source) {
         sVal = oEditor.container.firstChild.innerHTML;
         if(!oParams.empty_tags){
             sVal = sVal.replaceAll('<p><br></p>','');
+        }
+        if ((oEditor.getContents()['ops'] || []).length == 1 && oEditor.getText().trim().length === 0) { 
+            sVal = '' 
         }
         $(oParams.selector).val(sVal); 
     });

@@ -11,6 +11,8 @@ $_['text_payment']				= 'Pagamentos';
 $_['text_filter']				= 'Filtro';
 $_['text_store']				= 'Informações da loja';
 $_['text_setting']				= 'Configuração';
+$_['text_physical']              = 'Physical';
+$_['text_virtual']              = 'Virtual';
 $_['text_visit_store']			= 'Visitar loja';
 $_['text_subscription']			= 'Plano de Assinatura';
 	
