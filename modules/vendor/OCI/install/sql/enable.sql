@@ -33,6 +33,11 @@ INSERT INTO `sys_pages_blocks` (`object`, `cell_id`, `module`, `title_system`, `
 INSERT INTO `sys_pages_blocks` (`object`, `cell_id`, `module`, `title_system`, `title`, `designbox_id`, `class`, `async`, `cache_lifetime`, `submenu`, `tabs`, `hidden_on`, `visible_for_levels`, `type`, `content`, `help`, `deletable`, `copyable`, `active`, `order`) VALUES
 ('Mads-Management', 1, 'vnd_oci', '_vnd_oci_mads_management_title', '_vnd_oci_mads_management_title', 11, '', 0, 0, '', 0 , 0, 2147483647, 'service', 'a:3:{s:6:\"module\";s:7:\"vnd_oci\";s:6:\"method\";s:14:\"MadsManagement\";s:6:\"params\";a:1:{i:0;s:8:\"extended\";}}', '', 1, 1, 1, 0);
 
+INSERT INTO `sys_pages_blocks` (`object`, `cell_id`, `module`, `title_system`, `title`, `designbox_id`, `class`, `async`, `cache_lifetime`, `submenu`, `tabs`, `hidden_on`, `visible_for_levels`, `type`, `content`, `help`, `deletable`, `copyable`, `active`, `order`) VALUES
+('Advertisement', 1, 'vnd_oci', '_vnd_oci_advertisement_title', '_vnd_oci_advertisement_title', 11, '', 0, 0, '', 0 , 0, 2147483647, 'service', 'a:3:{s:6:\"module\";s:7:\"vnd_oci\";s:6:\"method\";s:13:\"Advertisement\";s:6:\"params\";a:1:{i:0;s:8:\"extended\";}}', '', 1, 1, 1, 0);
+
+INSERT INTO `sys_pages_blocks` (`object`, `cell_id`, `module`, `title_system`, `title`, `designbox_id`, `class`, `async`, `cache_lifetime`, `submenu`, `tabs`, `hidden_on`, `visible_for_levels`, `type`, `content`, `help`, `deletable`, `copyable`, `active`, `order`) VALUES
+('Business-Analytics', 1, 'vnd_oci', '_vnd_oci_business_analytics_title', '_vnd_oci_business_analytics_title', 11, '', 0, 0, '', 0 , 0, 2147483647, 'service', 'a:3:{s:6:\"module\";s:7:\"vnd_oci\";s:6:\"method\";s:17:\"BusinessAnalytics\";s:6:\"params\";a:1:{i:0;s:8:\"extended\";}}', '', 1, 1, 1, 0);
 
 
 CREATE TABLE IF NOT EXISTS `oc_lts_geo_zone` (

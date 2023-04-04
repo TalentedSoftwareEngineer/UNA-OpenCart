@@ -17,4 +17,10 @@
   <string
     name="_vnd_oci_mads_management_title"
   ><![CDATA[Mads Management]]></string>
+  <string
+    name="_vnd_oci_advertisement_title"
+  ><![CDATA[Advertisement management]]></string>
+  <string
+    name="_vnd_oci_business_analytics_title"
+  ><![CDATA[Business Analytics]]></string>
 </resources>

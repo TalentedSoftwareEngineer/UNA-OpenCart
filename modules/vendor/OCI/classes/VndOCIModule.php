@@ -62,6 +62,20 @@ class VndOCIModule extends BxDolModule
         $output = $this->helper->get_include_output($file);
         return $output;
     }
+
+    function serviceAdvertisement()
+    {
+        $file = VNDOCI_ROOTDIR . "scripts/advertisement.php";
+        $output = $this->helper->get_include_output($file);
+        return $output;
+    }
+
+    function serviceBusinessAnalytics()
+    {
+        $file = VNDOCI_ROOTDIR . "scripts/business_analytics.php";
+        $output = $this->helper->get_include_output($file);
+        return $output;
+    }
 }
 
 /** @} */
