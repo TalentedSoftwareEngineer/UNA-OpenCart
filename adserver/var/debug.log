@@ -1,0 +1,622 @@
+Apr 04 19:09:59 +0900 OX-642c59e6ede9b [    error]  Unable to drop table rv_account_preference_assoc
+Apr 04 19:09:59 +0900 OX-642c59e6ede9b [    error]  Unable to drop the table account_preference_assoc
+Apr 04 19:09:59 +0900 OX-642c59e6ede9b [    error]  Unable to drop table rv_account_user_assoc
+Apr 04 19:09:59 +0900 OX-642c59e6ede9b [    error]  Unable to drop the table account_user_assoc
+Apr 04 19:09:59 +0900 OX-642c59e6ede9b [    error]  Unable to drop table rv_account_user_permission_assoc
+Apr 04 19:09:59 +0900 OX-642c59e6ede9b [    error]  Unable to drop the table account_user_permission_assoc
+Apr 04 19:09:59 +0900 OX-642c59e6ede9b [    error]  Unable to drop table rv_accounts
+Apr 04 19:09:59 +0900 OX-642c59e6ede9b [    error]  Unable to drop the table accounts
+Apr 04 19:09:59 +0900 OX-642c59e6ede9b [    error]  Unable to drop table rv_acls
+Apr 04 19:09:59 +0900 OX-642c59e6ede9b [    error]  Unable to drop the table acls
+Apr 04 19:09:59 +0900 OX-642c59e6ede9b [    error]  Unable to drop table rv_acls_channel
+Apr 04 19:09:59 +0900 OX-642c59e6ede9b [    error]  Unable to drop the table acls_channel
+Apr 04 19:09:59 +0900 OX-642c59e6ede9b [    error]  Unable to drop table rv_ad_category_assoc
+Apr 04 19:09:59 +0900 OX-642c59e6ede9b [    error]  Unable to drop the table ad_category_assoc
+Apr 04 19:09:59 +0900 OX-642c59e6ede9b [    error]  Unable to drop table rv_ad_zone_assoc
+Apr 04 19:09:59 +0900 OX-642c59e6ede9b [    error]  Unable to drop the table ad_zone_assoc
+Apr 04 19:09:59 +0900 OX-642c59e6ede9b [    error]  Unable to drop table rv_affiliates
+Apr 04 19:09:59 +0900 OX-642c59e6ede9b [    error]  Unable to drop the table affiliates
+Apr 04 19:09:59 +0900 OX-642c59e6ede9b [    error]  Unable to drop table rv_affiliates_extra
+Apr 04 19:09:59 +0900 OX-642c59e6ede9b [    error]  Unable to drop the table affiliates_extra
+Apr 04 19:09:59 +0900 OX-642c59e6ede9b [    error]  Unable to drop table rv_agency
+Apr 04 19:09:59 +0900 OX-642c59e6ede9b [    error]  Unable to drop the table agency
+Apr 04 19:09:59 +0900 OX-642c59e6ede9b [    error]  Unable to drop table rv_application_variable
+Apr 04 19:09:59 +0900 OX-642c59e6ede9b [    error]  Unable to drop the table application_variable
+Apr 04 19:09:59 +0900 OX-642c59e6ede9b [    error]  Unable to drop table rv_audit
+Apr 04 19:09:59 +0900 OX-642c59e6ede9b [    error]  Unable to drop the table audit
+Apr 04 19:09:59 +0900 OX-642c59e6ede9b [    error]  Unable to drop table rv_banners
+Apr 04 19:09:59 +0900 OX-642c59e6ede9b [    error]  Unable to drop the table banners
+Apr 04 19:09:59 +0900 OX-642c59e6ede9b [    error]  Unable to drop table rv_campaigns
+Apr 04 19:09:59 +0900 OX-642c59e6ede9b [    error]  Unable to drop the table campaigns
+Apr 04 19:09:59 +0900 OX-642c59e6ede9b [    error]  Unable to drop table rv_campaigns_trackers
+Apr 04 19:09:59 +0900 OX-642c59e6ede9b [    error]  Unable to drop the table campaigns_trackers
+Apr 04 19:09:59 +0900 OX-642c59e6ede9b [    error]  Unable to drop table rv_category
+Apr 04 19:09:59 +0900 OX-642c59e6ede9b [    error]  Unable to drop the table category
+Apr 04 19:09:59 +0900 OX-642c59e6ede9b [    error]  Unable to drop table rv_channel
+Apr 04 19:09:59 +0900 OX-642c59e6ede9b [    error]  Unable to drop the table channel
+Apr 04 19:09:59 +0900 OX-642c59e6ede9b [    error]  Unable to drop table rv_clients
+Apr 04 19:09:59 +0900 OX-642c59e6ede9b [    error]  Unable to drop the table clients
+Apr 04 19:09:59 +0900 OX-642c59e6ede9b [    error]  Unable to drop table rv_data_intermediate_ad
+Apr 04 19:09:59 +0900 OX-642c59e6ede9b [    error]  Unable to drop the table data_intermediate_ad
+Apr 04 19:09:59 +0900 OX-642c59e6ede9b [    error]  Unable to drop table rv_data_intermediate_ad_connection
+Apr 04 19:09:59 +0900 OX-642c59e6ede9b [    error]  Unable to drop the table data_intermediate_ad_connection
+Apr 04 19:09:59 +0900 OX-642c59e6ede9b [    error]  Unable to drop table rv_data_intermediate_ad_variable_value
+Apr 04 19:09:59 +0900 OX-642c59e6ede9b [    error]  Unable to drop the table data_intermediate_ad_variable_value
+Apr 04 19:09:59 +0900 OX-642c59e6ede9b [    error]  Unable to drop table rv_data_raw_ad_click
+Apr 04 19:09:59 +0900 OX-642c59e6ede9b [    error]  Unable to drop the table data_raw_ad_click
+Apr 04 19:09:59 +0900 OX-642c59e6ede9b [    error]  Unable to drop table rv_data_raw_ad_impression
+Apr 04 19:09:59 +0900 OX-642c59e6ede9b [    error]  Unable to drop the table data_raw_ad_impression
+Apr 04 19:09:59 +0900 OX-642c59e6ede9b [    error]  Unable to drop table rv_data_raw_ad_request
+Apr 04 19:09:59 +0900 OX-642c59e6ede9b [    error]  Unable to drop the table data_raw_ad_request
+Apr 04 19:09:59 +0900 OX-642c59e6ede9b [    error]  Unable to drop table rv_data_raw_tracker_impression
+Apr 04 19:09:59 +0900 OX-642c59e6ede9b [    error]  Unable to drop the table data_raw_tracker_impression
+Apr 04 19:09:59 +0900 OX-642c59e6ede9b [    error]  Unable to drop table rv_data_raw_tracker_variable_value
+Apr 04 19:09:59 +0900 OX-642c59e6ede9b [    error]  Unable to drop the table data_raw_tracker_variable_value
+Apr 04 19:09:59 +0900 OX-642c59e6ede9b [    error]  Unable to drop table rv_data_summary_ad_hourly
+Apr 04 19:09:59 +0900 OX-642c59e6ede9b [    error]  Unable to drop the table data_summary_ad_hourly
+Apr 04 19:09:59 +0900 OX-642c59e6ede9b [    error]  Unable to drop table rv_data_summary_ad_zone_assoc
+Apr 04 19:09:59 +0900 OX-642c59e6ede9b [    error]  Unable to drop the table data_summary_ad_zone_assoc
+Apr 04 19:09:59 +0900 OX-642c59e6ede9b [    error]  Unable to drop table rv_data_summary_channel_daily
+Apr 04 19:09:59 +0900 OX-642c59e6ede9b [    error]  Unable to drop the table data_summary_channel_daily
+Apr 04 19:09:59 +0900 OX-642c59e6ede9b [    error]  Unable to drop table rv_data_summary_zone_impression_history
+Apr 04 19:09:59 +0900 OX-642c59e6ede9b [    error]  Unable to drop the table data_summary_zone_impression_history
+Apr 04 19:09:59 +0900 OX-642c59e6ede9b [    error]  Unable to drop table rv_images
+Apr 04 19:09:59 +0900 OX-642c59e6ede9b [    error]  Unable to drop the table images
+Apr 04 19:09:59 +0900 OX-642c59e6ede9b [    error]  Unable to drop table rv_log_maintenance_forecasting
+Apr 04 19:09:59 +0900 OX-642c59e6ede9b [    error]  Unable to drop the table log_maintenance_forecasting
+Apr 04 19:09:59 +0900 OX-642c59e6ede9b [    error]  Unable to drop table rv_log_maintenance_priority
+Apr 04 19:09:59 +0900 OX-642c59e6ede9b [    error]  Unable to drop the table log_maintenance_priority
+Apr 04 19:09:59 +0900 OX-642c59e6ede9b [    error]  Unable to drop table rv_log_maintenance_statistics
+Apr 04 19:09:59 +0900 OX-642c59e6ede9b [    error]  Unable to drop the table log_maintenance_statistics
+Apr 04 19:09:59 +0900 OX-642c59e6ede9b [    error]  Unable to drop table rv_password_recovery
+Apr 04 19:09:59 +0900 OX-642c59e6ede9b [    error]  Unable to drop the table password_recovery
+Apr 04 19:09:59 +0900 OX-642c59e6ede9b [    error]  Unable to drop table rv_placement_zone_assoc
+Apr 04 19:09:59 +0900 OX-642c59e6ede9b [    error]  Unable to drop the table placement_zone_assoc
+Apr 04 19:09:59 +0900 OX-642c59e6ede9b [    error]  Unable to drop table rv_preferences
+Apr 04 19:09:59 +0900 OX-642c59e6ede9b [    error]  Unable to drop the table preferences
+Apr 04 19:09:59 +0900 OX-642c59e6ede9b [    error]  Unable to drop table rv_session
+Apr 04 19:09:59 +0900 OX-642c59e6ede9b [    error]  Unable to drop the table session
+Apr 04 19:09:59 +0900 OX-642c59e6ede9b [    error]  Unable to drop table rv_targetstats
+Apr 04 19:09:59 +0900 OX-642c59e6ede9b [    error]  Unable to drop the table targetstats
+Apr 04 19:09:59 +0900 OX-642c59e6ede9b [    error]  Unable to drop table rv_tracker_append
+Apr 04 19:09:59 +0900 OX-642c59e6ede9b [    error]  Unable to drop the table tracker_append
+Apr 04 19:09:59 +0900 OX-642c59e6ede9b [    error]  Unable to drop table rv_trackers
+Apr 04 19:09:59 +0900 OX-642c59e6ede9b [    error]  Unable to drop the table trackers
+Apr 04 19:09:59 +0900 OX-642c59e6ede9b [    error]  Unable to drop table rv_userlog
+Apr 04 19:09:59 +0900 OX-642c59e6ede9b [    error]  Unable to drop the table userlog
+Apr 04 19:09:59 +0900 OX-642c59e6ede9b [    error]  Unable to drop table rv_users
+Apr 04 19:09:59 +0900 OX-642c59e6ede9b [    error]  Unable to drop the table users
+Apr 04 19:09:59 +0900 OX-642c59e6ede9b [    error]  Unable to drop table rv_variable_publisher
+Apr 04 19:09:59 +0900 OX-642c59e6ede9b [    error]  Unable to drop the table variable_publisher
+Apr 04 19:09:59 +0900 OX-642c59e6ede9b [    error]  Unable to drop table rv_variables
+Apr 04 19:09:59 +0900 OX-642c59e6ede9b [    error]  Unable to drop the table variables
+Apr 04 19:09:59 +0900 OX-642c59e6ede9b [    error]  Unable to drop table rv_zones
+Apr 04 19:09:59 +0900 OX-642c59e6ede9b [    error]  Unable to drop the table zones
+Apr 04 19:14:25 +0900 OX-plugins-642c5af130532 [     info]  starting _checkPackageContents openXBannerTypes.xml
+Apr 04 19:14:25 +0900 OX-plugins-642c5af130532 [     info]  expecting definition openXBannerTypes.xml
+Apr 04 19:14:25 +0900 OX-plugins-642c5af130532 [     info]  detected plugin definition file /plugins/etc/openXBannerTypes.xml
+Apr 04 19:14:25 +0900 OX-plugins-642c5af130532 [     info]  detected group definition file /plugins/etc/oxText/oxText.xml
+Apr 04 19:14:25 +0900 OX-plugins-642c5af130532 [     info]  detected group definition file /plugins/etc/oxHtml/oxHtml.xml
+Apr 04 19:14:25 +0900 OX-plugins-642c5af130532 [     info]  Executing _checkOpenXCompatibility for oxHtml
+Apr 04 19:14:25 +0900 OX-plugins-642c5af130532 [     info]  Executing _checkSystemEnvironment for oxHtml
+Apr 04 19:14:25 +0900 OX-plugins-642c5af130532 [     info]  Executing _checkDatabaseEnvironment for oxHtml
+Apr 04 19:14:25 +0900 OX-plugins-642c5af130532 [     info]  Executing _runScript for oxHtml
+Apr 04 19:14:25 +0900 OX-plugins-642c5af130532 [     info]  Executing _checkDependenciesForInstallOrEnable for oxHtml
+Apr 04 19:14:25 +0900 OX-plugins-642c5af130532 [     info]  Executing _checkFiles for oxHtml
+Apr 04 19:14:25 +0900 OX-plugins-642c5af130532 [     info]  Executing _checkNavigationCheckers for oxHtml
+Apr 04 19:14:25 +0900 OX-plugins-642c5af130532 [     info]  Executing _checkMenus for oxHtml
+Apr 04 19:14:25 +0900 OX-plugins-642c5af130532 [     info]  Executing _registerSchema for oxHtml
+Apr 04 19:14:25 +0900 OX-plugins-642c5af130532 [     info]  Executing _registerPreferences for oxHtml
+Apr 04 19:14:25 +0900 OX-plugins-642c5af130532 [     info]  Executing _registerSettings for oxHtml
+Apr 04 19:14:25 +0900 OX-plugins-642c5af130532 [     info]  Executing disableComponentGroup for oxHtml
+Apr 04 19:14:25 +0900 OX-plugins-642c5af130532 [     info]  Executing _registerPluginVersion for oxHtml
+Apr 04 19:14:25 +0900 OX-plugins-642c5af130532 [     info]  Executing _runScript for oxHtml
+Apr 04 19:14:25 +0900 OX-plugins-642c5af130532 [     info]  Executing _checkOpenXCompatibility for oxText
+Apr 04 19:14:25 +0900 OX-plugins-642c5af130532 [     info]  Executing _checkSystemEnvironment for oxText
+Apr 04 19:14:25 +0900 OX-plugins-642c5af130532 [     info]  Executing _checkDatabaseEnvironment for oxText
+Apr 04 19:14:25 +0900 OX-plugins-642c5af130532 [     info]  Executing _runScript for oxText
+Apr 04 19:14:25 +0900 OX-plugins-642c5af130532 [     info]  Executing _checkDependenciesForInstallOrEnable for oxText
+Apr 04 19:14:25 +0900 OX-plugins-642c5af130532 [     info]  Executing _checkFiles for oxText
+Apr 04 19:14:25 +0900 OX-plugins-642c5af130532 [     info]  Executing _checkNavigationCheckers for oxText
+Apr 04 19:14:25 +0900 OX-plugins-642c5af130532 [     info]  Executing _checkMenus for oxText
+Apr 04 19:14:25 +0900 OX-plugins-642c5af130532 [     info]  Executing _registerSchema for oxText
+Apr 04 19:14:25 +0900 OX-plugins-642c5af130532 [     info]  Executing _registerPreferences for oxText
+Apr 04 19:14:25 +0900 OX-plugins-642c5af130532 [     info]  Executing _registerSettings for oxText
+Apr 04 19:14:25 +0900 OX-plugins-642c5af130532 [     info]  Executing disableComponentGroup for oxText
+Apr 04 19:14:25 +0900 OX-plugins-642c5af130532 [     info]  Executing _registerPluginVersion for oxText
+Apr 04 19:14:25 +0900 OX-plugins-642c5af130532 [     info]  Executing _runScript for oxText
+Apr 04 19:14:28 +0900 OX-plugins-642c5af4a679b [     info]  starting _checkPackageContents openXDeliveryLimitations.xml
+Apr 04 19:14:28 +0900 OX-plugins-642c5af4a679b [     info]  expecting definition openXDeliveryLimitations.xml
+Apr 04 19:14:28 +0900 OX-plugins-642c5af4a679b [     info]  detected group definition file /plugins/etc/Client/Client.xml
+Apr 04 19:14:28 +0900 OX-plugins-642c5af4a679b [     info]  detected group definition file /plugins/etc/Time/Time.xml
+Apr 04 19:14:28 +0900 OX-plugins-642c5af4a679b [     info]  detected plugin definition file /plugins/etc/openXDeliveryLimitations.xml
+Apr 04 19:14:28 +0900 OX-plugins-642c5af4a679b [     info]  detected group definition file /plugins/etc/Site/Site.xml
+Apr 04 19:14:28 +0900 OX-plugins-642c5af4a679b [     info]  detected group definition file /plugins/etc/Geo/Geo.xml
+Apr 04 19:14:29 +0900 OX-plugins-642c5af4a679b [     info]  Executing _checkOpenXCompatibility for Client
+Apr 04 19:14:29 +0900 OX-plugins-642c5af4a679b [     info]  Executing _checkSystemEnvironment for Client
+Apr 04 19:14:29 +0900 OX-plugins-642c5af4a679b [     info]  Executing _checkDatabaseEnvironment for Client
+Apr 04 19:14:29 +0900 OX-plugins-642c5af4a679b [     info]  Executing _runScript for Client
+Apr 04 19:14:29 +0900 OX-plugins-642c5af4a679b [     info]  Executing _checkDependenciesForInstallOrEnable for Client
+Apr 04 19:14:29 +0900 OX-plugins-642c5af4a679b [     info]  Executing _checkFiles for Client
+Apr 04 19:14:29 +0900 OX-plugins-642c5af4a679b [     info]  Executing _checkNavigationCheckers for Client
+Apr 04 19:14:29 +0900 OX-plugins-642c5af4a679b [     info]  Executing _checkMenus for Client
+Apr 04 19:14:29 +0900 OX-plugins-642c5af4a679b [     info]  Executing _registerSchema for Client
+Apr 04 19:14:29 +0900 OX-plugins-642c5af4a679b [     info]  Executing _registerPreferences for Client
+Apr 04 19:14:29 +0900 OX-plugins-642c5af4a679b [     info]  Executing _registerSettings for Client
+Apr 04 19:14:29 +0900 OX-plugins-642c5af4a679b [     info]  Executing disableComponentGroup for Client
+Apr 04 19:14:29 +0900 OX-plugins-642c5af4a679b [     info]  Executing _registerPluginVersion for Client
+Apr 04 19:14:29 +0900 OX-plugins-642c5af4a679b [     info]  Executing _runScript for Client
+Apr 04 19:14:29 +0900 OX-plugins-642c5af4a679b [     info]  Executing _checkOpenXCompatibility for Geo
+Apr 04 19:14:29 +0900 OX-plugins-642c5af4a679b [     info]  Executing _checkSystemEnvironment for Geo
+Apr 04 19:14:29 +0900 OX-plugins-642c5af4a679b [     info]  Executing _checkDatabaseEnvironment for Geo
+Apr 04 19:14:29 +0900 OX-plugins-642c5af4a679b [     info]  Executing _runScript for Geo
+Apr 04 19:14:29 +0900 OX-plugins-642c5af4a679b [     info]  Executing _checkDependenciesForInstallOrEnable for Geo
+Apr 04 19:14:29 +0900 OX-plugins-642c5af4a679b [     info]  Executing _checkFiles for Geo
+Apr 04 19:14:29 +0900 OX-plugins-642c5af4a679b [     info]  Executing _checkNavigationCheckers for Geo
+Apr 04 19:14:29 +0900 OX-plugins-642c5af4a679b [     info]  Executing _checkMenus for Geo
+Apr 04 19:14:29 +0900 OX-plugins-642c5af4a679b [     info]  Executing _registerSchema for Geo
+Apr 04 19:14:29 +0900 OX-plugins-642c5af4a679b [     info]  Executing _registerPreferences for Geo
+Apr 04 19:14:29 +0900 OX-plugins-642c5af4a679b [     info]  Executing _registerSettings for Geo
+Apr 04 19:14:29 +0900 OX-plugins-642c5af4a679b [     info]  Executing disableComponentGroup for Geo
+Apr 04 19:14:29 +0900 OX-plugins-642c5af4a679b [     info]  Executing _registerPluginVersion for Geo
+Apr 04 19:14:29 +0900 OX-plugins-642c5af4a679b [     info]  Executing _runScript for Geo
+Apr 04 19:14:29 +0900 OX-plugins-642c5af4a679b [     info]  Executing _checkOpenXCompatibility for Site
+Apr 04 19:14:29 +0900 OX-plugins-642c5af4a679b [     info]  Executing _checkSystemEnvironment for Site
+Apr 04 19:14:29 +0900 OX-plugins-642c5af4a679b [     info]  Executing _checkDatabaseEnvironment for Site
+Apr 04 19:14:29 +0900 OX-plugins-642c5af4a679b [     info]  Executing _runScript for Site
+Apr 04 19:14:29 +0900 OX-plugins-642c5af4a679b [     info]  Executing _checkDependenciesForInstallOrEnable for Site
+Apr 04 19:14:29 +0900 OX-plugins-642c5af4a679b [     info]  Executing _checkFiles for Site
+Apr 04 19:14:29 +0900 OX-plugins-642c5af4a679b [     info]  Executing _checkNavigationCheckers for Site
+Apr 04 19:14:29 +0900 OX-plugins-642c5af4a679b [     info]  Executing _checkMenus for Site
+Apr 04 19:14:29 +0900 OX-plugins-642c5af4a679b [     info]  Executing _registerSchema for Site
+Apr 04 19:14:29 +0900 OX-plugins-642c5af4a679b [     info]  Executing _registerPreferences for Site
+Apr 04 19:14:29 +0900 OX-plugins-642c5af4a679b [     info]  Executing _registerSettings for Site
+Apr 04 19:14:29 +0900 OX-plugins-642c5af4a679b [     info]  Executing disableComponentGroup for Site
+Apr 04 19:14:29 +0900 OX-plugins-642c5af4a679b [     info]  Executing _registerPluginVersion for Site
+Apr 04 19:14:29 +0900 OX-plugins-642c5af4a679b [     info]  Executing _runScript for Site
+Apr 04 19:14:29 +0900 OX-plugins-642c5af4a679b [     info]  Executing _checkOpenXCompatibility for Time
+Apr 04 19:14:29 +0900 OX-plugins-642c5af4a679b [     info]  Executing _checkSystemEnvironment for Time
+Apr 04 19:14:29 +0900 OX-plugins-642c5af4a679b [     info]  Executing _checkDatabaseEnvironment for Time
+Apr 04 19:14:29 +0900 OX-plugins-642c5af4a679b [     info]  Executing _runScript for Time
+Apr 04 19:14:29 +0900 OX-plugins-642c5af4a679b [     info]  Executing _checkDependenciesForInstallOrEnable for Time
+Apr 04 19:14:29 +0900 OX-plugins-642c5af4a679b [     info]  Executing _checkFiles for Time
+Apr 04 19:14:29 +0900 OX-plugins-642c5af4a679b [     info]  Executing _checkNavigationCheckers for Time
+Apr 04 19:14:29 +0900 OX-plugins-642c5af4a679b [     info]  Executing _checkMenus for Time
+Apr 04 19:14:29 +0900 OX-plugins-642c5af4a679b [     info]  Executing _registerSchema for Time
+Apr 04 19:14:29 +0900 OX-plugins-642c5af4a679b [     info]  Executing _registerPreferences for Time
+Apr 04 19:14:29 +0900 OX-plugins-642c5af4a679b [     info]  Executing _registerSettings for Time
+Apr 04 19:14:29 +0900 OX-plugins-642c5af4a679b [     info]  Executing disableComponentGroup for Time
+Apr 04 19:14:29 +0900 OX-plugins-642c5af4a679b [     info]  Executing _registerPluginVersion for Time
+Apr 04 19:14:29 +0900 OX-plugins-642c5af4a679b [     info]  Executing _runScript for Time
+Apr 04 19:14:33 +0900 OX-plugins-642c5af8c663a [     info]  starting _checkPackageContents openXReports.xml
+Apr 04 19:14:33 +0900 OX-plugins-642c5af8c663a [     info]  expecting definition openXReports.xml
+Apr 04 19:14:33 +0900 OX-plugins-642c5af8c663a [     info]  detected plugin definition file /plugins/etc/openXReports.xml
+Apr 04 19:14:33 +0900 OX-plugins-642c5af8c663a [     info]  detected group definition file /plugins/etc/oxReportsAdmin/oxReportsAdmin.xml
+Apr 04 19:14:33 +0900 OX-plugins-642c5af8c663a [     info]  detected group definition file /plugins/etc/oxReportsStandard/oxReportsStandard.xml
+Apr 04 19:14:33 +0900 OX-plugins-642c5af8c663a [     info]  Executing _checkOpenXCompatibility for oxReportsStandard
+Apr 04 19:14:33 +0900 OX-plugins-642c5af8c663a [     info]  Executing _checkSystemEnvironment for oxReportsStandard
+Apr 04 19:14:33 +0900 OX-plugins-642c5af8c663a [     info]  Executing _checkDatabaseEnvironment for oxReportsStandard
+Apr 04 19:14:33 +0900 OX-plugins-642c5af8c663a [     info]  Executing _runScript for oxReportsStandard
+Apr 04 19:14:33 +0900 OX-plugins-642c5af8c663a [     info]  Executing _checkDependenciesForInstallOrEnable for oxReportsStandard
+Apr 04 19:14:33 +0900 OX-plugins-642c5af8c663a [     info]  Executing _checkFiles for oxReportsStandard
+Apr 04 19:14:33 +0900 OX-plugins-642c5af8c663a [     info]  Executing _checkNavigationCheckers for oxReportsStandard
+Apr 04 19:14:33 +0900 OX-plugins-642c5af8c663a [     info]  Executing _checkMenus for oxReportsStandard
+Apr 04 19:14:33 +0900 OX-plugins-642c5af8c663a [     info]  Executing _registerSchema for oxReportsStandard
+Apr 04 19:14:33 +0900 OX-plugins-642c5af8c663a [     info]  Executing _registerPreferences for oxReportsStandard
+Apr 04 19:14:33 +0900 OX-plugins-642c5af8c663a [     info]  Executing _registerSettings for oxReportsStandard
+Apr 04 19:14:33 +0900 OX-plugins-642c5af8c663a [     info]  Executing disableComponentGroup for oxReportsStandard
+Apr 04 19:14:33 +0900 OX-plugins-642c5af8c663a [     info]  Executing _registerPluginVersion for oxReportsStandard
+Apr 04 19:14:33 +0900 OX-plugins-642c5af8c663a [     info]  Executing _runScript for oxReportsStandard
+Apr 04 19:14:33 +0900 OX-plugins-642c5af8c663a [     info]  Executing _checkOpenXCompatibility for oxReportsAdmin
+Apr 04 19:14:33 +0900 OX-plugins-642c5af8c663a [     info]  Executing _checkSystemEnvironment for oxReportsAdmin
+Apr 04 19:14:33 +0900 OX-plugins-642c5af8c663a [     info]  Executing _checkDatabaseEnvironment for oxReportsAdmin
+Apr 04 19:14:33 +0900 OX-plugins-642c5af8c663a [     info]  Executing _runScript for oxReportsAdmin
+Apr 04 19:14:33 +0900 OX-plugins-642c5af8c663a [     info]  Executing _checkDependenciesForInstallOrEnable for oxReportsAdmin
+Apr 04 19:14:33 +0900 OX-plugins-642c5af8c663a [     info]  Executing _checkFiles for oxReportsAdmin
+Apr 04 19:14:33 +0900 OX-plugins-642c5af8c663a [     info]  Executing _checkNavigationCheckers for oxReportsAdmin
+Apr 04 19:14:33 +0900 OX-plugins-642c5af8c663a [     info]  Executing _checkMenus for oxReportsAdmin
+Apr 04 19:14:33 +0900 OX-plugins-642c5af8c663a [     info]  Executing _registerSchema for oxReportsAdmin
+Apr 04 19:14:33 +0900 OX-plugins-642c5af8c663a [     info]  Executing _registerPreferences for oxReportsAdmin
+Apr 04 19:14:33 +0900 OX-plugins-642c5af8c663a [     info]  Executing _registerSettings for oxReportsAdmin
+Apr 04 19:14:33 +0900 OX-plugins-642c5af8c663a [     info]  Executing disableComponentGroup for oxReportsAdmin
+Apr 04 19:14:33 +0900 OX-plugins-642c5af8c663a [     info]  Executing _registerPluginVersion for oxReportsAdmin
+Apr 04 19:14:33 +0900 OX-plugins-642c5af8c663a [     info]  Executing _runScript for oxReportsAdmin
+Apr 04 19:14:36 +0900 OX-plugins-642c5afc0f44a [     info]  starting _checkPackageContents openXDeliveryCacheStore.xml
+Apr 04 19:14:36 +0900 OX-plugins-642c5afc0f44a [     info]  expecting definition openXDeliveryCacheStore.xml
+Apr 04 19:14:36 +0900 OX-plugins-642c5afc0f44a [     info]  detected group definition file /plugins/etc/oxMemcached/oxMemcached.xml
+Apr 04 19:14:36 +0900 OX-plugins-642c5afc0f44a [     info]  detected plugin definition file /plugins/etc/openXDeliveryCacheStore.xml
+Apr 04 19:14:36 +0900 OX-plugins-642c5afc0f44a [     info]  detected group definition file /plugins/etc/oxCacheFile/oxCacheFile.xml
+Apr 04 19:14:36 +0900 OX-plugins-642c5afc0f44a [     info]  Executing _checkOpenXCompatibility for oxCacheFile
+Apr 04 19:14:36 +0900 OX-plugins-642c5afc0f44a [     info]  Executing _checkSystemEnvironment for oxCacheFile
+Apr 04 19:14:36 +0900 OX-plugins-642c5afc0f44a [     info]  Executing _checkDatabaseEnvironment for oxCacheFile
+Apr 04 19:14:36 +0900 OX-plugins-642c5afc0f44a [     info]  Executing _runScript for oxCacheFile
+Apr 04 19:14:36 +0900 OX-plugins-642c5afc0f44a [     info]  Executing _checkDependenciesForInstallOrEnable for oxCacheFile
+Apr 04 19:14:36 +0900 OX-plugins-642c5afc0f44a [     info]  Executing _checkFiles for oxCacheFile
+Apr 04 19:14:36 +0900 OX-plugins-642c5afc0f44a [     info]  Executing _checkNavigationCheckers for oxCacheFile
+Apr 04 19:14:36 +0900 OX-plugins-642c5afc0f44a [     info]  Executing _checkMenus for oxCacheFile
+Apr 04 19:14:36 +0900 OX-plugins-642c5afc0f44a [     info]  Executing _registerSchema for oxCacheFile
+Apr 04 19:14:36 +0900 OX-plugins-642c5afc0f44a [     info]  Executing _registerPreferences for oxCacheFile
+Apr 04 19:14:36 +0900 OX-plugins-642c5afc0f44a [     info]  Executing _registerSettings for oxCacheFile
+Apr 04 19:14:36 +0900 OX-plugins-642c5afc0f44a [     info]  Executing disableComponentGroup for oxCacheFile
+Apr 04 19:14:36 +0900 OX-plugins-642c5afc0f44a [     info]  Executing _registerPluginVersion for oxCacheFile
+Apr 04 19:14:36 +0900 OX-plugins-642c5afc0f44a [     info]  Executing _runScript for oxCacheFile
+Apr 04 19:14:36 +0900 OX-plugins-642c5afc0f44a [     info]  Executing _checkOpenXCompatibility for oxMemcached
+Apr 04 19:14:36 +0900 OX-plugins-642c5afc0f44a [     info]  Executing _checkSystemEnvironment for oxMemcached
+Apr 04 19:14:36 +0900 OX-plugins-642c5afc0f44a [     info]  Executing _checkDatabaseEnvironment for oxMemcached
+Apr 04 19:14:36 +0900 OX-plugins-642c5afc0f44a [     info]  Executing _runScript for oxMemcached
+Apr 04 19:14:36 +0900 OX-plugins-642c5afc0f44a [     info]  Executing _checkDependenciesForInstallOrEnable for oxMemcached
+Apr 04 19:14:36 +0900 OX-plugins-642c5afc0f44a [     info]  Executing _checkFiles for oxMemcached
+Apr 04 19:14:36 +0900 OX-plugins-642c5afc0f44a [     info]  Executing _checkNavigationCheckers for oxMemcached
+Apr 04 19:14:36 +0900 OX-plugins-642c5afc0f44a [     info]  Executing _checkMenus for oxMemcached
+Apr 04 19:14:36 +0900 OX-plugins-642c5afc0f44a [     info]  Executing _registerSchema for oxMemcached
+Apr 04 19:14:36 +0900 OX-plugins-642c5afc0f44a [     info]  Executing _registerPreferences for oxMemcached
+Apr 04 19:14:36 +0900 OX-plugins-642c5afc0f44a [     info]  Executing _registerSettings for oxMemcached
+Apr 04 19:14:36 +0900 OX-plugins-642c5afc0f44a [     info]  Executing disableComponentGroup for oxMemcached
+Apr 04 19:14:36 +0900 OX-plugins-642c5afc0f44a [     info]  Executing _registerPluginVersion for oxMemcached
+Apr 04 19:14:36 +0900 OX-plugins-642c5afc0f44a [     info]  Executing _runScript for oxMemcached
+Apr 04 19:14:39 +0900 OX-plugins-642c5aff54523 [     info]  starting _checkPackageContents openXInvocationTags.xml
+Apr 04 19:14:39 +0900 OX-plugins-642c5aff54523 [     info]  expecting definition openXInvocationTags.xml
+Apr 04 19:14:39 +0900 OX-plugins-642c5aff54523 [     info]  detected group definition file /plugins/etc/oxInvocationTags/oxInvocationTags.xml
+Apr 04 19:14:39 +0900 OX-plugins-642c5aff54523 [     info]  detected plugin definition file /plugins/etc/openXInvocationTags.xml
+Apr 04 19:14:39 +0900 OX-plugins-642c5aff54523 [     info]  Executing _checkOpenXCompatibility for oxInvocationTags
+Apr 04 19:14:39 +0900 OX-plugins-642c5aff54523 [     info]  Executing _checkSystemEnvironment for oxInvocationTags
+Apr 04 19:14:39 +0900 OX-plugins-642c5aff54523 [     info]  Executing _checkDatabaseEnvironment for oxInvocationTags
+Apr 04 19:14:39 +0900 OX-plugins-642c5aff54523 [     info]  Executing _runScript for oxInvocationTags
+Apr 04 19:14:39 +0900 OX-plugins-642c5aff54523 [     info]  Executing _checkDependenciesForInstallOrEnable for oxInvocationTags
+Apr 04 19:14:39 +0900 OX-plugins-642c5aff54523 [     info]  Executing _checkFiles for oxInvocationTags
+Apr 04 19:14:39 +0900 OX-plugins-642c5aff54523 [     info]  Executing _checkNavigationCheckers for oxInvocationTags
+Apr 04 19:14:39 +0900 OX-plugins-642c5aff54523 [     info]  Executing _checkMenus for oxInvocationTags
+Apr 04 19:14:39 +0900 OX-plugins-642c5aff54523 [     info]  Executing _registerSchema for oxInvocationTags
+Apr 04 19:14:39 +0900 OX-plugins-642c5aff54523 [     info]  Executing _registerPreferences for oxInvocationTags
+Apr 04 19:14:39 +0900 OX-plugins-642c5aff54523 [     info]  Executing _registerSettings for oxInvocationTags
+Apr 04 19:14:39 +0900 OX-plugins-642c5aff54523 [     info]  Executing disableComponentGroup for oxInvocationTags
+Apr 04 19:14:39 +0900 OX-plugins-642c5aff54523 [     info]  Executing _registerPluginVersion for oxInvocationTags
+Apr 04 19:14:39 +0900 OX-plugins-642c5aff54523 [     info]  Executing _runScript for oxInvocationTags
+Apr 04 19:14:42 +0900 OX-plugins-642c5b02be1d9 [     info]  starting _checkPackageContents openXDeliveryLog.xml
+Apr 04 19:14:42 +0900 OX-plugins-642c5b02be1d9 [     info]  expecting definition openXDeliveryLog.xml
+Apr 04 19:14:42 +0900 OX-plugins-642c5b02be1d9 [     info]  detected group definition file /plugins/etc/oxLogImpression/oxLogImpression.xml
+Apr 04 19:14:42 +0900 OX-plugins-642c5b02be1d9 [     info]  detected group definition file /plugins/etc/oxDeliveryDataPrepare/oxDeliveryDataPrepare.xml
+Apr 04 19:14:42 +0900 OX-plugins-642c5b02be1d9 [     info]  detected plugin definition file /plugins/etc/openXDeliveryLog.xml
+Apr 04 19:14:42 +0900 OX-plugins-642c5b02be1d9 [     info]  detected group definition file /plugins/etc/oxLogConversion/oxLogConversion.xml
+Apr 04 19:14:42 +0900 OX-plugins-642c5b02be1d9 [     info]  detected group definition file /plugins/etc/oxLogRequest/oxLogRequest.xml
+Apr 04 19:14:42 +0900 OX-plugins-642c5b02be1d9 [     info]  detected group definition file /plugins/etc/oxLogClick/oxLogClick.xml
+Apr 04 19:14:43 +0900 OX-plugins-642c5b02be1d9 [     info]  Executing _checkOpenXCompatibility for oxDeliveryDataPrepare
+Apr 04 19:14:43 +0900 OX-plugins-642c5b02be1d9 [     info]  Executing _checkSystemEnvironment for oxDeliveryDataPrepare
+Apr 04 19:14:43 +0900 OX-plugins-642c5b02be1d9 [     info]  Executing _checkDatabaseEnvironment for oxDeliveryDataPrepare
+Apr 04 19:14:43 +0900 OX-plugins-642c5b02be1d9 [     info]  Executing _runScript for oxDeliveryDataPrepare
+Apr 04 19:14:43 +0900 OX-plugins-642c5b02be1d9 [     info]  Executing _checkDependenciesForInstallOrEnable for oxDeliveryDataPrepare
+Apr 04 19:14:43 +0900 OX-plugins-642c5b02be1d9 [     info]  Executing _checkFiles for oxDeliveryDataPrepare
+Apr 04 19:14:43 +0900 OX-plugins-642c5b02be1d9 [     info]  Executing _checkNavigationCheckers for oxDeliveryDataPrepare
+Apr 04 19:14:43 +0900 OX-plugins-642c5b02be1d9 [     info]  Executing _checkMenus for oxDeliveryDataPrepare
+Apr 04 19:14:43 +0900 OX-plugins-642c5b02be1d9 [     info]  Executing _registerSchema for oxDeliveryDataPrepare
+Apr 04 19:14:43 +0900 OX-plugins-642c5b02be1d9 [     info]  Executing _registerPreferences for oxDeliveryDataPrepare
+Apr 04 19:14:43 +0900 OX-plugins-642c5b02be1d9 [     info]  Executing _registerSettings for oxDeliveryDataPrepare
+Apr 04 19:14:43 +0900 OX-plugins-642c5b02be1d9 [     info]  Executing disableComponentGroup for oxDeliveryDataPrepare
+Apr 04 19:14:43 +0900 OX-plugins-642c5b02be1d9 [     info]  Executing _registerPluginVersion for oxDeliveryDataPrepare
+Apr 04 19:14:43 +0900 OX-plugins-642c5b02be1d9 [     info]  Executing _runScript for oxDeliveryDataPrepare
+Apr 04 19:14:43 +0900 OX-plugins-642c5b02be1d9 [     info]  Executing _checkOpenXCompatibility for oxLogClick
+Apr 04 19:14:43 +0900 OX-plugins-642c5b02be1d9 [     info]  Executing _checkSystemEnvironment for oxLogClick
+Apr 04 19:14:43 +0900 OX-plugins-642c5b02be1d9 [     info]  Executing _checkDatabaseEnvironment for oxLogClick
+Apr 04 19:14:43 +0900 OX-plugins-642c5b02be1d9 [     info]  Executing _runScript for oxLogClick
+Apr 04 19:14:43 +0900 OX-plugins-642c5b02be1d9 [     info]  Executing _checkDependenciesForInstallOrEnable for oxLogClick
+Apr 04 19:14:43 +0900 OX-plugins-642c5b02be1d9 [     info]  Executing _checkFiles for oxLogClick
+Apr 04 19:14:43 +0900 OX-plugins-642c5b02be1d9 [     info]  Executing _checkNavigationCheckers for oxLogClick
+Apr 04 19:14:43 +0900 OX-plugins-642c5b02be1d9 [     info]  Executing _checkMenus for oxLogClick
+Apr 04 19:14:43 +0900 OX-plugins-642c5b02be1d9 [     info]  Executing _registerSchema for oxLogClick
+Apr 04 19:14:43 +0900 OX-plugins-642c5b02be1d9 [     info]  Executing _registerPreferences for oxLogClick
+Apr 04 19:14:43 +0900 OX-plugins-642c5b02be1d9 [     info]  Executing _registerSettings for oxLogClick
+Apr 04 19:14:43 +0900 OX-plugins-642c5b02be1d9 [     info]  Executing disableComponentGroup for oxLogClick
+Apr 04 19:14:43 +0900 OX-plugins-642c5b02be1d9 [     info]  Executing _registerPluginVersion for oxLogClick
+Apr 04 19:14:43 +0900 OX-plugins-642c5b02be1d9 [     info]  Executing _runScript for oxLogClick
+Apr 04 19:14:43 +0900 OX-plugins-642c5b02be1d9 [     info]  Executing _checkOpenXCompatibility for oxLogConversion
+Apr 04 19:14:43 +0900 OX-plugins-642c5b02be1d9 [     info]  Executing _checkSystemEnvironment for oxLogConversion
+Apr 04 19:14:43 +0900 OX-plugins-642c5b02be1d9 [     info]  Executing _checkDatabaseEnvironment for oxLogConversion
+Apr 04 19:14:43 +0900 OX-plugins-642c5b02be1d9 [     info]  Executing _runScript for oxLogConversion
+Apr 04 19:14:43 +0900 OX-plugins-642c5b02be1d9 [     info]  Executing _checkDependenciesForInstallOrEnable for oxLogConversion
+Apr 04 19:14:43 +0900 OX-plugins-642c5b02be1d9 [     info]  Executing _checkFiles for oxLogConversion
+Apr 04 19:14:43 +0900 OX-plugins-642c5b02be1d9 [     info]  Executing _checkNavigationCheckers for oxLogConversion
+Apr 04 19:14:43 +0900 OX-plugins-642c5b02be1d9 [     info]  Executing _checkMenus for oxLogConversion
+Apr 04 19:14:43 +0900 OX-plugins-642c5b02be1d9 [     info]  Executing _registerSchema for oxLogConversion
+Apr 04 19:14:43 +0900 OX-plugins-642c5b02be1d9 [     info]  Executing _registerPreferences for oxLogConversion
+Apr 04 19:14:43 +0900 OX-plugins-642c5b02be1d9 [     info]  Executing _registerSettings for oxLogConversion
+Apr 04 19:14:43 +0900 OX-plugins-642c5b02be1d9 [     info]  Executing disableComponentGroup for oxLogConversion
+Apr 04 19:14:43 +0900 OX-plugins-642c5b02be1d9 [     info]  Executing _registerPluginVersion for oxLogConversion
+Apr 04 19:14:43 +0900 OX-plugins-642c5b02be1d9 [     info]  Executing _runScript for oxLogConversion
+Apr 04 19:14:43 +0900 OX-plugins-642c5b02be1d9 [     info]  Executing _checkOpenXCompatibility for oxLogImpression
+Apr 04 19:14:43 +0900 OX-plugins-642c5b02be1d9 [     info]  Executing _checkSystemEnvironment for oxLogImpression
+Apr 04 19:14:43 +0900 OX-plugins-642c5b02be1d9 [     info]  Executing _checkDatabaseEnvironment for oxLogImpression
+Apr 04 19:14:43 +0900 OX-plugins-642c5b02be1d9 [     info]  Executing _runScript for oxLogImpression
+Apr 04 19:14:43 +0900 OX-plugins-642c5b02be1d9 [     info]  Executing _checkDependenciesForInstallOrEnable for oxLogImpression
+Apr 04 19:14:43 +0900 OX-plugins-642c5b02be1d9 [     info]  Executing _checkFiles for oxLogImpression
+Apr 04 19:14:43 +0900 OX-plugins-642c5b02be1d9 [     info]  Executing _checkNavigationCheckers for oxLogImpression
+Apr 04 19:14:43 +0900 OX-plugins-642c5b02be1d9 [     info]  Executing _checkMenus for oxLogImpression
+Apr 04 19:14:43 +0900 OX-plugins-642c5b02be1d9 [     info]  Executing _registerSchema for oxLogImpression
+Apr 04 19:14:43 +0900 OX-plugins-642c5b02be1d9 [     info]  Executing _registerPreferences for oxLogImpression
+Apr 04 19:14:43 +0900 OX-plugins-642c5b02be1d9 [     info]  Executing _registerSettings for oxLogImpression
+Apr 04 19:14:43 +0900 OX-plugins-642c5b02be1d9 [     info]  Executing disableComponentGroup for oxLogImpression
+Apr 04 19:14:43 +0900 OX-plugins-642c5b02be1d9 [     info]  Executing _registerPluginVersion for oxLogImpression
+Apr 04 19:14:43 +0900 OX-plugins-642c5b02be1d9 [     info]  Executing _runScript for oxLogImpression
+Apr 04 19:14:44 +0900 OX-plugins-642c5b02be1d9 [     info]  Executing _checkOpenXCompatibility for oxLogRequest
+Apr 04 19:14:44 +0900 OX-plugins-642c5b02be1d9 [     info]  Executing _checkSystemEnvironment for oxLogRequest
+Apr 04 19:14:44 +0900 OX-plugins-642c5b02be1d9 [     info]  Executing _checkDatabaseEnvironment for oxLogRequest
+Apr 04 19:14:44 +0900 OX-plugins-642c5b02be1d9 [     info]  Executing _runScript for oxLogRequest
+Apr 04 19:14:44 +0900 OX-plugins-642c5b02be1d9 [     info]  Executing _checkDependenciesForInstallOrEnable for oxLogRequest
+Apr 04 19:14:44 +0900 OX-plugins-642c5b02be1d9 [     info]  Executing _checkFiles for oxLogRequest
+Apr 04 19:14:44 +0900 OX-plugins-642c5b02be1d9 [     info]  Executing _checkNavigationCheckers for oxLogRequest
+Apr 04 19:14:44 +0900 OX-plugins-642c5b02be1d9 [     info]  Executing _checkMenus for oxLogRequest
+Apr 04 19:14:44 +0900 OX-plugins-642c5b02be1d9 [     info]  Executing _registerSchema for oxLogRequest
+Apr 04 19:14:44 +0900 OX-plugins-642c5b02be1d9 [     info]  Executing _registerPreferences for oxLogRequest
+Apr 04 19:14:44 +0900 OX-plugins-642c5b02be1d9 [     info]  Executing _registerSettings for oxLogRequest
+Apr 04 19:14:44 +0900 OX-plugins-642c5b02be1d9 [     info]  Executing disableComponentGroup for oxLogRequest
+Apr 04 19:14:44 +0900 OX-plugins-642c5b02be1d9 [     info]  Executing _registerPluginVersion for oxLogRequest
+Apr 04 19:14:44 +0900 OX-plugins-642c5b02be1d9 [     info]  Executing _runScript for oxLogRequest
+Apr 04 19:14:47 +0900 OX-plugins-642c5b072f7bf [     info]  starting _checkPackageContents openXVideoAds.xml
+Apr 04 19:14:47 +0900 OX-plugins-642c5b072f7bf [     info]  expecting definition openXVideoAds.xml
+Apr 04 19:14:47 +0900 OX-plugins-642c5b072f7bf [     info]  detected group definition file /plugins/etc/videoReport/videoReport.xml
+Apr 04 19:14:47 +0900 OX-plugins-642c5b072f7bf [     info]  detected plugin definition file /plugins/etc/openXVideoAds.xml
+Apr 04 19:14:47 +0900 OX-plugins-642c5b072f7bf [     info]  detected group definition file /plugins/etc/oxLogVast/oxLogVast.xml
+Apr 04 19:14:47 +0900 OX-plugins-642c5b072f7bf [     info]  detected group definition file /plugins/etc/vastServeVideoPlayer/vastServeVideoPlayer.xml
+Apr 04 19:14:47 +0900 OX-plugins-642c5b072f7bf [     info]  detected group definition file /plugins/etc/vastOverlayBannerTypeHtml/vastOverlayBannerTypeHtml.xml
+Apr 04 19:14:47 +0900 OX-plugins-642c5b072f7bf [     info]  detected group definition file /plugins/etc/vastInlineBannerTypeHtml/vastInlineBannerTypeHtml.xml
+Apr 04 19:14:47 +0900 OX-plugins-642c5b072f7bf [     info]  Executing _checkOpenXCompatibility for vastInlineBannerTypeHtml
+Apr 04 19:14:47 +0900 OX-plugins-642c5b072f7bf [     info]  Executing _checkSystemEnvironment for vastInlineBannerTypeHtml
+Apr 04 19:14:47 +0900 OX-plugins-642c5b072f7bf [     info]  Executing _checkDatabaseEnvironment for vastInlineBannerTypeHtml
+Apr 04 19:14:47 +0900 OX-plugins-642c5b072f7bf [     info]  Executing _runScript for vastInlineBannerTypeHtml
+Apr 04 19:14:47 +0900 OX-plugins-642c5b072f7bf [     info]  Executing _checkDependenciesForInstallOrEnable for vastInlineBannerTypeHtml
+Apr 04 19:14:47 +0900 OX-plugins-642c5b072f7bf [     info]  Executing _checkFiles for vastInlineBannerTypeHtml
+Apr 04 19:14:47 +0900 OX-plugins-642c5b072f7bf [     info]  Executing _checkNavigationCheckers for vastInlineBannerTypeHtml
+Apr 04 19:14:47 +0900 OX-plugins-642c5b072f7bf [     info]  Executing _checkMenus for vastInlineBannerTypeHtml
+Apr 04 19:14:47 +0900 OX-plugins-642c5b072f7bf [     info]  Executing _registerSchema for vastInlineBannerTypeHtml
+Apr 04 19:14:48 +0900 OX-plugins-642c5b072f7bf [     info]  Executing _registerPreferences for vastInlineBannerTypeHtml
+Apr 04 19:14:48 +0900 OX-plugins-642c5b072f7bf [     info]  Executing _registerSettings for vastInlineBannerTypeHtml
+Apr 04 19:14:48 +0900 OX-plugins-642c5b072f7bf [     info]  Executing disableComponentGroup for vastInlineBannerTypeHtml
+Apr 04 19:14:48 +0900 OX-plugins-642c5b072f7bf [     info]  Executing _registerPluginVersion for vastInlineBannerTypeHtml
+Apr 04 19:14:48 +0900 OX-plugins-642c5b072f7bf [     info]  Executing _runScript for vastInlineBannerTypeHtml
+Apr 04 19:14:48 +0900 OX-plugins-642c5b072f7bf [     info]  Executing _checkOpenXCompatibility for vastOverlayBannerTypeHtml
+Apr 04 19:14:48 +0900 OX-plugins-642c5b072f7bf [     info]  Executing _checkSystemEnvironment for vastOverlayBannerTypeHtml
+Apr 04 19:14:48 +0900 OX-plugins-642c5b072f7bf [     info]  Executing _checkDatabaseEnvironment for vastOverlayBannerTypeHtml
+Apr 04 19:14:48 +0900 OX-plugins-642c5b072f7bf [     info]  Executing _runScript for vastOverlayBannerTypeHtml
+Apr 04 19:14:48 +0900 OX-plugins-642c5b072f7bf [     info]  Executing _checkDependenciesForInstallOrEnable for vastOverlayBannerTypeHtml
+Apr 04 19:14:48 +0900 OX-plugins-642c5b072f7bf [     info]  Executing _checkFiles for vastOverlayBannerTypeHtml
+Apr 04 19:14:48 +0900 OX-plugins-642c5b072f7bf [     info]  Executing _checkNavigationCheckers for vastOverlayBannerTypeHtml
+Apr 04 19:14:48 +0900 OX-plugins-642c5b072f7bf [     info]  Executing _checkMenus for vastOverlayBannerTypeHtml
+Apr 04 19:14:48 +0900 OX-plugins-642c5b072f7bf [     info]  Executing _registerSchema for vastOverlayBannerTypeHtml
+Apr 04 19:14:48 +0900 OX-plugins-642c5b072f7bf [     info]  Executing _registerPreferences for vastOverlayBannerTypeHtml
+Apr 04 19:14:48 +0900 OX-plugins-642c5b072f7bf [     info]  Executing _registerSettings for vastOverlayBannerTypeHtml
+Apr 04 19:14:48 +0900 OX-plugins-642c5b072f7bf [     info]  Executing disableComponentGroup for vastOverlayBannerTypeHtml
+Apr 04 19:14:48 +0900 OX-plugins-642c5b072f7bf [     info]  Executing _registerPluginVersion for vastOverlayBannerTypeHtml
+Apr 04 19:14:48 +0900 OX-plugins-642c5b072f7bf [     info]  Executing _runScript for vastOverlayBannerTypeHtml
+Apr 04 19:14:48 +0900 OX-plugins-642c5b072f7bf [     info]  Executing _checkOpenXCompatibility for oxLogVast
+Apr 04 19:14:48 +0900 OX-plugins-642c5b072f7bf [     info]  Executing _checkSystemEnvironment for oxLogVast
+Apr 04 19:14:48 +0900 OX-plugins-642c5b072f7bf [     info]  Executing _checkDatabaseEnvironment for oxLogVast
+Apr 04 19:14:48 +0900 OX-plugins-642c5b072f7bf [     info]  Executing _runScript for oxLogVast
+Apr 04 19:14:48 +0900 OX-plugins-642c5b072f7bf [     info]  Executing _checkDependenciesForInstallOrEnable for oxLogVast
+Apr 04 19:14:48 +0900 OX-plugins-642c5b072f7bf [     info]  Executing _checkFiles for oxLogVast
+Apr 04 19:14:48 +0900 OX-plugins-642c5b072f7bf [     info]  Executing _checkNavigationCheckers for oxLogVast
+Apr 04 19:14:48 +0900 OX-plugins-642c5b072f7bf [     info]  Executing _checkMenus for oxLogVast
+Apr 04 19:14:48 +0900 OX-plugins-642c5b072f7bf [     info]  Executing _registerSchema for oxLogVast
+Apr 04 19:14:48 +0900 OX-plugins-642c5b072f7bf [     info]  Executing _registerPreferences for oxLogVast
+Apr 04 19:14:48 +0900 OX-plugins-642c5b072f7bf [     info]  Executing _registerSettings for oxLogVast
+Apr 04 19:14:48 +0900 OX-plugins-642c5b072f7bf [     info]  Executing disableComponentGroup for oxLogVast
+Apr 04 19:14:48 +0900 OX-plugins-642c5b072f7bf [     info]  Executing _registerPluginVersion for oxLogVast
+Apr 04 19:14:48 +0900 OX-plugins-642c5b072f7bf [     info]  Executing _runScript for oxLogVast
+Apr 04 19:14:48 +0900 OX-plugins-642c5b072f7bf [     info]  Executing _checkOpenXCompatibility for vastServeVideoPlayer
+Apr 04 19:14:48 +0900 OX-plugins-642c5b072f7bf [     info]  Executing _checkSystemEnvironment for vastServeVideoPlayer
+Apr 04 19:14:48 +0900 OX-plugins-642c5b072f7bf [     info]  Executing _checkDatabaseEnvironment for vastServeVideoPlayer
+Apr 04 19:14:48 +0900 OX-plugins-642c5b072f7bf [     info]  Executing _runScript for vastServeVideoPlayer
+Apr 04 19:14:48 +0900 OX-plugins-642c5b072f7bf [     info]  Executing _checkDependenciesForInstallOrEnable for vastServeVideoPlayer
+Apr 04 19:14:48 +0900 OX-plugins-642c5b072f7bf [     info]  Executing _checkFiles for vastServeVideoPlayer
+Apr 04 19:14:48 +0900 OX-plugins-642c5b072f7bf [     info]  Executing _checkNavigationCheckers for vastServeVideoPlayer
+Apr 04 19:14:48 +0900 OX-plugins-642c5b072f7bf [     info]  Executing _checkMenus for vastServeVideoPlayer
+Apr 04 19:14:48 +0900 OX-plugins-642c5b072f7bf [     info]  Executing _registerSchema for vastServeVideoPlayer
+Apr 04 19:14:48 +0900 OX-plugins-642c5b072f7bf [     info]  Executing _registerPreferences for vastServeVideoPlayer
+Apr 04 19:14:48 +0900 OX-plugins-642c5b072f7bf [     info]  Executing _registerSettings for vastServeVideoPlayer
+Apr 04 19:14:48 +0900 OX-plugins-642c5b072f7bf [     info]  Executing disableComponentGroup for vastServeVideoPlayer
+Apr 04 19:14:48 +0900 OX-plugins-642c5b072f7bf [     info]  Executing _registerPluginVersion for vastServeVideoPlayer
+Apr 04 19:14:48 +0900 OX-plugins-642c5b072f7bf [     info]  Executing _runScript for vastServeVideoPlayer
+Apr 04 19:14:48 +0900 OX-plugins-642c5b072f7bf [     info]  Executing _checkOpenXCompatibility for videoReport
+Apr 04 19:14:48 +0900 OX-plugins-642c5b072f7bf [     info]  Executing _checkSystemEnvironment for videoReport
+Apr 04 19:14:48 +0900 OX-plugins-642c5b072f7bf [     info]  Executing _checkDatabaseEnvironment for videoReport
+Apr 04 19:14:48 +0900 OX-plugins-642c5b072f7bf [     info]  Executing _runScript for videoReport
+Apr 04 19:14:48 +0900 OX-plugins-642c5b072f7bf [     info]  Executing _checkDependenciesForInstallOrEnable for videoReport
+Apr 04 19:14:48 +0900 OX-plugins-642c5b072f7bf [     info]  Executing _checkFiles for videoReport
+Apr 04 19:14:48 +0900 OX-plugins-642c5b072f7bf [     info]  Executing _checkNavigationCheckers for videoReport
+Apr 04 19:14:48 +0900 OX-plugins-642c5b072f7bf [     info]  Executing _checkMenus for videoReport
+Apr 04 19:14:48 +0900 OX-plugins-642c5b072f7bf [     info]  Executing _registerSchema for videoReport
+Apr 04 19:14:48 +0900 OX-plugins-642c5b072f7bf [     info]  Executing _registerPreferences for videoReport
+Apr 04 19:14:48 +0900 OX-plugins-642c5b072f7bf [     info]  Executing _registerSettings for videoReport
+Apr 04 19:14:48 +0900 OX-plugins-642c5b072f7bf [     info]  Executing disableComponentGroup for videoReport
+Apr 04 19:14:48 +0900 OX-plugins-642c5b072f7bf [     info]  Executing _registerPluginVersion for videoReport
+Apr 04 19:14:48 +0900 OX-plugins-642c5b072f7bf [     info]  Executing _runScript for videoReport
+Apr 04 19:14:52 +0900 OX-plugins-642c5b0c2fcbb [     info]  starting _checkPackageContents reviveMaxMindGeoIP2.xml
+Apr 04 19:14:52 +0900 OX-plugins-642c5b0c2fcbb [     info]  expecting definition reviveMaxMindGeoIP2.xml
+Apr 04 19:14:52 +0900 OX-plugins-642c5b0c2fcbb [     info]  detected plugin definition file /plugins/etc/reviveMaxMindGeoIP2.xml
+Apr 04 19:14:52 +0900 OX-plugins-642c5b0c2fcbb [     info]  detected group definition file /plugins/etc/rvMaxMindGeoIP2Maintenance/rvMaxMindGeoIP2Maintenance.xml
+Apr 04 19:14:52 +0900 OX-plugins-642c5b0c2fcbb [     info]  detected group definition file /plugins/etc/rvMaxMindGeoIP2/rvMaxMindGeoIP2.xml
+Apr 04 19:14:52 +0900 OX-plugins-642c5b0c2fcbb [     info]  Executing _checkOpenXCompatibility for rvMaxMindGeoIP2
+Apr 04 19:14:52 +0900 OX-plugins-642c5b0c2fcbb [     info]  Executing _checkSystemEnvironment for rvMaxMindGeoIP2
+Apr 04 19:14:52 +0900 OX-plugins-642c5b0c2fcbb [     info]  Executing _checkDatabaseEnvironment for rvMaxMindGeoIP2
+Apr 04 19:14:52 +0900 OX-plugins-642c5b0c2fcbb [     info]  Executing _runScript for rvMaxMindGeoIP2
+Apr 04 19:14:52 +0900 OX-plugins-642c5b0c2fcbb [     info]  Executing _checkDependenciesForInstallOrEnable for rvMaxMindGeoIP2
+Apr 04 19:14:52 +0900 OX-plugins-642c5b0c2fcbb [     info]  Executing _checkFiles for rvMaxMindGeoIP2
+Apr 04 19:14:52 +0900 OX-plugins-642c5b0c2fcbb [     info]  Executing _checkNavigationCheckers for rvMaxMindGeoIP2
+Apr 04 19:14:52 +0900 OX-plugins-642c5b0c2fcbb [     info]  Executing _checkMenus for rvMaxMindGeoIP2
+Apr 04 19:14:52 +0900 OX-plugins-642c5b0c2fcbb [     info]  Executing _registerSchema for rvMaxMindGeoIP2
+Apr 04 19:14:52 +0900 OX-plugins-642c5b0c2fcbb [     info]  Executing _registerPreferences for rvMaxMindGeoIP2
+Apr 04 19:14:52 +0900 OX-plugins-642c5b0c2fcbb [     info]  Executing _registerSettings for rvMaxMindGeoIP2
+Apr 04 19:14:52 +0900 OX-plugins-642c5b0c2fcbb [     info]  Executing disableComponentGroup for rvMaxMindGeoIP2
+Apr 04 19:14:52 +0900 OX-plugins-642c5b0c2fcbb [     info]  Executing _registerPluginVersion for rvMaxMindGeoIP2
+Apr 04 19:14:52 +0900 OX-plugins-642c5b0c2fcbb [     info]  Executing _runScript for rvMaxMindGeoIP2
+Apr 04 19:14:52 +0900 OX-plugins-642c5b0c2fcbb [     info]  Executing _checkOpenXCompatibility for rvMaxMindGeoIP2Maintenance
+Apr 04 19:14:52 +0900 OX-plugins-642c5b0c2fcbb [     info]  Executing _checkSystemEnvironment for rvMaxMindGeoIP2Maintenance
+Apr 04 19:14:52 +0900 OX-plugins-642c5b0c2fcbb [     info]  Executing _checkDatabaseEnvironment for rvMaxMindGeoIP2Maintenance
+Apr 04 19:14:52 +0900 OX-plugins-642c5b0c2fcbb [     info]  Executing _runScript for rvMaxMindGeoIP2Maintenance
+Apr 04 19:14:52 +0900 OX-plugins-642c5b0c2fcbb [     info]  Executing _checkDependenciesForInstallOrEnable for rvMaxMindGeoIP2Maintenance
+Apr 04 19:14:52 +0900 OX-plugins-642c5b0c2fcbb [     info]  Executing _checkFiles for rvMaxMindGeoIP2Maintenance
+Apr 04 19:14:52 +0900 OX-plugins-642c5b0c2fcbb [     info]  Executing _checkNavigationCheckers for rvMaxMindGeoIP2Maintenance
+Apr 04 19:14:52 +0900 OX-plugins-642c5b0c2fcbb [     info]  Executing _checkMenus for rvMaxMindGeoIP2Maintenance
+Apr 04 19:14:52 +0900 OX-plugins-642c5b0c2fcbb [     info]  Executing _registerSchema for rvMaxMindGeoIP2Maintenance
+Apr 04 19:14:52 +0900 OX-plugins-642c5b0c2fcbb [     info]  Executing _registerPreferences for rvMaxMindGeoIP2Maintenance
+Apr 04 19:14:52 +0900 OX-plugins-642c5b0c2fcbb [     info]  Executing _registerSettings for rvMaxMindGeoIP2Maintenance
+Apr 04 19:14:52 +0900 OX-plugins-642c5b0c2fcbb [     info]  Executing disableComponentGroup for rvMaxMindGeoIP2Maintenance
+Apr 04 19:14:52 +0900 OX-plugins-642c5b0c2fcbb [     info]  Executing _registerPluginVersion for rvMaxMindGeoIP2Maintenance
+Apr 04 19:14:52 +0900 OX-plugins-642c5b0c2fcbb [     info]  Executing _runScript for rvMaxMindGeoIP2Maintenance
+Apr 04 19:14:54 +0900 OX-plugins-642c5b0c2fcbb [  warning]  An error occurred trying to download the latest GeoIP2 database: Client error: `GET https://download.maxmind.com/app/geoip_download?edition_id=GeoLite2-City&amp;suffix=tar.gz.md5&amp;license_key=` resulted in a `401 Unauthorized` response:
+Invalid license key
+
+
+Apr 05 03:56:04 +0900 OX-642cd5334ee97 [     info]  Unwritable file C:\xampp\htdocs\UNA\adserver\plugins/reports/b19635b517a80497813a20c37ec52cad
+Apr 05 03:56:15 +0900 OX-642cd53e8f82e [     info]  Unwritable file C:\xampp\htdocs\UNA\adserver\plugins/etc/oxText/_lang/po/0d43542b9b99b3b3333ced451ea46f22
+Apr 05 03:57:37 +0900 OX-642cd590ac189 [     info]  Unwritable file C:\xampp\htdocs\UNA\adserver\plugins/etc/vastInlineBannerTypeHtml/etc/ac5223369066d419095874a8124ab09e
+Apr 05 04:27:27 +0900 OX-642cdc8e2e02e [     info]  Unwritable file C:\xampp\htdocs\UNA\adserver\plugins/reports/oxReportsAdmin/a18b5a72788e7e63d4ae35cff0a5a23d
+Apr 05 04:27:37 +0900 OX-642cdc98ee29f [     info]  Unwritable file C:\xampp\htdocs\UNA\adserver\plugins/deliveryLog/0d30dbf7f13e7cf4a2bac9a7aea82462
+Apr 05 04:27:48 +0900 OX-642cdca399490 [     info]  Unwritable file C:\xampp\htdocs\UNA\adserver\plugins/etc/oxHtml/5bdfce4deb8bae9cee37745e2ee59d81
+Apr 05 07:27:19 +0900 OX-642d06b1832a1 [     info]  Unwritable file C:\xampp\htdocs\UNA\adserver\plugins/deliveryLog/0ff57b863feeceb6d4c2ba31039b5976
+Apr 06 04:30:44 +0900 OX-642e2ed41270a [     info]  Unwritable file C:\xampp\htdocs\UNA\adserver\var\plugins/DataObjects/facc79cbcc008bf4a8c05b85295ea05f
+Apr 06 04:30:44 +0900 OX-642e2ed41270a [     info]  Unwritable file C:\xampp\htdocs\UNA\adserver\plugins/etc/Client/afbe98c1d8bbf5613f261cd129be2144
+Apr 06 10:49:17 +0900 OX-642e878c74db0 [     info]  Unwritable file C:\xampp\htdocs\UNA\adserver\plugins/etc/oxMemcached/ea732d82071fdba76b3ad95699007877
+Apr 06 10:49:17 +0900 OX-642e878c74db0 [     info]  Unwritable file C:\xampp\htdocs\UNA\adserver\plugins/etc/vastInlineBannerTypeHtml/etc/DataObjects/6c2293ac385099a3a217a3dc1bcb55e7
+Apr 06 10:49:51 +0900 OX-642e87af49ba0 [     info]  Unwritable file C:\xampp\htdocs\UNA\adserver\www\admin\plugins/videoReport/js/ed63646cddb3e20aba7b3beb3c734174
+Apr 06 10:51:05 +0900 OX-642e87f8dfbb0 [     info]  Unwritable file C:\xampp\htdocs\UNA\adserver\plugins/etc/oxMemcached/_lang/644c515d93ebf7d6ee0a2d58cd7e035e
+Apr 06 10:53:34 +0900 OX-642e888d90c83 [     info]  Unwritable file C:\xampp\htdocs\UNA\adserver\plugins/invocationTags/fd0cbd086afab1e17f8d0fc2c2c9ef0d
+Apr 06 10:53:37 +0900 OX-642e889132b09 [     info]  Unwritable file C:\xampp\htdocs\UNA\adserver\plugins/deliveryLog/oxLogVast/6a14a4a80a1afe62a50c061bcd10e154
+Apr 06 10:54:23 +0900 OX-642e88bed83dc [     info]  Unwritable file C:\xampp\htdocs\UNA\adserver\plugins/deliveryCacheStore/4905e4cc10dfa6da2e24f28350349837
+Apr 06 10:59:10 +0900 OX-642e89ddc7d6b [     info]  Unwritable file C:\xampp\htdocs\UNA\adserver\plugins/etc/oxInvocationTags/_lang/po/e9cf0628a46beed4a9e6b4fa9f811666
+Apr 06 11:22:54 +0900 OX-642e8f6d83159 [     info]  Unwritable file C:\xampp\htdocs\UNA\adserver\plugins/etc/vastInlineBannerTypeHtml/f629eb37b2dda7f427dd21ddc75913a6
+Apr 06 11:27:22 +0900 OX-642e9079d363a [     info]  Unwritable file C:\xampp\htdocs\UNA\adserver\www\admin\plugins/videoReport/lib/dda122f1262658a4cd11fcec88a03f9b
+Apr 06 12:23:28 +0900 OX-642e9da082b91 [     info]  Unwritable file C:\xampp\htdocs\UNA\adserver\plugins/deliveryCacheStore/20295baf94e741a49879ebf020c824d4
+Apr 06 12:23:28 +0900 OX-642e9da082b91 [     info]  Unwritable file C:\xampp\htdocs\UNA\adserver\plugins/etc/Client/_lang/d7c0b87d372de899247cb6511c0536e1
+Apr 06 12:24:23 +0900 OX-642e9dd73a9e2 [     info]  Unwritable file C:\xampp\htdocs\UNA\adserver\plugins/etc/Time/_lang/po/ef2fd4324dba6209da0c350b1d2eb9de
+Apr 06 12:24:23 +0900 OX-642e9dd73a9e2 [     info]  Unwritable file C:\xampp\htdocs\UNA\adserver\plugins/etc/vastInlineBannerTypeHtml/etc/219936378cf1c22fbd342848a08c0191
+Apr 06 12:33:35 +0900 OX-642e9ffedf063 [     info]  Unwritable file C:\xampp\htdocs\UNA\adserver\plugins/c1ffc149af569b81d69ff8b03a1c27bf
+Apr 06 12:36:12 +0900 OX-642ea09c25186 [     info]  Unwritable file C:\xampp\htdocs\UNA\adserver\plugins/etc/oxReportsStandard/_lang/po/2781baa3c91e62bd3a7715b790c39327
+Apr 06 12:38:21 +0900 OX-642ea11d06d78 [     info]  Unwritable file C:\xampp\htdocs\UNA\adserver\plugins/deliveryLog/vastServeVideoPlayer/6f90a34c632ccfc79c5020835c4058b6
+Apr 06 12:38:21 +0900 OX-642ea11d06d78 [     info]  Unwritable file C:\xampp\htdocs\UNA\adserver\plugins/invocationTags/oxInvocationTags/layerstyles/cursor/eb1daf255b4d1ed2c415c064e250b39a
+Apr 06 12:47:05 +0900 OX-642ea328bbf79 [     info]  Unwritable file C:\xampp\htdocs\UNA\adserver\plugins/0cd07f0583a6d7a46095a13c0267ede0
+Apr 06 12:47:05 +0900 OX-642ea328bbf79 [     info]  Unwritable file C:\xampp\htdocs\UNA\adserver\plugins/etc/oxLogClick/326703460196cc7f45d4b69f257d62fa
+Apr 06 12:50:34 +0900 OX-642ea3fa0b133 [     info]  Unwritable file C:\xampp\htdocs\UNA\adserver\plugins/etc/vastInlineBannerTypeHtml/38d3c6832bb7e49b056a7cce5663838f
+Apr 06 12:56:19 +0900 OX-642ea552646b1 [     info]  Unwritable file C:\xampp\htdocs\UNA\adserver\plugins/etc/rvMaxMindGeoIP2/8cc976396e661e844d7efac5f2ec2a06
+Apr 06 13:02:56 +0900 OX-642ea6dfbbe0e [     info]  Unwritable file C:\xampp\htdocs\UNA\adserver\plugins/etc/rvMaxMindGeoIP2/8b08bcba3b1c7cd48b0ac5fcb11dfad4
+Apr 06 13:09:44 +0900 OX-642ea877b0677 [     info]  Unwritable file C:\xampp\htdocs\UNA\adserver\plugins/bannerTypeHtml/oxHtml/f081625f771dbca47ff98f5c7a2463de
+Apr 06 13:11:25 +0900 OX-642ea8dd4aea8 [     info]  Unwritable file C:\xampp\htdocs\UNA\adserver\plugins/etc/oxHtml/_lang/73bd1b48b1bcfcd6102ac066928d7a4f
+Apr 06 13:11:59 +0900 OX-642ea8fea6382 [     info]  Unwritable file C:\xampp\htdocs\UNA\adserver\plugins/etc/Time/4ff186289d84eb15dd04e8d6f8ada8fd
+Apr 06 13:11:59 +0900 OX-642ea8fea6382 [     info]  Unwritable file C:\xampp\htdocs\UNA\adserver\plugins/maintenanceStatisticsTask/3e8dc5f9fb0df2751a7ea115e925e125
+Apr 06 13:23:10 +0900 OX-642eab9e8843a [     info]  Unwritable file C:\xampp\htdocs\UNA\adserver\plugins/etc/Geo/ee6791e810737fa904c0fe86db4a3615
+Apr 06 13:25:35 +0900 OX-642eac2f2522e [     info]  Unwritable file C:\xampp\htdocs\UNA\adserver\plugins/etc/oxCacheFile/3fdde5c5cb329458c1dbef45989c8388
+Apr 06 17:12:21 +0900 OX-642ee1559f7c4 [     info]  Unwritable file C:\xampp\htdocs\UNA\adserver\var\plugins/recover/55228e17e53eb447fccc38896493e9ce
+Apr 06 17:12:26 +0900 OX-642ee159b45f2 [     info]  Unwritable file C:\xampp\htdocs\UNA\adserver\plugins/deliveryLimitations/Time/3bf20a5bdc5df1a590299658b0a021d3
+Apr 06 17:12:30 +0900 OX-642ee15e7c550 [     info]  Unwritable file C:\xampp\htdocs\UNA\adserver\plugins/b27428bfe7e505828c0586bd43895f0c
+Apr 06 17:12:31 +0900 OX-642ee15e7c550 [     info]  Unwritable file C:\xampp\htdocs\UNA\adserver\plugins/etc/vastInlineBannerTypeHtml/3771acd54877fdfd684984b6d0485fbf
+Apr 06 17:12:31 +0900 OX-642ee15f74775 [     info]  Unwritable file C:\xampp\htdocs\UNA\adserver\plugins/etc/oxCacheFile/41bc2e49c218f504ffcb3cdc0372f03a
+Apr 06 17:12:32 +0900 OX-642ee15f74775 [     info]  Unwritable file C:\xampp\htdocs\UNA\adserver\plugins/etc/oxReportsAdmin/2d5221ee2a3416ee66654ad235372fd8
+Apr 06 17:12:32 +0900 OX-642ee16067ca9 [     info]  Unwritable file C:\xampp\htdocs\UNA\adserver\var\plugins/e0a2a99471e55e722769827b955fd239
+Apr 06 17:12:36 +0900 OX-642ee16445258 [     info]  Unwritable file C:\xampp\htdocs\UNA\adserver\plugins/etc/oxReportsAdmin/8f0e35117b1fed082daa6e46771c8376
+Apr 06 17:12:42 +0900 OX-642ee169d0624 [     info]  Unwritable file C:\xampp\htdocs\UNA\adserver\plugins/deliveryLimitations/Time/b574b4170f23819973aa25153da333bd
+Apr 06 17:12:42 +0900 OX-642ee169d0624 [     info]  Unwritable file C:\xampp\htdocs\UNA\adserver\plugins/etc/oxLogVast/etc/2808e3613b219d8eadb1007ef2827087
+Apr 06 17:22:33 +0900 OX-642ee3b8c2f5c [     info]  Unwritable file C:\xampp\htdocs\UNA\adserver\www\admin\plugins/videoReport/js/cdbe8652eef930d136cd233cbf46180d
+Apr 06 17:33:26 +0900 OX-642ee645741f1 [     info]  Unwritable file C:\xampp\htdocs\UNA\adserver\plugins/maintenanceStatisticsTask/815663cbf2144f4699709128e0e5ede8
+Apr 06 17:33:38 +0900 OX-642ee6524db0b [     info]  Unwritable file C:\xampp\htdocs\UNA\adserver\plugins/etc/oxInvocationTags/df7053c25332b087240140b7c50b0189
+Apr 06 17:33:39 +0900 OX-642ee6524db0b [     info]  Unwritable file C:\xampp\htdocs\UNA\adserver\plugins/etc/Site/_lang/po/5172cd3ef3673d4dc8d2cc8545b29cfa
+Apr 06 17:33:41 +0900 OX-642ee655a15d1 [     info]  Unwritable file C:\xampp\htdocs\UNA\adserver\plugins/bannerTypeHtml/vastInlineBannerTypeHtml/88aa31313953ecd9262fb6a1b3d37e71
+Apr 06 17:33:42 +0900 OX-642ee655a15d1 [     info]  Unwritable file C:\xampp\htdocs\UNA\adserver\www\admin\plugins/videoReport/74044ca0cc2b60fc9d94e9b9dd8b4c99
+Apr 06 17:33:43 +0900 OX-642ee6569c5fa [     info]  Unwritable file C:\xampp\htdocs\UNA\adserver\plugins/reports/oxReportsStandard/3238cc8d832060151648de58d83a13bc
+Apr 06 17:33:46 +0900 OX-642ee659dc617 [     info]  Unwritable file C:\xampp\htdocs\UNA\adserver\plugins/etc/Time/_lang/145c58a15787b04d716947741999e66b
+Apr 06 17:34:57 +0900 OX-642ee6a09735f [    error]  Smarty error: [in login.html line 63]: syntax error: unrecognized tag: $('#username').val(username);
+    $('#password').val(password);
+    $('#login').click(); (Smarty_Compiler.class.php, line 444)
+Apr 06 17:34:57 +0900 OX-642ee6a09735f [    error]  Smarty error: [in login.html line 63]: syntax error: unrecognized tag '' (Smarty_Compiler.class.php, line 588)
+Apr 06 17:35:39 +0900 OX-642ee6cad539f [    error]  Smarty error: [in login.html line 63]: syntax error: unrecognized tag: //     $('#username').val(username);
+//     $('#password').val(password);
+//     $('#login').click();
+// (Smarty_Compiler.class.php, line 444)
+Apr 06 17:35:39 +0900 OX-642ee6cad539f [    error]  Smarty error: [in login.html line 63]: syntax error: unrecognized tag '' (Smarty_Compiler.class.php, line 588)
+Apr 06 17:36:22 +0900 OX-642ee6f5806f3 [    error]  Smarty error: [in login.html line 64]: syntax error: unrecognized tag: $('#username').val(username);
+    $('#password').val(password);
+    $('#login').click(); (Smarty_Compiler.class.php, line 444)
+Apr 06 17:36:22 +0900 OX-642ee6f5806f3 [    error]  Smarty error: [in login.html line 64]: syntax error: unrecognized tag '' (Smarty_Compiler.class.php, line 588)
+Apr 06 17:37:24 +0900 OX-642ee733a0ec5 [    error]  Smarty error: [in login.html line 64]: syntax error: unrecognized tag:  (Smarty_Compiler.class.php, line 444)
+Apr 06 17:37:24 +0900 OX-642ee733a0ec5 [    error]  Smarty error: [in login.html line 64]: syntax error: unrecognized tag '' (Smarty_Compiler.class.php, line 588)
+Apr 06 17:37:26 +0900 OX-642ee735bd9fa [     info]  Unwritable file C:\xampp\htdocs\UNA\adserver\plugins/etc/oxDeliveryDataPrepare/etc/DataObjects/45c120cebd8ee26a2993902528581ee4
+Apr 06 17:37:35 +0900 OX-642ee73eb0e63 [     info]  Unwritable file C:\xampp\htdocs\UNA\adserver\var\plugins/611673ddf4a89e018d0c6d84b8cf0c1c
+Apr 06 17:37:38 +0900 OX-642ee74214816 [     info]  Unwritable file C:\xampp\htdocs\UNA\adserver\plugins/etc/vastInlineBannerTypeHtml/etc/DataObjects/a6518cea762dd2513e996a06f1da872e
+Apr 06 17:37:54 +0900 OX-642ee751539c7 [    error]  Smarty error: [in login.html line 68]: syntax error: unrecognized tag:  (Smarty_Compiler.class.php, line 444)
+Apr 06 17:37:54 +0900 OX-642ee751539c7 [    error]  Smarty error: [in login.html line 68]: syntax error: unrecognized tag '' (Smarty_Compiler.class.php, line 588)
+Apr 06 17:38:24 +0900 OX-642ee76fe8263 [    error]  Smarty error: [in login.html line 68]: syntax error: unrecognized tag: $('#login').click(); (Smarty_Compiler.class.php, line 444)
+Apr 06 17:38:24 +0900 OX-642ee76fe8263 [    error]  Smarty error: [in login.html line 68]: syntax error: unrecognized tag '' (Smarty_Compiler.class.php, line 588)
+Apr 06 17:38:46 +0900 OX-642ee786293b3 [    error]  Smarty error: [in login.html line 68]: syntax error: unrecognized tag: $('#login').click(); (Smarty_Compiler.class.php, line 444)
+Apr 06 17:38:46 +0900 OX-642ee786293b3 [    error]  Smarty error: [in login.html line 68]: syntax error: unrecognized tag '' (Smarty_Compiler.class.php, line 588)
+Apr 06 17:40:52 +0900 OX-642ee8046069d [     info]  Unwritable file C:\xampp\htdocs\UNA\adserver\plugins/etc/oxLogClick/etc/2edfe85597f95f3b61052b4f71d521d3
+Apr 06 17:41:34 +0900 OX-642ee82d8d511 [     info]  Unwritable file C:\xampp\htdocs\UNA\adserver\plugins/etc/Time/1b8ddb97c1f92539e3e2abdaf1def8cd
+ 
+Apr 06 19:14:42 +0900 OX-maintenance-642efe0274a67 [     info]  Running Maintenance Priority Engine
+Apr 06 19:14:43 +0900 OX-maintenance-642efe0274a67 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsLifetime
+Apr 06 19:14:43 +0900 OX-maintenance-642efe0274a67 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsLifetime
+Apr 06 19:14:43 +0900 OX-maintenance-642efe0274a67 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsDaily
+Apr 06 19:14:43 +0900 OX-maintenance-642efe0274a67 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsDaily
+Apr 06 19:14:43 +0900 OX-maintenance-642efe0274a67 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_AllocateZoneImpressions
+Apr 06 19:14:43 +0900 OX-maintenance-642efe0274a67 [     info]    - Selecting Zones forecasts for all managers for OI from 2023-04-06 17:00:00 to 2023-04-06 17:59:59
+Apr 06 19:14:43 +0900 OX-maintenance-642efe0274a67 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_AllocateZoneImpressions
+Apr 06 19:14:43 +0900 OX-maintenance-642efe0274a67 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_PriorityCompensation
+Apr 06 19:14:43 +0900 OX-maintenance-642efe0274a67 [     info]    - Selecting Zones forecasts for all managers for OI from 2023-04-06 17:00:00 to 2023-04-06 17:59:59
+Apr 06 19:14:43 +0900 OX-maintenance-642efe0274a67 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_PriorityCompensation
+Apr 06 19:14:43 +0900 OX-maintenance-642efe0274a67 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_ECPMforContract
+Apr 06 19:14:43 +0900 OX-maintenance-642efe0274a67 [     info]  - Selecting All Managers
+Apr 06 19:14:43 +0900 OX-maintenance-642efe0274a67 [     info]    - Selecting active campaigns with priority = '9' for manager 1
+Apr 06 19:14:43 +0900 OX-maintenance-642efe0274a67 [     info]    - Selecting active campaigns with priority = '8' for manager 1
+Apr 06 19:14:43 +0900 OX-maintenance-642efe0274a67 [     info]    - Selecting active campaigns with priority = '7' for manager 1
+Apr 06 19:14:43 +0900 OX-maintenance-642efe0274a67 [     info]    - Selecting active campaigns with priority = '6' for manager 1
+Apr 06 19:14:43 +0900 OX-maintenance-642efe0274a67 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_ECPMforContract
+Apr 06 19:14:43 +0900 OX-maintenance-642efe0274a67 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_ECPMforRemnant
+Apr 06 19:14:43 +0900 OX-maintenance-642efe0274a67 [     info]  - Selecting Managers with ECPM priority campaigns running
+Apr 06 19:14:43 +0900 OX-maintenance-642efe0274a67 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_ECPMforRemnant
+Apr 06 19:14:43 +0900 OX-maintenance-642efe0274a67 [     info]  Maintenance Priority Engine Completed (Started at 2023-04-06 19:14:42 CET)
+ 
+Apr 06 20:40:01 +0900 OX-maintenance-642f120177d11 [     info]  Running Maintenance Priority Engine
+Apr 06 20:40:01 +0900 OX-maintenance-642f120177d11 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsLifetime
+Apr 06 20:40:01 +0900 OX-maintenance-642f120177d11 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsLifetime
+Apr 06 20:40:01 +0900 OX-maintenance-642f120177d11 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsDaily
+Apr 06 20:40:01 +0900 OX-maintenance-642f120177d11 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsDaily
+Apr 06 20:40:01 +0900 OX-maintenance-642f120177d11 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_AllocateZoneImpressions
+Apr 06 20:40:01 +0900 OX-maintenance-642f120177d11 [     info]    - Selecting Zones forecasts for all managers for OI from 2023-04-06 18:00:00 to 2023-04-06 18:59:59
+Apr 06 20:40:01 +0900 OX-maintenance-642f120177d11 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_AllocateZoneImpressions
+Apr 06 20:40:01 +0900 OX-maintenance-642f120177d11 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_PriorityCompensation
+Apr 06 20:40:01 +0900 OX-maintenance-642f120177d11 [     info]    - Selecting Zones forecasts for all managers for OI from 2023-04-06 18:00:00 to 2023-04-06 18:59:59
+Apr 06 20:40:02 +0900 OX-maintenance-642f120177d11 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_PriorityCompensation
+Apr 06 20:40:02 +0900 OX-maintenance-642f120177d11 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_ECPMforContract
+Apr 06 20:40:02 +0900 OX-maintenance-642f120177d11 [     info]  - Selecting All Managers
+Apr 06 20:40:02 +0900 OX-maintenance-642f120177d11 [     info]    - Selecting active campaigns with priority = '9' for manager 1
+Apr 06 20:40:02 +0900 OX-maintenance-642f120177d11 [     info]    - Selecting active campaigns with priority = '8' for manager 1
+Apr 06 20:40:02 +0900 OX-maintenance-642f120177d11 [     info]    - Selecting active campaigns with priority = '7' for manager 1
+Apr 06 20:40:02 +0900 OX-maintenance-642f120177d11 [     info]    - Selecting active campaigns with priority = '6' for manager 1
+Apr 06 20:40:02 +0900 OX-maintenance-642f120177d11 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_ECPMforContract
+Apr 06 20:40:02 +0900 OX-maintenance-642f120177d11 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_ECPMforRemnant
+Apr 06 20:40:02 +0900 OX-maintenance-642f120177d11 [     info]  - Selecting Managers with ECPM priority campaigns running
+Apr 06 20:40:02 +0900 OX-maintenance-642f120177d11 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_ECPMforRemnant
+Apr 06 20:40:02 +0900 OX-maintenance-642f120177d11 [     info]  Maintenance Priority Engine Completed (Started at 2023-04-06 20:40:01 CET)
+ 
+Apr 06 20:40:17 +0900 OX-maintenance-642f1211443e9 [     info]  Running Maintenance Priority Engine
+Apr 06 20:40:17 +0900 OX-maintenance-642f1211443e9 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsLifetime
+Apr 06 20:40:17 +0900 OX-maintenance-642f1211443e9 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsLifetime
+Apr 06 20:40:17 +0900 OX-maintenance-642f1211443e9 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsDaily
+Apr 06 20:40:17 +0900 OX-maintenance-642f1211443e9 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsDaily
+Apr 06 20:40:17 +0900 OX-maintenance-642f1211443e9 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_AllocateZoneImpressions
+Apr 06 20:40:17 +0900 OX-maintenance-642f1211443e9 [     info]    - Selecting Zones forecasts for all managers for OI from 2023-04-06 18:00:00 to 2023-04-06 18:59:59
+Apr 06 20:40:17 +0900 OX-maintenance-642f1211443e9 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_AllocateZoneImpressions
+Apr 06 20:40:17 +0900 OX-maintenance-642f1211443e9 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_PriorityCompensation
+Apr 06 20:40:17 +0900 OX-maintenance-642f1211443e9 [     info]    - Selecting Zones forecasts for all managers for OI from 2023-04-06 18:00:00 to 2023-04-06 18:59:59
+Apr 06 20:40:17 +0900 OX-maintenance-642f1211443e9 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_PriorityCompensation
+Apr 06 20:40:17 +0900 OX-maintenance-642f1211443e9 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_ECPMforContract
+Apr 06 20:40:17 +0900 OX-maintenance-642f1211443e9 [     info]  - Selecting All Managers
+Apr 06 20:40:17 +0900 OX-maintenance-642f1211443e9 [     info]    - Selecting active campaigns with priority = '9' for manager 1
+Apr 06 20:40:17 +0900 OX-maintenance-642f1211443e9 [     info]    - Selecting active campaigns with priority = '8' for manager 1
+Apr 06 20:40:17 +0900 OX-maintenance-642f1211443e9 [     info]    - Selecting active campaigns with priority = '7' for manager 1
+Apr 06 20:40:17 +0900 OX-maintenance-642f1211443e9 [     info]    - Selecting active campaigns with priority = '6' for manager 1
+Apr 06 20:40:17 +0900 OX-maintenance-642f1211443e9 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_ECPMforContract
+Apr 06 20:40:17 +0900 OX-maintenance-642f1211443e9 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_ECPMforRemnant
+Apr 06 20:40:17 +0900 OX-maintenance-642f1211443e9 [     info]  - Selecting Managers with ECPM priority campaigns running
+Apr 06 20:40:17 +0900 OX-maintenance-642f1211443e9 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_ECPMforRemnant
+Apr 06 20:40:17 +0900 OX-maintenance-642f1211443e9 [     info]  Maintenance Priority Engine Completed (Started at 2023-04-06 20:40:17 CET)
+Apr 07 09:10:21 +0900 OX-642fc1db8dd1e [     info]  Unwritable file C:\xampp\htdocs\UNA\adserver\var\plugins/recover/a21d88f430685ee0ccc07678ccf65e5c
+Apr 07 09:10:21 +0900 OX-642fc1db8dd1e [     info]  Unwritable file C:\xampp\htdocs\UNA\adserver\plugins/etc/vastInlineBannerTypeHtml/3f32255006d88dfd595efbc624a86dae
+Apr 07 09:10:37 +0900 OX-642fc1e80853b [     info]  Unwritable file C:\xampp\htdocs\UNA\adserver\plugins/maintenanceStatisticsTask/rvMaxMindGeoIP2Maintenance/04a5b457e79d9626cdd2ac09918784cb
+Apr 07 09:10:52 +0900 OX-642fc1f82ea18 [     info]  Unwritable file C:\xampp\htdocs\UNA\adserver\plugins/deliveryLimitations/Site/2d3b5abc8149c8123ce2518741c5daa5

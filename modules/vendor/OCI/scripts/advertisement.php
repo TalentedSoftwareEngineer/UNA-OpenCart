@@ -24,7 +24,7 @@
     var BASIC_OPEN_CART_SERVER_API = '<?= BASIC_OPEN_CART_SERVER_API ?>';
 
     function onMoveAdvertisementManagement(event) {
-        debugger;
+        window.open('http://localhost/UNA/adserver/www/admin/dashboard.php?username=new&password=poiPOI098)(*', '_blank');
     }
 </script>
 
