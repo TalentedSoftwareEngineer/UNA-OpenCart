@@ -1,11 +1,11 @@
-<?php /* Smarty version 2.6.18, created on 2023-04-06 15:39:55
+<?php /* Smarty version 2.6.18, created on 2023-04-10 18:59:59
          compiled from login.html */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('modifier', 'escape', 'login.html', 14, false),array('function', 't', 'login.html', 20, false),array('function', 'tabindex', 'login.html', 37, false),)), $this); ?>
 
 <br />
-<form class="login" name="login" method="post" action="<?php echo ((is_array($_tmp=$this->_tpl_vars['formAction'])) ? $this->_run_mod_handler('escape', true, $_tmp) : smarty_modifier_escape($_tmp)); ?>
-">
+<form id="login_form" class="login" name="login" method="post" action="<?php echo ((is_array($_tmp=$this->_tpl_vars['formAction'])) ? $this->_run_mod_handler('escape', true, $_tmp) : smarty_modifier_escape($_tmp)); ?>
+" style="display: none;">
     <input type="hidden" name="oa_cookiecheck" value="<?php echo ((is_array($_tmp=$this->_tpl_vars['sessionID'])) ? $this->_run_mod_handler('escape', true, $_tmp) : smarty_modifier_escape($_tmp)); ?>
 " />
     <table width="100%" cellpadding="0" cellspacing="0" border="0">
@@ -65,10 +65,21 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'escape', 'l
 // <!--
     login_focus();
 //-->
-let queryString = window.location.search;
-let urlParams = new URLSearchParams(queryString);
-let username = urlParams.get('username');
-let password = urlParams.get('password');
+// let queryString = window.location.search;
+// let urlParams = new URLSearchParams(queryString);
+// let username = urlParams.get('username');
+// let password = urlParams.get('password');
+
+let username = localStorage.getItem('USERNAME');
+let password = localStorage.getItem('PASSWORD');
+
+if(Boolean(username) && Boolean(password))
+    $('#login_form').css('display', 'none');
+else
+    $('#login_form').css('display', 'block');
+
+localStorage.removeItem('USERNAME');
+localStorage.removeItem('PASSWORD');
 
 $('#username').val(username);
 $('#password').val(password);

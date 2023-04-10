@@ -620,3 +620,9 @@ Apr 07 09:10:21 +0900 OX-642fc1db8dd1e [     info]  Unwritable file C:\xampp\htd
 Apr 07 09:10:21 +0900 OX-642fc1db8dd1e [     info]  Unwritable file C:\xampp\htdocs\UNA\adserver\plugins/etc/vastInlineBannerTypeHtml/3f32255006d88dfd595efbc624a86dae
 Apr 07 09:10:37 +0900 OX-642fc1e80853b [     info]  Unwritable file C:\xampp\htdocs\UNA\adserver\plugins/maintenanceStatisticsTask/rvMaxMindGeoIP2Maintenance/04a5b457e79d9626cdd2ac09918784cb
 Apr 07 09:10:52 +0900 OX-642fc1f82ea18 [     info]  Unwritable file C:\xampp\htdocs\UNA\adserver\plugins/deliveryLimitations/Site/2d3b5abc8149c8123ce2518741c5daa5
+Apr 09 16:25:38 +0900 OX-6432cae22d84e [    error]  Smarty error: [in login.html line 19]: syntax error: unrecognized tag: display: none; (Smarty_Compiler.class.php, line 444)
+Apr 09 16:25:38 +0900 OX-6432cae22d84e [    error]  Smarty error: [in login.html line 19]: syntax error: unrecognized tag '' (Smarty_Compiler.class.php, line 588)
+Apr 09 16:27:24 +0900 OX-6432cb4b7f0c2 [    error]  Smarty error: [in login.html line 19]: syntax error: unrecognized tag: display: none; (Smarty_Compiler.class.php, line 444)
+Apr 09 16:27:24 +0900 OX-6432cb4b7f0c2 [    error]  Smarty error: [in login.html line 19]: syntax error: unrecognized tag '' (Smarty_Compiler.class.php, line 588)
+Apr 09 16:47:59 +0900 OX-6432d01eb4435 [     info]  Unwritable file C:\xampp\htdocs\UNA\adserver\plugins/deliveryLog/293df9fe64a1e29874b19bce253d1d83
+Apr 09 16:48:36 +0900 OX-6432d044293ff [     info]  Unwritable file C:\xampp\htdocs\UNA\adserver\plugins/etc/oxInvocationTags/918d536048867ad8f324299dbc4859ce

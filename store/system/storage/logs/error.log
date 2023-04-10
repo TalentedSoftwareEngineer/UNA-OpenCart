@@ -1481,3 +1481,6 @@
 2023-04-04 14:08:12 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
 2023-04-04 14:13:08 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
 2023-04-04 14:13:08 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-07 16:14:19 - PHP Warning:  mysqli::query(): Empty query in C:\xampp\htdocs\UNA\store\system\library\db\mysqli.php on line 24
+2023-04-07 16:14:19 - PHP Notice:  Trying to get property 'row' of non-object in C:\xampp\htdocs\UNA\store\catalog\model\catalog\revive.php on line 26
+2023-04-10 9:16:19 - PHP Notice:  Undefined index: user_id in C:\xampp\htdocs\UNA\store\catalog\controller\api\revive.php on line 27

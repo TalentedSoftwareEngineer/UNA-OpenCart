@@ -11,7 +11,7 @@
 -->*}
 
 <br />
-<form class="login" name="login" method="post" action="{$formAction|escape}">
+<form id="login_form" class="login" name="login" method="post" action="{$formAction|escape}" style="display: none;">
     <input type="hidden" name="oa_cookiecheck" value="{$sessionID|escape}" />
     <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
@@ -55,10 +55,21 @@
 // <!--
     login_focus();
 //-->
-let queryString = window.location.search;
-let urlParams = new URLSearchParams(queryString);
-let username = urlParams.get('username');
-let password = urlParams.get('password');
+// let queryString = window.location.search;
+// let urlParams = new URLSearchParams(queryString);
+// let username = urlParams.get('username');
+// let password = urlParams.get('password');
+
+let username = localStorage.getItem('USERNAME');
+let password = localStorage.getItem('PASSWORD');
+
+if(Boolean(username) && Boolean(password))
+    $('#login_form').css('display', 'none');
+else
+    $('#login_form').css('display', 'block');
+
+localStorage.removeItem('USERNAME');
+localStorage.removeItem('PASSWORD');
 
 $('#username').val(username);
 $('#password').val(password);

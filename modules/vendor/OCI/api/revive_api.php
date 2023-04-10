@@ -7,15 +7,13 @@ class ReviveApiIntegration {
         
     }
 
-    public function getShowedMadsToSeller($customer_id)
+    public function addAgency($accountInfo)
     {
         //All users must have all the sub products of the mads product to see the mads product.
-        $url = BASIC_OPEN_CART_SERVER_API . "route=api/mads/getShowedMadsToSeller";
+        $url = BASIC_OPEN_CART_SERVER_API . "route=api/revive/addAgency";
         $curl = curl_init($url);
          
-        $post = array (
-            'customer_id' => $customer_id
-        );
+        $post = $accountInfo;
         curl_setopt_array( $curl, array(
           CURLOPT_RETURNTRANSFER=> TRUE,
           CURLOPT_POSTFIELDS      => $post,
