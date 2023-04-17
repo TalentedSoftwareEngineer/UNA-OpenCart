@@ -5,6 +5,7 @@
 <style></style>
 <?php  
     require_once 'modules/vendor/OCI/api/opencart_api.php';
+    require_once 'modules/vendor/OCI/api/revive_api.php';
 
     $basename = basename(BX_DIRECTORY_PATH_MODULES . '/OCI');
 
@@ -31,6 +32,8 @@
         } else {
             $isSelf = true;
         }
+
+        $rv_ids = (array) ReviveApiIntegration::getInstance()->getRvIds($loggedId);
     }
 ?>
 
@@ -76,12 +79,69 @@
         $.fn.removeProductFromBlock(productInfo.product_id, block_id);
     }
 
+    function onClickProductImage(event, productInfo) {
+        $.fn.uploadImageFile(productInfo);
+    }
+
+    function addBanner(productInfo, file) {
+        let data = {
+            filename: file.filename,
+            filewidth: file.filewidth,
+            fileheight: file.fileheight,
+            url: productInfo.href.replace('account/vendor/lts_visit_product', 'product/product').replace('&amp;', '&'), 
+            comments: productInfo.description,
+            campaign_id: '<?= $rv_ids['campaign_id'] ?>',
+            user_id: '<?= $rv_ids['user_id'] ?>',
+            account_id: '<?= $rv_ids['rv_acc_id'] ?>',
+            advertiser_account_id: '<?= $rv_ids['advertiser_account_id'] ?>',
+            username: '<?= $loggedUser['name'] ?>',
+            product_id: productInfo.product_id,
+            product_name: productInfo.name
+        }
+
+        $.ajax({
+            type: 'post',
+            url: BASIC_OPEN_CART_SERVER_API + 'route=api/revive/addBanner',
+            data: data,
+            success: function(response) {
+                console.log('tag', response);
+                window.open(BASIC_REVIVE_URL + 'www/admin/banner-edit.php?clientid=<?= $rv_ids['client_id'] ?>&campaignid=<?= $rv_ids['campaign_id'] ?>&bannerid=' + response.bannerId, '_blank');
+            },
+            fail: function(fail){
+                console.log('addBanner_fail', fail);
+            },
+            error: function(error, ajaxOptions, thrownError) {
+                console.log('addBanner_error', error);
+            }
+        });
+    }
+
+    $.fn.uploadImageFile = function(productInfo) {
+        var filePath = '<?= ROOTDIR ?>/store/image/cache' + productInfo.thumb.split('store/image/cache')[1];
+        var fileName = filePath.split('/')[filePath.split('/').length - 1];
+        var fileExt = fileName.split('.')[fileName.split('.').length - 1];
+
+        $.ajax({
+            url: BASIC_OPEN_CART_SERVER_API + 'route=api/revive/uploadBannerImage',
+            method:"POST",
+            data: {
+                imagePath: filePath,
+                imageName: fileName,
+                imageExt: fileExt,
+            },
+            success: function(data)
+            {
+                addBanner(productInfo, data);
+            },
+            error: function(error, ajaxOptions, thrownError) {
+                console.log('uploadImageFile', error);
+            }
+        });
+    }
+
     $.fn.createProductCard = function(productInfo, elmnt_pdt_in_block) {
-        let name_link = $("<a></a>");
-        name_link.attr('href', BASIC_REVIVE_URL+'www/admin/advertiser-index.php');
-        name_link.text(productInfo.name);
         let name = $("<strong></strong>");
-        name.append(name_link);
+        name.text(productInfo.name);
         let price = $("<h6></h6>");
         price.text(productInfo.price);
         let namePriceContainer = $("<div></div>");
@@ -92,6 +152,7 @@
         let descP = $("<a></a>");
         descP.addClass('flex-grow-1');
         descP.attr('href', productInfo.href.replace('&amp;', '&'));
+        descP.css({"height": "100px", "overflow": "hidden"});
         descP.text(productInfo.description.substr(0, 100)+'..');
 
         let deleteBtn = $("<button><i class='fa fa-trash'></i>Remove</button>");
@@ -111,6 +172,10 @@
         var cardImg = $('<img>');
         cardImg.addClass('card-img-top w-75 mx-auto');
         cardImg.attr({'src': productInfo.thumb, 'alt': "Card image"});
+        cardImg.css('cursor', 'pointer');
+        cardImg.on('click', function() {
+            onClickProductImage(event, productInfo);
+        });
 
         var card = $("<div></div>");
         card.addClass('card');

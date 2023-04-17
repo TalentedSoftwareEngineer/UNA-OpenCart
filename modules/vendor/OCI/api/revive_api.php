@@ -28,6 +28,29 @@ class ReviveApiIntegration {
         return $response;
     }
 
+    public function getRvIds($id)
+    {
+        $url = BASIC_OPEN_CART_SERVER_API . "route=api/revive/getRvIds";
+        $curl = curl_init($url);
+         
+        $post = array (
+            'id' => $id
+        );
+
+        curl_setopt_array( $curl, array(
+          CURLOPT_RETURNTRANSFER=> TRUE,
+          CURLOPT_POSTFIELDS      => $post,
+          CURLOPT_SSL_VERIFYHOST => 2,
+          CURLOPT_SSL_VERIFYPEER => false
+        ) );
+         
+        $raw_response = curl_exec( $curl );
+        $response = json_decode($raw_response);
+        curl_close($curl);
+        
+        return $response;
+    }
+
     public static function getInstance() 
     {
         if (null === self::$_instance) {

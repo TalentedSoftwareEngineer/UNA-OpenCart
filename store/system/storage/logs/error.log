@@ -1484,3 +1484,186 @@
 2023-04-07 16:14:19 - PHP Warning:  mysqli::query(): Empty query in C:\xampp\htdocs\UNA\store\system\library\db\mysqli.php on line 24
 2023-04-07 16:14:19 - PHP Notice:  Trying to get property 'row' of non-object in C:\xampp\htdocs\UNA\store\catalog\model\catalog\revive.php on line 26
 2023-04-10 9:16:19 - PHP Notice:  Undefined index: user_id in C:\xampp\htdocs\UNA\store\catalog\controller\api\revive.php on line 27
+2023-04-15 1:02:52 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-15 1:04:47 - PHP Warning:  mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in C:\xampp\htdocs\UNA\store\system\library\mail\mail.php on line 77
+2023-04-15 1:06:00 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-15 1:09:28 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-15 1:36:51 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-15 1:37:49 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-15 1:38:11 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-15 1:41:03 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-15 1:45:25 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-15 1:47:05 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-15 1:47:17 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-15 1:47:45 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-15 1:49:39 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-15 1:50:21 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-15 1:50:35 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-15 1:52:05 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-15 9:49:02 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-15 9:49:15 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-15 10:06:37 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-15 10:07:40 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-15 10:08:54 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-15 10:10:31 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-16 7:28:52 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-16 12:10:00 - PHP Warning:  unlink(C:/xampp/htdocs/UNA/store/system/storage/cache/cache.catalog.language.1681633732): No such file or directory in C:\xampp\htdocs\UNA\store\system\library\cache\file.php on line 17
+2023-04-16 12:27:21 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-16 12:27:30 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-16 12:33:15 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-16 12:34:46 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-16 12:40:06 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-16 12:40:59 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-16 12:43:27 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-16 12:43:27 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-16 12:45:15 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-16 12:49:10 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-16 12:49:14 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-16 12:50:15 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-16 12:50:19 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-16 12:51:04 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-16 12:51:09 - PHP Notice:  Array to string conversion in C:\xampp\htdocs\UNA\store\system\library\response.php on line 118
+2023-04-16 12:51:40 - PHP Notice:  Array to string conversion in C:\xampp\htdocs\UNA\store\system\library\response.php on line 118
+2023-04-16 12:51:50 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-16 12:56:34 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-16 12:56:41 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-16 12:57:23 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-16 12:59:56 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-16 13:08:23 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-16 13:09:22 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-16 13:13:45 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-16 13:25:37 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-16 13:26:26 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-16 13:26:54 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-16 13:29:33 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-16 13:31:42 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-16 13:31:53 - PHP Warning:  copy(localhost/UNA/adserver/www/images/aab.png): failed to open stream: No such file or directory in C:\xampp\htdocs\UNA\store\catalog\controller\api\revive.php on line 64
+2023-04-16 13:31:59 - PHP Warning:  copy(localhost/UNA/adserver/www/images/aab.png): failed to open stream: No such file or directory in C:\xampp\htdocs\UNA\store\catalog\controller\api\revive.php on line 64
+2023-04-16 13:31:59 - PHP Warning:  copy(localhost/UNA/adserver/www/images/aab.png): failed to open stream: No such file or directory in C:\xampp\htdocs\UNA\store\catalog\controller\api\revive.php on line 64
+2023-04-16 13:31:59 - PHP Warning:  copy(localhost/UNA/adserver/www/images/aab.png): failed to open stream: No such file or directory in C:\xampp\htdocs\UNA\store\catalog\controller\api\revive.php on line 64
+2023-04-16 13:31:59 - PHP Warning:  copy(localhost/UNA/adserver/www/images/aab.png): failed to open stream: No such file or directory in C:\xampp\htdocs\UNA\store\catalog\controller\api\revive.php on line 64
+2023-04-16 13:31:59 - PHP Warning:  copy(localhost/UNA/adserver/www/images/aab.png): failed to open stream: No such file or directory in C:\xampp\htdocs\UNA\store\catalog\controller\api\revive.php on line 64
+2023-04-16 13:33:58 - PHP Warning:  copy(localhost/UNA/adserver/www/images/aab.png): failed to open stream: No such file or directory in C:\xampp\htdocs\UNA\store\catalog\controller\api\revive.php on line 64
+2023-04-16 13:33:59 - PHP Warning:  copy(localhost/UNA/adserver/www/images/aab.png): failed to open stream: No such file or directory in C:\xampp\htdocs\UNA\store\catalog\controller\api\revive.php on line 64
+2023-04-16 13:33:59 - PHP Warning:  copy(localhost/UNA/adserver/www/images/aab.png): failed to open stream: No such file or directory in C:\xampp\htdocs\UNA\store\catalog\controller\api\revive.php on line 64
+2023-04-16 13:33:59 - PHP Warning:  copy(localhost/UNA/adserver/www/images/aab.png): failed to open stream: No such file or directory in C:\xampp\htdocs\UNA\store\catalog\controller\api\revive.php on line 64
+2023-04-16 13:34:00 - PHP Warning:  copy(localhost/UNA/adserver/www/images/aab.png): failed to open stream: No such file or directory in C:\xampp\htdocs\UNA\store\catalog\controller\api\revive.php on line 64
+2023-04-16 13:34:02 - PHP Warning:  copy(localhost/UNA/adserver/www/images/aab.png): failed to open stream: No such file or directory in C:\xampp\htdocs\UNA\store\catalog\controller\api\revive.php on line 64
+2023-04-16 13:34:03 - PHP Warning:  copy(localhost/UNA/adserver/www/images/aab.png): failed to open stream: No such file or directory in C:\xampp\htdocs\UNA\store\catalog\controller\api\revive.php on line 64
+2023-04-16 13:34:03 - PHP Warning:  copy(localhost/UNA/adserver/www/images/aab.png): failed to open stream: No such file or directory in C:\xampp\htdocs\UNA\store\catalog\controller\api\revive.php on line 64
+2023-04-16 13:34:03 - PHP Warning:  copy(localhost/UNA/adserver/www/images/aab.png): failed to open stream: No such file or directory in C:\xampp\htdocs\UNA\store\catalog\controller\api\revive.php on line 64
+2023-04-16 13:35:23 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-16 13:35:27 - PHP Warning:  copy(localhost/UNA/adserver/www/images/aab.png): failed to open stream: No such file or directory in C:\xampp\htdocs\UNA\store\catalog\controller\api\revive.php on line 64
+2023-04-16 13:35:27 - PHP Warning:  copy(localhost/UNA/adserver/www/images/aab.png): failed to open stream: No such file or directory in C:\xampp\htdocs\UNA\store\catalog\controller\api\revive.php on line 64
+2023-04-16 13:35:27 - PHP Warning:  copy(localhost/UNA/adserver/www/images/aab.png): failed to open stream: No such file or directory in C:\xampp\htdocs\UNA\store\catalog\controller\api\revive.php on line 64
+2023-04-16 13:35:27 - PHP Warning:  copy(localhost/UNA/adserver/www/images/aab.png): failed to open stream: No such file or directory in C:\xampp\htdocs\UNA\store\catalog\controller\api\revive.php on line 64
+2023-04-16 13:38:05 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-16 13:38:41 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-16 13:40:32 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-16 13:43:39 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-16 13:43:43 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-16 13:43:43 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-16 13:44:55 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-16 13:45:00 - PHP Notice:  Undefined index: REMOTE_HOST in C:\xampp\htdocs\UNA\store\catalog\controller\api\revive.php on line 62
+2023-04-16 13:54:22 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-16 14:04:08 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-16 14:04:36 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-16 14:08:36 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-16 14:15:36 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-16 14:16:27 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-16 14:18:29 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-16 14:23:09 - PHP Warning:  copy(): The second argument to copy() function cannot be a directory in C:\xampp\htdocs\UNA\store\catalog\controller\api\revive.php on line 64
+2023-04-16 14:23:18 - PHP Warning:  copy(): The second argument to copy() function cannot be a directory in C:\xampp\htdocs\UNA\store\catalog\controller\api\revive.php on line 64
+2023-04-16 14:23:36 - PHP Warning:  copy(): The second argument to copy() function cannot be a directory in C:\xampp\htdocs\UNA\store\catalog\controller\api\revive.php on line 64
+2023-04-16 14:24:08 - PHP Warning:  copy(): The second argument to copy() function cannot be a directory in C:\xampp\htdocs\UNA\store\catalog\controller\api\revive.php on line 64
+2023-04-16 14:30:14 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-16 14:30:53 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-16 14:32:27 - PHP Warning:  copy(): The second argument to copy() function cannot be a directory in C:\xampp\htdocs\UNA\store\catalog\controller\api\revive.php on line 66
+2023-04-16 14:32:37 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-16 14:40:42 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-16 14:44:38 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-16 14:44:55 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-16 14:57:36 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-16 14:58:54 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-16 14:59:03 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-16 15:02:13 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-16 15:13:54 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-16 15:17:23 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-16 15:52:41 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-16 15:56:24 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-16 15:56:45 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-16 16:13:37 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-16 16:15:45 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-16 16:21:09 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-16 16:22:13 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-16 16:28:42 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-16 17:43:09 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-16 17:59:52 - PHP Notice:  Undefined index: product_name in C:\xampp\htdocs\UNA\store\catalog\model\catalog\revive.php on line 71
+2023-04-16 17:59:52 - PHP Notice:  Undefined index: product_name in C:\xampp\htdocs\UNA\store\catalog\model\catalog\revive.php on line 78
+2023-04-16 17:59:52 - PHP Notice:  Undefined index: product_name in C:\xampp\htdocs\UNA\store\catalog\model\catalog\revive.php on line 78
+2023-04-16 18:01:34 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-16 18:02:12 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-16 18:02:41 - PHP Notice:  Undefined variable: result in C:\xampp\htdocs\UNA\store\catalog\controller\api\revive.php on line 47
+2023-04-16 18:02:42 - PHP Notice:  Undefined variable: result in C:\xampp\htdocs\UNA\store\catalog\controller\api\revive.php on line 47
+2023-04-16 18:03:12 - PHP Notice:  Undefined variable: result in C:\xampp\htdocs\UNA\store\catalog\controller\api\revive.php on line 47
+2023-04-16 18:03:12 - PHP Notice:  Undefined variable: result in C:\xampp\htdocs\UNA\store\catalog\controller\api\revive.php on line 47
+2023-04-16 18:03:13 - PHP Notice:  Undefined variable: result in C:\xampp\htdocs\UNA\store\catalog\controller\api\revive.php on line 47
+2023-04-16 18:03:13 - PHP Notice:  Undefined variable: result in C:\xampp\htdocs\UNA\store\catalog\controller\api\revive.php on line 47
+2023-04-16 18:03:13 - PHP Notice:  Undefined variable: result in C:\xampp\htdocs\UNA\store\catalog\controller\api\revive.php on line 47
+2023-04-16 18:03:13 - PHP Notice:  Undefined variable: result in C:\xampp\htdocs\UNA\store\catalog\controller\api\revive.php on line 47
+2023-04-16 18:03:13 - PHP Notice:  Undefined variable: result in C:\xampp\htdocs\UNA\store\catalog\controller\api\revive.php on line 47
+2023-04-16 18:05:42 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-16 18:07:56 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-17 4:27:44 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-17 4:30:30 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-17 4:31:25 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-17 4:32:47 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-17 4:35:54 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-17 4:36:01 - PHP Notice:  Undefined index: bannerid in C:\xampp\htdocs\UNA\store\catalog\controller\api\revive.php on line 42
+2023-04-17 4:36:07 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-17 4:36:54 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-17 4:38:48 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-17 4:42:16 - PHP Notice:  Undefined index: bannerid in C:\xampp\htdocs\UNA\store\catalog\controller\api\revive.php on line 42
+2023-04-17 4:44:56 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-17 4:45:20 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-17 4:46:21 - PHP Notice:  Undefined index: bannerid in C:\xampp\htdocs\UNA\store\catalog\controller\api\revive.php on line 42
+2023-04-17 4:46:41 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-17 4:55:01 - PHP Notice:  Undefined index: message in C:\xampp\htdocs\UNA\store\catalog\controller\account\vendor\lts_visit_product.php on line 503
+2023-04-17 4:55:01 - PHP Notice:  Undefined index: sub_products in C:\xampp\htdocs\UNA\store\catalog\controller\account\vendor\lts_visit_product.php on line 505
+2023-04-17 4:55:01 - PHP Notice:  Undefined index: image in C:\xampp\htdocs\UNA\store\catalog\controller\account\vendor\lts_visit_product.php on line 510
+2023-04-17 4:55:01 - PHP Notice:  Undefined index: product_id in C:\xampp\htdocs\UNA\store\catalog\controller\account\vendor\lts_visit_product.php on line 518
+2023-04-17 4:55:01 - PHP Notice:  Undefined index: product_id in C:\xampp\htdocs\UNA\store\catalog\controller\account\vendor\lts_visit_product.php on line 528
+2023-04-17 4:55:01 - PHP Notice:  Undefined index: name in C:\xampp\htdocs\UNA\store\catalog\controller\account\vendor\lts_visit_product.php on line 530
+2023-04-17 4:55:01 - PHP Notice:  Undefined index: model in C:\xampp\htdocs\UNA\store\catalog\controller\account\vendor\lts_visit_product.php on line 531
+2023-04-17 4:55:01 - PHP Notice:  Undefined index: price in C:\xampp\htdocs\UNA\store\catalog\controller\account\vendor\lts_visit_product.php on line 532
+2023-04-17 4:55:01 - PHP Notice:  Undefined index: quantity in C:\xampp\htdocs\UNA\store\catalog\controller\account\vendor\lts_visit_product.php on line 534
+2023-04-17 4:55:01 - PHP Notice:  Undefined index: status in C:\xampp\htdocs\UNA\store\catalog\controller\account\vendor\lts_visit_product.php on line 535
+2023-04-17 4:55:11 - PHP Notice:  Undefined index: message in C:\xampp\htdocs\UNA\store\catalog\controller\account\vendor\lts_visit_product.php on line 503
+2023-04-17 4:55:11 - PHP Notice:  Undefined index: sub_products in C:\xampp\htdocs\UNA\store\catalog\controller\account\vendor\lts_visit_product.php on line 505
+2023-04-17 4:55:11 - PHP Notice:  Undefined index: image in C:\xampp\htdocs\UNA\store\catalog\controller\account\vendor\lts_visit_product.php on line 510
+2023-04-17 4:55:11 - PHP Notice:  Undefined index: product_id in C:\xampp\htdocs\UNA\store\catalog\controller\account\vendor\lts_visit_product.php on line 518
+2023-04-17 4:55:11 - PHP Notice:  Undefined index: product_id in C:\xampp\htdocs\UNA\store\catalog\controller\account\vendor\lts_visit_product.php on line 528
+2023-04-17 4:55:11 - PHP Notice:  Undefined index: name in C:\xampp\htdocs\UNA\store\catalog\controller\account\vendor\lts_visit_product.php on line 530
+2023-04-17 4:55:11 - PHP Notice:  Undefined index: model in C:\xampp\htdocs\UNA\store\catalog\controller\account\vendor\lts_visit_product.php on line 531
+2023-04-17 4:55:11 - PHP Notice:  Undefined index: price in C:\xampp\htdocs\UNA\store\catalog\controller\account\vendor\lts_visit_product.php on line 532
+2023-04-17 4:55:11 - PHP Notice:  Undefined index: quantity in C:\xampp\htdocs\UNA\store\catalog\controller\account\vendor\lts_visit_product.php on line 534
+2023-04-17 4:55:11 - PHP Notice:  Undefined index: status in C:\xampp\htdocs\UNA\store\catalog\controller\account\vendor\lts_visit_product.php on line 535
+2023-04-17 5:04:02 - PHP Notice:  Undefined index: message in C:\xampp\htdocs\UNA\store\catalog\controller\account\vendor\lts_visit_product.php on line 503
+2023-04-17 5:04:02 - PHP Notice:  Undefined index: sub_products in C:\xampp\htdocs\UNA\store\catalog\controller\account\vendor\lts_visit_product.php on line 505
+2023-04-17 5:04:02 - PHP Notice:  Undefined index: image in C:\xampp\htdocs\UNA\store\catalog\controller\account\vendor\lts_visit_product.php on line 510
+2023-04-17 5:04:02 - PHP Notice:  Undefined index: product_id in C:\xampp\htdocs\UNA\store\catalog\controller\account\vendor\lts_visit_product.php on line 518
+2023-04-17 5:04:02 - PHP Notice:  Undefined index: product_id in C:\xampp\htdocs\UNA\store\catalog\controller\account\vendor\lts_visit_product.php on line 528
+2023-04-17 5:04:02 - PHP Notice:  Undefined index: name in C:\xampp\htdocs\UNA\store\catalog\controller\account\vendor\lts_visit_product.php on line 530
+2023-04-17 5:04:02 - PHP Notice:  Undefined index: model in C:\xampp\htdocs\UNA\store\catalog\controller\account\vendor\lts_visit_product.php on line 531
+2023-04-17 5:04:02 - PHP Notice:  Undefined index: price in C:\xampp\htdocs\UNA\store\catalog\controller\account\vendor\lts_visit_product.php on line 532
+2023-04-17 5:04:02 - PHP Notice:  Undefined index: quantity in C:\xampp\htdocs\UNA\store\catalog\controller\account\vendor\lts_visit_product.php on line 534
+2023-04-17 5:04:02 - PHP Notice:  Undefined index: status in C:\xampp\htdocs\UNA\store\catalog\controller\account\vendor\lts_visit_product.php on line 535
+2023-04-17 5:04:36 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-17 5:10:25 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-17 5:12:55 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-17 5:46:41 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-17 5:47:54 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-17 5:48:31 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-17 12:01:14 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-17 12:23:24 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121
+2023-04-17 14:34:57 - PHP Notice:  Undefined index: user_token in C:\xampp\htdocs\UNA\store\catalog\controller\api\unacustomer.php on line 121

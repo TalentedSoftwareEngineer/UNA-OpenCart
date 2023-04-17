@@ -92,7 +92,16 @@ CREATE TABLE IF NOT EXISTS `oc_lts_accepted_mads` (
 ) ENGINE=MYISAM DEFAULT CHARSET=utf8;
 
 CREATE TABLE IF NOT EXISTS `sys_acc_to_rv_agc` (
-    `agency_id` INT(11) NOT NULL,
+    `sys_acc_id` int(11) NOT NULL,
     `rv_acc_id` INT(11) NOT NULL,
-    `sys_acc_id` int(11) NOT NULL
+    `agency_id` INT(11) NOT NULL,
+    `user_id` int(11) NOT NULL,
+    `advertiser_account_id` int(11) NOT NULL,
+    `client_id` int(11) NOT NULL,
+    `campaign_id` int(11) NOT NULL
+) ENGINE=MYISAM DEFAULT CHARSET=utf8;
+
+CREATE TABLE IF NOT EXISTS `rv_ocproduct_to_banner` (
+    `product_id` int(11) NOT NULL,
+    `banner_id` INT(11) NOT NULL
 ) ENGINE=MYISAM DEFAULT CHARSET=utf8;

@@ -626,3 +626,993 @@ Apr 09 16:27:24 +0900 OX-6432cb4b7f0c2 [    error]  Smarty error: [in login.html
 Apr 09 16:27:24 +0900 OX-6432cb4b7f0c2 [    error]  Smarty error: [in login.html line 19]: syntax error: unrecognized tag '' (Smarty_Compiler.class.php, line 588)
 Apr 09 16:47:59 +0900 OX-6432d01eb4435 [     info]  Unwritable file C:\xampp\htdocs\UNA\adserver\plugins/deliveryLog/293df9fe64a1e29874b19bce253d1d83
 Apr 09 16:48:36 +0900 OX-6432d044293ff [     info]  Unwritable file C:\xampp\htdocs\UNA\adserver\plugins/etc/oxInvocationTags/918d536048867ad8f324299dbc4859ce
+Apr 13 00:09:45 +0900 OX-64372c23e3f10 [     info]  Unwritable file C:\xampp\htdocs\UNA\adserver\plugins/invocationTags/oxInvocationTags/layerstyles/simple/ee76b3e2f074032b1948da212115f1e9
+Apr 13 06:20:48 +0900 OX-6437831e94a94 [     info]  Unwritable file C:\xampp\htdocs\UNA\adserver\var\plugins/0854e6645fbf5bed67d2de268cff63e8
+Apr 13 06:20:54 +0900 OX-6437831e94a94 [     info]  Unwritable file C:\xampp\htdocs\UNA\adserver\plugins/reports/33b12f1be95b75a3948a71eb744f8574
+Apr 13 06:20:58 +0900 OX-64378326f389e [     info]  Unwritable file C:\xampp\htdocs\UNA\adserver\plugins/deliveryLimitations/Time/62bb592076285b64d0ab43e2c8b5e37e
+Apr 13 08:58:25 +0900 OX-6437a81101a42 [     info]  Unwritable file C:\xampp\htdocs\UNA\adserver\plugins/etc/oxCacheFile/04c3f8490d145b16ef14d1f6899519de
+ 
+Apr 13 08:58:55 +0900 OX-maintenance-6437a82f0cfc0 [     info]  Running Maintenance Priority Engine
+Apr 13 08:58:55 +0900 OX-maintenance-6437a82f0cfc0 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsLifetime
+Apr 13 08:58:55 +0900 OX-maintenance-6437a82f0cfc0 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsLifetime
+Apr 13 08:58:55 +0900 OX-maintenance-6437a82f0cfc0 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsDaily
+Apr 13 08:58:55 +0900 OX-maintenance-6437a82f0cfc0 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsDaily
+Apr 13 08:58:55 +0900 OX-maintenance-6437a82f0cfc0 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_AllocateZoneImpressions
+Apr 13 08:58:55 +0900 OX-maintenance-6437a82f0cfc0 [     info]    - Selecting Zones forecasts for all managers for OI from 2023-04-13 06:00:00 to 2023-04-13 06:59:59
+Apr 13 08:58:55 +0900 OX-maintenance-6437a82f0cfc0 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_AllocateZoneImpressions
+Apr 13 08:58:55 +0900 OX-maintenance-6437a82f0cfc0 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_PriorityCompensation
+Apr 13 08:58:55 +0900 OX-maintenance-6437a82f0cfc0 [     info]    - Selecting Zones forecasts for all managers for OI from 2023-04-13 06:00:00 to 2023-04-13 06:59:59
+Apr 13 08:58:56 +0900 OX-maintenance-6437a82f0cfc0 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_PriorityCompensation
+Apr 13 08:58:56 +0900 OX-maintenance-6437a82f0cfc0 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_ECPMforContract
+Apr 13 08:58:56 +0900 OX-maintenance-6437a82f0cfc0 [     info]  - Selecting All Managers
+Apr 13 08:58:56 +0900 OX-maintenance-6437a82f0cfc0 [     info]    - Selecting active campaigns with priority = '9' for manager 11
+Apr 13 08:58:56 +0900 OX-maintenance-6437a82f0cfc0 [     info]    - Selecting active campaigns with priority = '8' for manager 11
+Apr 13 08:58:56 +0900 OX-maintenance-6437a82f0cfc0 [     info]    - Selecting active campaigns with priority = '7' for manager 11
+Apr 13 08:58:56 +0900 OX-maintenance-6437a82f0cfc0 [     info]    - Selecting active campaigns with priority = '6' for manager 11
+Apr 13 08:58:56 +0900 OX-maintenance-6437a82f0cfc0 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_ECPMforContract
+Apr 13 08:58:56 +0900 OX-maintenance-6437a82f0cfc0 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_ECPMforRemnant
+Apr 13 08:58:56 +0900 OX-maintenance-6437a82f0cfc0 [     info]  - Selecting Managers with ECPM priority campaigns running
+Apr 13 08:58:56 +0900 OX-maintenance-6437a82f0cfc0 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_ECPMforRemnant
+Apr 13 08:58:56 +0900 OX-maintenance-6437a82f0cfc0 [     info]  Maintenance Priority Engine Completed (Started at 2023-04-13 08:58:55 CET)
+ 
+Apr 13 08:59:51 +0900 OX-maintenance-6437a867635e9 [     info]  Running Maintenance Priority Engine
+Apr 13 08:59:51 +0900 OX-maintenance-6437a867635e9 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsLifetime
+Apr 13 08:59:51 +0900 OX-maintenance-6437a867635e9 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsLifetime
+Apr 13 08:59:51 +0900 OX-maintenance-6437a867635e9 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsDaily
+Apr 13 08:59:51 +0900 OX-maintenance-6437a867635e9 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsDaily
+Apr 13 08:59:51 +0900 OX-maintenance-6437a867635e9 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_AllocateZoneImpressions
+Apr 13 08:59:51 +0900 OX-maintenance-6437a867635e9 [     info]    - Selecting Zones forecasts for all managers for OI from 2023-04-13 06:00:00 to 2023-04-13 06:59:59
+Apr 13 08:59:51 +0900 OX-maintenance-6437a867635e9 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_AllocateZoneImpressions
+Apr 13 08:59:51 +0900 OX-maintenance-6437a867635e9 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_PriorityCompensation
+Apr 13 08:59:51 +0900 OX-maintenance-6437a867635e9 [     info]    - Selecting Zones forecasts for all managers for OI from 2023-04-13 06:00:00 to 2023-04-13 06:59:59
+Apr 13 08:59:51 +0900 OX-maintenance-6437a867635e9 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_PriorityCompensation
+Apr 13 08:59:51 +0900 OX-maintenance-6437a867635e9 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_ECPMforContract
+Apr 13 08:59:51 +0900 OX-maintenance-6437a867635e9 [     info]  - Selecting All Managers
+Apr 13 08:59:51 +0900 OX-maintenance-6437a867635e9 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_ECPMforContract
+Apr 13 08:59:51 +0900 OX-maintenance-6437a867635e9 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_ECPMforRemnant
+Apr 13 08:59:51 +0900 OX-maintenance-6437a867635e9 [     info]  - Selecting Managers with ECPM priority campaigns running
+Apr 13 08:59:51 +0900 OX-maintenance-6437a867635e9 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_ECPMforRemnant
+Apr 13 08:59:51 +0900 OX-maintenance-6437a867635e9 [     info]  Maintenance Priority Engine Completed (Started at 2023-04-13 08:59:51 CET)
+ 
+Apr 13 09:40:49 +0900 OX-maintenance-6437b200e27ff [     info]  Running Maintenance Priority Engine
+Apr 13 09:40:49 +0900 OX-maintenance-6437b200e27ff [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsLifetime
+Apr 13 09:40:49 +0900 OX-maintenance-6437b200e27ff [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsLifetime
+Apr 13 09:40:49 +0900 OX-maintenance-6437b200e27ff [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsDaily
+Apr 13 09:40:49 +0900 OX-maintenance-6437b200e27ff [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsDaily
+Apr 13 09:40:49 +0900 OX-maintenance-6437b200e27ff [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_AllocateZoneImpressions
+Apr 13 09:40:49 +0900 OX-maintenance-6437b200e27ff [     info]    - Selecting Zones forecasts for all managers for OI from 2023-04-13 07:00:00 to 2023-04-13 07:59:59
+Apr 13 09:40:49 +0900 OX-maintenance-6437b200e27ff [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_AllocateZoneImpressions
+Apr 13 09:40:49 +0900 OX-maintenance-6437b200e27ff [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_PriorityCompensation
+Apr 13 09:40:49 +0900 OX-maintenance-6437b200e27ff [     info]    - Selecting Zones forecasts for all managers for OI from 2023-04-13 07:00:00 to 2023-04-13 07:59:59
+Apr 13 09:40:49 +0900 OX-maintenance-6437b200e27ff [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_PriorityCompensation
+Apr 13 09:40:49 +0900 OX-maintenance-6437b200e27ff [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_ECPMforContract
+Apr 13 09:40:49 +0900 OX-maintenance-6437b200e27ff [     info]  - Selecting All Managers
+Apr 13 09:40:49 +0900 OX-maintenance-6437b200e27ff [     info]    - Selecting active campaigns with priority = '9' for manager 13
+Apr 13 09:40:49 +0900 OX-maintenance-6437b200e27ff [     info]    - Selecting active campaigns with priority = '8' for manager 13
+Apr 13 09:40:49 +0900 OX-maintenance-6437b200e27ff [     info]    - Selecting active campaigns with priority = '7' for manager 13
+Apr 13 09:40:49 +0900 OX-maintenance-6437b200e27ff [     info]    - Selecting active campaigns with priority = '6' for manager 13
+Apr 13 09:40:49 +0900 OX-maintenance-6437b200e27ff [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_ECPMforContract
+Apr 13 09:40:49 +0900 OX-maintenance-6437b200e27ff [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_ECPMforRemnant
+Apr 13 09:40:49 +0900 OX-maintenance-6437b200e27ff [     info]  - Selecting Managers with ECPM priority campaigns running
+Apr 13 09:40:49 +0900 OX-maintenance-6437b200e27ff [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_ECPMforRemnant
+Apr 13 09:40:49 +0900 OX-maintenance-6437b200e27ff [     info]  Maintenance Priority Engine Completed (Started at 2023-04-13 09:40:49 CET)
+ 
+Apr 13 10:24:18 +0900 OX-maintenance-6437bc322cdf5 [     info]  Running Maintenance Priority Engine
+Apr 13 10:24:18 +0900 OX-maintenance-6437bc322cdf5 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsLifetime
+Apr 13 10:24:18 +0900 OX-maintenance-6437bc322cdf5 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsLifetime
+Apr 13 10:24:18 +0900 OX-maintenance-6437bc322cdf5 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsDaily
+Apr 13 10:24:18 +0900 OX-maintenance-6437bc322cdf5 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsDaily
+Apr 13 10:24:18 +0900 OX-maintenance-6437bc322cdf5 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_AllocateZoneImpressions
+Apr 13 10:24:18 +0900 OX-maintenance-6437bc322cdf5 [     info]    - Selecting Zones forecasts for all managers for OI from 2023-04-13 08:00:00 to 2023-04-13 08:59:59
+Apr 13 10:24:18 +0900 OX-maintenance-6437bc322cdf5 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_AllocateZoneImpressions
+Apr 13 10:24:18 +0900 OX-maintenance-6437bc322cdf5 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_PriorityCompensation
+Apr 13 10:24:18 +0900 OX-maintenance-6437bc322cdf5 [     info]    - Selecting Zones forecasts for all managers for OI from 2023-04-13 08:00:00 to 2023-04-13 08:59:59
+Apr 13 10:24:18 +0900 OX-maintenance-6437bc322cdf5 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_PriorityCompensation
+Apr 13 10:24:18 +0900 OX-maintenance-6437bc322cdf5 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_ECPMforContract
+Apr 13 10:24:18 +0900 OX-maintenance-6437bc322cdf5 [     info]  - Selecting All Managers
+Apr 13 10:24:18 +0900 OX-maintenance-6437bc322cdf5 [     info]    - Selecting active campaigns with priority = '9' for manager 13
+Apr 13 10:24:18 +0900 OX-maintenance-6437bc322cdf5 [     info]    - Selecting active campaigns with priority = '8' for manager 13
+Apr 13 10:24:18 +0900 OX-maintenance-6437bc322cdf5 [     info]    - Selecting active campaigns with priority = '7' for manager 13
+Apr 13 10:24:18 +0900 OX-maintenance-6437bc322cdf5 [     info]    - Selecting active campaigns with priority = '6' for manager 13
+Apr 13 10:24:18 +0900 OX-maintenance-6437bc322cdf5 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_ECPMforContract
+Apr 13 10:24:18 +0900 OX-maintenance-6437bc322cdf5 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_ECPMforRemnant
+Apr 13 10:24:18 +0900 OX-maintenance-6437bc322cdf5 [     info]  - Selecting Managers with ECPM priority campaigns running
+Apr 13 10:24:18 +0900 OX-maintenance-6437bc322cdf5 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_ECPMforRemnant
+Apr 13 10:24:18 +0900 OX-maintenance-6437bc322cdf5 [     info]  Maintenance Priority Engine Completed (Started at 2023-04-13 10:24:18 CET)
+ 
+Apr 13 10:30:19 +0900 OX-maintenance-6437bd9bc24a8 [     info]  Running Maintenance Priority Engine
+Apr 13 10:30:19 +0900 OX-maintenance-6437bd9bc24a8 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsLifetime
+Apr 13 10:30:19 +0900 OX-maintenance-6437bd9bc24a8 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsLifetime
+Apr 13 10:30:19 +0900 OX-maintenance-6437bd9bc24a8 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsDaily
+Apr 13 10:30:19 +0900 OX-maintenance-6437bd9bc24a8 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsDaily
+Apr 13 10:30:19 +0900 OX-maintenance-6437bd9bc24a8 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_AllocateZoneImpressions
+Apr 13 10:30:19 +0900 OX-maintenance-6437bd9bc24a8 [     info]    - Selecting Zones forecasts for all managers for OI from 2023-04-13 08:00:00 to 2023-04-13 08:59:59
+Apr 13 10:30:20 +0900 OX-maintenance-6437bd9bc24a8 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_AllocateZoneImpressions
+Apr 13 10:30:20 +0900 OX-maintenance-6437bd9bc24a8 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_PriorityCompensation
+Apr 13 10:30:20 +0900 OX-maintenance-6437bd9bc24a8 [     info]    - Selecting Zones forecasts for all managers for OI from 2023-04-13 08:00:00 to 2023-04-13 08:59:59
+Apr 13 10:30:20 +0900 OX-maintenance-6437bd9bc24a8 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_PriorityCompensation
+Apr 13 10:30:20 +0900 OX-maintenance-6437bd9bc24a8 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_ECPMforContract
+Apr 13 10:30:20 +0900 OX-maintenance-6437bd9bc24a8 [     info]  - Selecting All Managers
+Apr 13 10:30:20 +0900 OX-maintenance-6437bd9bc24a8 [     info]    - Selecting active campaigns with priority = '9' for manager 13
+Apr 13 10:30:20 +0900 OX-maintenance-6437bd9bc24a8 [     info]    - Selecting active campaigns with priority = '8' for manager 13
+Apr 13 10:30:20 +0900 OX-maintenance-6437bd9bc24a8 [     info]    - Selecting active campaigns with priority = '7' for manager 13
+Apr 13 10:30:20 +0900 OX-maintenance-6437bd9bc24a8 [     info]    - Selecting active campaigns with priority = '6' for manager 13
+Apr 13 10:30:20 +0900 OX-maintenance-6437bd9bc24a8 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_ECPMforContract
+Apr 13 10:30:20 +0900 OX-maintenance-6437bd9bc24a8 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_ECPMforRemnant
+Apr 13 10:30:20 +0900 OX-maintenance-6437bd9bc24a8 [     info]  - Selecting Managers with ECPM priority campaigns running
+Apr 13 10:30:20 +0900 OX-maintenance-6437bd9bc24a8 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_ECPMforRemnant
+Apr 13 10:30:20 +0900 OX-maintenance-6437bd9bc24a8 [     info]  Maintenance Priority Engine Completed (Started at 2023-04-13 10:30:19 CET)
+ 
+Apr 13 10:34:59 +0900 OX-maintenance-6437beb2c883a [     info]  Running Maintenance Priority Engine
+Apr 13 10:34:59 +0900 OX-maintenance-6437beb2c883a [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsLifetime
+Apr 13 10:34:59 +0900 OX-maintenance-6437beb2c883a [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsLifetime
+Apr 13 10:34:59 +0900 OX-maintenance-6437beb2c883a [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsDaily
+Apr 13 10:34:59 +0900 OX-maintenance-6437beb2c883a [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsDaily
+Apr 13 10:34:59 +0900 OX-maintenance-6437beb2c883a [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_AllocateZoneImpressions
+Apr 13 10:34:59 +0900 OX-maintenance-6437beb2c883a [     info]    - Selecting Zones forecasts for all managers for OI from 2023-04-13 08:00:00 to 2023-04-13 08:59:59
+Apr 13 10:34:59 +0900 OX-maintenance-6437beb2c883a [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_AllocateZoneImpressions
+Apr 13 10:34:59 +0900 OX-maintenance-6437beb2c883a [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_PriorityCompensation
+Apr 13 10:34:59 +0900 OX-maintenance-6437beb2c883a [     info]    - Selecting Zones forecasts for all managers for OI from 2023-04-13 08:00:00 to 2023-04-13 08:59:59
+Apr 13 10:34:59 +0900 OX-maintenance-6437beb2c883a [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_PriorityCompensation
+Apr 13 10:34:59 +0900 OX-maintenance-6437beb2c883a [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_ECPMforContract
+Apr 13 10:34:59 +0900 OX-maintenance-6437beb2c883a [     info]  - Selecting All Managers
+Apr 13 10:34:59 +0900 OX-maintenance-6437beb2c883a [     info]    - Selecting active campaigns with priority = '9' for manager 13
+Apr 13 10:34:59 +0900 OX-maintenance-6437beb2c883a [     info]    - Selecting active campaigns with priority = '8' for manager 13
+Apr 13 10:34:59 +0900 OX-maintenance-6437beb2c883a [     info]    - Selecting active campaigns with priority = '7' for manager 13
+Apr 13 10:34:59 +0900 OX-maintenance-6437beb2c883a [     info]    - Selecting active campaigns with priority = '6' for manager 13
+Apr 13 10:34:59 +0900 OX-maintenance-6437beb2c883a [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_ECPMforContract
+Apr 13 10:34:59 +0900 OX-maintenance-6437beb2c883a [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_ECPMforRemnant
+Apr 13 10:34:59 +0900 OX-maintenance-6437beb2c883a [     info]  - Selecting Managers with ECPM priority campaigns running
+Apr 13 10:34:59 +0900 OX-maintenance-6437beb2c883a [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_ECPMforRemnant
+Apr 13 10:34:59 +0900 OX-maintenance-6437beb2c883a [     info]  Maintenance Priority Engine Completed (Started at 2023-04-13 10:34:59 CET)
+ 
+Apr 13 12:28:44 +0900 OX-maintenance-6437d95cbf414 [     info]  Running Maintenance Priority Engine
+Apr 13 12:28:44 +0900 OX-maintenance-6437d95cbf414 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsLifetime
+Apr 13 12:28:44 +0900 OX-maintenance-6437d95cbf414 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsLifetime
+Apr 13 12:28:44 +0900 OX-maintenance-6437d95cbf414 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsDaily
+Apr 13 12:28:44 +0900 OX-maintenance-6437d95cbf414 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsDaily
+Apr 13 12:28:44 +0900 OX-maintenance-6437d95cbf414 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_AllocateZoneImpressions
+Apr 13 12:28:44 +0900 OX-maintenance-6437d95cbf414 [     info]    - Selecting Zones forecasts for all managers for OI from 2023-04-13 10:00:00 to 2023-04-13 10:59:59
+Apr 13 12:28:45 +0900 OX-maintenance-6437d95cbf414 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_AllocateZoneImpressions
+Apr 13 12:28:45 +0900 OX-maintenance-6437d95cbf414 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_PriorityCompensation
+Apr 13 12:28:45 +0900 OX-maintenance-6437d95cbf414 [     info]    - Selecting Zones forecasts for all managers for OI from 2023-04-13 10:00:00 to 2023-04-13 10:59:59
+Apr 13 12:28:45 +0900 OX-maintenance-6437d95cbf414 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_PriorityCompensation
+Apr 13 12:28:45 +0900 OX-maintenance-6437d95cbf414 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_ECPMforContract
+Apr 13 12:28:45 +0900 OX-maintenance-6437d95cbf414 [     info]  - Selecting All Managers
+Apr 13 12:28:45 +0900 OX-maintenance-6437d95cbf414 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_ECPMforContract
+Apr 13 12:28:45 +0900 OX-maintenance-6437d95cbf414 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_ECPMforRemnant
+Apr 13 12:28:45 +0900 OX-maintenance-6437d95cbf414 [     info]  - Selecting Managers with ECPM priority campaigns running
+Apr 13 12:28:45 +0900 OX-maintenance-6437d95cbf414 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_ECPMforRemnant
+Apr 13 12:28:45 +0900 OX-maintenance-6437d95cbf414 [     info]  Maintenance Priority Engine Completed (Started at 2023-04-13 12:28:44 CET)
+Apr 13 14:58:37 +0900 OX-6437fc7c4cdd3 [     info]  Unwritable file C:\xampp\htdocs\UNA\adserver\plugins/etc/Time/2ec54d73c817d1ab78b503357deede20
+ 
+Apr 13 18:16:55 +0900 OX-maintenance-64382af706188 [     info]  Running Maintenance Priority Engine
+Apr 13 18:16:55 +0900 OX-maintenance-64382af706188 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsLifetime
+Apr 13 18:16:55 +0900 OX-maintenance-64382af706188 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsLifetime
+Apr 13 18:16:55 +0900 OX-maintenance-64382af706188 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsDaily
+Apr 13 18:16:55 +0900 OX-maintenance-64382af706188 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsDaily
+Apr 13 18:16:55 +0900 OX-maintenance-64382af706188 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_AllocateZoneImpressions
+Apr 13 18:16:55 +0900 OX-maintenance-64382af706188 [     info]    - Selecting Zones forecasts for all managers for OI from 2023-04-13 16:00:00 to 2023-04-13 16:59:59
+Apr 13 18:16:55 +0900 OX-maintenance-64382af706188 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_AllocateZoneImpressions
+Apr 13 18:16:55 +0900 OX-maintenance-64382af706188 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_PriorityCompensation
+Apr 13 18:16:55 +0900 OX-maintenance-64382af706188 [     info]    - Selecting Zones forecasts for all managers for OI from 2023-04-13 16:00:00 to 2023-04-13 16:59:59
+Apr 13 18:16:55 +0900 OX-maintenance-64382af706188 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_PriorityCompensation
+Apr 13 18:16:55 +0900 OX-maintenance-64382af706188 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_ECPMforContract
+Apr 13 18:16:55 +0900 OX-maintenance-64382af706188 [     info]  - Selecting All Managers
+Apr 13 18:16:55 +0900 OX-maintenance-64382af706188 [     info]    - Selecting active campaigns with priority = '9' for manager 14
+Apr 13 18:16:55 +0900 OX-maintenance-64382af706188 [     info]    - Selecting active campaigns with priority = '8' for manager 14
+Apr 13 18:16:55 +0900 OX-maintenance-64382af706188 [     info]    - Selecting active campaigns with priority = '7' for manager 14
+Apr 13 18:16:55 +0900 OX-maintenance-64382af706188 [     info]    - Selecting active campaigns with priority = '6' for manager 14
+Apr 13 18:16:55 +0900 OX-maintenance-64382af706188 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_ECPMforContract
+Apr 13 18:16:55 +0900 OX-maintenance-64382af706188 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_ECPMforRemnant
+Apr 13 18:16:55 +0900 OX-maintenance-64382af706188 [     info]  - Selecting Managers with ECPM priority campaigns running
+Apr 13 18:16:55 +0900 OX-maintenance-64382af706188 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_ECPMforRemnant
+Apr 13 18:16:55 +0900 OX-maintenance-64382af706188 [     info]  Maintenance Priority Engine Completed (Started at 2023-04-13 18:16:55 CET)
+ 
+Apr 13 18:36:09 +0900 OX-maintenance-64382f79177ee [     info]  Running Maintenance Priority Engine
+Apr 13 18:36:09 +0900 OX-maintenance-64382f79177ee [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsLifetime
+Apr 13 18:36:09 +0900 OX-maintenance-64382f79177ee [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsLifetime
+Apr 13 18:36:09 +0900 OX-maintenance-64382f79177ee [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsDaily
+Apr 13 18:36:09 +0900 OX-maintenance-64382f79177ee [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsDaily
+Apr 13 18:36:09 +0900 OX-maintenance-64382f79177ee [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_AllocateZoneImpressions
+Apr 13 18:36:09 +0900 OX-maintenance-64382f79177ee [     info]    - Selecting Zones forecasts for all managers for OI from 2023-04-13 16:00:00 to 2023-04-13 16:59:59
+Apr 13 18:36:09 +0900 OX-maintenance-64382f79177ee [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_AllocateZoneImpressions
+Apr 13 18:36:09 +0900 OX-maintenance-64382f79177ee [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_PriorityCompensation
+Apr 13 18:36:09 +0900 OX-maintenance-64382f79177ee [     info]    - Selecting Zones forecasts for all managers for OI from 2023-04-13 16:00:00 to 2023-04-13 16:59:59
+Apr 13 18:36:10 +0900 OX-maintenance-64382f79177ee [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_PriorityCompensation
+Apr 13 18:36:10 +0900 OX-maintenance-64382f79177ee [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_ECPMforContract
+Apr 13 18:36:10 +0900 OX-maintenance-64382f79177ee [     info]  - Selecting All Managers
+Apr 13 18:36:10 +0900 OX-maintenance-64382f79177ee [     info]    - Selecting active campaigns with priority = '9' for manager 14
+Apr 13 18:36:10 +0900 OX-maintenance-64382f79177ee [     info]    - Selecting active campaigns with priority = '8' for manager 14
+Apr 13 18:36:10 +0900 OX-maintenance-64382f79177ee [     info]    - Selecting active campaigns with priority = '7' for manager 14
+Apr 13 18:36:10 +0900 OX-maintenance-64382f79177ee [     info]    - Selecting active campaigns with priority = '6' for manager 14
+Apr 13 18:36:10 +0900 OX-maintenance-64382f79177ee [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_ECPMforContract
+Apr 13 18:36:10 +0900 OX-maintenance-64382f79177ee [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_ECPMforRemnant
+Apr 13 18:36:10 +0900 OX-maintenance-64382f79177ee [     info]  - Selecting Managers with ECPM priority campaigns running
+Apr 13 18:36:10 +0900 OX-maintenance-64382f79177ee [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_ECPMforRemnant
+Apr 13 18:36:10 +0900 OX-maintenance-64382f79177ee [     info]  Maintenance Priority Engine Completed (Started at 2023-04-13 18:36:09 CET)
+Apr 13 19:38:10 +0900 OX-64383e01d3750 [    error]  Smarty error: [in banner-edit.html line 140]: syntax error: unrecognized tag:  (Smarty_Compiler.class.php, line 444)
+Apr 13 19:38:10 +0900 OX-64383e01d3750 [    error]  Smarty error: [in banner-edit.html line 140]: syntax error: unrecognized tag '' (Smarty_Compiler.class.php, line 588)
+Apr 13 19:42:27 +0900 OX-64383f034a331 [    error]  Smarty error: [in banner-edit.html line 140]: syntax error: unrecognized tag 'var' (Smarty_Compiler.class.php, line 588)
+ 
+Apr 13 19:43:06 +0900 OX-maintenance-64383f2a2d652 [     info]  Running Maintenance Priority Engine
+Apr 13 19:43:06 +0900 OX-maintenance-64383f2a2d652 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsLifetime
+Apr 13 19:43:06 +0900 OX-maintenance-64383f2a2d652 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsLifetime
+Apr 13 19:43:06 +0900 OX-maintenance-64383f2a2d652 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsDaily
+Apr 13 19:43:06 +0900 OX-maintenance-64383f2a2d652 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsDaily
+Apr 13 19:43:06 +0900 OX-maintenance-64383f2a2d652 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_AllocateZoneImpressions
+Apr 13 19:43:06 +0900 OX-maintenance-64383f2a2d652 [     info]    - Selecting Zones forecasts for all managers for OI from 2023-04-13 17:00:00 to 2023-04-13 17:59:59
+Apr 13 19:43:06 +0900 OX-maintenance-64383f2a2d652 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_AllocateZoneImpressions
+Apr 13 19:43:06 +0900 OX-maintenance-64383f2a2d652 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_PriorityCompensation
+Apr 13 19:43:06 +0900 OX-maintenance-64383f2a2d652 [     info]    - Selecting Zones forecasts for all managers for OI from 2023-04-13 17:00:00 to 2023-04-13 17:59:59
+Apr 13 19:43:07 +0900 OX-maintenance-64383f2a2d652 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_PriorityCompensation
+Apr 13 19:43:07 +0900 OX-maintenance-64383f2a2d652 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_ECPMforContract
+Apr 13 19:43:07 +0900 OX-maintenance-64383f2a2d652 [     info]  - Selecting All Managers
+Apr 13 19:43:07 +0900 OX-maintenance-64383f2a2d652 [     info]    - Selecting active campaigns with priority = '9' for manager 14
+Apr 13 19:43:07 +0900 OX-maintenance-64383f2a2d652 [     info]    - Selecting active campaigns with priority = '8' for manager 14
+Apr 13 19:43:07 +0900 OX-maintenance-64383f2a2d652 [     info]    - Selecting active campaigns with priority = '7' for manager 14
+Apr 13 19:43:07 +0900 OX-maintenance-64383f2a2d652 [     info]    - Selecting active campaigns with priority = '6' for manager 14
+Apr 13 19:43:07 +0900 OX-maintenance-64383f2a2d652 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_ECPMforContract
+Apr 13 19:43:07 +0900 OX-maintenance-64383f2a2d652 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_ECPMforRemnant
+Apr 13 19:43:07 +0900 OX-maintenance-64383f2a2d652 [     info]  - Selecting Managers with ECPM priority campaigns running
+Apr 13 19:43:07 +0900 OX-maintenance-64383f2a2d652 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_ECPMforRemnant
+Apr 13 19:43:07 +0900 OX-maintenance-64383f2a2d652 [     info]  Maintenance Priority Engine Completed (Started at 2023-04-13 19:43:06 CET)
+ 
+Apr 13 19:43:18 +0900 OX-maintenance-64383f3676831 [     info]  Running Maintenance Priority Engine
+Apr 13 19:43:18 +0900 OX-maintenance-64383f3676831 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsLifetime
+Apr 13 19:43:18 +0900 OX-maintenance-64383f3676831 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsLifetime
+Apr 13 19:43:18 +0900 OX-maintenance-64383f3676831 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsDaily
+Apr 13 19:43:18 +0900 OX-maintenance-64383f3676831 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsDaily
+Apr 13 19:43:18 +0900 OX-maintenance-64383f3676831 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_AllocateZoneImpressions
+Apr 13 19:43:18 +0900 OX-maintenance-64383f3676831 [     info]    - Selecting Zones forecasts for all managers for OI from 2023-04-13 17:00:00 to 2023-04-13 17:59:59
+Apr 13 19:43:18 +0900 OX-maintenance-64383f3676831 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_AllocateZoneImpressions
+Apr 13 19:43:18 +0900 OX-maintenance-64383f3676831 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_PriorityCompensation
+Apr 13 19:43:18 +0900 OX-maintenance-64383f3676831 [     info]    - Selecting Zones forecasts for all managers for OI from 2023-04-13 17:00:00 to 2023-04-13 17:59:59
+Apr 13 19:43:19 +0900 OX-maintenance-64383f3676831 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_PriorityCompensation
+Apr 13 19:43:19 +0900 OX-maintenance-64383f3676831 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_ECPMforContract
+Apr 13 19:43:19 +0900 OX-maintenance-64383f3676831 [     info]  - Selecting All Managers
+Apr 13 19:43:19 +0900 OX-maintenance-64383f3676831 [     info]    - Selecting active campaigns with priority = '9' for manager 14
+Apr 13 19:43:19 +0900 OX-maintenance-64383f3676831 [     info]    - Selecting active campaigns with priority = '8' for manager 14
+Apr 13 19:43:19 +0900 OX-maintenance-64383f3676831 [     info]    - Selecting active campaigns with priority = '7' for manager 14
+Apr 13 19:43:19 +0900 OX-maintenance-64383f3676831 [     info]    - Selecting active campaigns with priority = '6' for manager 14
+Apr 13 19:43:19 +0900 OX-maintenance-64383f3676831 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_ECPMforContract
+Apr 13 19:43:19 +0900 OX-maintenance-64383f3676831 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_ECPMforRemnant
+Apr 13 19:43:19 +0900 OX-maintenance-64383f3676831 [     info]  - Selecting Managers with ECPM priority campaigns running
+Apr 13 19:43:19 +0900 OX-maintenance-64383f3676831 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_ECPMforRemnant
+Apr 13 19:43:19 +0900 OX-maintenance-64383f3676831 [     info]  Maintenance Priority Engine Completed (Started at 2023-04-13 19:43:18 CET)
+ 
+Apr 13 19:43:25 +0900 OX-maintenance-64383f3cbaa99 [     info]  Running Maintenance Priority Engine
+Apr 13 19:43:25 +0900 OX-maintenance-64383f3cbaa99 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsLifetime
+Apr 13 19:43:25 +0900 OX-maintenance-64383f3cbaa99 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsLifetime
+Apr 13 19:43:25 +0900 OX-maintenance-64383f3cbaa99 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsDaily
+Apr 13 19:43:25 +0900 OX-maintenance-64383f3cbaa99 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsDaily
+Apr 13 19:43:25 +0900 OX-maintenance-64383f3cbaa99 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_AllocateZoneImpressions
+Apr 13 19:43:25 +0900 OX-maintenance-64383f3cbaa99 [     info]    - Selecting Zones forecasts for all managers for OI from 2023-04-13 17:00:00 to 2023-04-13 17:59:59
+Apr 13 19:43:25 +0900 OX-maintenance-64383f3cbaa99 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_AllocateZoneImpressions
+Apr 13 19:43:25 +0900 OX-maintenance-64383f3cbaa99 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_PriorityCompensation
+Apr 13 19:43:25 +0900 OX-maintenance-64383f3cbaa99 [     info]    - Selecting Zones forecasts for all managers for OI from 2023-04-13 17:00:00 to 2023-04-13 17:59:59
+Apr 13 19:43:25 +0900 OX-maintenance-64383f3cbaa99 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_PriorityCompensation
+Apr 13 19:43:25 +0900 OX-maintenance-64383f3cbaa99 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_ECPMforContract
+Apr 13 19:43:25 +0900 OX-maintenance-64383f3cbaa99 [     info]  - Selecting All Managers
+Apr 13 19:43:25 +0900 OX-maintenance-64383f3cbaa99 [     info]    - Selecting active campaigns with priority = '9' for manager 14
+Apr 13 19:43:25 +0900 OX-maintenance-64383f3cbaa99 [     info]    - Selecting active campaigns with priority = '8' for manager 14
+Apr 13 19:43:25 +0900 OX-maintenance-64383f3cbaa99 [     info]    - Selecting active campaigns with priority = '7' for manager 14
+Apr 13 19:43:25 +0900 OX-maintenance-64383f3cbaa99 [     info]    - Selecting active campaigns with priority = '6' for manager 14
+Apr 13 19:43:25 +0900 OX-maintenance-64383f3cbaa99 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_ECPMforContract
+Apr 13 19:43:25 +0900 OX-maintenance-64383f3cbaa99 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_ECPMforRemnant
+Apr 13 19:43:25 +0900 OX-maintenance-64383f3cbaa99 [     info]  - Selecting Managers with ECPM priority campaigns running
+Apr 13 19:43:25 +0900 OX-maintenance-64383f3cbaa99 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_ECPMforRemnant
+Apr 13 19:43:25 +0900 OX-maintenance-64383f3cbaa99 [     info]  Maintenance Priority Engine Completed (Started at 2023-04-13 19:43:25 CET)
+ 
+Apr 13 19:55:57 +0900 OX-maintenance-6438422cd5b9d [     info]  Running Maintenance Priority Engine
+Apr 13 19:55:57 +0900 OX-maintenance-6438422cd5b9d [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsLifetime
+Apr 13 19:55:57 +0900 OX-maintenance-6438422cd5b9d [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsLifetime
+Apr 13 19:55:57 +0900 OX-maintenance-6438422cd5b9d [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsDaily
+Apr 13 19:55:57 +0900 OX-maintenance-6438422cd5b9d [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsDaily
+Apr 13 19:55:57 +0900 OX-maintenance-6438422cd5b9d [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_AllocateZoneImpressions
+Apr 13 19:55:57 +0900 OX-maintenance-6438422cd5b9d [     info]    - Selecting Zones forecasts for all managers for OI from 2023-04-13 17:00:00 to 2023-04-13 17:59:59
+Apr 13 19:55:57 +0900 OX-maintenance-6438422cd5b9d [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_AllocateZoneImpressions
+Apr 13 19:55:57 +0900 OX-maintenance-6438422cd5b9d [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_PriorityCompensation
+Apr 13 19:55:57 +0900 OX-maintenance-6438422cd5b9d [     info]    - Selecting Zones forecasts for all managers for OI from 2023-04-13 17:00:00 to 2023-04-13 17:59:59
+Apr 13 19:55:58 +0900 OX-maintenance-6438422cd5b9d [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_PriorityCompensation
+Apr 13 19:55:58 +0900 OX-maintenance-6438422cd5b9d [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_ECPMforContract
+Apr 13 19:55:58 +0900 OX-maintenance-6438422cd5b9d [     info]  - Selecting All Managers
+Apr 13 19:55:58 +0900 OX-maintenance-6438422cd5b9d [     info]    - Selecting active campaigns with priority = '9' for manager 14
+Apr 13 19:55:58 +0900 OX-maintenance-6438422cd5b9d [     info]    - Selecting active campaigns with priority = '8' for manager 14
+Apr 13 19:55:58 +0900 OX-maintenance-6438422cd5b9d [     info]    - Selecting active campaigns with priority = '7' for manager 14
+Apr 13 19:55:58 +0900 OX-maintenance-6438422cd5b9d [     info]    - Selecting active campaigns with priority = '6' for manager 14
+Apr 13 19:55:58 +0900 OX-maintenance-6438422cd5b9d [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_ECPMforContract
+Apr 13 19:55:58 +0900 OX-maintenance-6438422cd5b9d [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_ECPMforRemnant
+Apr 13 19:55:58 +0900 OX-maintenance-6438422cd5b9d [     info]  - Selecting Managers with ECPM priority campaigns running
+Apr 13 19:55:58 +0900 OX-maintenance-6438422cd5b9d [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_ECPMforRemnant
+Apr 13 19:55:58 +0900 OX-maintenance-6438422cd5b9d [     info]  Maintenance Priority Engine Completed (Started at 2023-04-13 19:55:57 CET)
+ 
+Apr 16 17:27:20 +0900 OX-maintenance-643c13d87732b [     info]  Running Maintenance Priority Engine
+Apr 16 17:27:21 +0900 OX-maintenance-643c13d87732b [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsLifetime
+Apr 16 17:27:21 +0900 OX-maintenance-643c13d87732b [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsLifetime
+Apr 16 17:27:21 +0900 OX-maintenance-643c13d87732b [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsDaily
+Apr 16 17:27:21 +0900 OX-maintenance-643c13d87732b [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsDaily
+Apr 16 17:27:21 +0900 OX-maintenance-643c13d87732b [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_AllocateZoneImpressions
+Apr 16 17:27:21 +0900 OX-maintenance-643c13d87732b [     info]    - Selecting Zones forecasts for all managers for OI from 2023-04-16 15:00:00 to 2023-04-16 15:59:59
+Apr 16 17:27:21 +0900 OX-maintenance-643c13d87732b [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_AllocateZoneImpressions
+Apr 16 17:27:21 +0900 OX-maintenance-643c13d87732b [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_PriorityCompensation
+Apr 16 17:27:21 +0900 OX-maintenance-643c13d87732b [     info]    - Selecting Zones forecasts for all managers for OI from 2023-04-16 15:00:00 to 2023-04-16 15:59:59
+Apr 16 17:27:21 +0900 OX-maintenance-643c13d87732b [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_PriorityCompensation
+Apr 16 17:27:21 +0900 OX-maintenance-643c13d87732b [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_ECPMforContract
+Apr 16 17:27:21 +0900 OX-maintenance-643c13d87732b [     info]  - Selecting All Managers
+Apr 16 17:27:21 +0900 OX-maintenance-643c13d87732b [     info]    - Selecting active campaigns with priority = '9' for manager 14
+Apr 16 17:27:21 +0900 OX-maintenance-643c13d87732b [     info]    - Selecting active campaigns with priority = '8' for manager 14
+Apr 16 17:27:21 +0900 OX-maintenance-643c13d87732b [     info]    - Selecting active campaigns with priority = '7' for manager 14
+Apr 16 17:27:21 +0900 OX-maintenance-643c13d87732b [     info]    - Selecting active campaigns with priority = '6' for manager 14
+Apr 16 17:27:21 +0900 OX-maintenance-643c13d87732b [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_ECPMforContract
+Apr 16 17:27:21 +0900 OX-maintenance-643c13d87732b [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_ECPMforRemnant
+Apr 16 17:27:21 +0900 OX-maintenance-643c13d87732b [     info]  - Selecting Managers with ECPM priority campaigns running
+Apr 16 17:27:21 +0900 OX-maintenance-643c13d87732b [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_ECPMforRemnant
+Apr 16 17:27:21 +0900 OX-maintenance-643c13d87732b [     info]  Maintenance Priority Engine Completed (Started at 2023-04-16 17:27:20 CET)
+ 
+Apr 16 17:28:36 +0900 OX-maintenance-643c142446df5 [     info]  Running Maintenance Priority Engine
+Apr 16 17:28:36 +0900 OX-maintenance-643c142446df5 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsLifetime
+Apr 16 17:28:36 +0900 OX-maintenance-643c142446df5 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsLifetime
+Apr 16 17:28:36 +0900 OX-maintenance-643c142446df5 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsDaily
+Apr 16 17:28:36 +0900 OX-maintenance-643c142446df5 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsDaily
+Apr 16 17:28:36 +0900 OX-maintenance-643c142446df5 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_AllocateZoneImpressions
+Apr 16 17:28:36 +0900 OX-maintenance-643c142446df5 [     info]    - Selecting Zones forecasts for all managers for OI from 2023-04-16 15:00:00 to 2023-04-16 15:59:59
+Apr 16 17:28:36 +0900 OX-maintenance-643c142446df5 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_AllocateZoneImpressions
+Apr 16 17:28:36 +0900 OX-maintenance-643c142446df5 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_PriorityCompensation
+Apr 16 17:28:36 +0900 OX-maintenance-643c142446df5 [     info]    - Selecting Zones forecasts for all managers for OI from 2023-04-16 15:00:00 to 2023-04-16 15:59:59
+Apr 16 17:28:36 +0900 OX-maintenance-643c142446df5 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_PriorityCompensation
+Apr 16 17:28:36 +0900 OX-maintenance-643c142446df5 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_ECPMforContract
+Apr 16 17:28:36 +0900 OX-maintenance-643c142446df5 [     info]  - Selecting All Managers
+Apr 16 17:28:36 +0900 OX-maintenance-643c142446df5 [     info]    - Selecting active campaigns with priority = '9' for manager 14
+Apr 16 17:28:36 +0900 OX-maintenance-643c142446df5 [     info]    - Selecting active campaigns with priority = '8' for manager 14
+Apr 16 17:28:36 +0900 OX-maintenance-643c142446df5 [     info]    - Selecting active campaigns with priority = '7' for manager 14
+Apr 16 17:28:36 +0900 OX-maintenance-643c142446df5 [     info]    - Selecting active campaigns with priority = '6' for manager 14
+Apr 16 17:28:36 +0900 OX-maintenance-643c142446df5 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_ECPMforContract
+Apr 16 17:28:36 +0900 OX-maintenance-643c142446df5 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_ECPMforRemnant
+Apr 16 17:28:36 +0900 OX-maintenance-643c142446df5 [     info]  - Selecting Managers with ECPM priority campaigns running
+Apr 16 17:28:36 +0900 OX-maintenance-643c142446df5 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_ECPMforRemnant
+Apr 16 17:28:36 +0900 OX-maintenance-643c142446df5 [     info]  Maintenance Priority Engine Completed (Started at 2023-04-16 17:28:36 CET)
+ 
+Apr 16 19:43:04 +0900 OX-maintenance-643c33a897f3f [     info]  Running Maintenance Priority Engine
+Apr 16 19:43:04 +0900 OX-maintenance-643c33a897f3f [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsLifetime
+Apr 16 19:43:04 +0900 OX-maintenance-643c33a897f3f [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsLifetime
+Apr 16 19:43:04 +0900 OX-maintenance-643c33a897f3f [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsDaily
+Apr 16 19:43:04 +0900 OX-maintenance-643c33a897f3f [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsDaily
+Apr 16 19:43:04 +0900 OX-maintenance-643c33a897f3f [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_AllocateZoneImpressions
+Apr 16 19:43:04 +0900 OX-maintenance-643c33a897f3f [     info]    - Selecting Zones forecasts for all managers for OI from 2023-04-16 17:00:00 to 2023-04-16 17:59:59
+Apr 16 19:43:04 +0900 OX-maintenance-643c33a897f3f [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_AllocateZoneImpressions
+Apr 16 19:43:04 +0900 OX-maintenance-643c33a897f3f [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_PriorityCompensation
+Apr 16 19:43:04 +0900 OX-maintenance-643c33a897f3f [     info]    - Selecting Zones forecasts for all managers for OI from 2023-04-16 17:00:00 to 2023-04-16 17:59:59
+Apr 16 19:43:05 +0900 OX-maintenance-643c33a897f3f [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_PriorityCompensation
+Apr 16 19:43:05 +0900 OX-maintenance-643c33a897f3f [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_ECPMforContract
+Apr 16 19:43:05 +0900 OX-maintenance-643c33a897f3f [     info]  - Selecting All Managers
+Apr 16 19:43:05 +0900 OX-maintenance-643c33a897f3f [     info]    - Selecting active campaigns with priority = '9' for manager 14
+Apr 16 19:43:05 +0900 OX-maintenance-643c33a897f3f [     info]    - Selecting active campaigns with priority = '8' for manager 14
+Apr 16 19:43:05 +0900 OX-maintenance-643c33a897f3f [     info]    - Selecting active campaigns with priority = '7' for manager 14
+Apr 16 19:43:05 +0900 OX-maintenance-643c33a897f3f [     info]    - Selecting active campaigns with priority = '6' for manager 14
+Apr 16 19:43:05 +0900 OX-maintenance-643c33a897f3f [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_ECPMforContract
+Apr 16 19:43:05 +0900 OX-maintenance-643c33a897f3f [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_ECPMforRemnant
+Apr 16 19:43:05 +0900 OX-maintenance-643c33a897f3f [     info]  - Selecting Managers with ECPM priority campaigns running
+Apr 16 19:43:05 +0900 OX-maintenance-643c33a897f3f [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_ECPMforRemnant
+Apr 16 19:43:05 +0900 OX-maintenance-643c33a897f3f [     info]  Maintenance Priority Engine Completed (Started at 2023-04-16 19:43:04 CET)
+ 
+Apr 16 19:58:29 +0900 OX-maintenance-643c3745a2ebf [     info]  Running Maintenance Priority Engine
+Apr 16 19:58:29 +0900 OX-maintenance-643c3745a2ebf [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsLifetime
+Apr 16 19:58:29 +0900 OX-maintenance-643c3745a2ebf [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsLifetime
+Apr 16 19:58:29 +0900 OX-maintenance-643c3745a2ebf [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsDaily
+Apr 16 19:58:29 +0900 OX-maintenance-643c3745a2ebf [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsDaily
+Apr 16 19:58:29 +0900 OX-maintenance-643c3745a2ebf [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_AllocateZoneImpressions
+Apr 16 19:58:29 +0900 OX-maintenance-643c3745a2ebf [     info]    - Selecting Zones forecasts for all managers for OI from 2023-04-16 17:00:00 to 2023-04-16 17:59:59
+Apr 16 19:58:29 +0900 OX-maintenance-643c3745a2ebf [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_AllocateZoneImpressions
+Apr 16 19:58:29 +0900 OX-maintenance-643c3745a2ebf [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_PriorityCompensation
+Apr 16 19:58:29 +0900 OX-maintenance-643c3745a2ebf [     info]    - Selecting Zones forecasts for all managers for OI from 2023-04-16 17:00:00 to 2023-04-16 17:59:59
+Apr 16 19:58:30 +0900 OX-maintenance-643c3745a2ebf [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_PriorityCompensation
+Apr 16 19:58:30 +0900 OX-maintenance-643c3745a2ebf [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_ECPMforContract
+Apr 16 19:58:30 +0900 OX-maintenance-643c3745a2ebf [     info]  - Selecting All Managers
+Apr 16 19:58:30 +0900 OX-maintenance-643c3745a2ebf [     info]    - Selecting active campaigns with priority = '9' for manager 14
+Apr 16 19:58:30 +0900 OX-maintenance-643c3745a2ebf [     info]    - Selecting active campaigns with priority = '8' for manager 14
+Apr 16 19:58:30 +0900 OX-maintenance-643c3745a2ebf [     info]    - Selecting active campaigns with priority = '7' for manager 14
+Apr 16 19:58:30 +0900 OX-maintenance-643c3745a2ebf [     info]    - Selecting active campaigns with priority = '6' for manager 14
+Apr 16 19:58:30 +0900 OX-maintenance-643c3745a2ebf [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_ECPMforContract
+Apr 16 19:58:30 +0900 OX-maintenance-643c3745a2ebf [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_ECPMforRemnant
+Apr 16 19:58:30 +0900 OX-maintenance-643c3745a2ebf [     info]  - Selecting Managers with ECPM priority campaigns running
+Apr 16 19:58:30 +0900 OX-maintenance-643c3745a2ebf [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_ECPMforRemnant
+Apr 16 19:58:30 +0900 OX-maintenance-643c3745a2ebf [     info]  Maintenance Priority Engine Completed (Started at 2023-04-16 19:58:29 CET)
+ 
+Apr 16 19:58:36 +0900 OX-maintenance-643c374c58c1d [     info]  Running Maintenance Priority Engine
+Apr 16 19:58:36 +0900 OX-maintenance-643c374c58c1d [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsLifetime
+Apr 16 19:58:36 +0900 OX-maintenance-643c374c58c1d [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsLifetime
+Apr 16 19:58:36 +0900 OX-maintenance-643c374c58c1d [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsDaily
+Apr 16 19:58:36 +0900 OX-maintenance-643c374c58c1d [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsDaily
+Apr 16 19:58:36 +0900 OX-maintenance-643c374c58c1d [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_AllocateZoneImpressions
+Apr 16 19:58:36 +0900 OX-maintenance-643c374c58c1d [     info]    - Selecting Zones forecasts for all managers for OI from 2023-04-16 17:00:00 to 2023-04-16 17:59:59
+Apr 16 19:58:36 +0900 OX-maintenance-643c374c58c1d [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_AllocateZoneImpressions
+Apr 16 19:58:36 +0900 OX-maintenance-643c374c58c1d [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_PriorityCompensation
+Apr 16 19:58:36 +0900 OX-maintenance-643c374c58c1d [     info]    - Selecting Zones forecasts for all managers for OI from 2023-04-16 17:00:00 to 2023-04-16 17:59:59
+Apr 16 19:58:36 +0900 OX-maintenance-643c374c58c1d [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_PriorityCompensation
+Apr 16 19:58:36 +0900 OX-maintenance-643c374c58c1d [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_ECPMforContract
+Apr 16 19:58:36 +0900 OX-maintenance-643c374c58c1d [     info]  - Selecting All Managers
+Apr 16 19:58:36 +0900 OX-maintenance-643c374c58c1d [     info]    - Selecting active campaigns with priority = '9' for manager 14
+Apr 16 19:58:36 +0900 OX-maintenance-643c374c58c1d [     info]    - Selecting active campaigns with priority = '8' for manager 14
+Apr 16 19:58:36 +0900 OX-maintenance-643c374c58c1d [     info]    - Selecting active campaigns with priority = '7' for manager 14
+Apr 16 19:58:36 +0900 OX-maintenance-643c374c58c1d [     info]    - Selecting active campaigns with priority = '6' for manager 14
+Apr 16 19:58:36 +0900 OX-maintenance-643c374c58c1d [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_ECPMforContract
+Apr 16 19:58:36 +0900 OX-maintenance-643c374c58c1d [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_ECPMforRemnant
+Apr 16 19:58:36 +0900 OX-maintenance-643c374c58c1d [     info]  - Selecting Managers with ECPM priority campaigns running
+Apr 16 19:58:36 +0900 OX-maintenance-643c374c58c1d [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_ECPMforRemnant
+Apr 16 19:58:36 +0900 OX-maintenance-643c374c58c1d [     info]  Maintenance Priority Engine Completed (Started at 2023-04-16 19:58:36 CET)
+ 
+Apr 16 20:01:58 +0900 OX-maintenance-643c38169b93b [     info]  Running Maintenance Priority Engine
+Apr 16 20:01:58 +0900 OX-maintenance-643c38169b93b [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsLifetime
+Apr 16 20:01:58 +0900 OX-maintenance-643c38169b93b [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsLifetime
+Apr 16 20:01:58 +0900 OX-maintenance-643c38169b93b [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsDaily
+Apr 16 20:01:58 +0900 OX-maintenance-643c38169b93b [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsDaily
+Apr 16 20:01:58 +0900 OX-maintenance-643c38169b93b [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_AllocateZoneImpressions
+Apr 16 20:01:58 +0900 OX-maintenance-643c38169b93b [     info]    - Selecting Zones forecasts for all managers for OI from 2023-04-16 18:00:00 to 2023-04-16 18:59:59
+Apr 16 20:01:58 +0900 OX-maintenance-643c38169b93b [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_AllocateZoneImpressions
+Apr 16 20:01:58 +0900 OX-maintenance-643c38169b93b [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_PriorityCompensation
+Apr 16 20:01:58 +0900 OX-maintenance-643c38169b93b [     info]    - Selecting Zones forecasts for all managers for OI from 2023-04-16 18:00:00 to 2023-04-16 18:59:59
+Apr 16 20:01:59 +0900 OX-maintenance-643c38169b93b [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_PriorityCompensation
+Apr 16 20:01:59 +0900 OX-maintenance-643c38169b93b [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_ECPMforContract
+Apr 16 20:01:59 +0900 OX-maintenance-643c38169b93b [     info]  - Selecting All Managers
+Apr 16 20:01:59 +0900 OX-maintenance-643c38169b93b [     info]    - Selecting active campaigns with priority = '9' for manager 14
+Apr 16 20:01:59 +0900 OX-maintenance-643c38169b93b [     info]    - Selecting active campaigns with priority = '8' for manager 14
+Apr 16 20:01:59 +0900 OX-maintenance-643c38169b93b [     info]    - Selecting active campaigns with priority = '7' for manager 14
+Apr 16 20:01:59 +0900 OX-maintenance-643c38169b93b [     info]    - Selecting active campaigns with priority = '6' for manager 14
+Apr 16 20:01:59 +0900 OX-maintenance-643c38169b93b [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_ECPMforContract
+Apr 16 20:01:59 +0900 OX-maintenance-643c38169b93b [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_ECPMforRemnant
+Apr 16 20:01:59 +0900 OX-maintenance-643c38169b93b [     info]  - Selecting Managers with ECPM priority campaigns running
+Apr 16 20:01:59 +0900 OX-maintenance-643c38169b93b [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_ECPMforRemnant
+Apr 16 20:01:59 +0900 OX-maintenance-643c38169b93b [     info]  Maintenance Priority Engine Completed (Started at 2023-04-16 20:01:58 CET)
+ 
+Apr 16 20:11:19 +0900 OX-maintenance-643c3a47b4558 [     info]  Running Maintenance Priority Engine
+Apr 16 20:11:19 +0900 OX-maintenance-643c3a47b4558 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsLifetime
+Apr 16 20:11:19 +0900 OX-maintenance-643c3a47b4558 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsLifetime
+Apr 16 20:11:19 +0900 OX-maintenance-643c3a47b4558 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsDaily
+Apr 16 20:11:19 +0900 OX-maintenance-643c3a47b4558 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsDaily
+Apr 16 20:11:19 +0900 OX-maintenance-643c3a47b4558 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_AllocateZoneImpressions
+Apr 16 20:11:19 +0900 OX-maintenance-643c3a47b4558 [     info]    - Selecting Zones forecasts for all managers for OI from 2023-04-16 18:00:00 to 2023-04-16 18:59:59
+Apr 16 20:11:19 +0900 OX-maintenance-643c3a47b4558 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_AllocateZoneImpressions
+Apr 16 20:11:19 +0900 OX-maintenance-643c3a47b4558 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_PriorityCompensation
+Apr 16 20:11:19 +0900 OX-maintenance-643c3a47b4558 [     info]    - Selecting Zones forecasts for all managers for OI from 2023-04-16 18:00:00 to 2023-04-16 18:59:59
+Apr 16 20:11:20 +0900 OX-maintenance-643c3a47b4558 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_PriorityCompensation
+Apr 16 20:11:20 +0900 OX-maintenance-643c3a47b4558 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_ECPMforContract
+Apr 16 20:11:20 +0900 OX-maintenance-643c3a47b4558 [     info]  - Selecting All Managers
+Apr 16 20:11:20 +0900 OX-maintenance-643c3a47b4558 [     info]    - Selecting active campaigns with priority = '9' for manager 14
+Apr 16 20:11:20 +0900 OX-maintenance-643c3a47b4558 [     info]    - Selecting active campaigns with priority = '8' for manager 14
+Apr 16 20:11:20 +0900 OX-maintenance-643c3a47b4558 [     info]    - Selecting active campaigns with priority = '7' for manager 14
+Apr 16 20:11:20 +0900 OX-maintenance-643c3a47b4558 [     info]    - Selecting active campaigns with priority = '6' for manager 14
+Apr 16 20:11:20 +0900 OX-maintenance-643c3a47b4558 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_ECPMforContract
+Apr 16 20:11:20 +0900 OX-maintenance-643c3a47b4558 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_ECPMforRemnant
+Apr 16 20:11:20 +0900 OX-maintenance-643c3a47b4558 [     info]  - Selecting Managers with ECPM priority campaigns running
+Apr 16 20:11:20 +0900 OX-maintenance-643c3a47b4558 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_ECPMforRemnant
+Apr 16 20:11:20 +0900 OX-maintenance-643c3a47b4558 [     info]  Maintenance Priority Engine Completed (Started at 2023-04-16 20:11:19 CET)
+ 
+Apr 17 06:28:05 +0900 OX-maintenance-643ccad5a0f8a [     info]  Running Maintenance Priority Engine
+Apr 17 06:28:05 +0900 OX-maintenance-643ccad5a0f8a [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsLifetime
+Apr 17 06:28:05 +0900 OX-maintenance-643ccad5a0f8a [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsLifetime
+Apr 17 06:28:05 +0900 OX-maintenance-643ccad5a0f8a [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsDaily
+Apr 17 06:28:05 +0900 OX-maintenance-643ccad5a0f8a [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsDaily
+Apr 17 06:28:05 +0900 OX-maintenance-643ccad5a0f8a [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_AllocateZoneImpressions
+Apr 17 06:28:05 +0900 OX-maintenance-643ccad5a0f8a [     info]    - Selecting Zones forecasts for all managers for OI from 2023-04-17 04:00:00 to 2023-04-17 04:59:59
+Apr 17 06:28:05 +0900 OX-maintenance-643ccad5a0f8a [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_AllocateZoneImpressions
+Apr 17 06:28:05 +0900 OX-maintenance-643ccad5a0f8a [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_PriorityCompensation
+Apr 17 06:28:05 +0900 OX-maintenance-643ccad5a0f8a [     info]    - Selecting Zones forecasts for all managers for OI from 2023-04-17 04:00:00 to 2023-04-17 04:59:59
+Apr 17 06:28:06 +0900 OX-maintenance-643ccad5a0f8a [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_PriorityCompensation
+Apr 17 06:28:06 +0900 OX-maintenance-643ccad5a0f8a [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_ECPMforContract
+Apr 17 06:28:06 +0900 OX-maintenance-643ccad5a0f8a [     info]  - Selecting All Managers
+Apr 17 06:28:06 +0900 OX-maintenance-643ccad5a0f8a [     info]    - Selecting active campaigns with priority = '9' for manager 14
+Apr 17 06:28:06 +0900 OX-maintenance-643ccad5a0f8a [     info]    - Selecting active campaigns with priority = '8' for manager 14
+Apr 17 06:28:06 +0900 OX-maintenance-643ccad5a0f8a [     info]    - Selecting active campaigns with priority = '7' for manager 14
+Apr 17 06:28:06 +0900 OX-maintenance-643ccad5a0f8a [     info]    - Selecting active campaigns with priority = '6' for manager 14
+Apr 17 06:28:06 +0900 OX-maintenance-643ccad5a0f8a [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_ECPMforContract
+Apr 17 06:28:06 +0900 OX-maintenance-643ccad5a0f8a [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_ECPMforRemnant
+Apr 17 06:28:06 +0900 OX-maintenance-643ccad5a0f8a [     info]  - Selecting Managers with ECPM priority campaigns running
+Apr 17 06:28:06 +0900 OX-maintenance-643ccad5a0f8a [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_ECPMforRemnant
+Apr 17 06:28:06 +0900 OX-maintenance-643ccad5a0f8a [     info]  Maintenance Priority Engine Completed (Started at 2023-04-17 06:28:05 CET)
+ 
+Apr 17 06:36:27 +0900 OX-maintenance-643ccccb1c4df [     info]  Running Maintenance Priority Engine
+Apr 17 06:36:27 +0900 OX-maintenance-643ccccb1c4df [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsLifetime
+Apr 17 06:36:27 +0900 OX-maintenance-643ccccb1c4df [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsLifetime
+Apr 17 06:36:27 +0900 OX-maintenance-643ccccb1c4df [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsDaily
+Apr 17 06:36:27 +0900 OX-maintenance-643ccccb1c4df [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsDaily
+Apr 17 06:36:27 +0900 OX-maintenance-643ccccb1c4df [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_AllocateZoneImpressions
+Apr 17 06:36:27 +0900 OX-maintenance-643ccccb1c4df [     info]    - Selecting Zones forecasts for all managers for OI from 2023-04-17 04:00:00 to 2023-04-17 04:59:59
+Apr 17 06:36:27 +0900 OX-maintenance-643ccccb1c4df [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_AllocateZoneImpressions
+Apr 17 06:36:27 +0900 OX-maintenance-643ccccb1c4df [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_PriorityCompensation
+Apr 17 06:36:27 +0900 OX-maintenance-643ccccb1c4df [     info]    - Selecting Zones forecasts for all managers for OI from 2023-04-17 04:00:00 to 2023-04-17 04:59:59
+Apr 17 06:36:27 +0900 OX-maintenance-643ccccb1c4df [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_PriorityCompensation
+Apr 17 06:36:27 +0900 OX-maintenance-643ccccb1c4df [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_ECPMforContract
+Apr 17 06:36:27 +0900 OX-maintenance-643ccccb1c4df [     info]  - Selecting All Managers
+Apr 17 06:36:27 +0900 OX-maintenance-643ccccb1c4df [     info]    - Selecting active campaigns with priority = '9' for manager 14
+Apr 17 06:36:27 +0900 OX-maintenance-643ccccb1c4df [     info]    - Selecting active campaigns with priority = '8' for manager 14
+Apr 17 06:36:27 +0900 OX-maintenance-643ccccb1c4df [     info]    - Selecting active campaigns with priority = '7' for manager 14
+Apr 17 06:36:27 +0900 OX-maintenance-643ccccb1c4df [     info]    - Selecting active campaigns with priority = '6' for manager 14
+Apr 17 06:36:27 +0900 OX-maintenance-643ccccb1c4df [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_ECPMforContract
+Apr 17 06:36:27 +0900 OX-maintenance-643ccccb1c4df [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_ECPMforRemnant
+Apr 17 06:36:27 +0900 OX-maintenance-643ccccb1c4df [     info]  - Selecting Managers with ECPM priority campaigns running
+Apr 17 06:36:27 +0900 OX-maintenance-643ccccb1c4df [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_ECPMforRemnant
+Apr 17 06:36:27 +0900 OX-maintenance-643ccccb1c4df [     info]  Maintenance Priority Engine Completed (Started at 2023-04-17 06:36:27 CET)
+ 
+Apr 17 06:40:50 +0900 OX-maintenance-643ccdd245782 [     info]  Running Maintenance Priority Engine
+Apr 17 06:40:50 +0900 OX-maintenance-643ccdd245782 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsLifetime
+Apr 17 06:40:50 +0900 OX-maintenance-643ccdd245782 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsLifetime
+Apr 17 06:40:50 +0900 OX-maintenance-643ccdd245782 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsDaily
+Apr 17 06:40:50 +0900 OX-maintenance-643ccdd245782 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsDaily
+Apr 17 06:40:50 +0900 OX-maintenance-643ccdd245782 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_AllocateZoneImpressions
+Apr 17 06:40:50 +0900 OX-maintenance-643ccdd245782 [     info]    - Selecting Zones forecasts for all managers for OI from 2023-04-17 04:00:00 to 2023-04-17 04:59:59
+Apr 17 06:40:50 +0900 OX-maintenance-643ccdd245782 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_AllocateZoneImpressions
+Apr 17 06:40:50 +0900 OX-maintenance-643ccdd245782 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_PriorityCompensation
+Apr 17 06:40:50 +0900 OX-maintenance-643ccdd245782 [     info]    - Selecting Zones forecasts for all managers for OI from 2023-04-17 04:00:00 to 2023-04-17 04:59:59
+Apr 17 06:40:50 +0900 OX-maintenance-643ccdd245782 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_PriorityCompensation
+Apr 17 06:40:50 +0900 OX-maintenance-643ccdd245782 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_ECPMforContract
+Apr 17 06:40:50 +0900 OX-maintenance-643ccdd245782 [     info]  - Selecting All Managers
+Apr 17 06:40:50 +0900 OX-maintenance-643ccdd245782 [     info]    - Selecting active campaigns with priority = '9' for manager 14
+Apr 17 06:40:50 +0900 OX-maintenance-643ccdd245782 [     info]    - Selecting active campaigns with priority = '8' for manager 14
+Apr 17 06:40:50 +0900 OX-maintenance-643ccdd245782 [     info]    - Selecting active campaigns with priority = '7' for manager 14
+Apr 17 06:40:50 +0900 OX-maintenance-643ccdd245782 [     info]    - Selecting active campaigns with priority = '6' for manager 14
+Apr 17 06:40:50 +0900 OX-maintenance-643ccdd245782 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_ECPMforContract
+Apr 17 06:40:50 +0900 OX-maintenance-643ccdd245782 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_ECPMforRemnant
+Apr 17 06:40:50 +0900 OX-maintenance-643ccdd245782 [     info]  - Selecting Managers with ECPM priority campaigns running
+Apr 17 06:40:50 +0900 OX-maintenance-643ccdd245782 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_ECPMforRemnant
+Apr 17 06:40:50 +0900 OX-maintenance-643ccdd245782 [     info]  Maintenance Priority Engine Completed (Started at 2023-04-17 06:40:50 CET)
+ 
+Apr 17 06:45:05 +0900 OX-maintenance-643cced0e49c3 [     info]  Running Maintenance Priority Engine
+Apr 17 06:45:05 +0900 OX-maintenance-643cced0e49c3 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsLifetime
+Apr 17 06:45:05 +0900 OX-maintenance-643cced0e49c3 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsLifetime
+Apr 17 06:45:05 +0900 OX-maintenance-643cced0e49c3 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsDaily
+Apr 17 06:45:05 +0900 OX-maintenance-643cced0e49c3 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsDaily
+Apr 17 06:45:05 +0900 OX-maintenance-643cced0e49c3 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_AllocateZoneImpressions
+Apr 17 06:45:05 +0900 OX-maintenance-643cced0e49c3 [     info]    - Selecting Zones forecasts for all managers for OI from 2023-04-17 04:00:00 to 2023-04-17 04:59:59
+Apr 17 06:45:05 +0900 OX-maintenance-643cced0e49c3 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_AllocateZoneImpressions
+Apr 17 06:45:05 +0900 OX-maintenance-643cced0e49c3 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_PriorityCompensation
+Apr 17 06:45:05 +0900 OX-maintenance-643cced0e49c3 [     info]    - Selecting Zones forecasts for all managers for OI from 2023-04-17 04:00:00 to 2023-04-17 04:59:59
+Apr 17 06:45:06 +0900 OX-maintenance-643cced0e49c3 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_PriorityCompensation
+Apr 17 06:45:06 +0900 OX-maintenance-643cced0e49c3 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_ECPMforContract
+Apr 17 06:45:06 +0900 OX-maintenance-643cced0e49c3 [     info]  - Selecting All Managers
+Apr 17 06:45:06 +0900 OX-maintenance-643cced0e49c3 [     info]    - Selecting active campaigns with priority = '9' for manager 14
+Apr 17 06:45:06 +0900 OX-maintenance-643cced0e49c3 [     info]    - Selecting active campaigns with priority = '8' for manager 14
+Apr 17 06:45:06 +0900 OX-maintenance-643cced0e49c3 [     info]    - Selecting active campaigns with priority = '7' for manager 14
+Apr 17 06:45:06 +0900 OX-maintenance-643cced0e49c3 [     info]    - Selecting active campaigns with priority = '6' for manager 14
+Apr 17 06:45:06 +0900 OX-maintenance-643cced0e49c3 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_ECPMforContract
+Apr 17 06:45:06 +0900 OX-maintenance-643cced0e49c3 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_ECPMforRemnant
+Apr 17 06:45:06 +0900 OX-maintenance-643cced0e49c3 [     info]  - Selecting Managers with ECPM priority campaigns running
+Apr 17 06:45:06 +0900 OX-maintenance-643cced0e49c3 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_ECPMforRemnant
+Apr 17 06:45:06 +0900 OX-maintenance-643cced0e49c3 [     info]  Maintenance Priority Engine Completed (Started at 2023-04-17 06:45:05 CET)
+ 
+Apr 17 06:45:54 +0900 OX-maintenance-643ccf0287c8f [     info]  Running Maintenance Priority Engine
+Apr 17 06:45:54 +0900 OX-maintenance-643ccf0287c8f [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsLifetime
+Apr 17 06:45:54 +0900 OX-maintenance-643ccf0287c8f [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsLifetime
+Apr 17 06:45:54 +0900 OX-maintenance-643ccf0287c8f [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsDaily
+Apr 17 06:45:54 +0900 OX-maintenance-643ccf0287c8f [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsDaily
+Apr 17 06:45:54 +0900 OX-maintenance-643ccf0287c8f [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_AllocateZoneImpressions
+Apr 17 06:45:54 +0900 OX-maintenance-643ccf0287c8f [     info]    - Selecting Zones forecasts for all managers for OI from 2023-04-17 04:00:00 to 2023-04-17 04:59:59
+Apr 17 06:45:54 +0900 OX-maintenance-643ccf0287c8f [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_AllocateZoneImpressions
+Apr 17 06:45:54 +0900 OX-maintenance-643ccf0287c8f [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_PriorityCompensation
+Apr 17 06:45:54 +0900 OX-maintenance-643ccf0287c8f [     info]    - Selecting Zones forecasts for all managers for OI from 2023-04-17 04:00:00 to 2023-04-17 04:59:59
+Apr 17 06:45:55 +0900 OX-maintenance-643ccf0287c8f [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_PriorityCompensation
+Apr 17 06:45:55 +0900 OX-maintenance-643ccf0287c8f [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_ECPMforContract
+Apr 17 06:45:55 +0900 OX-maintenance-643ccf0287c8f [     info]  - Selecting All Managers
+Apr 17 06:45:55 +0900 OX-maintenance-643ccf0287c8f [     info]    - Selecting active campaigns with priority = '9' for manager 14
+Apr 17 06:45:55 +0900 OX-maintenance-643ccf0287c8f [     info]    - Selecting active campaigns with priority = '8' for manager 14
+Apr 17 06:45:55 +0900 OX-maintenance-643ccf0287c8f [     info]    - Selecting active campaigns with priority = '7' for manager 14
+Apr 17 06:45:55 +0900 OX-maintenance-643ccf0287c8f [     info]    - Selecting active campaigns with priority = '6' for manager 14
+Apr 17 06:45:55 +0900 OX-maintenance-643ccf0287c8f [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_ECPMforContract
+Apr 17 06:45:55 +0900 OX-maintenance-643ccf0287c8f [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_ECPMforRemnant
+Apr 17 06:45:55 +0900 OX-maintenance-643ccf0287c8f [     info]  - Selecting Managers with ECPM priority campaigns running
+Apr 17 06:45:55 +0900 OX-maintenance-643ccf0287c8f [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_ECPMforRemnant
+Apr 17 06:45:55 +0900 OX-maintenance-643ccf0287c8f [     info]  Maintenance Priority Engine Completed (Started at 2023-04-17 06:45:54 CET)
+ 
+Apr 17 06:46:31 +0900 OX-maintenance-643ccf275cad1 [     info]  Running Maintenance Priority Engine
+Apr 17 06:46:31 +0900 OX-maintenance-643ccf275cad1 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsLifetime
+Apr 17 06:46:31 +0900 OX-maintenance-643ccf275cad1 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsLifetime
+Apr 17 06:46:31 +0900 OX-maintenance-643ccf275cad1 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsDaily
+Apr 17 06:46:31 +0900 OX-maintenance-643ccf275cad1 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsDaily
+Apr 17 06:46:31 +0900 OX-maintenance-643ccf275cad1 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_AllocateZoneImpressions
+Apr 17 06:46:31 +0900 OX-maintenance-643ccf275cad1 [     info]    - Selecting Zones forecasts for all managers for OI from 2023-04-17 04:00:00 to 2023-04-17 04:59:59
+Apr 17 06:46:31 +0900 OX-maintenance-643ccf275cad1 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_AllocateZoneImpressions
+Apr 17 06:46:31 +0900 OX-maintenance-643ccf275cad1 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_PriorityCompensation
+Apr 17 06:46:31 +0900 OX-maintenance-643ccf275cad1 [     info]    - Selecting Zones forecasts for all managers for OI from 2023-04-17 04:00:00 to 2023-04-17 04:59:59
+Apr 17 06:46:32 +0900 OX-maintenance-643ccf275cad1 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_PriorityCompensation
+Apr 17 06:46:32 +0900 OX-maintenance-643ccf275cad1 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_ECPMforContract
+Apr 17 06:46:32 +0900 OX-maintenance-643ccf275cad1 [     info]  - Selecting All Managers
+Apr 17 06:46:32 +0900 OX-maintenance-643ccf275cad1 [     info]    - Selecting active campaigns with priority = '9' for manager 14
+Apr 17 06:46:32 +0900 OX-maintenance-643ccf275cad1 [     info]    - Selecting active campaigns with priority = '8' for manager 14
+Apr 17 06:46:32 +0900 OX-maintenance-643ccf275cad1 [     info]    - Selecting active campaigns with priority = '7' for manager 14
+Apr 17 06:46:32 +0900 OX-maintenance-643ccf275cad1 [     info]    - Selecting active campaigns with priority = '6' for manager 14
+Apr 17 06:46:32 +0900 OX-maintenance-643ccf275cad1 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_ECPMforContract
+Apr 17 06:46:32 +0900 OX-maintenance-643ccf275cad1 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_ECPMforRemnant
+Apr 17 06:46:32 +0900 OX-maintenance-643ccf275cad1 [     info]  - Selecting Managers with ECPM priority campaigns running
+Apr 17 06:46:32 +0900 OX-maintenance-643ccf275cad1 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_ECPMforRemnant
+Apr 17 06:46:32 +0900 OX-maintenance-643ccf275cad1 [     info]  Maintenance Priority Engine Completed (Started at 2023-04-17 06:46:31 CET)
+ 
+Apr 17 06:50:00 +0900 OX-maintenance-643ccff8bb45a [     info]  Running Maintenance Priority Engine
+Apr 17 06:50:00 +0900 OX-maintenance-643ccff8bb45a [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsLifetime
+Apr 17 06:50:00 +0900 OX-maintenance-643ccff8bb45a [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsLifetime
+Apr 17 06:50:00 +0900 OX-maintenance-643ccff8bb45a [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsDaily
+Apr 17 06:50:00 +0900 OX-maintenance-643ccff8bb45a [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsDaily
+Apr 17 06:50:00 +0900 OX-maintenance-643ccff8bb45a [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_AllocateZoneImpressions
+Apr 17 06:50:00 +0900 OX-maintenance-643ccff8bb45a [     info]    - Selecting Zones forecasts for all managers for OI from 2023-04-17 04:00:00 to 2023-04-17 04:59:59
+Apr 17 06:50:00 +0900 OX-maintenance-643ccff8bb45a [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_AllocateZoneImpressions
+Apr 17 06:50:00 +0900 OX-maintenance-643ccff8bb45a [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_PriorityCompensation
+Apr 17 06:50:01 +0900 OX-maintenance-643ccff8bb45a [     info]    - Selecting Zones forecasts for all managers for OI from 2023-04-17 04:00:00 to 2023-04-17 04:59:59
+Apr 17 06:50:01 +0900 OX-maintenance-643ccff8bb45a [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_PriorityCompensation
+Apr 17 06:50:01 +0900 OX-maintenance-643ccff8bb45a [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_ECPMforContract
+Apr 17 06:50:01 +0900 OX-maintenance-643ccff8bb45a [     info]  - Selecting All Managers
+Apr 17 06:50:01 +0900 OX-maintenance-643ccff8bb45a [     info]    - Selecting active campaigns with priority = '9' for manager 14
+Apr 17 06:50:01 +0900 OX-maintenance-643ccff8bb45a [     info]    - Selecting active campaigns with priority = '8' for manager 14
+Apr 17 06:50:01 +0900 OX-maintenance-643ccff8bb45a [     info]    - Selecting active campaigns with priority = '7' for manager 14
+Apr 17 06:50:01 +0900 OX-maintenance-643ccff8bb45a [     info]    - Selecting active campaigns with priority = '6' for manager 14
+Apr 17 06:50:01 +0900 OX-maintenance-643ccff8bb45a [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_ECPMforContract
+Apr 17 06:50:01 +0900 OX-maintenance-643ccff8bb45a [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_ECPMforRemnant
+Apr 17 06:50:01 +0900 OX-maintenance-643ccff8bb45a [     info]  - Selecting Managers with ECPM priority campaigns running
+Apr 17 06:50:01 +0900 OX-maintenance-643ccff8bb45a [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_ECPMforRemnant
+Apr 17 06:50:01 +0900 OX-maintenance-643ccff8bb45a [     info]  Maintenance Priority Engine Completed (Started at 2023-04-17 06:50:00 CET)
+ 
+Apr 17 06:54:33 +0900 OX-maintenance-643cd109c291e [     info]  Running Maintenance Priority Engine
+Apr 17 06:54:33 +0900 OX-maintenance-643cd109c291e [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsLifetime
+Apr 17 06:54:33 +0900 OX-maintenance-643cd109c291e [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsLifetime
+Apr 17 06:54:33 +0900 OX-maintenance-643cd109c291e [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsDaily
+Apr 17 06:54:33 +0900 OX-maintenance-643cd109c291e [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsDaily
+Apr 17 06:54:33 +0900 OX-maintenance-643cd109c291e [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_AllocateZoneImpressions
+Apr 17 06:54:33 +0900 OX-maintenance-643cd109c291e [     info]    - Selecting Zones forecasts for all managers for OI from 2023-04-17 04:00:00 to 2023-04-17 04:59:59
+Apr 17 06:54:34 +0900 OX-maintenance-643cd109c291e [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_AllocateZoneImpressions
+Apr 17 06:54:34 +0900 OX-maintenance-643cd109c291e [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_PriorityCompensation
+Apr 17 06:54:34 +0900 OX-maintenance-643cd109c291e [     info]    - Selecting Zones forecasts for all managers for OI from 2023-04-17 04:00:00 to 2023-04-17 04:59:59
+Apr 17 06:54:34 +0900 OX-maintenance-643cd109c291e [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_PriorityCompensation
+Apr 17 06:54:34 +0900 OX-maintenance-643cd109c291e [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_ECPMforContract
+Apr 17 06:54:34 +0900 OX-maintenance-643cd109c291e [     info]  - Selecting All Managers
+Apr 17 06:54:34 +0900 OX-maintenance-643cd109c291e [     info]    - Selecting active campaigns with priority = '9' for manager 14
+Apr 17 06:54:34 +0900 OX-maintenance-643cd109c291e [     info]    - Selecting active campaigns with priority = '8' for manager 14
+Apr 17 06:54:34 +0900 OX-maintenance-643cd109c291e [     info]    - Selecting active campaigns with priority = '7' for manager 14
+Apr 17 06:54:34 +0900 OX-maintenance-643cd109c291e [     info]    - Selecting active campaigns with priority = '6' for manager 14
+Apr 17 06:54:34 +0900 OX-maintenance-643cd109c291e [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_ECPMforContract
+Apr 17 06:54:34 +0900 OX-maintenance-643cd109c291e [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_ECPMforRemnant
+Apr 17 06:54:34 +0900 OX-maintenance-643cd109c291e [     info]  - Selecting Managers with ECPM priority campaigns running
+Apr 17 06:54:34 +0900 OX-maintenance-643cd109c291e [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_ECPMforRemnant
+Apr 17 06:54:34 +0900 OX-maintenance-643cd109c291e [     info]  Maintenance Priority Engine Completed (Started at 2023-04-17 06:54:33 CET)
+ 
+Apr 17 07:03:48 +0900 OX-maintenance-643cd334a6b1e [     info]  Running Maintenance Priority Engine
+Apr 17 07:03:48 +0900 OX-maintenance-643cd334a6b1e [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsLifetime
+Apr 17 07:03:48 +0900 OX-maintenance-643cd334a6b1e [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsLifetime
+Apr 17 07:03:48 +0900 OX-maintenance-643cd334a6b1e [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsDaily
+Apr 17 07:03:48 +0900 OX-maintenance-643cd334a6b1e [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsDaily
+Apr 17 07:03:48 +0900 OX-maintenance-643cd334a6b1e [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_AllocateZoneImpressions
+Apr 17 07:03:48 +0900 OX-maintenance-643cd334a6b1e [     info]    - Selecting Zones forecasts for all managers for OI from 2023-04-17 05:00:00 to 2023-04-17 05:59:59
+Apr 17 07:03:48 +0900 OX-maintenance-643cd334a6b1e [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_AllocateZoneImpressions
+Apr 17 07:03:48 +0900 OX-maintenance-643cd334a6b1e [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_PriorityCompensation
+Apr 17 07:03:48 +0900 OX-maintenance-643cd334a6b1e [     info]    - Selecting Zones forecasts for all managers for OI from 2023-04-17 05:00:00 to 2023-04-17 05:59:59
+Apr 17 07:03:49 +0900 OX-maintenance-643cd334a6b1e [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_PriorityCompensation
+Apr 17 07:03:49 +0900 OX-maintenance-643cd334a6b1e [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_ECPMforContract
+Apr 17 07:03:49 +0900 OX-maintenance-643cd334a6b1e [     info]  - Selecting All Managers
+Apr 17 07:03:49 +0900 OX-maintenance-643cd334a6b1e [     info]    - Selecting active campaigns with priority = '9' for manager 14
+Apr 17 07:03:49 +0900 OX-maintenance-643cd334a6b1e [     info]    - Selecting active campaigns with priority = '8' for manager 14
+Apr 17 07:03:49 +0900 OX-maintenance-643cd334a6b1e [     info]    - Selecting active campaigns with priority = '7' for manager 14
+Apr 17 07:03:49 +0900 OX-maintenance-643cd334a6b1e [     info]    - Selecting active campaigns with priority = '6' for manager 14
+Apr 17 07:03:49 +0900 OX-maintenance-643cd334a6b1e [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_ECPMforContract
+Apr 17 07:03:49 +0900 OX-maintenance-643cd334a6b1e [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_ECPMforRemnant
+Apr 17 07:03:49 +0900 OX-maintenance-643cd334a6b1e [     info]  - Selecting Managers with ECPM priority campaigns running
+Apr 17 07:03:49 +0900 OX-maintenance-643cd334a6b1e [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_ECPMforRemnant
+Apr 17 07:03:49 +0900 OX-maintenance-643cd334a6b1e [     info]  Maintenance Priority Engine Completed (Started at 2023-04-17 07:03:48 CET)
+ 
+Apr 17 07:06:08 +0900 OX-maintenance-643cd3c003aa7 [     info]  Running Maintenance Priority Engine
+Apr 17 07:06:08 +0900 OX-maintenance-643cd3c003aa7 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsLifetime
+Apr 17 07:06:08 +0900 OX-maintenance-643cd3c003aa7 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsLifetime
+Apr 17 07:06:08 +0900 OX-maintenance-643cd3c003aa7 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsDaily
+Apr 17 07:06:08 +0900 OX-maintenance-643cd3c003aa7 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsDaily
+Apr 17 07:06:08 +0900 OX-maintenance-643cd3c003aa7 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_AllocateZoneImpressions
+Apr 17 07:06:08 +0900 OX-maintenance-643cd3c003aa7 [     info]    - Selecting Zones forecasts for all managers for OI from 2023-04-17 05:00:00 to 2023-04-17 05:59:59
+Apr 17 07:06:08 +0900 OX-maintenance-643cd3c003aa7 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_AllocateZoneImpressions
+Apr 17 07:06:08 +0900 OX-maintenance-643cd3c003aa7 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_PriorityCompensation
+Apr 17 07:06:08 +0900 OX-maintenance-643cd3c003aa7 [     info]    - Selecting Zones forecasts for all managers for OI from 2023-04-17 05:00:00 to 2023-04-17 05:59:59
+Apr 17 07:06:08 +0900 OX-maintenance-643cd3c003aa7 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_PriorityCompensation
+Apr 17 07:06:08 +0900 OX-maintenance-643cd3c003aa7 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_ECPMforContract
+Apr 17 07:06:08 +0900 OX-maintenance-643cd3c003aa7 [     info]  - Selecting All Managers
+Apr 17 07:06:08 +0900 OX-maintenance-643cd3c003aa7 [     info]    - Selecting active campaigns with priority = '9' for manager 14
+Apr 17 07:06:08 +0900 OX-maintenance-643cd3c003aa7 [     info]    - Selecting active campaigns with priority = '8' for manager 14
+Apr 17 07:06:08 +0900 OX-maintenance-643cd3c003aa7 [     info]    - Selecting active campaigns with priority = '7' for manager 14
+Apr 17 07:06:08 +0900 OX-maintenance-643cd3c003aa7 [     info]    - Selecting active campaigns with priority = '6' for manager 14
+Apr 17 07:06:08 +0900 OX-maintenance-643cd3c003aa7 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_ECPMforContract
+Apr 17 07:06:08 +0900 OX-maintenance-643cd3c003aa7 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_ECPMforRemnant
+Apr 17 07:06:08 +0900 OX-maintenance-643cd3c003aa7 [     info]  - Selecting Managers with ECPM priority campaigns running
+Apr 17 07:06:08 +0900 OX-maintenance-643cd3c003aa7 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_ECPMforRemnant
+Apr 17 07:06:08 +0900 OX-maintenance-643cd3c003aa7 [     info]  Maintenance Priority Engine Completed (Started at 2023-04-17 07:06:08 CET)
+ 
+Apr 17 07:08:40 +0900 OX-maintenance-643cd4581c9b7 [     info]  Running Maintenance Priority Engine
+Apr 17 07:08:40 +0900 OX-maintenance-643cd4581c9b7 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsLifetime
+Apr 17 07:08:40 +0900 OX-maintenance-643cd4581c9b7 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsLifetime
+Apr 17 07:08:40 +0900 OX-maintenance-643cd4581c9b7 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsDaily
+Apr 17 07:08:40 +0900 OX-maintenance-643cd4581c9b7 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsDaily
+Apr 17 07:08:40 +0900 OX-maintenance-643cd4581c9b7 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_AllocateZoneImpressions
+Apr 17 07:08:40 +0900 OX-maintenance-643cd4581c9b7 [     info]    - Selecting Zones forecasts for all managers for OI from 2023-04-17 05:00:00 to 2023-04-17 05:59:59
+Apr 17 07:08:40 +0900 OX-maintenance-643cd4581c9b7 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_AllocateZoneImpressions
+Apr 17 07:08:40 +0900 OX-maintenance-643cd4581c9b7 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_PriorityCompensation
+Apr 17 07:08:40 +0900 OX-maintenance-643cd4581c9b7 [     info]    - Selecting Zones forecasts for all managers for OI from 2023-04-17 05:00:00 to 2023-04-17 05:59:59
+Apr 17 07:08:40 +0900 OX-maintenance-643cd4581c9b7 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_PriorityCompensation
+Apr 17 07:08:40 +0900 OX-maintenance-643cd4581c9b7 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_ECPMforContract
+Apr 17 07:08:40 +0900 OX-maintenance-643cd4581c9b7 [     info]  - Selecting All Managers
+Apr 17 07:08:40 +0900 OX-maintenance-643cd4581c9b7 [     info]    - Selecting active campaigns with priority = '9' for manager 14
+Apr 17 07:08:40 +0900 OX-maintenance-643cd4581c9b7 [     info]    - Selecting active campaigns with priority = '8' for manager 14
+Apr 17 07:08:40 +0900 OX-maintenance-643cd4581c9b7 [     info]    - Selecting active campaigns with priority = '7' for manager 14
+Apr 17 07:08:40 +0900 OX-maintenance-643cd4581c9b7 [     info]    - Selecting active campaigns with priority = '6' for manager 14
+Apr 17 07:08:40 +0900 OX-maintenance-643cd4581c9b7 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_ECPMforContract
+Apr 17 07:08:40 +0900 OX-maintenance-643cd4581c9b7 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_ECPMforRemnant
+Apr 17 07:08:40 +0900 OX-maintenance-643cd4581c9b7 [     info]  - Selecting Managers with ECPM priority campaigns running
+Apr 17 07:08:40 +0900 OX-maintenance-643cd4581c9b7 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_ECPMforRemnant
+Apr 17 07:08:40 +0900 OX-maintenance-643cd4581c9b7 [     info]  Maintenance Priority Engine Completed (Started at 2023-04-17 07:08:40 CET)
+ 
+Apr 17 07:10:23 +0900 OX-maintenance-643cd4bf83fb9 [     info]  Running Maintenance Priority Engine
+Apr 17 07:10:23 +0900 OX-maintenance-643cd4bf83fb9 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsLifetime
+Apr 17 07:10:23 +0900 OX-maintenance-643cd4bf83fb9 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsLifetime
+Apr 17 07:10:23 +0900 OX-maintenance-643cd4bf83fb9 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsDaily
+Apr 17 07:10:23 +0900 OX-maintenance-643cd4bf83fb9 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsDaily
+Apr 17 07:10:23 +0900 OX-maintenance-643cd4bf83fb9 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_AllocateZoneImpressions
+Apr 17 07:10:23 +0900 OX-maintenance-643cd4bf83fb9 [     info]    - Selecting Zones forecasts for all managers for OI from 2023-04-17 05:00:00 to 2023-04-17 05:59:59
+Apr 17 07:10:23 +0900 OX-maintenance-643cd4bf83fb9 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_AllocateZoneImpressions
+Apr 17 07:10:23 +0900 OX-maintenance-643cd4bf83fb9 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_PriorityCompensation
+Apr 17 07:10:23 +0900 OX-maintenance-643cd4bf83fb9 [     info]    - Selecting Zones forecasts for all managers for OI from 2023-04-17 05:00:00 to 2023-04-17 05:59:59
+Apr 17 07:10:24 +0900 OX-maintenance-643cd4bf83fb9 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_PriorityCompensation
+Apr 17 07:10:24 +0900 OX-maintenance-643cd4bf83fb9 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_ECPMforContract
+Apr 17 07:10:24 +0900 OX-maintenance-643cd4bf83fb9 [     info]  - Selecting All Managers
+Apr 17 07:10:24 +0900 OX-maintenance-643cd4bf83fb9 [     info]    - Selecting active campaigns with priority = '9' for manager 14
+Apr 17 07:10:24 +0900 OX-maintenance-643cd4bf83fb9 [     info]    - Selecting active campaigns with priority = '8' for manager 14
+Apr 17 07:10:24 +0900 OX-maintenance-643cd4bf83fb9 [     info]    - Selecting active campaigns with priority = '7' for manager 14
+Apr 17 07:10:24 +0900 OX-maintenance-643cd4bf83fb9 [     info]    - Selecting active campaigns with priority = '6' for manager 14
+Apr 17 07:10:24 +0900 OX-maintenance-643cd4bf83fb9 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_ECPMforContract
+Apr 17 07:10:24 +0900 OX-maintenance-643cd4bf83fb9 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_ECPMforRemnant
+Apr 17 07:10:24 +0900 OX-maintenance-643cd4bf83fb9 [     info]  - Selecting Managers with ECPM priority campaigns running
+Apr 17 07:10:24 +0900 OX-maintenance-643cd4bf83fb9 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_ECPMforRemnant
+Apr 17 07:10:24 +0900 OX-maintenance-643cd4bf83fb9 [     info]  Maintenance Priority Engine Completed (Started at 2023-04-17 07:10:23 CET)
+ 
+Apr 17 18:54:39 +0900 OX-maintenance-643d79cf68bd6 [     info]  Running Maintenance Priority Engine
+Apr 17 18:54:40 +0900 OX-maintenance-643d79cf68bd6 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsLifetime
+Apr 17 18:54:40 +0900 OX-maintenance-643d79cf68bd6 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsLifetime
+Apr 17 18:54:40 +0900 OX-maintenance-643d79cf68bd6 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsDaily
+Apr 17 18:54:40 +0900 OX-maintenance-643d79cf68bd6 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsDaily
+Apr 17 18:54:40 +0900 OX-maintenance-643d79cf68bd6 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_AllocateZoneImpressions
+Apr 17 18:54:40 +0900 OX-maintenance-643d79cf68bd6 [     info]    - Selecting Zones forecasts for all managers for OI from 2023-04-17 16:00:00 to 2023-04-17 16:59:59
+Apr 17 18:54:40 +0900 OX-maintenance-643d79cf68bd6 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_AllocateZoneImpressions
+Apr 17 18:54:40 +0900 OX-maintenance-643d79cf68bd6 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_PriorityCompensation
+Apr 17 18:54:40 +0900 OX-maintenance-643d79cf68bd6 [     info]    - Selecting Zones forecasts for all managers for OI from 2023-04-17 16:00:00 to 2023-04-17 16:59:59
+Apr 17 18:54:40 +0900 OX-maintenance-643d79cf68bd6 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_PriorityCompensation
+Apr 17 18:54:40 +0900 OX-maintenance-643d79cf68bd6 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_ECPMforContract
+Apr 17 18:54:40 +0900 OX-maintenance-643d79cf68bd6 [     info]  - Selecting All Managers
+Apr 17 18:54:40 +0900 OX-maintenance-643d79cf68bd6 [     info]    - Selecting active campaigns with priority = '9' for manager 14
+Apr 17 18:54:40 +0900 OX-maintenance-643d79cf68bd6 [     info]    - Selecting active campaigns with priority = '8' for manager 14
+Apr 17 18:54:40 +0900 OX-maintenance-643d79cf68bd6 [     info]    - Selecting active campaigns with priority = '7' for manager 14
+Apr 17 18:54:40 +0900 OX-maintenance-643d79cf68bd6 [     info]    - Selecting active campaigns with priority = '6' for manager 14
+Apr 17 18:54:40 +0900 OX-maintenance-643d79cf68bd6 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_ECPMforContract
+Apr 17 18:54:40 +0900 OX-maintenance-643d79cf68bd6 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_ECPMforRemnant
+Apr 17 18:54:40 +0900 OX-maintenance-643d79cf68bd6 [     info]  - Selecting Managers with ECPM priority campaigns running
+Apr 17 18:54:40 +0900 OX-maintenance-643d79cf68bd6 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_ECPMforRemnant
+Apr 17 18:54:40 +0900 OX-maintenance-643d79cf68bd6 [     info]  Maintenance Priority Engine Completed (Started at 2023-04-17 18:54:39 CET)
+ 
+Apr 17 18:55:45 +0900 OX-maintenance-643d7a118cf71 [     info]  Running Maintenance Priority Engine
+Apr 17 18:55:45 +0900 OX-maintenance-643d7a118cf71 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsLifetime
+Apr 17 18:55:45 +0900 OX-maintenance-643d7a118cf71 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsLifetime
+Apr 17 18:55:45 +0900 OX-maintenance-643d7a118cf71 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsDaily
+Apr 17 18:55:45 +0900 OX-maintenance-643d7a118cf71 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsDaily
+Apr 17 18:55:45 +0900 OX-maintenance-643d7a118cf71 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_AllocateZoneImpressions
+Apr 17 18:55:45 +0900 OX-maintenance-643d7a118cf71 [     info]    - Selecting Zones forecasts for all managers for OI from 2023-04-17 16:00:00 to 2023-04-17 16:59:59
+Apr 17 18:55:45 +0900 OX-maintenance-643d7a118cf71 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_AllocateZoneImpressions
+Apr 17 18:55:45 +0900 OX-maintenance-643d7a118cf71 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_PriorityCompensation
+Apr 17 18:55:45 +0900 OX-maintenance-643d7a118cf71 [     info]    - Selecting Zones forecasts for all managers for OI from 2023-04-17 16:00:00 to 2023-04-17 16:59:59
+Apr 17 18:55:46 +0900 OX-maintenance-643d7a118cf71 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_PriorityCompensation
+Apr 17 18:55:46 +0900 OX-maintenance-643d7a118cf71 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_ECPMforContract
+Apr 17 18:55:46 +0900 OX-maintenance-643d7a118cf71 [     info]  - Selecting All Managers
+Apr 17 18:55:46 +0900 OX-maintenance-643d7a118cf71 [     info]    - Selecting active campaigns with priority = '9' for manager 14
+Apr 17 18:55:46 +0900 OX-maintenance-643d7a118cf71 [     info]    - Selecting active campaigns with priority = '8' for manager 14
+Apr 17 18:55:46 +0900 OX-maintenance-643d7a118cf71 [     info]    - Selecting active campaigns with priority = '7' for manager 14
+Apr 17 18:55:46 +0900 OX-maintenance-643d7a118cf71 [     info]    - Selecting active campaigns with priority = '6' for manager 14
+Apr 17 18:55:46 +0900 OX-maintenance-643d7a118cf71 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_ECPMforContract
+Apr 17 18:55:46 +0900 OX-maintenance-643d7a118cf71 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_ECPMforRemnant
+Apr 17 18:55:46 +0900 OX-maintenance-643d7a118cf71 [     info]  - Selecting Managers with ECPM priority campaigns running
+Apr 17 18:55:46 +0900 OX-maintenance-643d7a118cf71 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_ECPMforRemnant
+Apr 17 18:55:46 +0900 OX-maintenance-643d7a118cf71 [     info]  Maintenance Priority Engine Completed (Started at 2023-04-17 18:55:45 CET)
+ 
+Apr 17 18:56:11 +0900 OX-maintenance-643d7a2b398bc [     info]  Running Maintenance Priority Engine
+Apr 17 18:56:11 +0900 OX-maintenance-643d7a2b398bc [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsLifetime
+Apr 17 18:56:11 +0900 OX-maintenance-643d7a2b398bc [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsLifetime
+Apr 17 18:56:11 +0900 OX-maintenance-643d7a2b398bc [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsDaily
+Apr 17 18:56:11 +0900 OX-maintenance-643d7a2b398bc [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsDaily
+Apr 17 18:56:11 +0900 OX-maintenance-643d7a2b398bc [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_AllocateZoneImpressions
+Apr 17 18:56:11 +0900 OX-maintenance-643d7a2b398bc [     info]    - Selecting Zones forecasts for all managers for OI from 2023-04-17 16:00:00 to 2023-04-17 16:59:59
+Apr 17 18:56:11 +0900 OX-maintenance-643d7a2b398bc [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_AllocateZoneImpressions
+Apr 17 18:56:11 +0900 OX-maintenance-643d7a2b398bc [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_PriorityCompensation
+Apr 17 18:56:11 +0900 OX-maintenance-643d7a2b398bc [     info]    - Selecting Zones forecasts for all managers for OI from 2023-04-17 16:00:00 to 2023-04-17 16:59:59
+Apr 17 18:56:11 +0900 OX-maintenance-643d7a2b398bc [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_PriorityCompensation
+Apr 17 18:56:11 +0900 OX-maintenance-643d7a2b398bc [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_ECPMforContract
+Apr 17 18:56:11 +0900 OX-maintenance-643d7a2b398bc [     info]  - Selecting All Managers
+Apr 17 18:56:11 +0900 OX-maintenance-643d7a2b398bc [     info]    - Selecting active campaigns with priority = '9' for manager 14
+Apr 17 18:56:11 +0900 OX-maintenance-643d7a2b398bc [     info]    - Selecting active campaigns with priority = '8' for manager 14
+Apr 17 18:56:11 +0900 OX-maintenance-643d7a2b398bc [     info]    - Selecting active campaigns with priority = '7' for manager 14
+Apr 17 18:56:11 +0900 OX-maintenance-643d7a2b398bc [     info]    - Selecting active campaigns with priority = '6' for manager 14
+Apr 17 18:56:11 +0900 OX-maintenance-643d7a2b398bc [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_ECPMforContract
+Apr 17 18:56:11 +0900 OX-maintenance-643d7a2b398bc [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_ECPMforRemnant
+Apr 17 18:56:11 +0900 OX-maintenance-643d7a2b398bc [     info]  - Selecting Managers with ECPM priority campaigns running
+Apr 17 18:56:11 +0900 OX-maintenance-643d7a2b398bc [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_ECPMforRemnant
+Apr 17 18:56:11 +0900 OX-maintenance-643d7a2b398bc [     info]  Maintenance Priority Engine Completed (Started at 2023-04-17 18:56:11 CET)
+ 
+Apr 17 18:56:59 +0900 OX-maintenance-643d7a5b6642c [     info]  Running Maintenance Priority Engine
+Apr 17 18:56:59 +0900 OX-maintenance-643d7a5b6642c [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsLifetime
+Apr 17 18:56:59 +0900 OX-maintenance-643d7a5b6642c [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsLifetime
+Apr 17 18:56:59 +0900 OX-maintenance-643d7a5b6642c [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsDaily
+Apr 17 18:56:59 +0900 OX-maintenance-643d7a5b6642c [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsDaily
+Apr 17 18:56:59 +0900 OX-maintenance-643d7a5b6642c [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_AllocateZoneImpressions
+Apr 17 18:56:59 +0900 OX-maintenance-643d7a5b6642c [     info]    - Selecting Zones forecasts for all managers for OI from 2023-04-17 16:00:00 to 2023-04-17 16:59:59
+Apr 17 18:56:59 +0900 OX-maintenance-643d7a5b6642c [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_AllocateZoneImpressions
+Apr 17 18:56:59 +0900 OX-maintenance-643d7a5b6642c [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_PriorityCompensation
+Apr 17 18:56:59 +0900 OX-maintenance-643d7a5b6642c [     info]    - Selecting Zones forecasts for all managers for OI from 2023-04-17 16:00:00 to 2023-04-17 16:59:59
+Apr 17 18:56:59 +0900 OX-maintenance-643d7a5b6642c [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_PriorityCompensation
+Apr 17 18:56:59 +0900 OX-maintenance-643d7a5b6642c [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_ECPMforContract
+Apr 17 18:56:59 +0900 OX-maintenance-643d7a5b6642c [     info]  - Selecting All Managers
+Apr 17 18:56:59 +0900 OX-maintenance-643d7a5b6642c [     info]    - Selecting active campaigns with priority = '9' for manager 14
+Apr 17 18:56:59 +0900 OX-maintenance-643d7a5b6642c [     info]    - Selecting active campaigns with priority = '8' for manager 14
+Apr 17 18:56:59 +0900 OX-maintenance-643d7a5b6642c [     info]    - Selecting active campaigns with priority = '7' for manager 14
+Apr 17 18:56:59 +0900 OX-maintenance-643d7a5b6642c [     info]    - Selecting active campaigns with priority = '6' for manager 14
+Apr 17 18:56:59 +0900 OX-maintenance-643d7a5b6642c [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_ECPMforContract
+Apr 17 18:56:59 +0900 OX-maintenance-643d7a5b6642c [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_ECPMforRemnant
+Apr 17 18:57:00 +0900 OX-maintenance-643d7a5b6642c [     info]  - Selecting Managers with ECPM priority campaigns running
+Apr 17 18:57:00 +0900 OX-maintenance-643d7a5b6642c [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_ECPMforRemnant
+Apr 17 18:57:00 +0900 OX-maintenance-643d7a5b6642c [     info]  Maintenance Priority Engine Completed (Started at 2023-04-17 18:56:59 CET)
+ 
+Apr 17 18:57:29 +0900 OX-maintenance-643d7a79189d5 [     info]  Running Maintenance Priority Engine
+Apr 17 18:57:29 +0900 OX-maintenance-643d7a79189d5 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsLifetime
+Apr 17 18:57:29 +0900 OX-maintenance-643d7a79189d5 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsLifetime
+Apr 17 18:57:29 +0900 OX-maintenance-643d7a79189d5 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsDaily
+Apr 17 18:57:29 +0900 OX-maintenance-643d7a79189d5 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsDaily
+Apr 17 18:57:29 +0900 OX-maintenance-643d7a79189d5 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_AllocateZoneImpressions
+Apr 17 18:57:29 +0900 OX-maintenance-643d7a79189d5 [     info]    - Selecting Zones forecasts for all managers for OI from 2023-04-17 16:00:00 to 2023-04-17 16:59:59
+Apr 17 18:57:29 +0900 OX-maintenance-643d7a79189d5 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_AllocateZoneImpressions
+Apr 17 18:57:29 +0900 OX-maintenance-643d7a79189d5 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_PriorityCompensation
+Apr 17 18:57:29 +0900 OX-maintenance-643d7a79189d5 [     info]    - Selecting Zones forecasts for all managers for OI from 2023-04-17 16:00:00 to 2023-04-17 16:59:59
+Apr 17 18:57:29 +0900 OX-maintenance-643d7a79189d5 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_PriorityCompensation
+Apr 17 18:57:29 +0900 OX-maintenance-643d7a79189d5 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_ECPMforContract
+Apr 17 18:57:29 +0900 OX-maintenance-643d7a79189d5 [     info]  - Selecting All Managers
+Apr 17 18:57:29 +0900 OX-maintenance-643d7a79189d5 [     info]    - Selecting active campaigns with priority = '9' for manager 14
+Apr 17 18:57:29 +0900 OX-maintenance-643d7a79189d5 [     info]    - Selecting active campaigns with priority = '8' for manager 14
+Apr 17 18:57:29 +0900 OX-maintenance-643d7a79189d5 [     info]    - Selecting active campaigns with priority = '7' for manager 14
+Apr 17 18:57:29 +0900 OX-maintenance-643d7a79189d5 [     info]    - Selecting active campaigns with priority = '6' for manager 14
+Apr 17 18:57:29 +0900 OX-maintenance-643d7a79189d5 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_ECPMforContract
+Apr 17 18:57:29 +0900 OX-maintenance-643d7a79189d5 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_ECPMforRemnant
+Apr 17 18:57:29 +0900 OX-maintenance-643d7a79189d5 [     info]  - Selecting Managers with ECPM priority campaigns running
+Apr 17 18:57:29 +0900 OX-maintenance-643d7a79189d5 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_ECPMforRemnant
+Apr 17 18:57:29 +0900 OX-maintenance-643d7a79189d5 [     info]  Maintenance Priority Engine Completed (Started at 2023-04-17 18:57:29 CET)
+ 
+Apr 17 18:58:19 +0900 OX-maintenance-643d7aab6b830 [     info]  Running Maintenance Priority Engine
+Apr 17 18:58:19 +0900 OX-maintenance-643d7aab6b830 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsLifetime
+Apr 17 18:58:19 +0900 OX-maintenance-643d7aab6b830 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsLifetime
+Apr 17 18:58:19 +0900 OX-maintenance-643d7aab6b830 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsDaily
+Apr 17 18:58:19 +0900 OX-maintenance-643d7aab6b830 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsDaily
+Apr 17 18:58:19 +0900 OX-maintenance-643d7aab6b830 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_AllocateZoneImpressions
+Apr 17 18:58:19 +0900 OX-maintenance-643d7aab6b830 [     info]    - Selecting Zones forecasts for all managers for OI from 2023-04-17 16:00:00 to 2023-04-17 16:59:59
+Apr 17 18:58:19 +0900 OX-maintenance-643d7aab6b830 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_AllocateZoneImpressions
+Apr 17 18:58:19 +0900 OX-maintenance-643d7aab6b830 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_PriorityCompensation
+Apr 17 18:58:19 +0900 OX-maintenance-643d7aab6b830 [     info]    - Selecting Zones forecasts for all managers for OI from 2023-04-17 16:00:00 to 2023-04-17 16:59:59
+Apr 17 18:58:20 +0900 OX-maintenance-643d7aab6b830 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_PriorityCompensation
+Apr 17 18:58:20 +0900 OX-maintenance-643d7aab6b830 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_ECPMforContract
+Apr 17 18:58:20 +0900 OX-maintenance-643d7aab6b830 [     info]  - Selecting All Managers
+Apr 17 18:58:20 +0900 OX-maintenance-643d7aab6b830 [     info]    - Selecting active campaigns with priority = '9' for manager 14
+Apr 17 18:58:20 +0900 OX-maintenance-643d7aab6b830 [     info]    - Selecting active campaigns with priority = '8' for manager 14
+Apr 17 18:58:20 +0900 OX-maintenance-643d7aab6b830 [     info]    - Selecting active campaigns with priority = '7' for manager 14
+Apr 17 18:58:20 +0900 OX-maintenance-643d7aab6b830 [     info]    - Selecting active campaigns with priority = '6' for manager 14
+Apr 17 18:58:20 +0900 OX-maintenance-643d7aab6b830 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_ECPMforContract
+Apr 17 18:58:20 +0900 OX-maintenance-643d7aab6b830 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_ECPMforRemnant
+Apr 17 18:58:20 +0900 OX-maintenance-643d7aab6b830 [     info]  - Selecting Managers with ECPM priority campaigns running
+Apr 17 18:58:20 +0900 OX-maintenance-643d7aab6b830 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_ECPMforRemnant
+Apr 17 18:58:20 +0900 OX-maintenance-643d7aab6b830 [     info]  Maintenance Priority Engine Completed (Started at 2023-04-17 18:58:19 CET)
+ 
+Apr 17 18:58:38 +0900 OX-maintenance-643d7abe1a0ae [     info]  Running Maintenance Priority Engine
+Apr 17 18:58:38 +0900 OX-maintenance-643d7abe1a0ae [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsLifetime
+Apr 17 18:58:38 +0900 OX-maintenance-643d7abe1a0ae [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsLifetime
+Apr 17 18:58:38 +0900 OX-maintenance-643d7abe1a0ae [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsDaily
+Apr 17 18:58:38 +0900 OX-maintenance-643d7abe1a0ae [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsDaily
+Apr 17 18:58:38 +0900 OX-maintenance-643d7abe1a0ae [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_AllocateZoneImpressions
+Apr 17 18:58:38 +0900 OX-maintenance-643d7abe1a0ae [     info]    - Selecting Zones forecasts for all managers for OI from 2023-04-17 16:00:00 to 2023-04-17 16:59:59
+Apr 17 18:58:38 +0900 OX-maintenance-643d7abe1a0ae [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_AllocateZoneImpressions
+Apr 17 18:58:38 +0900 OX-maintenance-643d7abe1a0ae [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_PriorityCompensation
+Apr 17 18:58:38 +0900 OX-maintenance-643d7abe1a0ae [     info]    - Selecting Zones forecasts for all managers for OI from 2023-04-17 16:00:00 to 2023-04-17 16:59:59
+Apr 17 18:58:38 +0900 OX-maintenance-643d7abe1a0ae [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_PriorityCompensation
+Apr 17 18:58:38 +0900 OX-maintenance-643d7abe1a0ae [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_ECPMforContract
+Apr 17 18:58:38 +0900 OX-maintenance-643d7abe1a0ae [     info]  - Selecting All Managers
+Apr 17 18:58:38 +0900 OX-maintenance-643d7abe1a0ae [     info]    - Selecting active campaigns with priority = '9' for manager 14
+Apr 17 18:58:38 +0900 OX-maintenance-643d7abe1a0ae [     info]    - Selecting active campaigns with priority = '8' for manager 14
+Apr 17 18:58:38 +0900 OX-maintenance-643d7abe1a0ae [     info]    - Selecting active campaigns with priority = '7' for manager 14
+Apr 17 18:58:38 +0900 OX-maintenance-643d7abe1a0ae [     info]    - Selecting active campaigns with priority = '6' for manager 14
+Apr 17 18:58:38 +0900 OX-maintenance-643d7abe1a0ae [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_ECPMforContract
+Apr 17 18:58:38 +0900 OX-maintenance-643d7abe1a0ae [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_ECPMforRemnant
+Apr 17 18:58:38 +0900 OX-maintenance-643d7abe1a0ae [     info]  - Selecting Managers with ECPM priority campaigns running
+Apr 17 18:58:38 +0900 OX-maintenance-643d7abe1a0ae [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_ECPMforRemnant
+Apr 17 18:58:38 +0900 OX-maintenance-643d7abe1a0ae [     info]  Maintenance Priority Engine Completed (Started at 2023-04-17 18:58:38 CET)
+ 
+Apr 17 18:59:36 +0900 OX-maintenance-643d7af8c88a5 [     info]  Running Maintenance Priority Engine
+Apr 17 18:59:37 +0900 OX-maintenance-643d7af8c88a5 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsLifetime
+Apr 17 18:59:37 +0900 OX-maintenance-643d7af8c88a5 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsLifetime
+Apr 17 18:59:37 +0900 OX-maintenance-643d7af8c88a5 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsDaily
+Apr 17 18:59:37 +0900 OX-maintenance-643d7af8c88a5 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsDaily
+Apr 17 18:59:37 +0900 OX-maintenance-643d7af8c88a5 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_AllocateZoneImpressions
+Apr 17 18:59:37 +0900 OX-maintenance-643d7af8c88a5 [     info]    - Selecting Zones forecasts for all managers for OI from 2023-04-17 16:00:00 to 2023-04-17 16:59:59
+Apr 17 18:59:37 +0900 OX-maintenance-643d7af8c88a5 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_AllocateZoneImpressions
+Apr 17 18:59:37 +0900 OX-maintenance-643d7af8c88a5 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_PriorityCompensation
+Apr 17 18:59:37 +0900 OX-maintenance-643d7af8c88a5 [     info]    - Selecting Zones forecasts for all managers for OI from 2023-04-17 16:00:00 to 2023-04-17 16:59:59
+Apr 17 18:59:37 +0900 OX-maintenance-643d7af8c88a5 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_PriorityCompensation
+Apr 17 18:59:37 +0900 OX-maintenance-643d7af8c88a5 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_ECPMforContract
+Apr 17 18:59:37 +0900 OX-maintenance-643d7af8c88a5 [     info]  - Selecting All Managers
+Apr 17 18:59:37 +0900 OX-maintenance-643d7af8c88a5 [     info]    - Selecting active campaigns with priority = '9' for manager 14
+Apr 17 18:59:37 +0900 OX-maintenance-643d7af8c88a5 [     info]    - Selecting active campaigns with priority = '8' for manager 14
+Apr 17 18:59:37 +0900 OX-maintenance-643d7af8c88a5 [     info]    - Selecting active campaigns with priority = '7' for manager 14
+Apr 17 18:59:37 +0900 OX-maintenance-643d7af8c88a5 [     info]    - Selecting active campaigns with priority = '6' for manager 14
+Apr 17 18:59:37 +0900 OX-maintenance-643d7af8c88a5 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_ECPMforContract
+Apr 17 18:59:37 +0900 OX-maintenance-643d7af8c88a5 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_ECPMforRemnant
+Apr 17 18:59:37 +0900 OX-maintenance-643d7af8c88a5 [     info]  - Selecting Managers with ECPM priority campaigns running
+Apr 17 18:59:37 +0900 OX-maintenance-643d7af8c88a5 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_ECPMforRemnant
+Apr 17 18:59:37 +0900 OX-maintenance-643d7af8c88a5 [     info]  Maintenance Priority Engine Completed (Started at 2023-04-17 18:59:36 CET)
+ 
+Apr 17 19:00:24 +0900 OX-maintenance-643d7b28113b9 [     info]  Running Maintenance Priority Engine
+Apr 17 19:00:24 +0900 OX-maintenance-643d7b28113b9 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsLifetime
+Apr 17 19:00:24 +0900 OX-maintenance-643d7b28113b9 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsLifetime
+Apr 17 19:00:24 +0900 OX-maintenance-643d7b28113b9 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsDaily
+Apr 17 19:00:24 +0900 OX-maintenance-643d7b28113b9 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsDaily
+Apr 17 19:00:24 +0900 OX-maintenance-643d7b28113b9 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_AllocateZoneImpressions
+Apr 17 19:00:24 +0900 OX-maintenance-643d7b28113b9 [     info]    - Selecting Zones forecasts for all managers for OI from 2023-04-17 17:00:00 to 2023-04-17 17:59:59
+Apr 17 19:00:24 +0900 OX-maintenance-643d7b28113b9 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_AllocateZoneImpressions
+Apr 17 19:00:24 +0900 OX-maintenance-643d7b28113b9 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_PriorityCompensation
+Apr 17 19:00:24 +0900 OX-maintenance-643d7b28113b9 [     info]    - Selecting Zones forecasts for all managers for OI from 2023-04-17 17:00:00 to 2023-04-17 17:59:59
+Apr 17 19:00:24 +0900 OX-maintenance-643d7b28113b9 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_PriorityCompensation
+Apr 17 19:00:24 +0900 OX-maintenance-643d7b28113b9 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_ECPMforContract
+Apr 17 19:00:24 +0900 OX-maintenance-643d7b28113b9 [     info]  - Selecting All Managers
+Apr 17 19:00:24 +0900 OX-maintenance-643d7b28113b9 [     info]    - Selecting active campaigns with priority = '9' for manager 14
+Apr 17 19:00:24 +0900 OX-maintenance-643d7b28113b9 [     info]    - Selecting active campaigns with priority = '8' for manager 14
+Apr 17 19:00:24 +0900 OX-maintenance-643d7b28113b9 [     info]    - Selecting active campaigns with priority = '7' for manager 14
+Apr 17 19:00:24 +0900 OX-maintenance-643d7b28113b9 [     info]    - Selecting active campaigns with priority = '6' for manager 14
+Apr 17 19:00:24 +0900 OX-maintenance-643d7b28113b9 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_ECPMforContract
+Apr 17 19:00:24 +0900 OX-maintenance-643d7b28113b9 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_ECPMforRemnant
+Apr 17 19:00:24 +0900 OX-maintenance-643d7b28113b9 [     info]  - Selecting Managers with ECPM priority campaigns running
+Apr 17 19:00:24 +0900 OX-maintenance-643d7b28113b9 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_ECPMforRemnant
+Apr 17 19:00:24 +0900 OX-maintenance-643d7b28113b9 [     info]  Maintenance Priority Engine Completed (Started at 2023-04-17 19:00:24 CET)
+ 
+Apr 17 19:00:48 +0900 OX-maintenance-643d7b3fe9c32 [     info]  Running Maintenance Priority Engine
+Apr 17 19:00:48 +0900 OX-maintenance-643d7b3fe9c32 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsLifetime
+Apr 17 19:00:48 +0900 OX-maintenance-643d7b3fe9c32 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsLifetime
+Apr 17 19:00:48 +0900 OX-maintenance-643d7b3fe9c32 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsDaily
+Apr 17 19:00:48 +0900 OX-maintenance-643d7b3fe9c32 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsDaily
+Apr 17 19:00:48 +0900 OX-maintenance-643d7b3fe9c32 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_AllocateZoneImpressions
+Apr 17 19:00:48 +0900 OX-maintenance-643d7b3fe9c32 [     info]    - Selecting Zones forecasts for all managers for OI from 2023-04-17 17:00:00 to 2023-04-17 17:59:59
+Apr 17 19:00:48 +0900 OX-maintenance-643d7b3fe9c32 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_AllocateZoneImpressions
+Apr 17 19:00:48 +0900 OX-maintenance-643d7b3fe9c32 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_PriorityCompensation
+Apr 17 19:00:48 +0900 OX-maintenance-643d7b3fe9c32 [     info]    - Selecting Zones forecasts for all managers for OI from 2023-04-17 17:00:00 to 2023-04-17 17:59:59
+Apr 17 19:00:48 +0900 OX-maintenance-643d7b3fe9c32 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_PriorityCompensation
+Apr 17 19:00:48 +0900 OX-maintenance-643d7b3fe9c32 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_ECPMforContract
+Apr 17 19:00:48 +0900 OX-maintenance-643d7b3fe9c32 [     info]  - Selecting All Managers
+Apr 17 19:00:48 +0900 OX-maintenance-643d7b3fe9c32 [     info]    - Selecting active campaigns with priority = '9' for manager 14
+Apr 17 19:00:48 +0900 OX-maintenance-643d7b3fe9c32 [     info]    - Selecting active campaigns with priority = '8' for manager 14
+Apr 17 19:00:48 +0900 OX-maintenance-643d7b3fe9c32 [     info]    - Selecting active campaigns with priority = '7' for manager 14
+Apr 17 19:00:48 +0900 OX-maintenance-643d7b3fe9c32 [     info]    - Selecting active campaigns with priority = '6' for manager 14
+Apr 17 19:00:48 +0900 OX-maintenance-643d7b3fe9c32 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_ECPMforContract
+Apr 17 19:00:48 +0900 OX-maintenance-643d7b3fe9c32 [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_ECPMforRemnant
+Apr 17 19:00:48 +0900 OX-maintenance-643d7b3fe9c32 [     info]  - Selecting Managers with ECPM priority campaigns running
+Apr 17 19:00:48 +0900 OX-maintenance-643d7b3fe9c32 [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_ECPMforRemnant
+Apr 17 19:00:48 +0900 OX-maintenance-643d7b3fe9c32 [     info]  Maintenance Priority Engine Completed (Started at 2023-04-17 19:00:48 CET)
+ 
+Apr 17 19:01:15 +0900 OX-maintenance-643d7b5aeb19e [     info]  Running Maintenance Priority Engine
+Apr 17 19:01:15 +0900 OX-maintenance-643d7b5aeb19e [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsLifetime
+Apr 17 19:01:15 +0900 OX-maintenance-643d7b5aeb19e [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsLifetime
+Apr 17 19:01:15 +0900 OX-maintenance-643d7b5aeb19e [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsDaily
+Apr 17 19:01:15 +0900 OX-maintenance-643d7b5aeb19e [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_GetRequiredAdImpressionsDaily
+Apr 17 19:01:15 +0900 OX-maintenance-643d7b5aeb19e [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_AllocateZoneImpressions
+Apr 17 19:01:15 +0900 OX-maintenance-643d7b5aeb19e [     info]    - Selecting Zones forecasts for all managers for OI from 2023-04-17 17:00:00 to 2023-04-17 17:59:59
+Apr 17 19:01:15 +0900 OX-maintenance-643d7b5aeb19e [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_AllocateZoneImpressions
+Apr 17 19:01:15 +0900 OX-maintenance-643d7b5aeb19e [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_PriorityCompensation
+Apr 17 19:01:15 +0900 OX-maintenance-643d7b5aeb19e [     info]    - Selecting Zones forecasts for all managers for OI from 2023-04-17 17:00:00 to 2023-04-17 17:59:59
+Apr 17 19:01:15 +0900 OX-maintenance-643d7b5aeb19e [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_PriorityCompensation
+Apr 17 19:01:15 +0900 OX-maintenance-643d7b5aeb19e [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_ECPMforContract
+Apr 17 19:01:15 +0900 OX-maintenance-643d7b5aeb19e [     info]  - Selecting All Managers
+Apr 17 19:01:15 +0900 OX-maintenance-643d7b5aeb19e [     info]    - Selecting active campaigns with priority = '9' for manager 14
+Apr 17 19:01:15 +0900 OX-maintenance-643d7b5aeb19e [     info]    - Selecting active campaigns with priority = '8' for manager 14
+Apr 17 19:01:15 +0900 OX-maintenance-643d7b5aeb19e [     info]    - Selecting active campaigns with priority = '7' for manager 14
+Apr 17 19:01:15 +0900 OX-maintenance-643d7b5aeb19e [     info]    - Selecting active campaigns with priority = '6' for manager 14
+Apr 17 19:01:15 +0900 OX-maintenance-643d7b5aeb19e [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_ECPMforContract
+Apr 17 19:01:15 +0900 OX-maintenance-643d7b5aeb19e [     info]  Task begin: OA_Maintenance_Priority_AdServer_Task_ECPMforRemnant
+Apr 17 19:01:15 +0900 OX-maintenance-643d7b5aeb19e [     info]  - Selecting Managers with ECPM priority campaigns running
+Apr 17 19:01:15 +0900 OX-maintenance-643d7b5aeb19e [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_ECPMforRemnant
+Apr 17 19:01:15 +0900 OX-maintenance-643d7b5aeb19e [     info]  Maintenance Priority Engine Completed (Started at 2023-04-17 19:01:15 CET)
