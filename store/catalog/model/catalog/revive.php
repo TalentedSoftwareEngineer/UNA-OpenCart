@@ -76,12 +76,12 @@ class ModelCatalogRevive extends Model {
 
         $this->db->query("INSERT INTO `rv_audit`(`actionid`,`context`,`contextid`,`parentid`,`details`,`userid`,`username`,`usertype`,`updated`,`account_id`,`advertiser_account_id`,`website_account_id`) values 
             (1,'banners'," . (int) $bannerId . ",NULL,'a:41:{s:8:\"bannerid\";i:" . (int) $bannerId . ";s:10:\"campaignid\";i:" . $data['campaign_id'] . ";s:11:\"contenttype\";s:3:\"png\";s:13:\"pluginversion\";i:0;s:11:\"storagetype\";s:3:\"web\";s:8:\"filename\";s:" . strlen($data['filename']) . ":\"" . $data['filename'] . "\";s:8:\"imageurl\";s:0:\"\";s:12:\"htmltemplate\";s:0:\"\";s:9:\"htmlcache\";s:0:\"\";s:5:\"width\";i:" . $data['filewidth'] . ";s:6:\"height\";i:" . $data['fileheight'] . ";s:6:\"weight\";i:1;s:3:\"seq\";i:0;s:6:\"target\";s:0:\"\";s:3:\"url\";s:" . strlen(str_replace('&amp;', '&', $data['url'])) . ":\"" . str_replace('&amp;', '&', $data['url']) . "\";s:3:\"alt\";s:0:\"\";s:10:\"statustext\";s:0:\"\";s:10:\"bannertext\";s:0:\"\";s:11:\"description\";s:" . strlen($data['product_name']) . ":\"" . $data['product_name'] . "\";s:8:\"adserver\";s:0:\"\";s:5:\"block\";i:0;s:7:\"capping\";i:0;s:15:\"session_capping\";i:0;s:18:\"compiledlimitation\";N;s:11:\"acl_plugins\";N;s:6:\"append\";N;s:10:\"bannertype\";i:0;s:12:\"alt_filename\";s:0:\"\";s:12:\"alt_imageurl\";s:0:\"\";s:15:\"alt_contenttype\";s:0:\"\";s:8:\"comments\";s:" . strlen($data['comments']) . ":\"" . $data['comments'] . "\";s:7:\"updated\";s:19:\"NOW()\";s:12:\"acls_updated\";N;s:7:\"keyword\";s:0:\"\";s:11:\"transparent\";s:4:\"null\";s:10:\"parameters\";s:2:\"N;\";s:6:\"status\";i:0;s:14:\"ext_bannertype\";N;s:7:\"prepend\";N;s:15:\"iframe_friendly\";s:5:\"false\";s:8:\"key_desc\";s:0:\"\";}'," . $data['user_id'] . ",'" . $data['username'] . "',0,NOW()," . $data['account_id'] . "," . $data['advertiser_account_id'] . ",NULL),
-            (1,'ad_zone_assoc'," . (int) $bannerId . ",NULL,'a:8:{s:16:\"ad_zone_assoc_id\";i:" . (int) $bannerId . ";s:7:\"zone_id\";i:0;s:5:\"ad_id\";i:" . (int) $bannerId . ";s:8:\"priority\";i:0;s:9:\"link_type\";i:0;s:15:\"priority_factor\";i:1;s:15:\"to_be_delivered\";s:4:\"null\";s:8:\"key_desc\";s:16:\"Ad #1 -> Zone #0\";}'," . (int) $data['user_id'] . ",'" . $data['username'] . "',0,'NOW()'," . (int) $data['account_id'] . "," . $data['advertiser_account_id'] . ",NULL)");
+            (1,'ad_zone_assoc'," . (int) $bannerId . ",NULL,'a:8:{s:16:\"ad_zone_assoc_id\";i:" . (int) $bannerId . ";s:7:\"zone_id\";i:0;s:5:\"ad_id\";i:" . (int) $bannerId . ";s:8:\"priority\";i:0;s:9:\"link_type\";i:0;s:15:\"priority_factor\";i:1;s:15:\"to_be_delivered\";s:4:\"null\";s:8:\"key_desc\";s:16:\"Ad #1 -> Zone #0\";}'," . (int) $data['user_id'] . ",'" . $data['username'] . "',0,NOW()," . (int) $data['account_id'] . "," . $data['advertiser_account_id'] . ",NULL)");
 
 		$this->db->query("INSERT INTO `rv_log_maintenance_priority`(`start_run`,`end_run`,`operation_interval`,`duration`,`run_type`,`updated_to`) values 
-            ('NOW()','NOW()',60,0,1,NULL),
-            ('NOW()','NOW()',60,0,2,NULL),
-            ('NOW()','NOW()',60,0,2,NULL)");
+            (NOW(),NOW(),60,0,1,NULL),
+            (NOW(),NOW(),60,0,2,NULL),
+            (NOW(),NOW(),60,0,2,NULL)");
 
         $this->db->query("INSERT INTO `rv_ocproduct_to_banner` SET 
             product_id = " . (int) $data['product_id'] . ", 
@@ -124,6 +124,57 @@ class ModelCatalogRevive extends Model {
         return $query;
 	}
 
+    public function getSysAccountLevelByProfileId($profile_id) {
+        $query = $this->db->query("SELECT IDLevel AS level FROM sys_acl_levels_members WHERE IDMember = " . (int) $profile_id);
+        return $query->row;
+    }
+
+    public function addAds($data) {
+        //add revive website
+		$this->db->query("INSERT INTO `rv_accounts`(`account_type`,`account_name`) values 
+            ('TRAFFICKER','" . $data['website_name'] . "')");
+        $websiteAccountId = $this->db->getLastId();
+
+		$this->db->query("INSERT INTO `rv_affiliates`(`agencyid`,`name`,`mnemonic`,`comments`,`contact`,`email`,`website`,`updated`,`oac_country_code`,`oac_language_id`,`oac_category_id`,`account_id`) values 
+            (" . $data['agencyid'] . ",'" . $data['website_name'] . "','','','','" . $data['email'] . "','" . $data['website_url'] . "',NOW(),'',NULL,NULL," . (int) $websiteAccountId . ")");
+        $websiteId = $this->db->getLastId();
+
+		$this->db->query("INSERT INTO `rv_audit`(`actionid`,`context`,`contextid`,`parentid`,`details`,`userid`,`username`,`usertype`,`updated`,`account_id`,`advertiser_account_id`,`website_account_id`) values 
+            (1,'accounts'," . (int) $websiteAccountId . ",NULL,'a:4:{s:10:\"account_id\";i:" . (int) $websiteAccountId . ";s:12:\"account_type\";s:10:\"TRAFFICKER\";s:12:\"account_name\";s:" . (int) strlen($data['website_name']) . ":\"" . $data['website_name'] . "\";s:8:\"key_desc\";s:" . strlen($data['website_name']) . ":\"" . $data['website_name'] . "\";}'," . (int) $data['user_id'] . ",'" . $data['user_name'] . "',0,NOW(),1,NULL," . (int) $websiteAccountId . "),
+            (1,'affiliates'," . (int) $websiteId . ",NULL,'a:14:{s:11:\"affiliateid\";i:" . (int) $websiteId . ";s:8:\"agencyid\";i:" . (int) $data['agencyid'] . ";s:4:\"name\";s:" . (int) strlen($data['website_name']) . ":\"" . $data['website_name'] . "\";s:8:\"mnemonic\";N;s:8:\"comments\";s:0:\"\";s:7:\"contact\";s:22:\"\";s:5:\"email\";s:" . (int) $data['email'] . ":\"" . $data['email'] . "\";s:7:\"website\";s:" . strlen($data['website_url']) . ":\"" . $data['website_url'] . "\";s:7:\"updated\";s:19:\"NOW()\";s:16:\"oac_country_code\";N;s:15:\"oac_language_id\";i:0;s:15:\"oac_category_id\";i:0;s:10:\"account_id\";i:" . (int) $websiteAccountId . ";s:8:\"key_desc\";s:" . (int) strlen($data['website_name']) . ":\"" . $data['website_name'] . "\";}'," . (int) $data['user_id'] . ",'" . $data['user_name'] . "',0,NOW()," . (int) $data['rv_acc_id'] . ",NULL," . (int) $websiteAccountId . ")");
+
+        //add zone
+		$this->db->query("INSERT INTO `rv_zones`(`affiliateid`,`zonename`,`description`,`delivery`,`zonetype`,`category`,`width`,`height`,`ad_selection`,`chain`,`prepend`,`append`,`appendtype`,`forceappend`,`inventory_forecast_type`,`comments`,`cost`,`cost_type`,`cost_variable_id`,`technology_cost`,`technology_cost_type`,`updated`,`block`,`capping`,`session_capping`,`what`,`rate`,`pricing`,`oac_category_id`,`ext_adselection`,`show_capped_no_cookie`) values 
+            (" . (int) $websiteId . ",'" . $data['zone_name'] . "','',0,3,'',468,60,'','','','',0,'f',0,'',NULL,NULL,NULL,NULL,NULL,NOW(),0,0,0,'',NULL,'CPM',NULL,NULL,0)");
+        $zoneId = $this->db->getLastId();
+
+        $this->db->query("INSERT INTO `rv_audit`(`actionid`,`context`,`contextid`,`parentid`,`details`,`userid`,`username`,`usertype`,`updated`,`account_id`,`advertiser_account_id`,`website_account_id`) values 
+            (1,'zones'," . (int) $zoneId . ",NULL,'a:33:{s:6:\"zoneid\";i:" . (int) $zoneId . ";s:11:\"affiliateid\";i:" . (int) $websiteId . ";s:8:\"zonename\";s:" . strlen($data['zone_name']) . ":\"" . $data['zone_name'] . "\";s:11:\"description\";s:23:\"\";s:8:\"delivery\";i:0;s:8:\"zonetype\";i:3;s:8:\"category\";s:0:\"\";s:5:\"width\";i:468;s:6:\"height\";i:60;s:12:\"ad_selection\";s:0:\"\";s:5:\"chain\";s:0:\"\";s:7:\"prepend\";s:0:\"\";s:6:\"append\";s:0:\"\";s:10:\"appendtype\";i:0;s:11:\"forceappend\";N;s:23:\"inventory_forecast_type\";i:0;s:8:\"comments\";s:0:\"\";s:4:\"cost\";i:0;s:9:\"cost_type\";i:0;s:16:\"cost_variable_id\";N;s:15:\"technology_cost\";i:0;s:20:\"technology_cost_type\";i:0;s:7:\"updated\";s:19:\"NOW()\";s:5:\"block\";i:0;s:7:\"capping\";i:0;s:15:\"session_capping\";i:0;s:4:\"what\";N;s:4:\"rate\";i:0;s:7:\"pricing\";N;s:15:\"oac_category_id\";i:0;s:15:\"ext_adselection\";N;s:21:\"show_capped_no_cookie\";i:0;s:8:\"key_desc\";s:16:\"" . $data['zone_name'] . "\";}'," . (int) $data['user_id'] . ",'" . $data['user_name'] . "',0,NOW()," . (int) $data['rv_acc_id'] . ",NULL," . (int) $websiteAccountId . ")");
+        
+        $this->db->query("INSERT INTO `rv_block_to_zone` SET 
+            block_id = " . (int)$data['block_id'] . ", 
+            sys_acc_id = " . (int)$data['sys_acc_id'] . ", 
+            agency_id = " . (int)$data['agencyid'] . ",
+            user_id = " . (int)$data['user_id'] . ",
+            rv_acc_id = " . (int)$data['rv_acc_id'] . ",
+            website_account_id = " . (int)$websiteAccountId . ",
+            affiliate_id = " . (int)$websiteId . ",
+            zone_id = " . (int)$zoneId
+        );
+
+        return array(
+            'affiliateid' => $websiteId,
+            'zoneid' => $zoneId
+        );
+    }
+
+	public function getZoneBySysAccIdBlockId($sys_acc_id, $block_id) {
+		$query = $this->db->query("SELECT * FROM rv_block_to_zone rbz
+            LEFT JOIN rv_zones rz ON (rbz.zone_id = rz.zoneid)
+            WHERE rbz.block_id = " . (int) $block_id . " AND rbz.sys_acc_id = " . (int) $sys_acc_id);
+		return $query->row;
+	}
+
     public function create_SysAcc_to_RvAgc_Table() {
       $sql = "CREATE TABLE IF NOT EXISTS `sys_acc_to_rv_agc` (
         `sys_acc_id` int(11) NOT NULL,
@@ -141,6 +192,20 @@ class ModelCatalogRevive extends Model {
         $sql = "CREATE TABLE IF NOT EXISTS `rv_ocproduct_to_banner` (
           `product_id` int(11) NOT NULL,
           `banner_id` INT(11) NOT NULL
+        ) ENGINE=MYISAM DEFAULT CHARSET=utf8;";
+        $this->db->query($sql);
+    }
+
+    public function create_SysBlock_to_RvZone_Table() {
+        $sql = "CREATE TABLE IF NOT EXISTS `rv_block_to_zone` (
+          `block_id` int(11) NOT NULL,
+          `sys_acc_id` int(11) NOT NULL,
+          `agency_id` int(11) NOT NULL,
+          `user_id` int(11) NOT NULL,
+          `rv_acc_id` int(11) NOT NULL,
+          `website_account_id` int(11) NOT NULL,
+          `affiliate_id` int(11) NOT NULL,
+          `zone_id` INT(11) NOT NULL
         ) ENGINE=MYISAM DEFAULT CHARSET=utf8;";
         $this->db->query($sql);
     }

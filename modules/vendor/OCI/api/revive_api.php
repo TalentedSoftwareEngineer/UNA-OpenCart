@@ -51,6 +51,29 @@ class ReviveApiIntegration {
         return $response;
     }
 
+    public function getSysAccountLevelByProfileId($profile_id)
+    {
+        $url = BASIC_OPEN_CART_SERVER_API . "route=api/revive/getSysAccountLevelByProfileId";
+        $curl = curl_init($url);
+         
+        $post = array (
+            'profile_id' => $profile_id
+        );
+
+        curl_setopt_array( $curl, array(
+          CURLOPT_RETURNTRANSFER=> TRUE,
+          CURLOPT_POSTFIELDS      => $post,
+          CURLOPT_SSL_VERIFYHOST => 2,
+          CURLOPT_SSL_VERIFYPEER => false
+        ) );
+         
+        $raw_response = curl_exec( $curl );
+        $response = json_decode($raw_response);
+        curl_close($curl);
+        
+        return $response;
+    }
+
     public static function getInstance() 
     {
         if (null === self::$_instance) {

@@ -105,3 +105,14 @@ CREATE TABLE IF NOT EXISTS `rv_ocproduct_to_banner` (
     `product_id` int(11) NOT NULL,
     `banner_id` INT(11) NOT NULL
 ) ENGINE=MYISAM DEFAULT CHARSET=utf8;
+
+CREATE TABLE IF NOT EXISTS `rv_block_to_zone` (
+    `block_id` int(11) NOT NULL,
+    `sys_acc_id` int(11) NOT NULL,
+    `agency_id` int(11) NOT NULL,
+    `user_id` int(11) NOT NULL,
+    `rv_acc_id` int(11) NOT NULL,
+    `website_account_id` int(11) NOT NULL,
+    `affiliate_id` int(11) NOT NULL,
+    `zone_id` INT(11) NOT NULL
+) ENGINE=MYISAM DEFAULT CHARSET=utf8;

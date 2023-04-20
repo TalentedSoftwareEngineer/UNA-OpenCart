@@ -80,4 +80,37 @@ class ControllerApiRevive extends Controller {
         )));
     }
 
+    public function getSysAccountLevelByProfileId()
+    {
+        $this->load->language('api/user');
+        $this->load->model('catalog/revive');
+
+        $profile_id = $this->request->post['profile_id'];
+        $level = $this->model_catalog_revive->getSysAccountLevelByProfileId($profile_id);
+
+        $this->response->addHeader('Content-Type: application/json');
+        $this->response->setOutput(json_encode($level));
+    }
+
+    public function addAds()
+    {
+        $this->load->language('api/user');
+        $this->load->model('catalog/revive');
+
+        $this->model_catalog_revive->create_SysBlock_to_RvZone_Table();
+
+        $zone = $this->model_catalog_revive->getZoneBySysAccIdBlockId($this->request->post['sys_acc_id'], $this->request->post['block_id']);
+        if(!isset($zone['zoneid']) || !$zone['zoneid']) {
+            $result = $this->model_catalog_revive->addAds($this->request->post);
+        } else {
+            $result = array(
+                'affiliateid' => $zone['affiliateid'],
+                'zoneid' => $zone['zoneid']
+            );
+        }        
+
+        $this->response->addHeader('Content-Type: application/json');
+        $this->response->setOutput(json_encode($result));
+    }
+
 }
