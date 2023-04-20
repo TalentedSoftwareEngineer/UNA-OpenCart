@@ -7,6 +7,8 @@
 
 <?php
     require_once 'modules/vendor/OCI/api/opencart_api.php';
+    require_once 'modules/vendor/OCI/api/revive_api.php';
+
     $loggedProfileId = bx_get_logged_profile_id();
     $isSelf = true;
     $arr_my_products = array();
@@ -41,6 +43,8 @@
         } else {
             $isSelf = true;
         }
+
+        $rv_ids = (array) ReviveApiIntegration::getInstance()->getRvIds($loggedId);
     }
 ?>
 
@@ -64,6 +68,67 @@
 <script type="text/javascript">
     var BASIC_OPEN_CART_ADMIN_SERVER_API = '<?= BASIC_OPEN_CART_ADMIN_SERVER_API ?>';
     var BASIC_OPEN_CART_SERVER_API = '<?= BASIC_OPEN_CART_SERVER_API ?>';
+    var BASIC_REVIVE_URL = '<?= BASIC_REVIVE_URL ?>';
+
+    function onClickProductImage(event, productInfo) {
+        $.fn.uploadImageFile(productInfo);
+    }
+
+    function addBanner(productInfo, file) {
+        let data = {
+            filename: file.filename,
+            filewidth: file.filewidth,
+            fileheight: file.fileheight,
+            url: productInfo.href.replace('account/vendor/lts_visit_product', 'product/product').replace('&amp;', '&'), 
+            comments: productInfo.description,
+            campaign_id: '<?= $rv_ids['campaign_id'] ?>',
+            user_id: '<?= $rv_ids['user_id'] ?>',
+            account_id: '<?= $rv_ids['rv_acc_id'] ?>',
+            advertiser_account_id: '<?= $rv_ids['advertiser_account_id'] ?>',
+            username: '<?= $loggedUser['name'] ?>',
+            product_id: productInfo.product_id,
+            product_name: productInfo.name
+        }
+
+        $.ajax({
+            type: 'post',
+            url: BASIC_OPEN_CART_SERVER_API + 'route=api/revive/addBanner',
+            data: data,
+            success: function(response) {
+                console.log('tag', response);
+                window.open(BASIC_REVIVE_URL + 'www/admin/banner-edit.php?clientid=<?= $rv_ids['client_id'] ?>&campaignid=<?= $rv_ids['campaign_id'] ?>&bannerid=' + response.bannerId, '_blank');
+            },
+            fail: function(fail){
+                console.log('addBanner_fail', fail);
+            },
+            error: function(error, ajaxOptions, thrownError) {
+                console.log('addBanner_error', error);
+            }
+        });
+    }
+
+    $.fn.uploadImageFile = function(productInfo) {
+        var filePath = '<?= ROOTDIR ?>/store/image/cache' + productInfo.thumb.split('store/image/cache')[1];
+        var fileName = filePath.split('/')[filePath.split('/').length - 1];
+        var fileExt = fileName.split('.')[fileName.split('.').length - 1];
+
+        $.ajax({
+            url: BASIC_OPEN_CART_SERVER_API + 'route=api/revive/uploadBannerImage',
+            method:"POST",
+            data: {
+                imagePath: filePath,
+                imageName: fileName,
+                imageExt: fileExt,
+            },
+            success: function(data)
+            {
+                addBanner(productInfo, data);
+            },
+            error: function(error, ajaxOptions, thrownError) {
+                console.log('uploadImageFile', error);
+            }
+        });
+    }
 
     function onProductSearch(event)
     {
@@ -191,10 +256,21 @@
         deleteCell.css('display', 'none');
         deleteCell.append(deleteBtn);
 
+        let adsBtn = $("<button><i class='fa fa-link'></i>Ads</button>");
+        adsBtn.addClass('btn btn-outline-primary btn-block');
+        adsBtn.on('click', function() {
+            onClickProductImage(event, productInfo);
+        });
+        let adsCell = $("<div></div>");
+        adsCell.attr('id', 'btnAds_' + productInfo.product_id);
+        adsCell.addClass('col pl-1 pr-1');
+        adsCell.append(adsBtn);
+
         let actionContainer = $("<div></div>");
         actionContainer.addClass('row');
         actionContainer.append(linkCell);
         actionContainer.append(deleteCell);
+        actionContainer.append(adsCell);
 
         let cardBody = $("<div></div>");
         cardBody.addClass('card-body');
@@ -204,10 +280,11 @@
 
         var cardImg = $('<img>');
         cardImg.addClass('card-img-top w-75 mx-auto');
-        cardImg.attr({
-            'src': productInfo.thumb,
-            'alt': "Card image"
-        });
+        cardImg.attr({'src': productInfo.thumb, 'alt': "Card image"});
+        // cardImg.css('cursor', 'pointer');
+        // cardImg.on('click', function() {
+        //     onClickProductImage(event, productInfo);
+        // });
 
         var card = $("<div></div>");
         card.addClass('card');

@@ -29,8 +29,8 @@ class ModelCatalogRevive extends Model {
             (" . $accountId . "," . (int)$userId . ",12,1),
             (" . $accountId . "," . (int)$userId . ",10,1)");
 
-        $this->db->query("INSERT INTO `rv_password_recovery`(`user_type`,`user_id`,`recovery_id`,`updated`) values 
-            ('user'," . (int)$userId . ",'1B965E63-FED813D7-0292D442',NOW())");
+        // $this->db->query("INSERT INTO `rv_password_recovery`(`user_type`,`user_id`,`recovery_id`,`updated`) values 
+        //     ('user'," . (int)$userId . ",'" . sha1('1B965E63-FED813D7-0292D442' . date('d-m-y h:i:s')) . "',NOW())");
 
         //add advertiser
 		$this->db->query("INSERT INTO `rv_accounts` SET account_type = 'ADVERTISER', account_name = '" . $data['name'] . "'");

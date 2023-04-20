@@ -1708,3 +1708,4 @@ Apr 17 20:00:02 +0900 OX-maintenance-643d8921cfeba [     info]  Task begin: OA_M
 Apr 17 20:00:02 +0900 OX-maintenance-643d8921cfeba [     info]  - Selecting Managers with ECPM priority campaigns running
 Apr 17 20:00:02 +0900 OX-maintenance-643d8921cfeba [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_ECPMforRemnant
 Apr 17 20:00:02 +0900 OX-maintenance-643d8921cfeba [     info]  Maintenance Priority Engine Completed (Started at 2023-04-17 20:00:02 CET)
+Apr 19 19:37:25 +0900 OX-644026d008de0 [     info]  Unwritable file C:\xampp\htdocs\UNA\adserver\plugins/468e9ccc652bebe0b932abf074567e7f

@@ -37,21 +37,6 @@
     }
 ?>
 
-<?php if($isSelf) : ?>
-    <div class="d-flex justify-content-end">
-        <div class="input-group w-25">
-            <div class="input-group-prepend">
-                <span class="input-group-text"><i class="fa fa-plus"></i></span>
-            </div>
-            <input type="text" class="input_search_product form-control" placeholder="Search...">
-            <div class="input-group-append">
-                <button onclick="onClickAddToBlock(event)" class="btn btn-outline-primary" type="button">Add</button>
-            </div>
-        </div>
-    </div>
-<?php endif; ?>
-
-<div class="products_in_block row mt-4 justify-content-center"></div>
 
 <script type="text/javascript">
     var BASIC_OPEN_CART_ADMIN_SERVER_API = '<?= BASIC_OPEN_CART_ADMIN_SERVER_API ?>';

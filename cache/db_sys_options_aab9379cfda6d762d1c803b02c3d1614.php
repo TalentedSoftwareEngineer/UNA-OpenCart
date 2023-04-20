@@ -1,7 +1,7 @@
 <?php $mixedData=array (
   'sys_cron_time' => '0',
   'sys_upgrade_channel' => 'beta',
-  'sys_revision' => '9',
+  'sys_revision' => '10',
   'sys_eq_time' => '0',
   'sys_push_queue_time' => '0',
   'sys_ftp_login' => '',
