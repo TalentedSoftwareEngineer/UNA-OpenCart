@@ -113,4 +113,24 @@ class ControllerApiRevive extends Controller {
         $this->response->setOutput(json_encode($result));
     }
 
+    public function getBannersBySysAccIdBlockId()
+    {
+        $this->load->language('api/user');
+        $this->load->model('catalog/revive');
+
+        $sys_acc_id = $this->request->post['sys_acc_id'];
+        $block_id = $this->request->post['block_id'];
+
+        $zoneId = $this->model_catalog_revive->getZoneIdBySysAccIdBlockId($sys_acc_id, $block_id);
+
+        if(!isset($zoneId['zone_id']) || !$zoneId['zone_id']) {
+            $result = 'No Zone';
+        } else {
+            $result = $this->model_catalog_revive->getBannersByZoneId($zoneId['zone_id']);
+        }
+
+        $this->response->addHeader('Content-Type: application/json');
+        $this->response->setOutput(json_encode($result));
+    }
+
 }

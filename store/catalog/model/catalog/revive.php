@@ -145,7 +145,7 @@ class ModelCatalogRevive extends Model {
 
         //add zone
 		$this->db->query("INSERT INTO `rv_zones`(`affiliateid`,`zonename`,`description`,`delivery`,`zonetype`,`category`,`width`,`height`,`ad_selection`,`chain`,`prepend`,`append`,`appendtype`,`forceappend`,`inventory_forecast_type`,`comments`,`cost`,`cost_type`,`cost_variable_id`,`technology_cost`,`technology_cost_type`,`updated`,`block`,`capping`,`session_capping`,`what`,`rate`,`pricing`,`oac_category_id`,`ext_adselection`,`show_capped_no_cookie`) values 
-            (" . (int) $websiteId . ",'" . $data['zone_name'] . "','',0,3,'',468,60,'','','','',0,'f',0,'',NULL,NULL,NULL,NULL,NULL,NOW(),0,0,0,'',NULL,'CPM',NULL,NULL,0)");
+            (" . (int) $websiteId . ",'" . $data['zone_name'] . "','',0,3,'',-1,-1,'','','','',0,'f',0,'',NULL,NULL,NULL,NULL,NULL,NOW(),0,0,0,'',NULL,'CPM',NULL,NULL,0)");
         $zoneId = $this->db->getLastId();
 
         $this->db->query("INSERT INTO `rv_audit`(`actionid`,`context`,`contextid`,`parentid`,`details`,`userid`,`username`,`usertype`,`updated`,`account_id`,`advertiser_account_id`,`website_account_id`) values 
@@ -174,6 +174,16 @@ class ModelCatalogRevive extends Model {
             WHERE rbz.block_id = " . (int) $block_id . " AND rbz.sys_acc_id = " . (int) $sys_acc_id);
 		return $query->row;
 	}
+
+    public function getZoneIdBySysAccIdBlockId($sys_acc_id, $block_id) {
+        $query = $this->db->query("SELECT zone_id FROM rv_block_to_zone WHERE block_id = " . (int) $block_id . " AND sys_acc_id = " . (int) $sys_acc_id);
+        return $query->row;
+    }
+
+    public function getBannersByZoneId($zone_id) {
+        $query = $this->db->query("SELECT * FROM rv_ad_zone_assoc AS raza LEFT JOIN rv_banners AS rb ON raza.`ad_id` = rb.`bannerid` WHERE raza.`zone_id` = " . (int) $zone_id);
+        return $query->rows;
+    }
 
     public function create_SysAcc_to_RvAgc_Table() {
       $sql = "CREATE TABLE IF NOT EXISTS `sys_acc_to_rv_agc` (

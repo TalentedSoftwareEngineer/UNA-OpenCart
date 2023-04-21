@@ -2,6 +2,11 @@
 <link rel="stylesheet" href="modules/vendor/OCI/template/font-awesome/css/font-awesome.min.css">
 <link rel ="stylesheet" href="modules/vendor/OCI/template/bootstrap/bootstrap.min.css">
 
+<link rel="stylesheet" href="modules/vendor/OCI/template/slick/slick.css">
+<link rel="stylesheet" href="modules/vendor/OCI/template/slick/slick-theme.css">
+
+<script type="text/javascript" src="modules/vendor/OCI/template/slick/slick.js"  charset="utf-8"></script>
+
 <style></style>
 <?php  
     require_once 'modules/vendor/OCI/api/opencart_api.php';
@@ -58,11 +63,19 @@
 
 <span id="ads_display_block" style="display: none;"></span>
 
-<?php if($isSelf && $isPremiumUser) : ?>
-    <div class="d-flex justify-content-end">
-        <button onclick="onClickAddAds(event)" class="btn btn-outline-primary btn-block" role="button">Click to add Ads</button>
+<div class="zone_content">
+    <div class="banner_container">
+        <div class="w-75 mx-auto">
+            <div id="banners_slider" class="banners slider"></div>
+        </div>
     </div>
-<?php endif; ?>
+    
+    <?php if($isSelf && $isPremiumUser) : ?>
+        <div class="d-flex justify-content-end mt-5">
+            <button onclick="onClickAddAds(event)" class="btn btn-outline-primary btn-block" role="button">Click to add Ads</button>
+        </div>
+    <?php endif; ?>
+</div>
 
 <script type="text/javascript">
     var BASIC_OPEN_CART_ADMIN_SERVER_API = '<?= BASIC_OPEN_CART_ADMIN_SERVER_API ?>';
@@ -100,4 +113,120 @@
             }
         });
     }
+
+    function createBannerElmntDom(banner) {
+        var container = $("<div></div>");
+
+        var image_container = $("<div></div>");
+        image_container.addClass('position-relative');
+
+        var image = $('<img>');
+        image.addClass('mx-auto');
+        image.attr({
+            'src': 'adserver/www/images/' + banner.filename,
+            'alt': banner.alt,
+            'title': banner.alt, 
+            'width': banner.width, 
+            'height': banner.height
+        });
+        var banner_desc = $("<h1></h1>");
+        banner_desc.addClass('text-center');
+        banner_desc.css({
+            'position': 'absolute',
+            'top': '50%',
+            'left': '50%',
+            'transform': 'translate(-50%, -50%)',
+            'padding': '10px 20px',
+            'background-color': 'rgba(255, 255, 255, 0.7)',
+            'border-radius': '50%'
+        });
+        banner_desc.text(banner.description);
+
+        image_container.append(image);
+        image_container.append(banner_desc);
+
+        var banner_text = $("<h3></h3>");
+        banner_text.addClass('text-center');
+        banner_text.text(banner.bannertext);
+
+        var comments = $("<p></p>");
+        comments.addClass('mt-5');
+        comments.css({'font-size': '20px'});
+        comments.text(banner.comments);
+
+        container.append(image_container);
+        container.append(banner_text);
+        container.append(comments);
+
+        $('#banners_slider').append(container);
+    }
+
+    function applySlickSlideToBanners() {
+        $(".banners").slick({
+            dots: true,
+            infinite: true,
+            speed: 300,
+            lazyLoad: 'ondemand',
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 3000,
+            // centerMode: true,
+            // centerPadding: '60px',
+            fade: false,
+            cssEase: 'linear',
+            responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                slidesToShow: 3,
+                slidesToScroll: 3,
+                infinite: true,
+                dots: true
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+                }
+            }
+            ]
+        });
+    }
+
+    function buildBannersSlider() {
+        $.ajax({
+            type: 'post',
+            url: BASIC_OPEN_CART_SERVER_API + 'route=api/revive/getBannersBySysAccIdBlockId',
+            data: {
+                sys_acc_id: '<?= $loggedUser['id'] ?>',
+                block_id: block_id
+            },
+            success: function(response) {
+                if(response == 'No Zone') {
+                } else {
+                    $('#banners_slider').empty();
+                    $.each(response, function(index, item) {createBannerElmntDom(item);});
+                    applySlickSlideToBanners();
+                }
+            },
+            fail: function(fail){
+                console.log(fail);
+            },
+            error: function(error, ajaxOptions, thrownError) {
+                console.log(error);
+            }
+        });
+    }
+
+    buildBannersSlider();
 </script>
