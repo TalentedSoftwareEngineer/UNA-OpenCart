@@ -213,6 +213,7 @@
             },
             success: function(response) {
                 if(response == 'No Zone') {
+                    $('#banners_slider').empty();
                 } else {
                     $('#banners_slider').empty();
                     $.each(response, function(index, item) {createBannerElmntDom(item);});

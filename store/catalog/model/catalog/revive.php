@@ -176,13 +176,18 @@ class ModelCatalogRevive extends Model {
 	}
 
     public function getZoneIdBySysAccIdBlockId($sys_acc_id, $block_id) {
-        $query = $this->db->query("SELECT zone_id FROM rv_block_to_zone WHERE block_id = " . (int) $block_id . " AND sys_acc_id = " . (int) $sys_acc_id);
+        $query = $this->db->query("SELECT * FROM rv_block_to_zone WHERE block_id = " . (int) $block_id . " AND sys_acc_id = " . (int) $sys_acc_id);
         return $query->row;
     }
 
     public function getBannersByZoneId($zone_id) {
-        $query = $this->db->query("SELECT * FROM rv_ad_zone_assoc AS raza LEFT JOIN rv_banners AS rb ON raza.`ad_id` = rb.`bannerid` WHERE raza.`zone_id` = " . (int) $zone_id);
+        $query = $this->db->query("SELECT * FROM rv_ad_zone_assoc AS raza LEFT JOIN rv_banners AS rb ON raza.`ad_id` = rb.`bannerid` LEFT JOIN rv_ocproduct_to_banner AS ropb ON raza.`ad_id` = ropb.`banner_id` WHERE raza.`zone_id` = " . (int) $zone_id);
         return $query->rows;
+    }
+
+    public function getChannelByWebsiteId($website_id) {
+        $query = $this->db->query("SELECT * FROM rv_channel WHERE affiliateid = " . (int) $website_id);
+        return $query->row;
     }
 
     public function create_SysAcc_to_RvAgc_Table() {

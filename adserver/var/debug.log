@@ -2413,3 +2413,4 @@ Apr 21 21:36:35 +0900 OX-maintenance-6442e5c230f5f [     info]  Task begin: OA_M
 Apr 21 21:36:35 +0900 OX-maintenance-6442e5c230f5f [     info]  - Selecting Managers with ECPM priority campaigns running
 Apr 21 21:36:35 +0900 OX-maintenance-6442e5c230f5f [     info]  Task complete: OA_Maintenance_Priority_AdServer_Task_ECPMforRemnant
 Apr 21 21:36:35 +0900 OX-maintenance-6442e5c230f5f [     info]  Maintenance Priority Engine Completed (Started at 2023-04-21 21:36:34 CET)
+Apr 22 12:31:39 +0900 OX-6443b78478ca8 [     info]  Unwritable file C:\xampp\htdocs\UNA\adserver\plugins/deliveryLog/vastServeVideoPlayer/7be01abe3418d5683314902e6dd45a8b

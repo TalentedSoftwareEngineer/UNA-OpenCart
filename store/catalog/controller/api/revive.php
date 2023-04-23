@@ -3,6 +3,8 @@
 use Cart\User;
 
 class ControllerApiRevive extends Controller {
+    private $allowedBanners = array();
+
 	public function __construct($registry) {
 		$this->registry = $registry;
 		$registry->set('user', new User($registry));
@@ -121,12 +123,20 @@ class ControllerApiRevive extends Controller {
         $sys_acc_id = $this->request->post['sys_acc_id'];
         $block_id = $this->request->post['block_id'];
 
-        $zoneId = $this->model_catalog_revive->getZoneIdBySysAccIdBlockId($sys_acc_id, $block_id);
+        $zone = $this->model_catalog_revive->getZoneIdBySysAccIdBlockId($sys_acc_id, $block_id);
 
-        if(!isset($zoneId['zone_id']) || !$zoneId['zone_id']) {
+        if(!isset($zone['zone_id']) || !$zone['zone_id']) {
             $result = 'No Zone';
         } else {
-            $result = $this->model_catalog_revive->getBannersByZoneId($zoneId['zone_id']);
+            $zone_banners = $this->model_catalog_revive->getBannersByZoneId($zone['zone_id']);
+            $channel = $this->model_catalog_revive->getChannelByWebsiteId($zone['affiliate_id']);
+            $startPos = strpos($channel['compiledlimitation'], 'MAX_checkSite_Variable');
+            $lengh = strpos($channel['compiledlimitation'], ')', $startPos) - $startPos;
+            $this->allowedBanners = explode(',', preg_replace('/\s+/', '', str_replace('\'', '', explode('|' ,explode(', \'', str_replace('MAX_checkSite_Variable(', '', substr($channel['compiledlimitation'], $startPos, $lengh)))[0])[1])));
+            
+            $result = array_filter($zone_banners, function($var) {
+                return in_array($var['product_id'], $this->allowedBanners);
+            });
         }
 
         $this->response->addHeader('Content-Type: application/json');
